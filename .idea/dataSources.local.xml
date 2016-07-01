@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails railsVue: development" uuid="2b3c35bb-cc2a-452d-bb75-b964c761495a">
+      <schema-pattern>railsVue_development.*</schema-pattern>
+      <default-schemas>railsVue_development.*</default-schemas>
+    </data-source>
+    <data-source name="Rails railsVue: production" uuid="80c52bce-26a4-4fdd-9355-ec48bed83902">
+      <user-name>railsVue</user-name>
+      <user-password>df96df8fdf97df8adfefdfe4dffcdff1df8ddff8dfebdfe3dfe6dff9dffcdfffdfefdff5dfeedfebdffedfebdfe8dfebdff9dfefdff5dffadfebdff9dff9dffddfe5dff8dfeedf8ddff7df8adf8fdf94</user-password>
+    </data-source>
+    <data-source name="Rails railsVue: test" uuid="16699d66-3ca3-4af6-a3d2-620665bbdacc" />
+  </component>
+</project>

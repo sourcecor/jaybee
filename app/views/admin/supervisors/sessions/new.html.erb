@@ -1,0 +1,21 @@
+<p class="login-box-msg">登入</p>
+
+<%= simple_form_for resource, as: resource_name, url: session_path(resource_name)  do |f| %>
+  <%= f.input :email, wrapper: :bootstrap, autofocus: true, placeholder: "郵件地址", icon: "fa-envelope" %>
+  <%= f.input :password, wrapper: :bootstrap, placeholder: "密碼", icon: "fa-eye-slash" %>
+
+  <div class="row">
+    <% if devise_mapping.rememberable? -%>
+      <div class="col-xs-8">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me, "記住我" %>
+      </div>
+    <% end -%>
+    <!-- /.col -->
+    <div class="col-xs-4">
+      <%= f.submit "登入", class: "btn btn-primary btn-block btn-flat" %>
+    </div>
+  </div>
+<% end %>
+
+<%= render "admin/supervisors/shared/links" %>

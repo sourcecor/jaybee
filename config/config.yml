@@ -1,0 +1,12 @@
+defaults: &defaults
+  logo_mini: <b>捷</b>比
+  logo_lg: <b>Jay</b>Bee
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
