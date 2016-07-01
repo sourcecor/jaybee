@@ -18,3 +18,8 @@
 /config/secrets.yml
 /db/import
 .DS_Store
+.idea/
+lib/capistrano/
+public/uploads/ckeditor/pictures/
+test/fixtures/admin/
+test/models/admin/
