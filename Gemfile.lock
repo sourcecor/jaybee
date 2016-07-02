@@ -1,4 +1,11 @@
 GIT
+  remote: git://github.com/capistrano/passenger.git
+  revision: 223bf12f06c79febabba61ef24eb3752ee8e8f5c
+  specs:
+    capistrano-passenger (0.2.0)
+      capistrano (~> 3.0)
+
+GIT
   remote: git://github.com/carrierwaveuploader/carrierwave.git
   revision: b31f7ce006bade550be0ad946d0b993b799358e3
   specs:
@@ -296,6 +303,7 @@ DEPENDENCIES
   byebug
   capistrano
   capistrano-bundler
+  capistrano-passenger!
   capistrano-rails
   capistrano-rvm
   capistrano3-puma
