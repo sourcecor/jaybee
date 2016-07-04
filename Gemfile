@@ -74,8 +74,6 @@ gem 'geokit-rails', github: 'geokit/geokit-rails'
 
 gem 'gridster-rails'
 
-
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -85,16 +83,16 @@ gem 'gridster-rails'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# environment variables config/application.yml
 gem 'figaro'
+# A Ruby Web Server Built For Concurrency
 gem 'puma'
 group :development do
   gem 'byebug'
-  gem 'capistrano'
-  gem 'capistrano3-puma'
-  gem 'capistrano-rails', require: false
-  gem 'capistrano-bundler', require: false
-  gem 'capistrano-rvm'
-  gem 'capistrano-passenger', require: false, github: 'capistrano/passenger'
+  gem "capistrano",  "~> 3.1", require: false
+  gem "capistrano-rvm", "~> 0.1.1", require: false
+  gem "capistrano-rails", "~> 1.1", require: false
+  gem "capistrano-rbenv", "~> 2.0", require: false # production server use rbenv
 end
 
 group :development do

@@ -13,12 +13,8 @@
 
 //= require jquery
 //= require jquery_ujs
-//= require jquery.turbolinks
 //= require jquery-ui
 //= require jquery.gridster.js
-//= require vue
-//= require vue-router
-//= require vue-resource
 //= require admin-lte/bootstrap/js/bootstrap
 //= require admin-lte/dist/js/app.js
 //= require admin-lte/plugins/iCheck/icheck.min.js
@@ -37,7 +33,6 @@
 //= require ckeditor/init
 //= require sync
 //= require_tree .
-//= require turbolinks
 
 
 // global after init google map callback

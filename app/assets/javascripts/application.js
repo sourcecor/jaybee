@@ -11,11 +11,12 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery-ui
+//= require vue
+//= require vue-router
+//= require vue-resource
 //= require pnotify
 //= require unobtrusive_flash
 //= require sync
 //= require_directory .
-//= require turbolinks

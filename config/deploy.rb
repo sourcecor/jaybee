@@ -6,7 +6,7 @@ set :repo_url, 'git@github.com:sourcecor/jaybee.git' # 修改這裡，以符合�
 set :branch, :master
 set :deploy_to, '/home/ubuntu/jaybee'
 set :pty, true
-set :linked_files, %w{config/database.yml config/application.yml}
+set :linked_files, %w{config/database.yml config/secrets.yml}
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
 set :linked_dirs, fetch(:linked_dirs, []).push('public/assets', 'public/uploads')
 set :keep_releases, 5
@@ -60,6 +60,19 @@ set :puma_preload_app, false
 # set :keep_releases, 5
 
 namespace :deploy do
+  namespace :bower do
+    desc 'Install bower'
+    task :install do
+      on roles(:web) do
+        within release_path do
+          with rails_env: fetch(:rails_env) do
+            execute :rake, 'bower:install CI=true'
+          end
+        end
+      end
+    end
+  end
+  before 'deploy:compile_assets', 'bower:install'
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do

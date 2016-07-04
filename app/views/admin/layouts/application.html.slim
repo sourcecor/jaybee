@@ -21,8 +21,8 @@ html
       header.main-header
         /! Logo
         a.logo[href="/admin"]
-          span.logo-mini = APP_CONFIG['logo_mini'].html_safe
-          span.logo-lg = APP_CONFIG['logo_lg'].html_safe
+          span.logo-mini = ENV['LOGO_MINI'].html_safe
+          span.logo-lg = ENV['LOGO_LG'].html_safe
         /! Header Navbar
         nav.navbar.navbar-static-top[role="navigation"]
           /! Sidebar toggle button

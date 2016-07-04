@@ -3,14 +3,7 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 $(document).ready ->
-  $.AdminLTE.layout.activate();
   initImageInput();
-
-$(document).on 'page:load', ->
-  o = $.AdminLTE.options
-  if o.sidebarPushMenu
-    $.AdminLTE.pushMenu.activate(o.sidebarToggleSelector)
-  $.AdminLTE.layout.activate()
 
 $('input').iCheck
   checkboxClass: 'icheckbox_square-blue'
