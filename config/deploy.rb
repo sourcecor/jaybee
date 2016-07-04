@@ -72,6 +72,7 @@ namespace :deploy do
         within release_path do
           with rails_env: fetch(:rails_env) do
             execute :rake, 'bower:install CI=true'
+            execute :rake, 'bower:resolve'
           end
         end
       end
