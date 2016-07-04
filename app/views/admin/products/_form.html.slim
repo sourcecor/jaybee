@@ -20,9 +20,9 @@
           = f.input :sale_price, input_html: { placeholder: "售價", min: 0 }
         .col-xs-12.col-md-3.col-lg-3
           = f.input :cost, input_html: { placeholder: "成本", min: 0 }
-        /.col-xs-12.col-md-12.col-lg-12
-        /  = f.association :categories, collection: cate_group, as: :grouped_select, \
-        /    :group_method => :last, :group_label_method => :first, input_html: { multiple: true }
+        .col-xs-12.col-md-12.col-lg-12
+          = f.association :categories, collection: cate_group, as: :grouped_select, \
+            :group_method => :last, :group_label_method => :first, input_html: { multiple: true }
   .box.collapsed-box
     .box-header.with-border
       h3.box-title
