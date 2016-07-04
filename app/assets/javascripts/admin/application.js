@@ -74,7 +74,7 @@ $(function(){
   } else {
     var script = document.createElement('script');
     script.type = 'text/javascript';
-    script.src = 'http://maps.googleapis.com/maps/api/js?key=AIzaSyBCghlLIYVWh1Y9tMZWsfdpDt0kZdZu2ro&libraries=places&callback=initMap';
+    script.src = 'http://maps.googleapis.com/maps/api/js?key=AIzaSyCUSk-5eNj1T5RH1U6tWPuqzA5fVMv37f0&libraries=places&callback=initMap';
     document.body.appendChild(script);
   }
 });
