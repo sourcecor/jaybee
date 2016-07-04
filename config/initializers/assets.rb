@@ -3,13 +3,11 @@
 # Version of your assets, change this if you want to expire all your assets.
 Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( admin-lte/dist/img/user2-160x160.jpg )
-Rails.application.config.assets.precompile += %w( admin-lte/plugins/iCheck/flat/blue@2x.jpg )
 Rails.application.config.assets.precompile += %w( admin/application.css.scss )
 Rails.application.config.assets.precompile += %w( admin/application.js )
 Rails.application.config.assets.precompile += %w( application.css.scss )
 Rails.application.config.assets.precompile += %w( application.js )
 Rails.application.config.assets.precompile += %w( ckeditor/* )
-Rails.application.config.assets.precompile += %w( blue.css )
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path
 
