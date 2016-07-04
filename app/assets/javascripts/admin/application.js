@@ -38,6 +38,7 @@
 // global after init google map callback
 // callback
 function initMap(){
+  alert('init');
   if ($('#geocode').length > 0)
     autocomplete = new google.maps.places.Autocomplete($('#geocode')[0]);
 }

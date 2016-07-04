@@ -3,7 +3,7 @@ class StoreInfo < ActiveRecord::Base
                    :lat_column_name => :latitude,
                    :lng_column_name => :longitude
 
-  validates :caption, :address, presence: true
+  validates :caption, :address, :phone, presence: true
 
   before_save :set_coordinate
 
