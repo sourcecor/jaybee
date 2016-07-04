@@ -73,6 +73,7 @@ namespace :deploy do
           with rails_env: fetch(:rails_env) do
             execute :rake, 'bower:install CI=true'
             execute :rake, 'bower:resolve'
+            execute :rake, 'assets:precompile'
           end
         end
       end
