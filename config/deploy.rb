@@ -12,7 +12,7 @@ set :linked_dirs, fetch(:linked_dirs, []).push('public/assets', 'public/uploads'
 set :linked_dirs, fetch(:linked_dirs, []).push("bin", "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system")
 set :keep_releases, 5
 set :rbenv_type, :user
-set :rbenv_ruby, 'ruby-2.3.1' # 修改這裡，以符合你的ruby版本。我是在server上裝 ruby2.2.0
+set :rbenv_ruby, '2.3.1' # 修改這裡，以符合你的ruby版本。我是在server上裝 ruby2.2.0
 set :rbenv_path, "/home/ubuntu/.rbenv/bin/rbenv"
 set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
 set :rbenv_map_bins, %w(rake gem bundle ruby rails)
