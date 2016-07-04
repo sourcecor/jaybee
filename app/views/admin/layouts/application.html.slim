@@ -63,6 +63,7 @@ html
         /! Main content
         section.content
           == yield
+          script[src="http://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyCUSk-5eNj1T5RH1U6tWPuqzA5fVMv37f0&libraries=places&callback=initMap"]
 
       /! Main Footer
       = render "admin/layouts_partial/footer"
