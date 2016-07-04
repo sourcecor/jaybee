@@ -1,17 +1,22 @@
 # config valid only for current version of Capistrano
-lock '3.4.0'
+lock '3.5.0'
 
 set :application, 'jaybee'
 set :repo_url, 'git@github.com:sourcecor/jaybee.git' # 修改這裡，以符合你自己放程式的地方
 set :branch, :master
 set :deploy_to, '/home/ubuntu/jaybee'
 set :pty, true
-set :linked_files, %w{config/database.yml config/secrets.yml}
+set :linked_files, %w{config/database.yml config/application.yml config/secrets.yml}
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
 set :linked_dirs, fetch(:linked_dirs, []).push('public/assets', 'public/uploads')
+set :linked_dirs, fetch(:linked_dirs, []).push("bin", "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle", "public/system")
 set :keep_releases, 5
-set :rvm_type, :user
-set :rvm_ruby_version, 'ruby-2.3.1' # 修改這裡，以符合你的ruby版本。我是在server上裝 ruby2.2.0
+set :rbenv_type, :user
+set :rbenv_ruby_version, 'ruby-2.3.1' # 修改這裡，以符合你的ruby版本。我是在server上裝 ruby2.2.0
+set :rbenv_path, "/home/ubuntu/.rbenv/bin/rbenv"
+set :rbenv_prefix, "RBENV_ROOT=#{fetch(:rbenv_path)} RBENV_VERSION=#{fetch(:rbenv_ruby)} #{fetch(:rbenv_path)}/bin/rbenv exec"
+set :rbenv_map_bins, %w(rake gem bundle ruby rails)
+set :rbenv_roles, :all
 
 set :puma_rackup, -> { File.join(current_path, 'config.ru') }
 set :puma_state, "#{shared_path}/tmp/pids/puma.state"
@@ -77,9 +82,9 @@ namespace :deploy do
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
+      within release_path do
+        execute :rake, 'cache:clear'
+      end
     end
   end
 

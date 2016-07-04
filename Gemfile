@@ -87,9 +87,7 @@ gem 'puma'
 group :development do
   gem 'byebug'
   gem "capistrano",  "~> 3.1", require: false
-  gem "capistrano-rvm", "~> 0.1.1", require: false
   gem 'capistrano3-puma'
-
   gem "capistrano-rails", "~> 1.1", require: false
   gem "capistrano-rbenv", "~> 2.0", require: false # production server use rbenv
 end
