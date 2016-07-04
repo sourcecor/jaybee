@@ -46,6 +46,6 @@ class Admin::StoreInfosController < Admin::ApplicationController
   end
   # strong params
   def storeInfo_params
-    params.require(:store_info).permit(:id, :caption, :address, :content)
+    params.require(:store_info).permit(:id, :caption, :phone, :address, :content)
   end
 end
