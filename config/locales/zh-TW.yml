@@ -54,6 +54,7 @@ zh-TW:
         qty: "數量"
       store_info:
         caption: "店名"
+        phone: "電話"
         address: "地址"
       supervisor:
         nickname: "姓名"
