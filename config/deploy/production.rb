@@ -1,4 +1,4 @@
-server '52.193.54.168', user: 'ubuntu', roles: %w{web app db}  # server IP是等下建完Ubuntu後AWS隨機給的的ip，或你在AWS上設定保留的ip (Elastic IP)。
+server '52.192.165.51', user: 'ubuntu', roles: %w{web app db}  # server IP是等下建完Ubuntu後AWS隨機給的的ip，或你在AWS上設定保留的ip (Elastic IP)。
 # server-based syntax
 # ======================
 # Defines a single server with a list of roles and multiple properties.
