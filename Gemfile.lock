@@ -223,6 +223,8 @@ GEM
     rake (11.2.2)
     rdoc (4.2.2)
       json (~> 1.4)
+    recaptcha (3.3.0)
+      json
     render_sync (0.5.0)
       em-http-request
     responders (2.2.0)
@@ -318,6 +320,7 @@ DEPENDENCIES
   puma
   rails (= 4.2.6)
   rails-i18n
+  recaptcha
   render_sync
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)

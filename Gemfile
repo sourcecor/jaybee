@@ -58,7 +58,7 @@ gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 # html editor
 gem 'ckeditor', github: 'galetahub/ckeditor'
 # rails panel
-# gem 'meta_request'
+# gem 'meta_request'b
 # soft delete
 gem 'permanent_records'
 
@@ -70,6 +70,8 @@ gem 'render_sync'
 gem 'geokit-rails', github: 'geokit/geokit-rails'
 
 gem 'gridster-rails'
+
+gem "recaptcha", require: "recaptcha/rails"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

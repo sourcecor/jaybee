@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160625002225) do
+ActiveRecord::Schema.define(version: 20160705064013) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "banners", force: :cascade do |t|
+    t.string   "caption",    limit: 20, default: "#"
+    t.integer  "parent_id"
+    t.string   "picture",    limit: 50
+    t.integer  "seq"
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
 
   create_table "categories", force: :cascade do |t|
     t.string   "caption",     limit: 30
@@ -133,11 +142,12 @@ ActiveRecord::Schema.define(version: 20160625002225) do
   create_table "store_infos", force: :cascade do |t|
     t.string   "caption"
     t.string   "address"
-    t.decimal  "latitude",   precision: 10, scale: 6
-    t.decimal  "longitude",  precision: 10, scale: 6
+    t.decimal  "latitude",              precision: 10, scale: 6
+    t.decimal  "longitude",             precision: 10, scale: 6
     t.text     "content"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
+    t.string   "phone",      limit: 20
   end
 
   add_index "store_infos", ["latitude"], name: "index_store_infos_on_latitude", using: :btree

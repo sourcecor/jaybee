@@ -1,5 +1,7 @@
 class Admin::Supervisors::SessionsController < Devise::SessionsController
+  include Recaptcha::Verify
   layout 'admin/layouts/basic'
+  prepend_around_action :check_recaptcha, only: [:create]
 # before_filter :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
@@ -23,4 +25,11 @@ class Admin::Supervisors::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.for(:sign_in) << :attribute
   # end
+  private
+    def check_recaptcha
+      unless verify_recaptcha
+        self.resource = resource_class.new sign_in_params
+        respond_with_navigational(resource) { render :new }
+      end
+    end
 end

@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+  get 'banners/index'
+
+  get 'banners/new'
+
+  get 'banners/create'
+
+  get 'banners/edit'
+
+  get 'banners/update'
+
+  get 'banners/destroy'
+
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
@@ -65,7 +77,7 @@ Rails.application.routes.draw do
     #
     patch 'pictures/update_sequence'
     #
-    resources :groups, :menus, :categories, :products, :store_infos, :home_grids
+    resources :groups, :menus, :categories, :products, :store_infos, :home_grids, :banners
 
     resources :supervisors do
       collection do
