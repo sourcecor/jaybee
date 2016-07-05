@@ -15,4 +15,5 @@ Rails.application.config.assets.precompile += %w( ckeditor/* )
 # application.js, application.css.scss, and all non-JS/CSS in app/assets folder are already added.
 # Rails.application.config.assets.precompile += %w( search.js )
 types = %w( *.png *.gif *.jpg *.eot *.woff *.ttf )
+
 Rails.application.config.assets.precompile += types

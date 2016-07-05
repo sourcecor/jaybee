@@ -1,6 +1,7 @@
 # Created by xuanyang on 6/10/16.
 $(document).ready ->
   $(window).bind 'rails:flash', (e, params) ->
+    alert "alert";
     PNotify.prototype.options.styling = "jqueryui";
     new PNotify(
       title: params.type,
