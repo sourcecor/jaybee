@@ -29,6 +29,7 @@ class Admin::Supervisors::SessionsController < Devise::SessionsController
     def check_captcha
       unless verify_recaptcha
         self.resource = resource_class.new sign_in_params
+        flash[:alert] = "There was an error with the recaptcha code below. Please re-enter the code and click submit."
         respond_with_navigational(resource) { render :new }
       end
     end
