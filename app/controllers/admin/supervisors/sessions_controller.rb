@@ -1,7 +1,7 @@
 class Admin::Supervisors::SessionsController < Devise::SessionsController
   include Recaptcha::Verify
   layout 'admin/layouts/basic'
-  prepend_around_action :check_recaptcha, only: [:create]
+  prepend_before_action :check_captcha, only: [:create] # Change this to be any actions you want to protect.
 # before_filter :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
@@ -26,9 +26,9 @@ class Admin::Supervisors::SessionsController < Devise::SessionsController
   #   devise_parameter_sanitizer.for(:sign_in) << :attribute
   # end
   private
-    def check_recaptcha
+    def check_captcha
       unless verify_recaptcha
-        self.resource = resource_class.new sign_in_params
+        self.resource = resource_class.new sign_up_params
         respond_with_navigational(resource) { render :new }
       end
     end
