@@ -20,6 +20,11 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 zh-TW:
+  recaptcha:
+    errors:
+      incorrect-captcha-sol: 'Fail'
+      verification_failed: '圖形驗證錯誤'
+      recaptcha_unreachable: '圖形驗證失效'
   activerecord:
     attributes:
       event:
