@@ -1,7 +1,7 @@
 <p class="login-box-msg">登入</p>
 
 <%= simple_form_for resource, as: resource_name, url: session_path(resource_name)  do |f| %>
-  <%= devise_error_messages! %>
+  <%= flash[:error_captcha] %>
   <%= f.input :email, wrapper: :bootstrap, autofocus: true, placeholder: "郵件地址", icon: "fa-envelope" %>
   <%= f.input :password, wrapper: :bootstrap, placeholder: "密碼", icon: "fa-eye-slash" %>
   <div class="row" style="margin-bottom: 5px">
