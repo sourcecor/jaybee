@@ -81,7 +81,13 @@ coffee:
     allowClear: true
 
   $('.row.sortable').sortable
+    connectWith: ".row.sortable",
+    start: (event, ui) ->
+      ui.item.toggleClass("placeholder");
+      ui.placeholder.height(ui.helper[0].scrollHeight);
+      ui.placeholder.width(ui.helper[0].scrollWidth);
     stop: (event, ui) ->
+      ui.item.toggleClass("placeholder");
       sorted = $(this).sortable('toArray');
       i = 0;
       p_data = [];
@@ -147,7 +153,6 @@ css:
     outline: 1px dashed #4183C4;
   }
   .nested-fields {
-    display: block;
     padding: 2px;
     border: 1px solid #cccccc;
     border-left: 3px solid #ff7700;

@@ -1,17 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'banners/index'
-
-  get 'banners/new'
-
-  get 'banners/create'
-
-  get 'banners/edit'
-
-  get 'banners/update'
-
-  get 'banners/destroy'
-
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

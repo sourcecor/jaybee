@@ -1,6 +1,6 @@
 class Category < ActiveRecord::Base
 
-  attr_accessor :params
+  # attr_accessor :params
 
   validates :caption, presence: true
 

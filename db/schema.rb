@@ -17,11 +17,14 @@ ActiveRecord::Schema.define(version: 20160705064013) do
   enable_extension "plpgsql"
 
   create_table "banners", force: :cascade do |t|
-    t.string   "caption",    limit: 20, default: "#"
-    t.integer  "parent_id"
-    t.integer  "seq"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.integer  "parent_id",               default: 0
+    t.string   "caption",     limit: 20,  default: "#"
+    t.string   "description", limit: 100, default: "#"
+    t.string   "link",        limit: 50,  default: "#"
+    t.string   "picture",     limit: 50
+    t.integer  "seq",                     default: 0
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
   end
 
   create_table "categories", force: :cascade do |t|

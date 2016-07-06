@@ -74,6 +74,12 @@ zh-TW:
         link: "連結"
         picture: "圖片"
         template_id: "範本"
+      banner:
+        caption: "標題"
+        description: "說明"
+        link: "連結"
+        seq: "排序"
+        picture: "圖片"
   date:
     order:
       - :year
