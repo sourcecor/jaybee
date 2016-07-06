@@ -16,8 +16,10 @@
       <%= f.submit "登入", class: "btn btn-primary btn-block btn-flat" %>
     </div>
   </div>
-  <p class="error"><%= flash[:recaptcha_error] %></p>
-  <%= recaptcha_tags %>
+  <div class="form-group has-warning">
+    <%= flash[:recaptcha_error] %>
+    <%= recaptcha_tags %>
+  </div>
 <% end %>
 
 <%= render "admin/supervisors/shared/links" %>
