@@ -73,8 +73,18 @@ Rails.application.routes.draw do
       end
 
     end
-
     # Directs /admin/products/* to Admin::ProductsController
     # (app/controllers/admin/products_controller.rb)
+  end
+  # jCoin API
+  # Rails API 參考https://codedecoder.wordpress.com/2013/02/21/sample-rest-api-example-in-rails/
+  # call api sample
+  # http://localhost:3000/api/v1/jcard/card_id_123456.json
+  scope :path => '/api/v1/', :module => 'api/v1' do
+    # 不用 :resources 因為會產生不會用到的routes
+    scope :controller => 'jcoin' do
+      get 'jcard/:id' => :fetch
+      patch 'jcard/:id' => :trans
+    end
   end
 end
