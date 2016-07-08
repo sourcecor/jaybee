@@ -1,6 +1,8 @@
 class Menu < ActiveRecord::Base
   validates :caption, :action, :icon, presence: true
 
+  validate :check_action_url
+
   has_many :sub_menus, -> { order(:seq) }, class_name: "Menu", foreign_key: "parent_id", dependent: :destroy
   accepts_nested_attributes_for :sub_menus, reject_if: :all_blank, allow_destroy: true
   belongs_to :p_menu, class_name: "Menu"
@@ -9,6 +11,18 @@ class Menu < ActiveRecord::Base
   # after_destroy { |record|
   #   ActiveRecord::Base.connection.execute("DELETE from admin_groups_menus where menu_id = '#{record.id}'")
   # }
+  # 檢查路由存不存在
+  def check_action_url
+
+    if (self.action.to_s != "#")
+      begin
+        puts send(self.action)
+      rescue => ex
+        errors.add(:action, "這個路由不存在")
+      end
+    end
+  end
+
   def sub_menu_recur(menu)
     r_menu = []
     r_menu << [ menu.caption, menu.id ]
