@@ -59,4 +59,7 @@ connection.execute("insert into groups_menus values ('2', '9') ");
 connection.execute("insert into groups_menus values ('2', '10') ");
 connection.execute("insert into groups_menus values ('2', '11') ");
 
-
+# SELECT setval('menus_id_seq', COALESCE((SELECT MAX(id)+1 FROM menus), 1), false);
+connection.execute("SELECT setval('supervisors_id_seq', COALESCE((SELECT MAX(id)+1 FROM supervisors), 1), false);");
+connection.execute("SELECT setval('menus_id_seq', COALESCE((SELECT MAX(id)+1 FROM menus), 1), false);");
+connection.execute("SELECT setval('groups_id_seq', COALESCE((SELECT MAX(id)+1 FROM groups), 1), false);");
