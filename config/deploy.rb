@@ -6,7 +6,7 @@ set :repo_url, 'git@github.com:sourcecor/jaybee.git' # 修改這裡，以符合�
 set :branch, :master
 set :deploy_to, '/home/ubuntu/jaybee'
 set :pty, true
-set :linked_files, %w{config/database.yml config/application.yml config/secrets.yml config/puma.rb}
+set :linked_files, %w{config/database.yml config/application.yml config/secrets.yml}
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
 set :linked_dirs, fetch(:linked_dirs, []).push('public/assets', 'public/uploads')
 set :linked_dirs, fetch(:linked_dirs, []).push("bin", "log", "shared/tmp/pids", "shared/log", "shared/tmp/sockets", "vendor/bundle")
