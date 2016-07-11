@@ -13794,3 +13794,162 @@ url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') => 
  DEBUG [7f0f9b65] Finished in 0.210 seconds with exit status 1 (failed).
   WARN puma.rb NOT FOUND!
  DEBUG Uploading config/puma.rb 0.0%
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-07-11 21:26:13 +0800 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [6fc1bd47] Running [ -d /home/ubuntu/.rbenv/versions/2.3.1 ] as ubuntu@52.192.165.51
+ DEBUG [6fc1bd47] Command: [ -d /home/ubuntu/.rbenv/versions/2.3.1 ]
+ DEBUG [6fc1bd47] Finished in 1.542 seconds with exit status 0 (successful).
+  INFO [42287959] Running /usr/bin/env mkdir -p /tmp/jaybee/ as ubuntu@52.192.165.51
+ DEBUG [42287959] Command: ( export RBENV_ROOT="/home/ubuntu/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /tmp/jaybee/ )
+  INFO [42287959] Finished in 1.441 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/jaybee/git-ssh.sh 0.0%
+  INFO Uploading /tmp/jaybee/git-ssh.sh 100.0%
+  INFO [1cd3bf34] Running /usr/bin/env chmod +rx /tmp/jaybee/git-ssh.sh as ubuntu@52.192.165.51
+ DEBUG [1cd3bf34] Command: ( export RBENV_ROOT="/home/ubuntu/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env chmod +rx /tmp/jaybee/git-ssh.sh )
+  INFO [1cd3bf34] Finished in 0.217 seconds with exit status 0 (successful).
+  INFO [d29c0693] Running /usr/bin/env git ls-remote --heads git@github.com:sourcecor/jaybee.git as ubuntu@52.192.165.51
+ DEBUG [d29c0693] Command: ( export RBENV_ROOT="/home/ubuntu/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/jaybee/git-ssh.sh" ; /usr/bin/env git ls-remote --heads git@github.com:sourcecor/jaybee.git )
+ DEBUG [d29c0693] 	b2d1ee1dd2ac66c11a891fc68e4fad77addcd542
+ DEBUG [d29c0693] 		
+ DEBUG [d29c0693] 	refs/heads/master
+ DEBUG [d29c0693] 	
+  INFO [d29c0693] Finished in 2.833 seconds with exit status 0 (successful).
+  INFO [f3b6b4f9] Running /usr/bin/env mkdir -p /home/ubuntu/jaybee/shared /home/ubuntu/jaybee/releases as ubuntu@52.192.165.51
+ DEBUG [f3b6b4f9] Command: ( export RBENV_ROOT="/home/ubuntu/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /home/ubuntu/jaybee/shared /home/ubuntu/jaybee/releases )
+  INFO [f3b6b4f9] Finished in 0.205 seconds with exit status 0 (successful).
+  INFO [7b514d4f] Running /usr/bin/env mkdir -p /home/ubuntu/jaybee/shared/public/assets /home/ubuntu/jaybee/shared/public/uploads /home/ubuntu/jaybee/shared/bin /home/ubuntu/jaybee/shared/log /home/ubuntu/jaybee/shared/shared/tmp/pids /home/ubuntu/jaybee/shared/shared/log /home/ubuntu/jaybee/shared/shared/tmp/sockets /home/ubuntu/jaybee/shared/vendor/bundle as ubuntu@52.192.165.51
+ DEBUG [7b514d4f] Command: ( export RBENV_ROOT="/home/ubuntu/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /home/ubuntu/jaybee/shared/public/assets /home/ubuntu/jaybee/shared/public/uploads /home/ubuntu/jaybee/shared/bin /home/ubuntu/jaybee/shared/log /home/ubuntu/jaybee/shared/shared/tmp/pids /home/ubuntu/jaybee/shared/shared/log /home/ubuntu/jaybee/shared/shared/tmp/sockets /home/ubuntu/jaybee/shared/vendor/bundle )
+  INFO [7b514d4f] Finished in 0.216 seconds with exit status 0 (successful).
+  INFO [1a8c56ae] Running /usr/bin/env mkdir -p /home/ubuntu/jaybee/shared/config as ubuntu@52.192.165.51
+ DEBUG [1a8c56ae] Command: ( export RBENV_ROOT="/home/ubuntu/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /home/ubuntu/jaybee/shared/config )
+  INFO [1a8c56ae] Finished in 0.217 seconds with exit status 0 (successful).
+ DEBUG [60baed35] Running [ -f /home/ubuntu/jaybee/shared/config/database.yml ] as ubuntu@52.192.165.51
+ DEBUG [60baed35] Command: [ -f /home/ubuntu/jaybee/shared/config/database.yml ]
+ DEBUG [60baed35] Finished in 0.213 seconds with exit status 0 (successful).
+ DEBUG [910b67a4] Running [ -f /home/ubuntu/jaybee/shared/config/application.yml ] as ubuntu@52.192.165.51
+ DEBUG [910b67a4] Command: [ -f /home/ubuntu/jaybee/shared/config/application.yml ]
+ DEBUG [910b67a4] Finished in 0.215 seconds with exit status 0 (successful).
+ DEBUG [a52d5b66] Running [ -f /home/ubuntu/jaybee/shared/config/secrets.yml ] as ubuntu@52.192.165.51
+ DEBUG [a52d5b66] Command: [ -f /home/ubuntu/jaybee/shared/config/secrets.yml ]
+ DEBUG [a52d5b66] Finished in 0.212 seconds with exit status 0 (successful).
+ DEBUG [410abc5f] Running [ -f config/puma.rb ] as ubuntu@52.192.165.51
+ DEBUG [410abc5f] Command: [ -f config/puma.rb ]
+ DEBUG [410abc5f] Finished in 0.209 seconds with exit status 1 (failed).
+  WARN puma.rb NOT FOUND!
+ DEBUG Uploading config/puma.rb 0.0%
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-07-11 21:33:21 +0800 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [3b92ac79] Running [ -d /home/ubuntu/.rbenv/versions/2.3.1 ] as ubuntu@52.192.165.51
+ DEBUG [3b92ac79] Command: [ -d /home/ubuntu/.rbenv/versions/2.3.1 ]
+ DEBUG [3b92ac79] Finished in 1.454 seconds with exit status 0 (successful).
+  INFO [0e5bf70a] Running /usr/bin/env mkdir -p /tmp/jaybee/ as ubuntu@52.192.165.51
+ DEBUG [0e5bf70a] Command: ( export RBENV_ROOT="/home/ubuntu/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /tmp/jaybee/ )
+  INFO [0e5bf70a] Finished in 1.450 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/jaybee/git-ssh.sh 0.0%
+  INFO Uploading /tmp/jaybee/git-ssh.sh 100.0%
+  INFO [15f602c6] Running /usr/bin/env chmod +rx /tmp/jaybee/git-ssh.sh as ubuntu@52.192.165.51
+ DEBUG [15f602c6] Command: ( export RBENV_ROOT="/home/ubuntu/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env chmod +rx /tmp/jaybee/git-ssh.sh )
+  INFO [15f602c6] Finished in 0.222 seconds with exit status 0 (successful).
+  INFO [665b992a] Running /usr/bin/env git ls-remote --heads git@github.com:sourcecor/jaybee.git as ubuntu@52.192.165.51
+ DEBUG [665b992a] Command: ( export RBENV_ROOT="/home/ubuntu/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/jaybee/git-ssh.sh" ; /usr/bin/env git ls-remote --heads git@github.com:sourcecor/jaybee.git )
+ DEBUG [665b992a] 	b2d1ee1dd2ac66c11a891fc68e4fad77addcd542
+ DEBUG [665b992a] 		
+ DEBUG [665b992a] 	refs/heads/master
+ DEBUG [665b992a] 	
+  INFO [665b992a] Finished in 2.825 seconds with exit status 0 (successful).
+  INFO [28656e21] Running /usr/bin/env mkdir -p /home/ubuntu/jaybee/shared /home/ubuntu/jaybee/releases as ubuntu@52.192.165.51
+ DEBUG [28656e21] Command: ( export RBENV_ROOT="/home/ubuntu/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /home/ubuntu/jaybee/shared /home/ubuntu/jaybee/releases )
+  INFO [28656e21] Finished in 0.222 seconds with exit status 0 (successful).
+  INFO [093609c6] Running /usr/bin/env mkdir -p /home/ubuntu/jaybee/shared/public/assets /home/ubuntu/jaybee/shared/public/uploads /home/ubuntu/jaybee/shared/bin /home/ubuntu/jaybee/shared/log /home/ubuntu/jaybee/shared/tmp/pids /home/ubuntu/jaybee/shared/tmp/sockets /home/ubuntu/jaybee/shared/vendor/bundle as ubuntu@52.192.165.51
+ DEBUG [093609c6] Command: ( export RBENV_ROOT="/home/ubuntu/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /home/ubuntu/jaybee/shared/public/assets /home/ubuntu/jaybee/shared/public/uploads /home/ubuntu/jaybee/shared/bin /home/ubuntu/jaybee/shared/log /home/ubuntu/jaybee/shared/tmp/pids /home/ubuntu/jaybee/shared/tmp/sockets /home/ubuntu/jaybee/shared/vendor/bundle )
+  INFO [093609c6] Finished in 0.222 seconds with exit status 0 (successful).
+  INFO [88cdd030] Running /usr/bin/env mkdir -p /home/ubuntu/jaybee/shared/config as ubuntu@52.192.165.51
+ DEBUG [88cdd030] Command: ( export RBENV_ROOT="/home/ubuntu/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /home/ubuntu/jaybee/shared/config )
+  INFO [88cdd030] Finished in 0.224 seconds with exit status 0 (successful).
+ DEBUG [81ba8b08] Running [ -f /home/ubuntu/jaybee/shared/config/database.yml ] as ubuntu@52.192.165.51
+ DEBUG [81ba8b08] Command: [ -f /home/ubuntu/jaybee/shared/config/database.yml ]
+ DEBUG [81ba8b08] Finished in 0.220 seconds with exit status 1 (failed).
+ ERROR linked file /home/ubuntu/jaybee/shared/config/database.yml does not exist on 52.192.165.51
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-07-11 21:34:39 +0800 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [a607696e] Running [ -d /home/ubuntu/.rbenv/versions/2.3.1 ] as ubuntu@52.192.165.51
+ DEBUG [a607696e] Command: [ -d /home/ubuntu/.rbenv/versions/2.3.1 ]
+ DEBUG [a607696e] Finished in 1.410 seconds with exit status 0 (successful).
+  INFO [b3c81483] Running /usr/bin/env mkdir -p /tmp/jaybee/ as ubuntu@52.192.165.51
+ DEBUG [b3c81483] Command: ( export RBENV_ROOT="/home/ubuntu/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /tmp/jaybee/ )
+  INFO [b3c81483] Finished in 1.522 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/jaybee/git-ssh.sh 0.0%
+  INFO Uploading /tmp/jaybee/git-ssh.sh 100.0%
+  INFO [e5acc66a] Running /usr/bin/env chmod +rx /tmp/jaybee/git-ssh.sh as ubuntu@52.192.165.51
+ DEBUG [e5acc66a] Command: ( export RBENV_ROOT="/home/ubuntu/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env chmod +rx /tmp/jaybee/git-ssh.sh )
+  INFO [e5acc66a] Finished in 0.229 seconds with exit status 0 (successful).
+  INFO [22c8d0f6] Running /usr/bin/env git ls-remote --heads git@github.com:sourcecor/jaybee.git as ubuntu@52.192.165.51
+ DEBUG [22c8d0f6] Command: ( export RBENV_ROOT="/home/ubuntu/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/jaybee/git-ssh.sh" ; /usr/bin/env git ls-remote --heads git@github.com:sourcecor/jaybee.git )
+ DEBUG [22c8d0f6] 	b2d1ee1dd2ac66c11a891fc68e4fad77addcd542
+ DEBUG [22c8d0f6] 		
+ DEBUG [22c8d0f6] 	refs/heads/master
+ DEBUG [22c8d0f6] 	
+  INFO [22c8d0f6] Finished in 2.886 seconds with exit status 0 (successful).
+  INFO [01d64fc2] Running /usr/bin/env mkdir -p /home/ubuntu/jaybee/shared /home/ubuntu/jaybee/releases as ubuntu@52.192.165.51
+ DEBUG [01d64fc2] Command: ( export RBENV_ROOT="/home/ubuntu/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /home/ubuntu/jaybee/shared /home/ubuntu/jaybee/releases )
+  INFO [01d64fc2] Finished in 0.224 seconds with exit status 0 (successful).
+  INFO [9a7a2225] Running /usr/bin/env mkdir -p /home/ubuntu/jaybee/shared/public/assets /home/ubuntu/jaybee/shared/public/uploads /home/ubuntu/jaybee/shared/bin /home/ubuntu/jaybee/shared/log /home/ubuntu/jaybee/shared/tmp/pids /home/ubuntu/jaybee/shared/tmp/sockets /home/ubuntu/jaybee/shared/vendor/bundle as ubuntu@52.192.165.51
+ DEBUG [9a7a2225] Command: ( export RBENV_ROOT="/home/ubuntu/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /home/ubuntu/jaybee/shared/public/assets /home/ubuntu/jaybee/shared/public/uploads /home/ubuntu/jaybee/shared/bin /home/ubuntu/jaybee/shared/log /home/ubuntu/jaybee/shared/tmp/pids /home/ubuntu/jaybee/shared/tmp/sockets /home/ubuntu/jaybee/shared/vendor/bundle )
+  INFO [9a7a2225] Finished in 0.229 seconds with exit status 0 (successful).
+  INFO [4108afd7] Running /usr/bin/env mkdir -p /home/ubuntu/jaybee/shared/config as ubuntu@52.192.165.51
+ DEBUG [4108afd7] Command: ( export RBENV_ROOT="/home/ubuntu/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /home/ubuntu/jaybee/shared/config )
+  INFO [4108afd7] Finished in 0.231 seconds with exit status 0 (successful).
+ DEBUG [b23e4b17] Running [ -f /home/ubuntu/jaybee/shared/config/database.yml ] as ubuntu@52.192.165.51
+ DEBUG [b23e4b17] Command: [ -f /home/ubuntu/jaybee/shared/config/database.yml ]
+ DEBUG [b23e4b17] Finished in 0.230 seconds with exit status 0 (successful).
+ DEBUG [a8e4b0de] Running [ -f /home/ubuntu/jaybee/shared/config/application.yml ] as ubuntu@52.192.165.51
+ DEBUG [a8e4b0de] Command: [ -f /home/ubuntu/jaybee/shared/config/application.yml ]
+ DEBUG [a8e4b0de] Finished in 0.227 seconds with exit status 1 (failed).
+ ERROR linked file /home/ubuntu/jaybee/shared/config/application.yml does not exist on 52.192.165.51
+  INFO ---------------------------------------------------------------------------
+  INFO START 2016-07-11 21:35:15 +0800 cap production deploy
+  INFO ---------------------------------------------------------------------------
+ DEBUG [93ccbaf0] Running [ -d /home/ubuntu/.rbenv/versions/2.3.1 ] as ubuntu@52.192.165.51
+ DEBUG [93ccbaf0] Command: [ -d /home/ubuntu/.rbenv/versions/2.3.1 ]
+ DEBUG [93ccbaf0] Finished in 1.466 seconds with exit status 0 (successful).
+  INFO [3361ca32] Running /usr/bin/env mkdir -p /tmp/jaybee/ as ubuntu@52.192.165.51
+ DEBUG [3361ca32] Command: ( export RBENV_ROOT="/home/ubuntu/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /tmp/jaybee/ )
+  INFO [3361ca32] Finished in 1.456 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/jaybee/git-ssh.sh 0.0%
+  INFO Uploading /tmp/jaybee/git-ssh.sh 100.0%
+  INFO [057f316a] Running /usr/bin/env chmod +rx /tmp/jaybee/git-ssh.sh as ubuntu@52.192.165.51
+ DEBUG [057f316a] Command: ( export RBENV_ROOT="/home/ubuntu/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env chmod +rx /tmp/jaybee/git-ssh.sh )
+  INFO [057f316a] Finished in 0.226 seconds with exit status 0 (successful).
+  INFO [d3b95b5b] Running /usr/bin/env git ls-remote --heads git@github.com:sourcecor/jaybee.git as ubuntu@52.192.165.51
+ DEBUG [d3b95b5b] Command: ( export RBENV_ROOT="/home/ubuntu/.rbenv" RBENV_VERSION="2.3.1" GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/jaybee/git-ssh.sh" ; /usr/bin/env git ls-remote --heads git@github.com:sourcecor/jaybee.git )
+ DEBUG [d3b95b5b] 	b2d1ee1dd2ac66c11a891fc68e4fad77addcd542
+ DEBUG [d3b95b5b] 		
+ DEBUG [d3b95b5b] 	refs/heads/master
+ DEBUG [d3b95b5b] 	
+  INFO [d3b95b5b] Finished in 3.327 seconds with exit status 0 (successful).
+  INFO [427b2483] Running /usr/bin/env mkdir -p /home/ubuntu/jaybee/shared /home/ubuntu/jaybee/releases as ubuntu@52.192.165.51
+ DEBUG [427b2483] Command: ( export RBENV_ROOT="/home/ubuntu/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /home/ubuntu/jaybee/shared /home/ubuntu/jaybee/releases )
+  INFO [427b2483] Finished in 0.224 seconds with exit status 0 (successful).
+  INFO [f1346bdf] Running /usr/bin/env mkdir -p /home/ubuntu/jaybee/shared/public/assets /home/ubuntu/jaybee/shared/public/uploads /home/ubuntu/jaybee/shared/bin /home/ubuntu/jaybee/shared/log /home/ubuntu/jaybee/shared/tmp/pids /home/ubuntu/jaybee/shared/tmp/sockets /home/ubuntu/jaybee/shared/vendor/bundle as ubuntu@52.192.165.51
+ DEBUG [f1346bdf] Command: ( export RBENV_ROOT="/home/ubuntu/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /home/ubuntu/jaybee/shared/public/assets /home/ubuntu/jaybee/shared/public/uploads /home/ubuntu/jaybee/shared/bin /home/ubuntu/jaybee/shared/log /home/ubuntu/jaybee/shared/tmp/pids /home/ubuntu/jaybee/shared/tmp/sockets /home/ubuntu/jaybee/shared/vendor/bundle )
+  INFO [f1346bdf] Finished in 0.226 seconds with exit status 0 (successful).
+  INFO [676a9aa9] Running /usr/bin/env mkdir -p /home/ubuntu/jaybee/shared/config as ubuntu@52.192.165.51
+ DEBUG [676a9aa9] Command: ( export RBENV_ROOT="/home/ubuntu/.rbenv" RBENV_VERSION="2.3.1" ; /usr/bin/env mkdir -p /home/ubuntu/jaybee/shared/config )
+  INFO [676a9aa9] Finished in 0.217 seconds with exit status 0 (successful).
+ DEBUG [0ea29906] Running [ -f /home/ubuntu/jaybee/shared/config/database.yml ] as ubuntu@52.192.165.51
+ DEBUG [0ea29906] Command: [ -f /home/ubuntu/jaybee/shared/config/database.yml ]
+ DEBUG [0ea29906] Finished in 0.218 seconds with exit status 0 (successful).
+ DEBUG [f7930d01] Running [ -f /home/ubuntu/jaybee/shared/config/application.yml ] as ubuntu@52.192.165.51
+ DEBUG [f7930d01] Command: [ -f /home/ubuntu/jaybee/shared/config/application.yml ]
+ DEBUG [f7930d01] Finished in 0.223 seconds with exit status 0 (successful).
+ DEBUG [1c1af70b] Running [ -f /home/ubuntu/jaybee/shared/config/secrets.yml ] as ubuntu@52.192.165.51
+ DEBUG [1c1af70b] Command: [ -f /home/ubuntu/jaybee/shared/config/secrets.yml ]
+ DEBUG [1c1af70b] Finished in 0.221 seconds with exit status 0 (successful).
+ DEBUG [0639c5ac] Running [ -f config/puma.rb ] as ubuntu@52.192.165.51
+ DEBUG [0639c5ac] Command: [ -f config/puma.rb ]
+ DEBUG [0639c5ac] Finished in 0.221 seconds with exit status 1 (failed).
+  WARN puma.rb NOT FOUND!
+ DEBUG Uploading config/puma.rb 0.0%
