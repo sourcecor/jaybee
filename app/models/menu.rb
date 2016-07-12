@@ -1,9 +1,7 @@
 class Menu < ActiveRecord::Base
-  attr_accessor :skip_action_validation
-
   validates :caption, :action, :icon, presence: true
 
-  validate :check_action_url, unless: :skip_action_validation
+  validate :check_action_url
 
   has_many :sub_menus, -> { order(:seq) }, class_name: "Menu", foreign_key: "parent_id", dependent: :destroy
   accepts_nested_attributes_for :sub_menus, reject_if: :all_blank, allow_destroy: true
@@ -17,11 +15,7 @@ class Menu < ActiveRecord::Base
   def check_action_url
 
     if (self.action.to_s != "#")
-      begin
-        puts send(self.action)
-      rescue => ex
-        errors.add(:action, "這個路由不存在")
-      end
+      errors.add(:action, "這個路由不存在") unless Rails.application.routes.url_helpers.method_defined?(self.action)
     end
   end
 

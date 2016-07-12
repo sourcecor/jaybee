@@ -100,10 +100,10 @@ ActiveRecord::Schema.define(version: 20160705064013) do
     t.integer  "parent_id",             default: 0
     t.string   "caption",    limit: 30
     t.string   "action",     limit: 50
-    t.string   "icon",       limit: 20, default: "fa-th"
+    t.string   "icon",       limit: 20, default: "fa-link"
     t.integer  "seq",                   default: 0
-    t.datetime "created_at",                              null: false
-    t.datetime "updated_at",                              null: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
   end
 
   create_table "messages", force: :cascade do |t|
@@ -119,9 +119,9 @@ ActiveRecord::Schema.define(version: 20160705064013) do
     t.string   "asset",          limit: 50
     t.integer  "imageable_id"
     t.string   "imageable_type"
-    t.integer  "seq",                       default: 0
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
+    t.integer  "seq",                       default: 0
   end
 
   add_index "pictures", ["imageable_type", "imageable_id"], name: "index_pictures_on_imageable_type_and_imageable_id", using: :btree
@@ -144,12 +144,12 @@ ActiveRecord::Schema.define(version: 20160705064013) do
   create_table "store_infos", force: :cascade do |t|
     t.string   "caption"
     t.string   "address"
-    t.string   "phone",      limit: 20
     t.decimal  "latitude",              precision: 10, scale: 6
     t.decimal  "longitude",             precision: 10, scale: 6
     t.text     "content"
     t.datetime "created_at",                                     null: false
     t.datetime "updated_at",                                     null: false
+    t.string   "phone",      limit: 20
   end
 
   add_index "store_infos", ["latitude"], name: "index_store_infos_on_latitude", using: :btree
