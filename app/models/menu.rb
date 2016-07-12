@@ -16,7 +16,7 @@ class Menu < ActiveRecord::Base
 
     if (self.action.to_s != "#")
       begin
-        puts send(self.action)
+        puts eval(self.action)
       rescue => ex
         errors.add(:action, "這個路由不存在")
       end
