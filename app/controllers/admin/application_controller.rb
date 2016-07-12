@@ -1,4 +1,6 @@
 class Admin::ApplicationController < ApplicationController
+  before_filter :set_content_type
+
   layout 'admin/layouts/application'
   after_filter :prepare_unobtrusive_flash
   before_action :configure_permitted_parameters, if: :devise_controller?
@@ -14,4 +16,7 @@ class Admin::ApplicationController < ApplicationController
     devise_parameter_sanitizer.permit(:account_update, keys: [:nickname])
   end
 
+  def set_content_type
+    headers["Content-Type"] = "text/html; charset=utf-8" # 設定HTTP回應的Content-Type標頭
+  end
 end

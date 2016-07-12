@@ -17,7 +17,7 @@
 /config/database.yml
 /config/secrets.yml
 /config/application.yml
-/config/puma.rb.bak
+/config/puma.rb
 .DS_Store
 .idea/
 lib/capistrano/
