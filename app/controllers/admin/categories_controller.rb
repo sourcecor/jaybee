@@ -25,7 +25,7 @@ class Admin::CategoriesController < Admin::ApplicationController
   end
 
   def update
-    # @category.params = category_params
+    @category.params = category_params
     if @category.update_attributes(category_params)
       flash[:notice] = '修改成功'
       redirect_to :action => 'index'
