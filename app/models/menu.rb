@@ -16,7 +16,8 @@ class Menu < ActiveRecord::Base
 
     if (self.action.to_s != "#")
       begin
-        puts eval(self.action)
+        # puts eval(self.action)
+        Rails.application.routes.url_helpers.method_defined?(self.action)
       rescue => ex
         errors.add(:action, "這個路由不存在")
       end
