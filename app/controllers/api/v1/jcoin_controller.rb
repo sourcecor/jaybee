@@ -9,30 +9,77 @@ class Api::V1::JcoinController < ApplicationController
     # bla bla ...
 
     # final output
-    respond_to do |format|
-      # format.json { render json: @jcard }
-      format.json { render json: { card_id: params[:id], v1: "hello", v2: "world"} }
+    if @bool
+      @jcoinm = Jcoinm.find_by(jcard_id: params[:id])
+        respond_to do |format|
+        # format.json { render json: @jcard }
+          format.json { render json: { card_id: params[:id], param1: "exist", param2:  @jcoinm.jcoin_amt.to_s  } }
+
+        end
+    else
+      respond_to do |format|
+        # format.json { render json: @jcard }
+        format.json { render json: { card_id: params[:id], param1: "not exist", param2: 0.to_s } }
+
+      end
     end
+
+
+
   end
 
   def trans
     # processing jobs
     # bla bla ...
-    puts params[:test1]
-    # final output
-    respond_to do |format|
-      format.json { render json: { card_id: params[:id], v1: "hello", v2: "world"} }
+    if @bool
+      @jcoinm = Jcoinm.find_by(jcard_id: params[:id])
+      @jcoin_amt = @jcoinm.jcoin_amt   #目前捷幣餘額
+
+
+      @custom_no   = params[:custom_no]
+      @data_date   = params[:data_date]
+      @sale_no     = params[:sale_no]
+      @data_type_no = params[:data_type_no]
+      @opt_amt     = params[:opt_amt].to_i
+      @redeem_amt  = params[:redeem_amt].to_i
+      @reward_amt  = params[:reward_amt].to_i
+
+      @balance = @jcoin_amt-@redeem_amt+@reward_amt
+
+      #puts @custom_no
+      #puts @data_date
+      #puts @sale_no
+      #puts @data_type_no
+      #puts @opt_amt
+      #puts @redeem_amt
+      #puts @reward_amt
+
+      @jcoinm.jcoinds.create(custom_no: @custom_no ,data_date: @data_date,sale_no: @sale_no,data_type_no: @data_type_no,
+                            opt_amt: @opt_amt, redeem_amt: @redeem_amt, reward_amt: @reward_amt, balance: @balance )
+
+      @jcoinm.update(jcoin_amt: @balance)
+
+      respond_to do |format|
+        # format.json { render json: @jcard }
+        format.json { render json: { card_id: params[:id], param1: "exist", param2: "save_ok" } }
+
+      end
+    else
+
+
+      puts params[:test1]
+      # final output
+      respond_to do |format|
+        format.json { render json: { card_id: params[:id], param1: "not exist", param2: 0.to_s } }
+      end
     end
   end
 
   protected
   def fetch_jcard
     # @jcard = JCard.where(card_id: params[:id])
-    puts params[:id]
-    if not Jcoinm.exists?(jcard_id: params[:id])
-      respond_to do |format|
-        format.jsoin { render json: {jcard_id: params[:id], error: "not exist"}}
-      end
-    end
+    #puts params[:id]
+    @bool = Jcoinm.exists?(jcard_id: params[:id])
+
   end
 end
