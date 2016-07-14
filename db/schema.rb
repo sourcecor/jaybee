@@ -11,11 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20160705064013) do
-=======
 ActiveRecord::Schema.define(version: 20160713140640) do
->>>>>>> 3d9f5898c7e00b865d221ad5cce4c23074d6b163
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -100,8 +96,6 @@ ActiveRecord::Schema.define(version: 20160713140640) do
     t.datetime "updated_at",                            null: false
   end
 
-<<<<<<< HEAD
-=======
   create_table "jcoinds", force: :cascade do |t|
     t.integer  "jcoinm_id"
     t.string   "custom_no",    limit: 10
@@ -129,7 +123,6 @@ ActiveRecord::Schema.define(version: 20160713140640) do
 
   add_index "jcoinms", ["user_id"], name: "index_jcoinms_on_user_id", using: :btree
 
->>>>>>> 3d9f5898c7e00b865d221ad5cce4c23074d6b163
   create_table "menus", force: :cascade do |t|
     t.integer  "parent_id",             default: 0
     t.string   "caption",    limit: 30
