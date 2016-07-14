@@ -29,5 +29,10 @@ class Api::V1::JcoinController < ApplicationController
   def fetch_jcard
     # @jcard = JCard.where(card_id: params[:id])
     puts params[:id]
+    if not Jcoinm.exists?(jcard_id: params[:id])
+      respond_to do |format|
+        format.jsoin { render json: {jcard_id: params[:id], error: "not exist"}}
+      end
+    end
   end
 end
