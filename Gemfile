@@ -64,6 +64,7 @@ gem 'permanent_records'
 
 # live message
 gem 'faye'
+gem 'private_pub'
 gem 'thin', require: false
 gem 'render_sync'
 # geo location
