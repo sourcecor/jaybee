@@ -1,0 +1,11 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea
+.keep
+config/puma.rb
+config/application.yml
+config/database.yml
+config/secrets.yml
+log/*
+test
+tmp
+vendor/assets/bower_components
