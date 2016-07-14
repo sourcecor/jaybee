@@ -4,6 +4,8 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  has_many :conversations, :foreign_key => :sender_id
+
   # 若 autosave 選項為 true，Rails 會在儲存父物件時，自動保存子物件。如子物件標記為刪除，也會在儲存時自動刪除。
   # dependent :destroy 刪除關聯
   has_one :jcoinm, dependent: :destroy, autosave: true
