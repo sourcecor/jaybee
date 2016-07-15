@@ -61,7 +61,8 @@ gem 'ckeditor', github: 'galetahub/ckeditor'
 # gem 'meta_request'b
 # soft delete
 gem 'permanent_records'
-
+# 排程
+gem 'whenever', '~> 0.9.4', :require => false
 # live message
 gem 'faye'
 gem 'private_pub'

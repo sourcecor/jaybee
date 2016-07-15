@@ -31,8 +31,10 @@ set :puma_workers, 0
 set :puma_worker_timeout, nil
 set :puma_init_active_record, true
 set :puma_preload_app, false
-
-
+# 排程
+set :whenever_roles, ->{ [:web, :app]}
+require "whenever/capistrano"
+set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:production)}" }
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
@@ -86,6 +88,7 @@ namespace :deploy do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
       within release_path do
+        execute :whenever, '--update-crontab'
         execute :rake, 'cache:clear'
       end
     end
