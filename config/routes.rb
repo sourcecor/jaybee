@@ -84,7 +84,7 @@ Rails.application.routes.draw do
     # 不用 :resources 因為會產生不會用到的routes
     scope :controller => 'jcoin' do
       get 'jcard/:id' => :fetch
-      patch 'jcard/:id' => :trans
+      post 'jcard/:id' => :trans
     end
   end
 end

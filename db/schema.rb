@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160705064013) do
+ActiveRecord::Schema.define(version: 20160714160636) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,13 @@ ActiveRecord::Schema.define(version: 20160705064013) do
   add_index "ckeditor_assets", ["assetable_type", "assetable_id"], name: "idx_ckeditor_assetable", using: :btree
   add_index "ckeditor_assets", ["assetable_type", "type", "assetable_id"], name: "idx_ckeditor_assetable_type", using: :btree
 
+  create_table "conversations", force: :cascade do |t|
+    t.integer  "sender_id"
+    t.integer  "recipient_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
   create_table "groups", force: :cascade do |t|
     t.string   "caption"
     t.datetime "created_at", null: false
@@ -96,6 +103,33 @@ ActiveRecord::Schema.define(version: 20160705064013) do
     t.datetime "updated_at",                            null: false
   end
 
+  create_table "jcoinds", force: :cascade do |t|
+    t.integer  "jcoinm_id"
+    t.string   "custom_no",    limit: 10
+    t.string   "data_date",    limit: 10
+    t.string   "sale_no",      limit: 20
+    t.string   "data_type_no", limit: 2
+    t.decimal  "opt_amt",                 precision: 8, scale: 2, default: 0.0
+    t.decimal  "redeem_amt",              precision: 8, scale: 2, default: 0.0
+    t.decimal  "reward_amt",              precision: 8,           default: 0
+    t.decimal  "balance",                 precision: 8
+    t.datetime "created_at",                                                    null: false
+    t.datetime "updated_at",                                                    null: false
+  end
+
+  add_index "jcoinds", ["jcoinm_id"], name: "index_jcoinds_on_jcoinm_id", using: :btree
+
+  create_table "jcoinms", force: :cascade do |t|
+    t.string   "jcard_id",   limit: 8
+    t.decimal  "jcoin_amt",            precision: 8, scale: 2, default: 0.0
+    t.integer  "user_id"
+    t.string   "rfcard_id",  limit: 8
+    t.datetime "created_at",                                                 null: false
+    t.datetime "updated_at",                                                 null: false
+  end
+
+  add_index "jcoinms", ["user_id"], name: "index_jcoinms_on_user_id", using: :btree
+
   create_table "menus", force: :cascade do |t|
     t.integer  "parent_id",             default: 0
     t.string   "caption",    limit: 30
@@ -108,11 +142,13 @@ ActiveRecord::Schema.define(version: 20160705064013) do
 
   create_table "messages", force: :cascade do |t|
     t.text     "body"
+    t.integer  "conversation_id"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
+  add_index "messages", ["conversation_id"], name: "index_messages_on_conversation_id", using: :btree
   add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
 
   create_table "pictures", force: :cascade do |t|
@@ -219,5 +255,6 @@ ActiveRecord::Schema.define(version: 20160705064013) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "messages", "conversations"
   add_foreign_key "messages", "users"
 end

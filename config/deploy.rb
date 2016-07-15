@@ -1,4 +1,3 @@
-# config valid only for current version of Capistrano
 lock '3.5.0'
 
 set :application, 'jaybee'
@@ -8,7 +7,7 @@ set :deploy_to, '/home/ubuntu/jaybee'
 set :pty, true
 set :linked_files, %w{config/database.yml config/application.yml config/secrets.yml config/puma.rb}
 # set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system public/uploads}
-set :linked_dirs, fetch(:linked_dirs, []).push('public/assets', 'public/uploads')
+set :linked_dirs, fetch(:linked_dirs, []).push('public/assets', 'public/uploads', 'public/system')
 set :linked_dirs, fetch(:linked_dirs, []).push("bin", "log", "tmp/pids", "tmp/cache", "tmp/sockets", "vendor/bundle")
 set :keep_releases, 5
 set :rbenv_type, :user

@@ -189,6 +189,8 @@ GEM
     pg (0.18.4)
     pkg-config (1.1.7)
     pnotify-rails (3.0.0)
+    private_pub (1.0.3)
+      faye
     puma (3.4.0)
     rack (1.6.4)
     rack-test (0.6.3)
@@ -317,6 +319,7 @@ DEPENDENCIES
   permanent_records
   pg (~> 0.15)
   pnotify-rails
+  private_pub
   puma
   rails (= 4.2.6)
   rails-i18n
