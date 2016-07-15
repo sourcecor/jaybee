@@ -89,7 +89,6 @@ namespace :deploy do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
       within release_path do
-        execute :whenever, '--update-crontab'
         execute :rake, 'cache:clear'
       end
     end
