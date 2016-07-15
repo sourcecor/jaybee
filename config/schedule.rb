@@ -10,7 +10,7 @@ set :output, "/home/ubuntu/jaybee/current/log/cron_log.log"
 set :environment, :production
 every 2.minutes do
   # command "/usr/bin/some_great_command"
-  runner "Log.info 'exec from cron job.'"
+  rake 'daily:go'
   # rake "some:great:rake:task"
 end
 # every 4.days do
