@@ -32,6 +32,7 @@ set :puma_worker_timeout, nil
 set :puma_init_active_record, true
 set :puma_preload_app, false
 # 排程
+set :whenever_command, [:bundle, :exec, :whenever]
 set :whenever_roles, ->{ [:web, :app]}
 require "whenever/capistrano"
 set :whenever_identifier, ->{ "#{fetch(:application)}_#{fetch(:production)}" }
