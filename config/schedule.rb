@@ -13,7 +13,6 @@ if @environment == "production"
     # rake "some:great:rake:task"
   end
 end
-#
 # every 4.days do
 #   runner "AnotherModel.prune_old_records"
 # end
