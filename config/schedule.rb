@@ -6,12 +6,10 @@
 # Example:
 #
 set :output, "/home/ubuntu/jaybee/current/log/cron_log.log"
-if @environment == "production"
-  every 2.minutes do
-    # command "/usr/bin/some_great_command"
-    # runner "MyModel.some_method"
-    # rake "some:great:rake:task"
-  end
+every 2.minutes do
+  # command "/usr/bin/some_great_command"
+  runner Log.info "exec from cron job."
+  # rake "some:great:rake:task"
 end
 # every 4.days do
 #   runner "AnotherModel.prune_old_records"
