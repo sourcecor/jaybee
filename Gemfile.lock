@@ -17,9 +17,9 @@ GIT
 
 GIT
   remote: git://github.com/geokit/geokit-rails.git
-  revision: 45ae9852591d0682efec753bcdeaf09a3946c524
+  revision: eb777e22708814afe4464e06dcfaa8173cb259c9
   specs:
-    geokit-rails (2.1.0)
+    geokit-rails (2.2.0)
       geokit (~> 1.5)
       rails (>= 3.0)
 
@@ -95,6 +95,7 @@ GEM
     capistrano3-puma (1.2.1)
       capistrano (~> 3.0)
       puma (>= 2.6)
+    chronic (0.10.2)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.8)
@@ -177,6 +178,8 @@ GEM
       railties (>= 3.1)
     multi_json (1.12.1)
     net-scp (1.2.1)
+      net-ssh (>= 2.6.5)
+    net-sftp (2.1.2)
       net-ssh (>= 2.6.5)
     net-ssh (3.2.0)
     nokogiri (1.6.8)
@@ -283,6 +286,8 @@ GEM
     websocket-driver (0.6.4)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
+    whenever (0.9.7)
+      chronic (>= 0.6.3)
     wice_grid (3.6.2)
       activerecord (> 3.2)
       coffee-rails (> 3.2)
@@ -316,6 +321,7 @@ DEPENDENCIES
   jquery-ui-rails
   mini_magick
   momentjs-rails
+  net-sftp
   permanent_records
   pg (~> 0.15)
   pnotify-rails
@@ -335,6 +341,7 @@ DEPENDENCIES
   unobtrusive_flash (>= 3)
   vuejs
   web-console (~> 2.0)
+  whenever (~> 0.9.4)
   wice_grid (~> 3.6)
 
 BUNDLED WITH
