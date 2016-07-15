@@ -5,6 +5,7 @@
 
 # Example:
 #
+set :bundle_command, "/home/ubuntu/.rbenv/shims/bundle"
 set :output, "/home/ubuntu/jaybee/current/log/cron_log.log"
 set :environment, :production
 every 2.minutes do
