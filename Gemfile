@@ -75,6 +75,7 @@ gem 'gridster-rails'
 
 gem "recaptcha", require: "recaptcha/rails"
 
+gem 'net-sftp'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

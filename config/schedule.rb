@@ -15,11 +15,11 @@ job_type :rake,   %q{ cd :path && PATH=:env_path:"$PATH" RAILS_ENV=:environment 
 job_type :runner, %q{ cd :path && PATH=:env_path:"$PATH" script/rails runner -e :environment ':task' :output }
 job_type :script, %q{ cd :path && PATH=:env_path:"$PATH" RAILS_ENV=:environment bundle exec script/:task :output }
 
-every 2.minutes do
-  # command "/usr/bin/some_great_command"
-  rake 'daily:go'
-  # rake "some:great:rake:task"
-end
+# every 2.minutes do
+#   # command "/usr/bin/some_great_command"
+#   rake 'daily:go'
+#   # rake "some:great:rake:task"
+# end
 # every 4.days do
 #   runner "AnotherModel.prune_old_records"
 # end
