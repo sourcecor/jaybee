@@ -4,15 +4,20 @@
 # http://en.wikipedia.org/wiki/Cron
 
 # Example:
-job_type :rbenv_rake, %Q{export PATH=/opt/rbenv/shims:/opt/rbenv/bin:/usr/bin:$PATH; eval "$(rbenv init -)"; \
-                         cd :path && bundle exec rake :task --silent :output }
-
-set :bundle_command, "/home/ubuntu/.rbenv/shims/bundle"
+set :env_path,    '"$HOME/.rbenv/shims":"$HOME/.rbenv/bin"'
 set :output, "/home/ubuntu/jaybee/current/log/cron_log.log"
 set :environment, :production
+
+# doesn't need modifications
+# job_type :command, ":task :output"
+
+job_type :rake,   %q{ cd :path && PATH=:env_path:"$PATH" RAILS_ENV=:environment bundle exec rake :task --silent :output }
+job_type :runner, %q{ cd :path && PATH=:env_path:"$PATH" script/rails runner -e :environment ':task' :output }
+job_type :script, %q{ cd :path && PATH=:env_path:"$PATH" RAILS_ENV=:environment bundle exec script/:task :output }
+
 every 2.minutes do
   # command "/usr/bin/some_great_command"
-  rbenv_rake 'daily:go'
+  rake 'daily:go'
   # rake "some:great:rake:task"
 end
 # every 4.days do
