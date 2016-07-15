@@ -5,6 +5,7 @@ config/puma.rb
 config/application.yml
 config/database.yml
 config/secrets.yml
+config/private_pub.yml
 log/*
 test
 tmp
