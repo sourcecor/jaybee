@@ -5,6 +5,6 @@ namespace :daily do
 
   # defined :log task
   task :log => :environment do
-    Log.create "Call from Task."
+    Log.create(log:"Call from Task.")
   end
 end
