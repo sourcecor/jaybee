@@ -4,7 +4,7 @@
 # http://en.wikipedia.org/wiki/Cron
 
 # Example:
-set :env_path,    '"$HOME/.rbenv/shims":"$HOME/.rbenv/bin"'
+set :env_path, '"$HOME/.rbenv/shims":"$HOME/.rbenv/bin"'
 set :output, "/home/ubuntu/jaybee/current/log/cron_log.log"
 set :environment, :production
 
