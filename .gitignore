@@ -6,6 +6,7 @@ config/application.yml
 config/database.yml
 config/secrets.yml
 config/private_pub.yml
+config/sync.yml
 log/*
 test
 tmp
