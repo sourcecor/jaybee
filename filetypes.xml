@@ -1,9 +1,0 @@
-<application>
-  <component name="FileTypeManager" version="17">
-    <extensionMap>
-      <mapping pattern=".rbenv-vars" type="PLAIN_TEXT" />
-      <mapping pattern=".ruby-version" type="PLAIN_TEXT" />
-      <mapping pattern="Bowerfile" type="PLAIN_TEXT" />
-    </extensionMap>
-  </component>
-</application>
