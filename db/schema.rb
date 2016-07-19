@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160715040027) do
+ActiveRecord::Schema.define(version: 20160719055749) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -201,8 +201,9 @@ ActiveRecord::Schema.define(version: 20160715040027) do
     t.integer  "product_id"
     t.string   "color",      limit: 20
     t.string   "color_pic",  limit: 20
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.integer  "seq",                   default: 0
   end
 
   add_index "sub_product_colors", ["product_id"], name: "index_sub_product_colors_on_product_id", using: :btree
