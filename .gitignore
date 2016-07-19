@@ -11,6 +11,7 @@ config/sync.yml
 log/*
 test
 tmp
+public/uploads
 vendor/assets/bower_components
 Contact GitHub API Training Shop Blog About
 _mac
