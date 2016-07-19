@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
-
+  # rails generate controller home index  --no-helper --no-assets --no-controller-specs --no-view-specs
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'sites#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
