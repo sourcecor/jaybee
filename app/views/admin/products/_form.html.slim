@@ -26,28 +26,28 @@
   .box.collapsed-box
     .box-header.with-border
       h3.box-title
-        | 側寫照
+        | 圖文詳情圖
       .box-tools
-        = link_to_add_association '新增', f, :profiles, partial: 'picture_fields', class: "btn btn-success btn-sm", \
-            "data-association-insertion-node" => '.row.sortable#profile_picture', "data-association-insertion-method" => :append
+        = link_to_add_association '新增', f, :profiles, partial: 'profile_fields', class: "btn btn-success btn-sm", \
+            "data-association-insertion-node" => '.row.sortable#profile_fields', "data-association-insertion-method" => :append
         button.btn.btn-box-tool[data-widget="collapse"]
           i.fa.fa-plus
     .box-body
-      .col-xs-12.col-md-12.col-lg-12.row.sortable#profile_picture
+      .col-xs-12.col-md-12.col-lg-12.row.sortable#profile_fields
         = f.simple_fields_for :profiles do |profile|
-          = render 'picture_fields', :f => profile
+          = render 'profile_fields', :f => profile
 
   .nav-tabs-custom
     ul.nav.nav-tabs.pull-right
       li
         a.btn.btn-default.btn-sm[data-toggle="collapse" data-target="#product_info"]
           i.fa.fa-angle-double-down
+      li
+        a[href="#item-size" data-toggle="tab" aria-expanded="true"] 尺寸說明
+      li
+        a[href="#item-spec" data-toggle="tab" aria-expanded="false"] 商品說明
       li.active
-        a[href="#item-brief" data-toggle="tab" aria-expanded="false"] 介紹
-      li
-        a[href="#item-spec" data-toggle="tab" aria-expanded="false"] 規格
-      li
-        a[href="#item-size" data-toggle="tab" aria-expanded="true"] 尺寸
+        a[href="#item-brief" data-toggle="tab" aria-expanded="false"] 商品特色
 
       li.pull-left.header
         i.fa.fa-info
@@ -55,12 +55,11 @@
 
     .tab-content.no-padding.collapse#product_info
       .tab-pane.active#item-brief
-        = f.input :brief, as: :ckeditor , wrapper: :bootstrap
+        = f.input :size_info, as: :ckeditor, wrapper: :bootstrap
       .tab-pane#item-spec
         = f.input :spec, as: :ckeditor, wrapper: :bootstrap
       .tab-pane#item-size
-        = f.input :size_info, as: :ckeditor, wrapper: :bootstrap
-
+        = f.input :brief, as: :ckeditor , wrapper: :bootstrap
     /= content_for :footer
   .box
     .box-header.with-border
@@ -68,9 +67,9 @@
         | 子商品
       .box-tools
         = link_to_add_association '新增', f, :sub_product_colors, partial: 'color_fields', class: "btn btn-success btn-sm", \
-            "data-association-insertion-node" => '#sub_color_items', "data-association-insertion-method" => :append
+            "data-association-insertion-node" => '.row.sortable#sub_color_items', "data-association-insertion-method" => :append
     .box-body
-      #sub_color_items
+      .row.sortable#sub_color_items
         = f.simple_fields_for :sub_product_colors do |item|
           = render 'color_fields', :f => item
 
@@ -80,61 +79,22 @@ coffee:
     placeholder: "選擇分類",
     allowClear: true
 
-  $('.row.sortable').sortable
-    connectWith: ".row.sortable",
-    start: (event, ui) ->
-      ui.item.toggleClass("placeholder");
-      ui.placeholder.height(ui.helper[0].scrollHeight);
-      ui.placeholder.width(ui.helper[0].scrollWidth);
-    stop: (event, ui) ->
-      ui.item.toggleClass("placeholder");
-      sorted = $(this).sortable('toArray');
-      i = 0;
-      p_data = [];
-      for item in sorted
-        splited = item.split(" ");
-        id = if splited[0] == 'f_new_profiles_' then splited[1] else splited[0];
-        if (id != '')
-          $("input[data-seq*=#{id}]").val(i);
-          p_data.push({id: parseInt($("input[data-id*=#{id}]").val()), seq: i})
-        i++;
+  initSortable('profile_fields');
 
-      $.ajax
-        type: "patch",
-        url: "/admin/pictures/update_sequence",
-        data: { data: p_data},
-        success: () ->
-          console.log "POST"
+  $('#sub_color_items').on 'cocoon:before-insert', (e, insertedItem) ->
+    #console.log insertedItem
+    return
 
-  .disableSelection();
-
-
-  $('ol.sortable#sub_product_colors').nestedSortable
-    forcePlaceholderSize: true,
-    handle: 'div',
-    items: 'li',
-    toleranceElement: '> div',
-    tabSize: 20,
-    opacity: .6,
-    maxLevels: 3,
-    placeholder: 'placeholder',
-    excludeRoot: true,
-    change: (e) ->
-      console.log "change"
-
-    relocate: (e) ->
-      hiered = $('ol.sortable').nestedSortable('toArray');
-      m_id = $("input[id=product_id]").val();
-      i = 0;
-      for item in hiered
-        if item.parent_id != null
-          parent_id = $("input[data-id*=f_#{item.parent_id}]").val();
-          $("input[data-parent-id*=f_#{item.id}]").val(parent_id);
-          $("input[data-seq*=f_#{item.id}]").val(i);
-        else
-          $("input[data-parent-id*=f_#{item.id}]").val(m_id);
-          $("input[data-seq*=f_#{item.id}]").val(i);
-        i++;
+  $('#sub_color_items').on 'cocoon:after-insert', (e, insertedItem) ->
+    #sort_id = $("div[id='#{insertedItem[0].id}']").parent().attr('id')
+    # 複製上一筆
+    itemcode = $(insertedItem).prev().find("input[name*='[itemcode]']").val()
+    color = $(insertedItem).prev().find("input[name*='[color]']").val()
+    size = $(insertedItem).prev().find("input[name*='[size]']").val()
+    $(insertedItem).find("input[name*='[itemcode]']").val(itemcode)
+    $(insertedItem).find("input[name*='[color]']").val(color)
+    $(insertedItem).find("input[name*='[size]']").val(size)
+    return
 
 css:
 
@@ -153,7 +113,7 @@ css:
     outline: 1px dashed #4183C4;
   }
   .nested-fields {
-    padding: 2px;
-    border: 1px solid #cccccc;
-    border-left: 3px solid #ff7700;
+    /*padding: 2px;*/
+    /*border: 1px solid #cccccc;*/
+    /*border-left: 3px solid #ff7700;*/
   }

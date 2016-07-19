@@ -7,7 +7,7 @@ class Product < ActiveRecord::Base
   has_many :profiles, -> { order(:seq) }, as: :imageable, class_name: "Picture", dependent: :destroy
   accepts_nested_attributes_for :profiles, allow_destroy: true
   #產品明細圖片
-  has_many :sub_product_colors, dependent: :destroy
+  has_many :sub_product_colors, -> { order(:seq) }, dependent: :destroy
   accepts_nested_attributes_for :sub_product_colors, allow_destroy: true
   #產品明細
   # has_many :sub_products
