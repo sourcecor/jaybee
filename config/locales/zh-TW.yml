@@ -53,7 +53,7 @@ zh-TW:
         color_pic: "色票"
         color: "色名"
       sub_product:
-        itemcode: "貨號"
+        itemcode: "條碼"
         size: "尺寸"
         color: "顏色"
         qty: "數量"

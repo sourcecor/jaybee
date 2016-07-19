@@ -19,5 +19,5 @@
 //= require pnotify
 //= require unobtrusive_flash
 //= require sync
-//= require_directory js
+//= require_directory ./js
 //= require_directory .

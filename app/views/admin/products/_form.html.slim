@@ -26,7 +26,7 @@
   .box.collapsed-box
     .box-header.with-border
       h3.box-title
-        | 側寫照
+        | 圖文詳情圖
       .box-tools
         = link_to_add_association '新增', f, :profiles, partial: 'picture_fields', class: "btn btn-success btn-sm", \
             "data-association-insertion-node" => '.row.sortable#profile_picture', "data-association-insertion-method" => :append
@@ -42,12 +42,12 @@
       li
         a.btn.btn-default.btn-sm[data-toggle="collapse" data-target="#product_info"]
           i.fa.fa-angle-double-down
+      li
+        a[href="#item-size" data-toggle="tab" aria-expanded="true"] 尺寸說明
+      li
+        a[href="#item-spec" data-toggle="tab" aria-expanded="false"] 商品說明
       li.active
-        a[href="#item-brief" data-toggle="tab" aria-expanded="false"] 介紹
-      li
-        a[href="#item-spec" data-toggle="tab" aria-expanded="false"] 規格
-      li
-        a[href="#item-size" data-toggle="tab" aria-expanded="true"] 尺寸
+        a[href="#item-brief" data-toggle="tab" aria-expanded="false"] 商品特色
 
       li.pull-left.header
         i.fa.fa-info
@@ -55,12 +55,11 @@
 
     .tab-content.no-padding.collapse#product_info
       .tab-pane.active#item-brief
-        = f.input :brief, as: :ckeditor , wrapper: :bootstrap
+        = f.input :size_info, as: :ckeditor, wrapper: :bootstrap
       .tab-pane#item-spec
         = f.input :spec, as: :ckeditor, wrapper: :bootstrap
       .tab-pane#item-size
-        = f.input :size_info, as: :ckeditor, wrapper: :bootstrap
-
+        = f.input :brief, as: :ckeditor , wrapper: :bootstrap
     /= content_for :footer
   .box
     .box-header.with-border
