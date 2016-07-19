@@ -2,6 +2,7 @@
 .idea
 .keep
 config/puma.rb
+config/deploy.rb
 config/application.yml
 config/database.yml
 config/secrets.yml
@@ -12,3 +13,19 @@ test
 tmp
 vendor/assets/bower_components
 Contact GitHub API Training Shop Blog About
+_mac
+inspection
+quicklists
+IntelliLang.xml
+colors.scheme.xml
+databaseDrivers.xml
+databaseSettings.xml
+debugger.xml
+diff.xml
+editor.codeinsight.xml
+editor.xml
+filetypes.xml
+ide.general.xml
+ignore.xml
+ui.lnf.xml
+web-browsers.xml
