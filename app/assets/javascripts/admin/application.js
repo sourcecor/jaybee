@@ -68,6 +68,51 @@ function initImageInput() {
   });
 };
 
+
+function initSortable(e) {
+    if (e !== '') {
+        $("#" + e).sortable({
+            connectWith: "#" + e,
+            start: function(event, ui) {
+                ui.item.toggleClass("placeholder");
+                ui.placeholder.height(ui.helper[0].scrollHeight);
+                return ui.placeholder.width(ui.helper[0].scrollWidth);
+            },
+            stop: function(event, ui) {
+                var i, id, item, j, len, p_data, sorted, splited;
+                ui.item.toggleClass("placeholder");
+                sorted = $(this).sortable('toArray');
+                console.log(sorted);
+                i = 0;
+                p_data = [];
+                for (j = 0, len = sorted.length; j < len; j++) {
+                    item = sorted[j];
+                    splited = item.split(" ");
+                    id = splited[0].indexOf("f_new_") !== -1 ? splited[1] : splited[0];
+                    if (id !== '') {
+                        $("input[data-seq*=" + id + "]").val(i);
+                        p_data.push({
+                            id: parseInt($("input[data-id*=" + id + "]").val()),
+                            seq: i
+                        });
+                    }
+                    i++;
+                }
+                return $.ajax({
+                    type: "patch",
+                    url: "/admin/pictures/update_sequence",
+                    data: {
+                        data: p_data
+                    },
+                    success: function() {
+                        return console.log("POST");
+                    }
+                });
+            }
+        }).disableSelection();
+    }
+};
+
 $(function(){
   if (typeof google === 'object' && typeof google.maps === 'object') {
     initMap();
