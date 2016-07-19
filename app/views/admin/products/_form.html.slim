@@ -82,11 +82,18 @@ coffee:
   initSortable('profile_fields');
 
   $('#sub_color_items').on 'cocoon:before-insert', (e, insertedItem) ->
+    #console.log insertedItem
     return
 
   $('#sub_color_items').on 'cocoon:after-insert', (e, insertedItem) ->
-    sort_id = $("div[id='#{insertedItem[0].id}']").parent().attr('id')
-    initSortable(sort_id);
+    #sort_id = $("div[id='#{insertedItem[0].id}']").parent().attr('id')
+    # 複製上一筆
+    itemcode = $(insertedItem).prev().find("input[name*='[itemcode]']").val()
+    color = $(insertedItem).prev().find("input[name*='[color]']").val()
+    size = $(insertedItem).prev().find("input[name*='[size]']").val()
+    $(insertedItem).find("input[name*='[itemcode]']").val(itemcode)
+    $(insertedItem).find("input[name*='[color]']").val(color)
+    $(insertedItem).find("input[name*='[size]']").val(size)
     return
 
 css:

@@ -82,7 +82,6 @@ function initSortable(e) {
                 var i, id, item, j, len, p_data, sorted, splited;
                 ui.item.toggleClass("placeholder");
                 sorted = $(this).sortable('toArray');
-                console.log(sorted);
                 i = 0;
                 p_data = [];
                 for (j = 0, len = sorted.length; j < len; j++) {
