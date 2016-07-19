@@ -63,12 +63,13 @@ Main Color:
 	padding-right: 10px;
 	background-clip: 'padding-box';
 	border: 1px solid rgba(0, 0, 0, .2);
-	-moz-border-radius: 0px;
-	-webkit-border-radius: 0px;
-	border-radius: 0px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
 	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
 	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
 	box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    background-color: rgba(255, 255, 255, 0.9)
 }
 
 #feedback-tab {
@@ -144,6 +145,8 @@ Main Color:
 	font-weight: bold;
 }
 .content{
+    width: 96%;
+    padding: 0% 2%;
 	max-width: 1200px;
 	margin: auto;
 }
@@ -172,7 +175,7 @@ Main Color:
 }
 /****NavStart****/
 header{
-	padding:0px 0px 5px 0px;
+	padding:0px 0px 8px 0px;
 	background-color: white;
     position: fixed;
     width: 100%;
@@ -186,11 +189,12 @@ header{
 	box-shadow: 0px 1px 5px lightgray;	
 }
 nav .logo{
+	position: absolute;	
 	display: inline-block;
 	vertical-align: top
 }
 nav .logo img{
-	width: 75%;
+	width: 60%;
 	margin-top: 5px;
 }
 
@@ -205,7 +209,7 @@ nav .jayNav{
 	width: 100%;
 	margin-top: 10px;
     text-align: right;
-    font-size: 16px;
+    font-size: 15px;
 	font-weight: bold;
 
 	
@@ -214,7 +218,6 @@ nav .jayNav{
 	display: inline-block;
 	width: 13.6%;
 	vertical-align: top;
-	padding: 10px 0px;
 	text-align: center;
 	border-right:dotted 1px #4FC1FF;
 	
@@ -241,9 +244,16 @@ nav .jayNav{
 	border-radius: 10px;
 	margin:40px 0px 0px 0px;
 	box-shadow: 0px 3px 5px gray;
+	text-align: left;
+	color: white;
 	
 	
 }
+.jayNav .bottomNav .parentNav li a{
+	color: white;
+	padding: 10px 0px;
+	display: block;
+} 
 .jayNav .bottomNav .parentNav .proList{
 	margin-left: -160px
 }
@@ -261,31 +271,35 @@ nav .jayNav{
     border-color: transparent transparent gray transparent;
 	text-shadow: 0px 1px 5px lightgray;
 }
-.jayNav .bottomNav .parentNav .childrenNav .grandsonNav{
+.jayNav .bottomNav .parentNav .childrenNav .subject{
 	display: inline-block;
 	vertical-align: top;
 	
 }
-.jayNav .bottomNav .parentNav .childrenNav .grandsonNav .subject a{
-	font-size: 16px;
+
+.jayNav .bottomNav .parentNav .childrenNav .subject a{
+	font-size: 15px;
 	font-weight: bold;
 	color: #FF91B8;
 	transition: all .7s ease;
+	padding: 8px 15px;
+	display: inline-block;
 }
-.jayNav .bottomNav .parentNav .childrenNav .grandsonNav .subject a:hover{
+.jayNav .bottomNav .parentNav .childrenNav .subject a:hover{
 	background-color: lightgray;
 }
-.jayNav .bottomNav .parentNav .childrenNav  a{
-	font-size: 15px;
-	padding: 8px 15px;
-	display: block;
-	font-weight: normal;	
+ .subject i{
+	display:none;
+	margin-left: 5px;
+}
+
+.jayNav .bottomNav .parentNav .childrenNav .grandsonNav  a{
+	
 	color: white;
 	transition: all .7s ease;
-	text-align: left;
 	
 }
-.jayNav .bottomNav .parentNav .childrenNav a:hover{
+.jayNav .bottomNav .parentNav .childrenNav .grandsonNav a:hover{
 	background-color: #4FC1FF;
 	color: white;
 }
@@ -299,6 +313,16 @@ nav .jayNav{
 	font-size: 12px;
 	margin-right: 10px;
 	
+}
+.navSearch button i{
+	display: inline-block;
+	margin-bottom: -10px;
+} 
+.navSearch i{
+	width: 25px;
+	font-size: 20px;
+	float: right;
+	display: none;
 }
 .topNav{
 	text-align: right;
@@ -317,60 +341,62 @@ nav .jayNav{
     text-align: left;
     font-size: 12px;
 }
-/*
-.topNav .navCart {
-	background-color: #EFEFEF;	
-	width: 30%;
-	display: inline-block;
-    float: right;
-    font-size: 14px;
+
+.proBox{
+	border-bottom: 1px solid white;
+	padding-bottom: 10px
 }
-.topNav .cartIcon{
-	padding: 13px 10px 13px 10px;
-	display: inline-block;
-	background-color: #4FC1FF;
-	color: white;
-	position: relative;
-	z-index: 1;
-	
-}
-.topNav .cartIcon i{
-	color: white;
-}
-.topNav .cartNum{
-	margin-left: 5px;
-    text-align: left;
-	padding: 10px 5px;
-	display: inline-block;
+.proImg{
+    width: 100px;
+    height:80px;
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
+    
+    
     
 }
-
-.topNav .cartIconB{
-	height: 28px;
-	width: 30px;
-	display: inline-block;
-	background-color: #4FC1FF;
+.proInfo{
+    
+    display: inline-block;
+    vertical-align: top;
+    word-wrap: break-word;
+	
+	
+}
+.proInfo p{
+	width: 160px;
 	color: white;
-	vertical-align: middle;
-	transform: rotate(45deg);
-	margin:-3px 0 0 -20px;
-	
-	
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-align: left;
+	line-height: 26px;
 }
-.topNav .navSearch i{
-	font-size: 18px;
-	color: #A0A0A0;
-}
-
-.topNav .navMember {
-	display: none;
-	width: 23px;
-	position: relative;
-	top:5px
+.proSubjet{
+    line-height: 23px;
+    font-weight: bold;
+    color:  #FFF;
+    margin-left: 5px;
+    text-align: left;
 }
 
-*/
-
+.proPrice{
+	color: white;
+	text-align: left;
+    margin-top: 10px
+}
+.proPrice .enPrice{
+	color: white;
+	float: right;
+}
+.boxShadow .content .bottomNav .parentNav .childrenNav .proBtn{
+	float: left;
+	width: 38.5%;
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+	margin-top: 10px;
+}
 
 
 
@@ -459,179 +485,87 @@ footer article ul li .social{
 .blankH60{
 	height: 60px;
 }
-
+/*******RWD start**********************************************/
 @media screen and (max-width: 940px) {
-	.topNav .navMember {
-		display: inline-block;
-	}
-	.topNav{
+	nav .jayNav{
 		width: 100%;
+		display: inline-block;
+		vertical-align: top;
+		float: right;
+	}
+	nav .logo{
+		position: fixed;	
+		top:-5px;
+		left: 20px;
+
 	}
 	.jayNav .bottomNav{
-			text-align: left;
-			margin-left: 15px;
-
+		margin-top: 30px;
 	}
-	.jayNav .bottomNav .parentNav{
+
+}
+
+@media screen and (max-width: 768px) {
+	.topNav .navSearch input{
+		width: 20px;
 		display: inline-block;
-		width: 16.5%;
-		font-size: 16px;
-		text-align: center;
-
 	}
-	.topNav .cartIconB,
-	.topNav .cartNum,
+	.topNav .navSearch input,
 	.jayNav .bottomNav .member{
 		display: none;
 	}
-	.topNav .navCart {
-		background-color: white;	
-		width:17.5%;
-		display: inline-block;
-		float: none;
-		font-size: 18px;
-		margin-left: -50px;
-	}
-	.topNav .cartIcon{
-		padding: 13px 10px 13px 10px;
-		display: inline-block;
-		background-color:white ;
-		position: relative;
-		z-index: 1;
-
-	}
-	.topNav .cartIcon i{
-		color: #4FC1FF;
-		margin-right: 15px;
-	}
-	.navSearch button{
-		width: 30px;
-		height: 30px;
-		border: none;
-		background-color:rgba(221, 221, 221, 0);
-
-	}
-	.topNav .navSearch {
-		width: 80%;
-		display: inline-block;
-		margin-left: 15px
-	}
-	.topNav .navSearch input{
-		padding: 10px;
-		width:80%;
-		background-color:#EFEFEF;
-		border:none;
-		text-align: left;
-		font-size: 18px;
-	}
-	
-}
-.proBox{
-	border-bottom: 1px solid white;
-	padding-bottom: 10px
-}
-.proImg{
-    width: 100px;
-    height:80px;
-    background-size: cover;
-    background-position: center;
-    display: inline-block;
-    
-    
-    
-}
-.proInfo{
-    
-    display: inline-block;
-    vertical-align: top;
-    word-wrap: break-word;
-	
-	
-}
-.proInfo p{
-	width: 160px;
-	color: white;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	text-align: left;
-	line-height: 26px;
-}
-.proSubjet{
-    line-height: 23px;
-    font-weight: bold;
-    color:  #FFF;
-    margin-left: 5px;
-    text-align: left;
-}
-
-.proPrice{
-	color: white;
-	text-align: left;
-    margin-top: 10px
-}
-.proPrice .enPrice{
-	color: white;
-	float: right;
-}
-.boxShadow .content .bottomNav .parentNav .childrenNav .proBtn{
-	float: left;
-	width: 38.5%;
-	display: inline-block;
-	vertical-align: top;
-	text-align: center;
-	margin-top: 10px;
-}
-@media screen and (max-width: 815px) {
 	.jayNav .bottomNav .parentNav{
-		display: inline-block;
-		width: 14%;
-		font-size: 14px;
-		text-align: center;
-
+		width: 19%;
 	}
-	.jayNav .bottomNav .parentNav img{
-		display: none;
-	}
-	nav .jayNav{
-		width: 75%;
-		display: inline-block;
-		vertical-align: top;
-		float: right;
-	}
-}
-@media screen and (max-width: 660px) {
-	nav .jayNav{
-		width: 70%;
-		display: inline-block;
-		vertical-align: top;
-		float: right;
-	}
-	.topNav .navSearch input{
-		display: none;
-	}
-	.topNav .navSearch {
-		width:25%;
-		display: inline-block;
-		margin-left: 15px
-	}
-	.navSearch button{
-		width: 30px;
-		height: 30px;
-		border: none;
-		background-color:rgba(221, 221, 221, 0);
-		margin-left: -0px;
-
+	.topNav .navSearch{
+		width: 210px;
+		margin-right: 5px;
 	}
 	.topNav .navSearch i{
-		font-size: 20px;
-		color: #4FC1FF;
-	}
-	.topNav .navCart {
-		background-color: white;	
-		width:25%;
+		font-size: 25px;
+		margin-left: 25px;
 		display: inline-block;
-		float: none;
-		font-size: 18px;
-		margin-left: -50px;
+		cursor: pointer;
 	}
+	.navSearch button i{
+		font-size: 25px;
+		margin-bottom: -0px;
+	}
+	.navSearch button{
+		font-size: 30px;
+		float: right;
+		margin: 0px 0px 0px 30px
+	}
+	.topNav{
+		text-align: right;
+		position: relative;
+		top:10px;
+	}
+	.jayNav .bottomNav .parentNav .childrenNav .subject{
+		display:block;
+	}
+	.subject i{
+		display:inline-block;
+		margin-left: 5px;
+	}
+	
+}
+
+@media screen and (max-width: 530px) {
+	.parentNav img{
+		display: none;	
+	}
+
+
+}
+@media screen and (max-width: 460px) {
+	.jayNav .bottomNav .parentNav{
+		width: 18.5%;
+	}
+	.jayNav .bottomNav{
+		font-size: 13px
+
+
+	}
+
 }

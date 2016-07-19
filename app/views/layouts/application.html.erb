@@ -1,696 +1,653 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<title>JayBee捷比童裝</title>
-	<link rel="shortcut icon" href="assets/images/main/icon.ico"/>
-	<link rel="stylesheet" href="assets/css/main.css" type='text/css' />
-    <link rel="stylesheet" href="assets/css/index.css" type='text/css' />
-    <link rel="stylesheet" href="assets/css/reset.css" type='text/css' />
-    <link rel="stylesheet" href="assets/css/distractful.css" type='text/css' />  
-    <link rel="stylesheet" href="assets/css/black-tie.min.css" type='text/css' /> 
-    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css" type='text/css' />
-    <script   src="https://code.jquery.com/jquery-1.12.4.min.js"   integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="   crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>       <script type="text/javascript" src="assets/js/html5toIE.js"></script>
-    <script type="text/javascript" src="assets/js/distractful.js"></script>
-	<script type="text/javascript" src="assets/js/main.js"></script>  
-    <script type="text/javascript" src="assets/js/index.js"></script>    
-    <script type="text/javascript" src="assets/js/socialLink.js"></script>
-    <script>
-	
-		 $(document).ready(function() {
-			  $(".share").hideshare({
-				  link: "http://www.jaybee.com/",
-				  position: "top"
-			  });
-
-		});
-	</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>JayBee捷比童裝</title>
+  <%= favicon_link_tag 'main/icon.ico' %>
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag 'application', :media => 'all' %>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css" type='text/css'/>
+  <%= javascript_include_tag 'application' %>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".share").hideshare({
+        link: "http://www.jaybee.com/",
+        position: "top"
+      });
+    });
+  </script>
 </head>
 <body>
-	<div id="layout">
-		<!-- headerStart***	----------------------------------------------------------------->					
-		<div id="back"><i class="btr bt-circle-arrow-up bt-2x"></i></div>
-		<div id="feedback">
-			<div id="feedback-tab"><p>線</p><p>上</p><p>客</p><p>服</p></div>
-			<div id="feedback-form" style='display:none;' class="col-xs-4 col-md-4 panel panel-default">
-				<form method="POST" action="/feedback" class="form panel-body" role="form">
-					<div class="form-group">
-						<input class="form-control" name="email" autofocus placeholder="電子郵件" type="email" />
-					</div>
-					<div class="form-group">
-						<textarea class="form-control" name="body" required placeholder="我有問題想問...." rows="5"></textarea>
-					</div>
-					<button class="btn" type="submit">Send</button>
-				</form>
-			</div>
-			
-		</div>
-		<header class="boxShadow">
-			<nav class="content">
-				<a class="logo" href="index.html"><img src="assets/images/main/logo.png" ></a>
-				<div class="jayNav">
-					<div class="topNav">
-						<div class="navSearch">
-							
-							<form>
-							<i class="btr bt-shopping-cart bt-lg"></i>
-							<i class="btr bt-user bt-lg"></i>
-							
-								<input type="text" placeholder="請輸入關鍵字"><button type="submit"><i class="btr bt-search bt-lg"></i></button>
-								
-							</form>
-							
-							
-						</div>
+<div id="layout">
 
-						
-						
-					</div>
-					<ul class="bottomNav">
-						<li  class="parentNav"><a href="javascript:;"><img src="assets/images/main/iconNew.png" >最新商品</a>
-							<ul class="childrenNav">
-								<li class="subject"><a href="javascript:;">最新女童<i class="btr bt-caret-left bt-sm"></i></a>
-										<ul class="grandsonNav"> 
+  <div id="back"><i class="btr bt-circle-arrow-up bt-2x"></i></div>
+  <div id="feedback">
+    <div id="feedback-tab"><p>線</p>
+      <p>上</p>
+      <p>客</p>
+      <p>服</p></div>
+    <div id="feedback-form" style='display:none;' class="col-xs-4 col-md-4 panel panel-default">
+      <form method="POST" action="/feedback" class="form panel-body" role="form">
+        <div class="form-group">
+          <input class="form-control" name="email" autofocus placeholder="電子郵件" type="email"/>
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" name="body" required placeholder="我有問題想問...." rows="5"></textarea>
+        </div>
+        <button class="btn" type="submit">Send</button>
+      </form>
+    </div>
 
-												<li><a href="javascript:;">T 恤</a></li>
-												<li><a href="javascript:;">背心</a></li>
-												<li><a href="javascript:;">短袖</a></li>
-												<li><a href="javascript:;">長袖</a></li>
-												<li><a href="javascript:;">襯衫</a></li>
-												<li><a href="javascript:;">針織衫</a></li>
-												<li><a href="javascript:;">吊帶裙</a></li>
-												<li><a href="javascript:;">洋裝</a></li>
-												<li><a href="javascript:;">外套</a></li>
-												<li><a href="javascript:;">短褲</a></li>
-												<li><a href="javascript:;">七分褲</a></li>
-												<li><a href="javascript:;">群類</a></li>
-												<li><a href="javascript:;">內搭褲</a></li>
-												<li><a href="javascript:;">長褲</a></li>
+  </div>
+  <header class="boxShadow">
+    <nav class="content">
+      <a class="logo" href="/"><%= image_tag "main/logo.png" %></a>
+      <div class="jayNav">
+        <div class="topNav">
+          <div class="navSearch">
+            <form>
+              <i class="btr bt-shopping-cart bt-lg"></i>
+              <i class="btr bt-user bt-lg"></i>
+              <input type="text" placeholder="請輸入關鍵字">
+              <button type="submit"><i class="btr bt-search bt-lg"></i></button>
+            </form>
+          </div>
+        </div>
+        <ul class="bottomNav">
+          <li class="parentNav"><a href="javascript:;"><%= image_tag "main/iconNew.png" %>最新商品</a>
+            <ul class="childrenNav">
+              <li class="subject"><a href="javascript:;">最新女童<i class="btr bt-caret-left bt-sm"></i></a>
+                <ul class="grandsonNav">
 
-										</ul>
-									</li>
-									<li class="subject"><a href="javascript:;">最新男童<i class="btr bt-caret-left bt-sm"></i></a>
-										<ul class="grandsonNav">	
-												<li><a href="javascript:;">T 恤</a></li>
-												<li><a href="javascript:;">背心</a></li>
-												<li><a href="javascript:;">短袖</a></li>
-												<li><a href="javascript:;">長袖</a></li>
-												<li><a href="javascript:;">襯衫</a></li>
-												<li><a href="javascript:;">針織衫</a></li>
-												<li><a href="javascript:;">吊帶裙</a></li>
-												<li><a href="javascript:;">洋裝</a></li>
-												<li><a href="javascript:;">外套</a></li>
-												<li><a href="javascript:;">短褲</a></li>
-												<li><a href="javascript:;">七分褲</a></li>
-												<li><a href="javascript:;">群類</a></li>
-												<li><a href="javascript:;">內搭褲</a></li>
-												<li><a href="javascript:;">長褲</a></li>
-										</ul>
-									</li>
-									<li class="subject"><a href="javascript:;">最新嬰幼兒<i class="btr bt-caret-left bt-sm"></i></a>
-										<ul class="grandsonNav">		
+                  <li><a href="javascript:;">T 恤</a></li>
+                  <li><a href="javascript:;">背心</a></li>
+                  <li><a href="javascript:;">短袖</a></li>
+                  <li><a href="javascript:;">長袖</a></li>
+                  <li><a href="javascript:;">襯衫</a></li>
+                  <li><a href="javascript:;">針織衫</a></li>
+                  <li><a href="javascript:;">吊帶裙</a></li>
+                  <li><a href="javascript:;">洋裝</a></li>
+                  <li><a href="javascript:;">外套</a></li>
+                  <li><a href="javascript:;">短褲</a></li>
+                  <li><a href="javascript:;">七分褲</a></li>
+                  <li><a href="javascript:;">群類</a></li>
+                  <li><a href="javascript:;">內搭褲</a></li>
+                  <li><a href="javascript:;">長褲</a></li>
 
-												<li><a href="javascript:;">T 恤</a></li>
-												<li><a href="javascript:;">背心</a></li>
-												<li><a href="javascript:;">短袖</a></li>
-												<li><a href="javascript:;">長袖</a></li>
-												<li><a href="javascript:;">襯衫</a></li>
-												<li><a href="javascript:;">針織衫</a></li>
-												<li><a href="javascript:;">吊帶裙</a></li>
-												<li><a href="javascript:;">洋裝</a></li>
-												<li><a href="javascript:;">外套</a></li>
-												<li><a href="javascript:;">短褲</a></li>
-												<li><a href="javascript:;">七分褲</a></li>
-												<li><a href="javascript:;">群類</a></li>
-												<li><a href="javascript:;">內搭褲</a></li>
-												<li><a href="javascript:;">長褲</a></li>
+                </ul>
+              </li>
+              <li class="subject"><a href="javascript:;">最新男童<i class="btr bt-caret-left bt-sm"></i></a>
+                <ul class="grandsonNav">
+                  <li><a href="javascript:;">T 恤</a></li>
+                  <li><a href="javascript:;">背心</a></li>
+                  <li><a href="javascript:;">短袖</a></li>
+                  <li><a href="javascript:;">長袖</a></li>
+                  <li><a href="javascript:;">襯衫</a></li>
+                  <li><a href="javascript:;">針織衫</a></li>
+                  <li><a href="javascript:;">吊帶裙</a></li>
+                  <li><a href="javascript:;">洋裝</a></li>
+                  <li><a href="javascript:;">外套</a></li>
+                  <li><a href="javascript:;">短褲</a></li>
+                  <li><a href="javascript:;">七分褲</a></li>
+                  <li><a href="javascript:;">群類</a></li>
+                  <li><a href="javascript:;">內搭褲</a></li>
+                  <li><a href="javascript:;">長褲</a></li>
+                </ul>
+              </li>
+              <li class="subject"><a href="javascript:;">最新嬰幼兒<i class="btr bt-caret-left bt-sm"></i></a>
+                <ul class="grandsonNav">
 
-									</ul>
-								</li>
-							</li>
-						</ul>
-			
-						<li class="parentNav"><a href="javascript:;"><img src="assets/images/main/iconGirl.png" >可愛女童</a>
-							<ul class="childrenNav">
-								<li class="subject"><a href="javascript:;">小女童上著<i class="btr bt-caret-left bt-sm"></i></a>
-									<ul class="grandsonNav"> 
-										
-											<li><a href="javascript:;">T 恤</a></li>
-											<li><a href="javascript:;">背心</a></li>
-											<li><a href="javascript:;">短袖</a></li>
-											<li><a href="javascript:;">長袖</a></li>
-											<li><a href="javascript:;">襯衫</a></li>
-											<li><a href="javascript:;">針織衫</a></li>
-											<li><a href="javascript:;">吊帶裙</a></li>
-											<li><a href="javascript:;">洋裝</a></li>
-											<li><a href="javascript:;">外套</a></li>
-										
-									</ul>
-								</li>	
-								<li class="subject"><a href="javascript:;">小女童下著<i class="btr bt-caret-left bt-sm"></i></a>	
-									<ul class="grandsonNav">
-											<li><a href="javascript:;">短褲</a></li>
-											<li><a href="javascript:;">七分褲</a></li>
-											<li><a href="javascript:;">群類</a></li>
-											<li><a href="javascript:;">內搭褲</a></li>
-											<li><a href="javascript:;">長褲</a></li>
-										
-									</ul>
-								</li>			
-								<li class="subject"><a href="javascript:;">大女孩上著<i class="btr bt-caret-left bt-sm"></i></a>
-									<ul class="grandsonNav">
-											<li><a href="javascript:;">T 恤</a></li>
-											<li><a href="javascript:;">背心</a></li>
-											<li><a href="javascript:;">短袖</a></li>
-											<li><a href="javascript:;">長袖</a></li>
-											<li><a href="javascript:;">襯衫</a></li>
-											<li><a href="javascript:;">針織衫</a></li>
-											<li><a href="javascript:;">吊帶裙</a></li>
-											<li><a href="javascript:;">洋裝</a></li>
-											<li><a href="javascript:;">外套</a></li>
-										
-									</ul>
-								</li>		
-								<li class="subject"><a href="javascript:;">大女孩下著<i class="btr bt-caret-left bt-sm"></i></a>	
-									<ul class="grandsonNav">
-											<li><a href="javascript:;">短褲</a></li>
-											<li><a href="javascript:;">七分褲</a></li>
-											<li><a href="javascript:;">群類</a></li>
-											<li><a href="javascript:;">內搭褲</a></li>
-											<li><a href="javascript:;">長褲</a></li>
-									</ul>
-								</li>
-								
-							</ul>
-						</li>
-						<li class="parentNav"><a href="javascript:;"><img src="assets/images/main/iconBoy.png" >帥氣男童</a>
-							<ul class="childrenNav">
-								<li class="subject"><a href="javascript:;">小男童上著<i class="btr bt-caret-left bt-sm"></i></a>
-									<ul class="grandsonNav"> 
-										
-											<li><a href="javascript:;">T 恤</a></li>
-											<li><a href="javascript:;">背心</a></li>
-											<li><a href="javascript:;">短袖</a></li>
-											<li><a href="javascript:;">長袖</a></li>
-											<li><a href="javascript:;">襯衫</a></li>
-											<li><a href="javascript:;">針織衫</a></li>
-											<li><a href="javascript:;">吊帶裙</a></li>
-											<li><a href="javascript:;">洋裝</a></li>
-											<li><a href="javascript:;">外套</a></li>
-										
-									</ul>
-								</li>
-								<li class="subject"><a href="javascript:;">小男童下著<i class="btr bt-caret-left bt-sm"></i></a>	
-									<ul class="grandsonNav">	
-										
-											<li><a href="javascript:;">短褲</a></li>
-											<li><a href="javascript:;">七分褲</a></li>
-											<li><a href="javascript:;">群類</a></li>
-											<li><a href="javascript:;">內搭褲</a></li>
-											<li><a href="javascript:;">長褲</a></li>
-										
-									</ul>
-								</li>
-								<li class="subject"><a href="javascript:;">大男孩上著<i class="btr bt-caret-left bt-sm"></i></a>	
-									<ul class="grandsonNav">		
-										
-											<li><a href="javascript:;">T 恤</a></li>
-											<li><a href="javascript:;">背心</a></li>
-											<li><a href="javascript:;">短袖</a></li>
-											<li><a href="javascript:;">長袖</a></li>
-											<li><a href="javascript:;">襯衫</a></li>
-											<li><a href="javascript:;">針織衫</a></li>
-											<li><a href="javascript:;">吊帶裙</a></li>
-											<li><a href="javascript:;">洋裝</a></li>
-											<li><a href="javascript:;">外套</a></li>
-										
-									</ul>
-								</li>
-								<li class="subject"><a href="javascript:;">大男孩下著<i class="btr bt-caret-left bt-sm"></i></a>	
-									<ul class="grandsonNav">		
-										
-											<li><a href="javascript:;">短褲</a></li>
-											<li><a href="javascript:;">七分褲</a></li>
-											<li><a href="javascript:;">群類</a></li>
-											<li><a href="javascript:;">內搭褲</a></li>
-											<li><a href="javascript:;">長褲</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li class="parentNav"><a href="javascript:;"><img src="assets/images/main/iconBaby.png" >嬰幼兒</a>
-							<ul class="childrenNav">
-								<li class="subject"><a href="javascript:;">嬰幼兒上著<i class="btr bt-caret-left bt-sm"></i></a>
-									<ul class="grandsonNav"> 
-										
-											<li><a href="javascript:;">T 恤</a></li>
-											<li><a href="javascript:;">背心</a></li>
-											<li><a href="javascript:;">短袖</a></li>
-											<li><a href="javascript:;">長袖</a></li>
-											<li><a href="javascript:;">襯衫</a></li>
-											<li><a href="javascript:;">針織衫</a></li>
-											<li><a href="javascript:;">吊帶裙</a></li>
-											<li><a href="javascript:;">洋裝</a></li>
-											<li><a href="javascript:;">外套</a></li>
-										
-									</ul>
-								</li>
-								<li class="subject"><a href="javascript:;">嬰幼兒下著<i class="btr bt-caret-left bt-sm"></i></a>	
-									<ul class="grandsonNav">	
-										
-											<li><a href="javascript:;">短褲</a></li>
-											<li><a href="javascript:;">七分褲</a></li>
-											<li><a href="javascript:;">群類</a></li>
-											<li><a href="javascript:;">內搭褲</a></li>
-											<li><a href="javascript:;">長褲</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li class="parentNav subject"><a href="javascript:;"><img src="assets/images/main/iconBrain.png" >人氣品牌</a>
-							<ul class="childrenNav">
-								<li><a href="javascript:;">米果</a></li>
-								<li><a href="javascript:;">豆山</a></li>
-								<li><a href="javascript:;">瑪瑪米亞</a></li>
-								<li><a href="javascript:;">瑪寶樂</a></li>
-								<li><a href="javascript:;">波提士</a></li>
-							</ul>
-						</li>
-						<li class="parentNav member"><a href="javascript:;"><img src="assets/images/main/iconUser.png" >會員中心</a>
-							<ul class="childrenNav">
-								<li><a href="javascript:;">訂單查詢</a></li>
-								<li><a href="javascript:;">退款查詢</a></li>
-								<li><a href="javascript:;">捷幣存褶</a></li>																<li><a href="javascript:;">個人設定</a></li>
-								<li><a href="javascript:;">門市查詢</a></li>
-							</ul>
-							
-						</li>
-						<li class="parentNav member"><a href="javascript:;"><i class="btr bt-shopping-cart bt-lg"></i>0件商品</a>
-							<ul class="childrenNav proList">
-								<div class="proBox">
-									<span class="proImg" style=background-image:url(assets/images/index/product0.jpg)></span>
+                  <li><a href="javascript:;">T 恤</a></li>
+                  <li><a href="javascript:;">背心</a></li>
+                  <li><a href="javascript:;">短袖</a></li>
+                  <li><a href="javascript:;">長袖</a></li>
+                  <li><a href="javascript:;">襯衫</a></li>
+                  <li><a href="javascript:;">針織衫</a></li>
+                  <li><a href="javascript:;">吊帶裙</a></li>
+                  <li><a href="javascript:;">洋裝</a></li>
+                  <li><a href="javascript:;">外套</a></li>
+                  <li><a href="javascript:;">短褲</a></li>
+                  <li><a href="javascript:;">七分褲</a></li>
+                  <li><a href="javascript:;">群類</a></li>
+                  <li><a href="javascript:;">內搭褲</a></li>
+                  <li><a href="javascript:;">長褲</a></li>
+
+                </ul>
+              </li>
+              </li>
+            </ul>
+
+          <li class="parentNav"><a href="javascript:;"><%= image_tag "main/iconGirl.png" %>可愛女童</a>
+            <ul class="childrenNav">
+              <li class="subject"><a href="javascript:;">小女童上著<i class="btr bt-caret-left bt-sm"></i></a>
+                <ul class="grandsonNav">
+
+                  <li><a href="javascript:;">T 恤</a></li>
+                  <li><a href="javascript:;">背心</a></li>
+                  <li><a href="javascript:;">短袖</a></li>
+                  <li><a href="javascript:;">長袖</a></li>
+                  <li><a href="javascript:;">襯衫</a></li>
+                  <li><a href="javascript:;">針織衫</a></li>
+                  <li><a href="javascript:;">吊帶裙</a></li>
+                  <li><a href="javascript:;">洋裝</a></li>
+                  <li><a href="javascript:;">外套</a></li>
+
+                </ul>
+              </li>
+              <li class="subject"><a href="javascript:;">小女童下著<i class="btr bt-caret-left bt-sm"></i></a>
+                <ul class="grandsonNav">
+                  <li><a href="javascript:;">短褲</a></li>
+                  <li><a href="javascript:;">七分褲</a></li>
+                  <li><a href="javascript:;">群類</a></li>
+                  <li><a href="javascript:;">內搭褲</a></li>
+                  <li><a href="javascript:;">長褲</a></li>
+
+                </ul>
+              </li>
+              <li class="subject"><a href="javascript:;">大女孩上著<i class="btr bt-caret-left bt-sm"></i></a>
+                <ul class="grandsonNav">
+                  <li><a href="javascript:;">T 恤</a></li>
+                  <li><a href="javascript:;">背心</a></li>
+                  <li><a href="javascript:;">短袖</a></li>
+                  <li><a href="javascript:;">長袖</a></li>
+                  <li><a href="javascript:;">襯衫</a></li>
+                  <li><a href="javascript:;">針織衫</a></li>
+                  <li><a href="javascript:;">吊帶裙</a></li>
+                  <li><a href="javascript:;">洋裝</a></li>
+                  <li><a href="javascript:;">外套</a></li>
+
+                </ul>
+              </li>
+              <li class="subject"><a href="javascript:;">大女孩下著<i class="btr bt-caret-left bt-sm"></i></a>
+                <ul class="grandsonNav">
+                  <li><a href="javascript:;">短褲</a></li>
+                  <li><a href="javascript:;">七分褲</a></li>
+                  <li><a href="javascript:;">群類</a></li>
+                  <li><a href="javascript:;">內搭褲</a></li>
+                  <li><a href="javascript:;">長褲</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="parentNav"><a href="javascript:;"><%= image_tag "main/iconBoy.png" %>帥氣男童</a>
+            <ul class="childrenNav">
+              <li class="subject"><a href="javascript:;">小男童上著<i class="btr bt-caret-left bt-sm"></i></a>
+                <ul class="grandsonNav">
+                  <li><a href="javascript:;">T 恤</a></li>
+                  <li><a href="javascript:;">背心</a></li>
+                  <li><a href="javascript:;">短袖</a></li>
+                  <li><a href="javascript:;">長袖</a></li>
+                  <li><a href="javascript:;">襯衫</a></li>
+                  <li><a href="javascript:;">針織衫</a></li>
+                  <li><a href="javascript:;">吊帶裙</a></li>
+                  <li><a href="javascript:;">洋裝</a></li>
+                  <li><a href="javascript:;">外套</a></li>
+                </ul>
+              </li>
+              <li class="subject"><a href="javascript:;">小男童下著<i class="btr bt-caret-left bt-sm"></i></a>
+                <ul class="grandsonNav">
+                  <li><a href="javascript:;">短褲</a></li>
+                  <li><a href="javascript:;">七分褲</a></li>
+                  <li><a href="javascript:;">群類</a></li>
+                  <li><a href="javascript:;">內搭褲</a></li>
+                  <li><a href="javascript:;">長褲</a></li>
+                </ul>
+              </li>
+              <li class="subject"><a href="javascript:;">大男孩上著<i class="btr bt-caret-left bt-sm"></i></a>
+                <ul class="grandsonNav">
+                  <li><a href="javascript:;">T 恤</a></li>
+                  <li><a href="javascript:;">背心</a></li>
+                  <li><a href="javascript:;">短袖</a></li>
+                  <li><a href="javascript:;">長袖</a></li>
+                  <li><a href="javascript:;">襯衫</a></li>
+                  <li><a href="javascript:;">針織衫</a></li>
+                  <li><a href="javascript:;">吊帶裙</a></li>
+                  <li><a href="javascript:;">洋裝</a></li>
+                  <li><a href="javascript:;">外套</a></li>
+                </ul>
+              </li>
+              <li class="subject"><a href="javascript:;">大男孩下著<i class="btr bt-caret-left bt-sm"></i></a>
+                <ul class="grandsonNav">
+                  <li><a href="javascript:;">短褲</a></li>
+                  <li><a href="javascript:;">七分褲</a></li>
+                  <li><a href="javascript:;">群類</a></li>
+                  <li><a href="javascript:;">內搭褲</a></li>
+                  <li><a href="javascript:;">長褲</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="parentNav"><a href="javascript:;"><%= image_tag "main/iconBaby.png" %>嬰幼兒</a>
+            <ul class="childrenNav">
+              <li class="subject"><a href="javascript:;">嬰幼兒上著<i class="btr bt-caret-left bt-sm"></i></a>
+                <ul class="grandsonNav">
+                  <li><a href="javascript:;">T 恤</a></li>
+                  <li><a href="javascript:;">背心</a></li>
+                  <li><a href="javascript:;">短袖</a></li>
+                  <li><a href="javascript:;">長袖</a></li>
+                  <li><a href="javascript:;">襯衫</a></li>
+                  <li><a href="javascript:;">針織衫</a></li>
+                  <li><a href="javascript:;">吊帶裙</a></li>
+                  <li><a href="javascript:;">洋裝</a></li>
+                  <li><a href="javascript:;">外套</a></li>
+                </ul>
+              </li>
+              <li class="subject"><a href="javascript:;">嬰幼兒下著<i class="btr bt-caret-left bt-sm"></i></a>
+                <ul class="grandsonNav">
+                  <li><a href="javascript:;">短褲</a></li>
+                  <li><a href="javascript:;">七分褲</a></li>
+                  <li><a href="javascript:;">群類</a></li>
+                  <li><a href="javascript:;">內搭褲</a></li>
+                  <li><a href="javascript:;">長褲</a></li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li class="parentNav subject"><a href="javascript:;"><%= image_tag "main/iconBrain.png" %>人氣品牌</a>
+            <ul class="childrenNav">
+              <li><a href="javascript:;">米果</a></li>
+              <li><a href="javascript:;">豆山</a></li>
+              <li><a href="javascript:;">瑪瑪米亞</a></li>
+              <li><a href="javascript:;">瑪寶樂</a></li>
+              <li><a href="javascript:;">波提士</a></li>
+            </ul>
+          </li>
+          <li class="parentNav member"><a href="javascript:;"><%= image_tag "main/iconUser.png" %>會員中心</a>
+            <ul class="childrenNav">
+              <li><a href="javascript:;">訂單查詢</a></li>
+              <li><a href="javascript:;">退款查詢</a></li>
+              <li><a href="javascript:;">捷幣存褶</a></li>
+              <li><a href="javascript:;">個人設定</a></li>
+              <li><a href="javascript:;">門市查詢</a></li>
+            </ul>
+
+          </li>
+          <li class="parentNav member"><a href="javascript:;"><i class="btr bt-shopping-cart bt-lg"></i>0件商品</a>
+            <ul class="childrenNav proList">
+              <div class="proBox">
+                <span class="proImg" style=background-image:url(<%= image_path('index/product0.jpg')%>)></span>
 									<span class="proInfo">
 										<p>DooSun豆山</p>
 										<p>花拼接領條紋無袖上衣</p>
 										<p class="en">x1 NT$ 6600</p>
 									</span>
+              </div>
+              <p><span class="proPrize">總額</span><span class="enPrize en">NT$6600</span></p>
+              <a class="proBtn" href="">購物車</a>
+              <a class="proBtn" href="">結帳</a>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <section class="distractful text-center">
+    <div class="distractful-item">
+      <%= image_tag "index/banner0.jpg" %>
+      <div class="col-md-6 col-md-offset-3"></div>
+    </div>
+    <div class="distractful-item">
+      <%= image_tag "index/banner1.jpg" %>
+      <div class="col-md-6 col-md-offset-3 text-left">
 
-								</div>
-								<p class="proPrice">總額</span><span class="enPrice en">NT$6600</p>
+      </div>
+    </div>
+    <div class="distractful-item">
+      <%= image_tag "index/banner2.jpg" %>
+      <div class="col-md-6 col-md-offset-3 text-left">
 
-									<a class="proBtn" href="">購物車</a>
-									<a class="proBtn" href="">結帳</a>
-								
-							</ul>
-							
-						</li>	
-					</ul>
-				</div>
-			</nav>
-		</header>
-<!-- headerEnd	----------------------------------------------------------------->			
-		
-		
-	
-<!-- BannerStart	------------------------------------------------------------->
-        
-            <section class="distractful text-center">
-                <div class="distractful-item">
-                    <img src="assets/images/index/banner0.jpg">
-                    <div class="col-md-6 col-md-offset-3">
+      </div>
+    </div>
+  </section>
+  <div id="content">
+    <aside>
+      <a class="asideItems">
+        <%= image_tag "index/aside0.jpg" %>
+      </a>
+      <a class="asideItems">
+        <%= image_tag "index/aside1.jpg" %>
+      </a>
+      <a class="asideItems">
+        <%= image_tag "index/aside2.jpg" %>
+      </a>
+    </aside>
 
-                    </div>
-                </div>
-                <div class="distractful-item">
-                    <img src="assets/images/index/banner1.jpg">
-                    <div class="col-md-6 col-md-offset-3 text-left">
+    <article class="brand">
+      <a href="javascript:;">
+        <%= image_tag "index/brand0.jpg" %>
+      </a>
+      <a href="javascript:;">
+        <%= image_tag "index/brand1.jpg" %>
+      </a>
+      <a href="javascript:;">
+        <%= image_tag "index/brand2.jpg" %>
+      </a>
+      <a href="javascript:;">
+        <%= image_tag "index/brand3.jpg" %>
+      </a>
+      <a href="javascript:;">
+        <%= image_tag "index/brand4.jpg" %>
+      </a>
+      <a href="javascript:;">
+        <%= image_tag "index/brand5.jpg" %>
+      </a>
+      <a href="javascript:;">
+        <%= image_tag "index/brand6.jpg" %>
+      </a>
+      <a href="javascript:;">
+        <%= image_tag "index/brand7.jpg" %>
+      </a>
+    </article>
 
-                    </div>
-                </div>
-                <div class="distractful-item">
-                    <img src="assets/images/index/banner2.jpg">
-                    <div class="col-md-6 col-md-offset-3 text-left">
+    <article class="gridOne">
+      <h1>可愛女童</h1>
+      <div class="left">
+        <a class="bigGrid gridImg" href="javascript:;">
+          <figure>
+            <%= image_tag "index/product0.jpg" %>
+            <figcaption>
+              <h2>DooSun豆山【JD4388】</h2>
+              <h3>花拼接領條紋無袖上衣</h3>
+              <h4 class="prize en">$250</h4>
+            </figcaption>
+          </figure>
+        </a>
 
-                    </div>
-                </div>
-             </section>         
-        
-<!-- BannerEnd	------------------------------------------------------------->		
+      </div>
+      <div class="right">
+        <div class="twoGirdBox">
+          <a class="twoGird gridImg" href="javascript:;">
+            <figure>
+              <%= image_tag "index/product1.jpg" %>
+              <figcaption>
+                <h2>DooSun豆山【JD4388】</h2>
+                <h3>花拼接領條紋無袖上衣</h3>
+                <h4 class="prize en">$250</h4>
+              </figcaption>
+            </figure>
+          </a>
+          <a class="twoGird gridImg" href="javascript:;">
+            <figure>
+              <%= image_tag "index/product2.jpg" %>
+              <figcaption>
+                <h2>DooSun豆山【JD4388】</h2>
+                <h3>花拼接領條紋無袖上衣</h3>
+                <h4 class="prize en">$250</h4>
+              </figcaption>
+            </figure>
+          </a>
+        </div>
+        <a class="singleGird gridImg" href="javascript:;">
+          <figure>
+            <%= image_tag "index/product3.jpg" %>
+            <figcaption>
+              <h2>DooSun豆山【JD4388】</h2>
+              <h3>花拼接領條紋無袖上衣</h3>
+              <h4 class="prize en">$250</h4>
+            </figcaption>
+          </figure>
+        </a>
+      </div>
+      <a class="center more en" href="#">more +</a>
+    </article>
 
-				
-<!-- contentStart***	----------------------------------------------------->		
-<div id="content">
-        <aside>
-            <a class="asideItems">
-                <img src="assets/images/index/aside0.jpg">
-            </a>
-            <a class="asideItems">
-                <img src="assets/images/index/aside1.jpg">
-            </a>
-            <a class="asideItems">
-                <img src="assets/images/index/aside2.jpg">
-            </a>                        
-        </aside>	
-        	
-		<article class="brand">
-			<a href="javascript:;">
-				<img src="assets/images/index/brand0.jpg">
-			</a>
-			<a href="javascript:;">
-				<img src="assets/images/index/brand1.jpg">
-			</a>
-			<a href="javascript:;">
-				<img src="assets/images/index/brand2.jpg">
-			</a>
-			<a href="javascript:;">
-				<img src="assets/images/index/brand3.jpg">
-			</a>
-			<a href="javascript:;">
-				<img src="assets/images/index/brand4.jpg">
-			</a>
-			<a href="javascript:;">
-				<img src="assets/images/index/brand5.jpg">
-			</a>
-			<a href="javascript:;">
-				<img src="assets/images/index/brand6.jpg">
-			</a>
-			<a href="javascript:;">
-				<img src="assets/images/index/brand7.jpg">
-			</a>
-		</article><!--    #brandEnd		-->
-		
-		<article class="gridOne">
-			<h1>可愛女童</h1>
-			<div class="left">
-				<a class="bigGrid gridImg" href="javascript:;">
-					<figure>
-						<img src="assets/images/index/product0.jpg">
-						<figcaption>
-							<h2>DooSun豆山【JD4388】</h2>
-							<h3>花拼接領條紋無袖上衣</h3>
-							<h4 class="prize en">$250</h4>
-						</figcaption>
-					</figure>		
-				</a>
-				
-			</div>
-			<div class="right">
-				<div class="twoGirdBox">
-					<a class="twoGird gridImg" href="javascript:;">
-						<figure>
-							<img src="assets/images/index/product1.jpg">
-							<figcaption>
-								<h2>DooSun豆山【JD4388】</h2>
-								<h3>花拼接領條紋無袖上衣</h3>
-								<h4 class="prize en">$250</h4>
-							</figcaption>
-						</figure>
-					</a>
-					<a class="twoGird gridImg"  href="javascript:;">
-						<figure>
-							<img src="assets/images/index/product2.jpg">
-							<figcaption>
-								<h2>DooSun豆山【JD4388】</h2>
-								<h3>花拼接領條紋無袖上衣</h3>
-								<h4 class="prize en">$250</h4>
-							</figcaption>
-						</figure>
-					</a>
-				</div>
-					<a class="singleGird gridImg"  href="javascript:;">
-						<figure>
-							<img src="assets/images/index/product3.jpg">
-							<figcaption>
-								<h2>DooSun豆山【JD4388】</h2>
-								<h3>花拼接領條紋無袖上衣</h3>
-								<h4 class="prize en">$250</h4>
-							</figcaption>
-						</figure>
-					</a>
-			</div>
-			<a class="center more en" href="#">more +</a>
-		</article>
-		
-		
-		<article class="gridOne gridTwo">
-			<h1>帥氣男童</h1>
-			<div class="right">
-				<div class="twoGirdBox">
-					<a class="twoGird gridImg" href="javascript:;">
-						<figure>
-							<img src="assets/images/index/product5.jpg">
-							<figcaption>
-								<h2>DooSun豆山【JD4388】</h2>
-								<h3>花拼接領條紋無袖上衣</h3>
-								<h4 class="prize en">$250</h4>
-							</figcaption>
-						</figure>
-					</a>
-					<a class="twoGird gridImg"  href="javascript:;">
-						<figure>
-							<img src="assets/images/index/product6.jpg">
-							<figcaption>
-								<h2>DooSun豆山【JD4388】</h2>
-								<h3>花拼接領條紋無袖上衣</h3>
-								<h4 class="prize en">$250</h4>
-							</figcaption>
-						</figure>
-					</a>
-				</div>
-					<a class="singleGird gridImg"  href="javascript:;">
-						<figure>
-							<img src="assets/images/index/product7.jpg">
-							<figcaption>
-								<h2>DooSun豆山【JD4388】</h2>
-								<h3>花拼接領條紋無袖上衣</h3>
-								<h4 class="prize en">$250</h4>
-							</figcaption>
-						</figure>
-					</a>
-			</div>
-			<div class="left">
-				<a class="bigGrid gridImg" href="javascript:;">
-					<figure>
-						<img src="assets/images/index/product4.jpg">
-						<figcaption>
-							<h2>DooSun豆山【JD4388】</h2>
-							<h3>花拼接領條紋無袖上衣</h3>
-							<h4 class="prize en">$250</h4>
-						</figcaption>
-					</figure>		
-				</a>
-				
-			</div>
-			<a class="center more en" href="#">more +</a>
-		</article>		
-		<article class="gridThird">
-			<h1>嬰幼兒</h1>
-			
-			
-					<a class="singleGird gridImg"  href="javascript:;">
-						<figure>
-							<img src="assets/images/index/product8.jpg">
-							<figcaption>
-								<h2>DooSun豆山【JD4388】</h2>
-								<h3>花拼接領條紋無袖上衣</h3>
-								<h4 class="prize en">$250</h4>
-							</figcaption>
-						</figure>
-					</a>
-					<a class="singleGird gridImg"  href="javascript:;">
-						<figure>
-							<img src="assets/images/index/product12.jpg">
-							<figcaption>
-								<h2>DooSun豆山【JD4388】</h2>
-								<h3>花拼接領條紋無袖上衣</h3>
-								<h4 class="prize en">$250</h4>
-							</figcaption>
-						</figure>
-					</a>
-			
-				<a class="singleGird gridImg"  href="javascript:;">
-						<figure>
-							<img src="assets/images/index/product13.jpg">
-							<figcaption>
-								<h2>DooSun豆山【JD4388】</h2>
-								<h3>花拼接領條紋無袖上衣</h3>
-								<h4 class="prize en">$250</h4>
-							</figcaption>
-						</figure>
-				</a>
-				<a class="singleGird gridImg"  href="javascript:;">
-						<figure>
-							<img src="assets/images/index/product14.jpg">
-							<figcaption>
-								<h2>DooSun豆山【JD4388】</h2>
-								<h3>花拼接領條紋無袖上衣</h3>
-								<h4 class="prize en">$250</h4>
-							</figcaption>
-						</figure>
-					</a>
-			<p class="blankH20"></p>
-			<a class="center more en" href="#">more +</a>
-		</article>	
-		
-		<article class="gridfour">
-			<h1>最新商品</h1>
-			
-			<div class="left">
-					<a class="singleGird gridImg"  href="javascript:;">
-						<figure>
-							<img src="assets/images/index/product17.jpg">
-							<figcaption>
-								<h2>DooSun豆山【JD4388】</h2>
-								<h3>花拼接領條紋無袖上衣</h3>
-								<h4 class="prize en">$250</h4>
-							</figcaption>
-						</figure>
-					</a>
-					<a class="singleGird gridImg"  href="javascript:;">
-						<figure>
-							<img src="assets/images/index/product18.jpg">
-							<figcaption>
-								<h2>DooSun豆山【JD4388】</h2>
-								<h3>花拼接領條紋無袖上衣</h3>
-								<h4 class="prize en">$250</h4>
-							</figcaption>
-						</figure>
-					</a>
-				
-			</div>
-			<div class="right">
-				<div class="twoGirdBox">
-					<a class="twoGird gridImg" href="javascript:;">
-						<figure>
-							<img src="assets/images/index/product15.jpg">
-							<figcaption>
-								<h2>DooSun豆山【JD4388】</h2>
-								<h3>花拼接領條紋無袖上衣</h3>
-								<h4 class="prize en">$250</h4>
-							</figcaption>
-						</figure>
-					</a>
-					<a class="twoGird gridImg"  href="javascript:;">
-						<figure>
-							<img src="assets/images/index/product16.jpg">
-							<figcaption>
-								<h2>DooSun豆山【JD4388】</h2>
-								<h3>花拼接領條紋無袖上衣</h3>
-								<h4 class="prize en">$250</h4>
-							</figcaption>
-						</figure>
-					</a>
-				</div>
-				
-			</div>
-			<a class="center more en" href="#">more +</a>
-		</article>
-		<article class="gridfour">
-			<h1>人氣熱賣</h1>
 
-			<div class="right">
-				<div class="twoGirdBox">
-					<a class="twoGird gridImg" href="javascript:;">
-						<figure>
-							<img src="assets/images/index/product19.jpg">
-							<figcaption>
-								<h2>DooSun豆山【JD4388】</h2>
-								<h3>花拼接領條紋無袖上衣</h3>
-								<h4 class="prize en">$250</h4>
-							</figcaption>
-						</figure>
-					</a>
-					<a class="twoGird gridImg"  href="javascript:;">
-						<figure>
-							<img src="assets/images/index/product20.jpg">
-							<figcaption>
-								<h2>DooSun豆山【JD4388】</h2>
-								<h3>花拼接領條紋無袖上衣</h3>
-								<h4 class="prize en">$250</h4>
-							</figcaption>
-						</figure>
-					</a>
-				</div>
-				
-			</div>
-						
-			<div class="left">
-					<a class="singleGird gridImg"  href="javascript:;">
-						<figure>
-							<img src="assets/images/index/product21.jpg">
-							<figcaption>
-								<h2>DooSun豆山【JD4388】</h2>
-								<h3>花拼接領條紋無袖上衣</h3>
-								<h4 class="prize en">$250</h4>
-							</figcaption>
-						</figure>
-					</a>
-					<a class="singleGird gridImg"  href="javascript:;">
-						<figure>
-							<img src="assets/images/index/product22.jpg">
-							<figcaption>
-								<h2>DooSun豆山【JD4388】</h2>
-								<h3>花拼接領條紋無袖上衣</h3>
-								<h4 class="prize en">$250</h4>
-							</figcaption>
-						</figure>
-					</a>
-				
-			</div>
-			<a class="center more en" href="#">more +</a>
-		</article>
-	<div class="blankH60"></div>
-	</div>
-<!--    #contentEnd		------------------------------------------------------->		
+    <article class="gridOne gridTwo">
+      <h1>帥氣男童</h1>
+      <div class="right">
+        <div class="twoGirdBox">
+          <a class="twoGird gridImg" href="javascript:;">
+            <figure>
+              <%= image_tag "index/product5.jpg" %>
+              <figcaption>
+                <h2>DooSun豆山【JD4388】</h2>
+                <h3>花拼接領條紋無袖上衣</h3>
+                <h4 class="prize en">$250</h4>
+              </figcaption>
+            </figure>
+          </a>
+          <a class="twoGird gridImg" href="javascript:;">
+            <figure>
+              <%= image_tag "index/product6.jpg" %>
+              <figcaption>
+                <h2>DooSun豆山【JD4388】</h2>
+                <h3>花拼接領條紋無袖上衣</h3>
+                <h4 class="prize en">$250</h4>
+              </figcaption>
+            </figure>
+          </a>
+        </div>
+        <a class="singleGird gridImg" href="javascript:;">
+          <figure>
+            <%= image_tag "index/product7.jpg" %>
+            <figcaption>
+              <h2>DooSun豆山【JD4388】</h2>
+              <h3>花拼接領條紋無袖上衣</h3>
+              <h4 class="prize en">$250</h4>
+            </figcaption>
+          </figure>
+        </a>
+      </div>
+      <div class="left">
+        <a class="bigGrid gridImg" href="javascript:;">
+          <figure>
+            <%= image_tag "index/product4.jpg" %>
+            <figcaption>
+              <h2>DooSun豆山【JD4388】</h2>
+              <h3>花拼接領條紋無袖上衣</h3>
+              <h4 class="prize en">$250</h4>
+            </figcaption>
+          </figure>
+        </a>
 
-<!--    footerStart****		--------------------------------------------------->		
-		
-		<footer>
-		<div id="footerBar">關於捷比<i class="btr bt-caret-up bt-sm"></i></div>
-			<article>
-				<ul>
-					<li class="subject"><a href="#">關於我們</a></li>
-					<li><a href="#">關於捷比</a></li>
-					<li><a href="#">門市資訊</a></li>
-					<li><a href="#">隱私權條款</a></li>
-				</ul>
-				<ul>
-					<li class="subject"><a href="#">購物須知</a></li>
-					<li><a href="#">注意事項</a></li>
-					<li><a href="#">付款方式</a></li>
-					<li><a href="#">運送方式</a></li>
-					<li><a href="#">退換貨方式</a></li>
-					<li><a href="#">尺寸丈量</a></li>
-					
-				</ul>
-				<ul>
-					<li class="subject"><a href="#">捷幣存摺</a></li>
-					<li><a href="#">使用方式</a></li>
-					<li><a href="#">餘額查詢</a></li>
-					<li><a href="#">最新贈品</a></li>
-				</ul>
-				<ul>
-					<li class="subject"><a href="#">客服資訊</a></li>
-					<li>
-						<a href="#" class="social"><img src="assets/images/main/socialLink0.png"></a>
-						<a href="#" class="social"><img src="assets/images/main/socialLink1.png"></a>
-					</li>
-					<li><a href="#">常見問題</a></li>
-					<li>
-						<p>客服專線：<span class="en">05-2785369</span></p>
-						<p>周一至周六 <span class="en">09:00 - 17:00</span></p>
-					</li>
-				</ul>
-			</article>
-			<div id="copyright" class="en">
-				Copyright &copy; 2016 Jay & Bee.All Right Reserved.
-			</div>
-		</footer>
-	<!--    footerEnd		-------------------------------------------------->			
-	
-</div><!--  #layoutEnd		-->	
+      </div>
+      <a class="center more en" href="#">more +</a>
+    </article>
+    <article class="gridThird">
+      <h1>嬰幼兒</h1>
+
+
+      <a class="singleGird gridImg" href="javascript:;">
+        <figure>
+          <%= image_tag "index/product8.jpg" %>
+          <figcaption>
+            <h2>DooSun豆山【JD4388】</h2>
+            <h3>花拼接領條紋無袖上衣</h3>
+            <h4 class="prize en">$250</h4>
+          </figcaption>
+        </figure>
+      </a>
+      <a class="singleGird gridImg" href="javascript:;">
+        <figure>
+          <%= image_tag "index/product12.jpg" %>
+          <figcaption>
+            <h2>DooSun豆山【JD4388】</h2>
+            <h3>花拼接領條紋無袖上衣</h3>
+            <h4 class="prize en">$250</h4>
+          </figcaption>
+        </figure>
+      </a>
+
+      <a class="singleGird gridImg" href="javascript:;">
+        <figure>
+          <%= image_tag "index/product13.jpg" %>
+          <figcaption>
+            <h2>DooSun豆山【JD4388】</h2>
+            <h3>花拼接領條紋無袖上衣</h3>
+            <h4 class="prize en">$250</h4>
+          </figcaption>
+        </figure>
+      </a>
+      <a class="singleGird gridImg" href="javascript:;">
+        <figure>
+          <%= image_tag "index/product14.jpg" %>
+          <figcaption>
+            <h2>DooSun豆山【JD4388】</h2>
+            <h3>花拼接領條紋無袖上衣</h3>
+            <h4 class="prize en">$250</h4>
+          </figcaption>
+        </figure>
+      </a>
+      <p class="blankH20"></p>
+      <a class="center more en" href="#">more +</a>
+    </article>
+
+    <article class="gridfour">
+      <h1>最新商品</h1>
+
+      <div class="left">
+        <a class="singleGird gridImg" href="javascript:;">
+          <figure>
+            <%= image_tag "index/product17.jpg" %>
+            <figcaption>
+              <h2>DooSun豆山【JD4388】</h2>
+              <h3>花拼接領條紋無袖上衣</h3>
+              <h4 class="prize en">$250</h4>
+            </figcaption>
+          </figure>
+        </a>
+        <a class="singleGird gridImg" href="javascript:;">
+          <figure>
+            <%= image_tag "index/product18.jpg" %>
+            <figcaption>
+              <h2>DooSun豆山【JD4388】</h2>
+              <h3>花拼接領條紋無袖上衣</h3>
+              <h4 class="prize en">$250</h4>
+            </figcaption>
+          </figure>
+        </a>
+
+      </div>
+      <div class="right">
+        <div class="twoGirdBox">
+          <a class="twoGird gridImg" href="javascript:;">
+            <figure>
+              <%= image_tag "index/product15.jpg" %>
+              <figcaption>
+                <h2>DooSun豆山【JD4388】</h2>
+                <h3>花拼接領條紋無袖上衣</h3>
+                <h4 class="prize en">$250</h4>
+              </figcaption>
+            </figure>
+          </a>
+          <a class="twoGird gridImg" href="javascript:;">
+            <figure>
+              <%= image_tag "index/product16.jpg" %>
+              <figcaption>
+                <h2>DooSun豆山【JD4388】</h2>
+                <h3>花拼接領條紋無袖上衣</h3>
+                <h4 class="prize en">$250</h4>
+              </figcaption>
+            </figure>
+          </a>
+        </div>
+
+      </div>
+      <a class="center more en" href="#">more +</a>
+    </article>
+    <article class="gridfour">
+      <h1>人氣熱賣</h1>
+
+      <div class="right">
+        <div class="twoGirdBox">
+          <a class="twoGird gridImg" href="javascript:;">
+            <figure>
+              <%= image_tag "index/product19.jpg" %>
+              <figcaption>
+                <h2>DooSun豆山【JD4388】</h2>
+                <h3>花拼接領條紋無袖上衣</h3>
+                <h4 class="prize en">$250</h4>
+              </figcaption>
+            </figure>
+          </a>
+          <a class="twoGird gridImg" href="javascript:;">
+            <figure>
+              <%= image_tag "index/product20.jpg" %>
+              <figcaption>
+                <h2>DooSun豆山【JD4388】</h2>
+                <h3>花拼接領條紋無袖上衣</h3>
+                <h4 class="prize en">$250</h4>
+              </figcaption>
+            </figure>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="left">
+        <a class="singleGird gridImg" href="javascript:;">
+          <figure>
+            <%= image_tag "index/producT21.jpg" %>
+            <figcaption>
+              <h2>DooSun豆山【JD4388】</h2>
+              <h3>花拼接領條紋無袖上衣</h3>
+              <h4 class="prize en">$250</h4>
+            </figcaption>
+          </figure>
+        </a>
+        <a class="singleGird gridImg" href="javascript:;">
+          <figure>
+            <%= image_tag "index/product22.jpg" %>
+            <figcaption>
+              <h2>DooSun豆山【JD4388】</h2>
+              <h3>花拼接領條紋無袖上衣</h3>
+              <h4 class="prize en">$250</h4>
+            </figcaption>
+          </figure>
+        </a>
+
+      </div>
+      <a class="center more en" href="#">more +</a>
+    </article>
+    <div class="blankH60"></div>
+  </div>
+
+
+  <footer>
+    <div id="footerBar">關於捷比<i class="btr bt-caret-up bt-sm"></i></div>
+    <article>
+      <ul>
+        <li class="subject"><a href="#">關於我們</a></li>
+        <li><a href="#">關於捷比</a></li>
+        <li><a href="#">門市資訊</a></li>
+        <li><a href="#">隱私權條款</a></li>
+      </ul>
+      <ul>
+        <li class="subject"><a href="#">購物須知</a></li>
+        <li><a href="#">注意事項</a></li>
+        <li><a href="#">付款方式</a></li>
+        <li><a href="#">運送方式</a></li>
+        <li><a href="#">退換貨方式</a></li>
+        <li><a href="#">尺寸丈量</a></li>
+
+      </ul>
+      <ul>
+        <li class="subject"><a href="#">捷幣存摺</a></li>
+        <li><a href="#">使用方式</a></li>
+        <li><a href="#">餘額查詢</a></li>
+        <li><a href="#">最新贈品</a></li>
+      </ul>
+      <ul>
+        <li class="subject"><a href="#">客服資訊</a></li>
+        <li>
+          <a href="#" class="social"><%= image_tag "main/socialLink0.png" %></a>
+          <a href="#" class="social"><%= image_tag "main/socialLink1.png" %></a>
+        </li>
+        <li><a href="#">常見問題</a></li>
+        <li>
+          <p>客服專線：<span class="en">05-2785369</span></p>
+          <p>周一至周六 <span class="en">09:00 - 17:00</span></p>
+        </li>
+      </ul>
+    </article>
+    <div id="copyright" class="en">
+      Copyright &copy; 2016 Jay & Bee.All Right Reserved.
+    </div>
+  </footer>
+
+</div>
 
 </body>
 </html>

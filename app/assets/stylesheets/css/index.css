@@ -24,6 +24,8 @@ aside a img{
 	width: 100%;
 }
 #content article{
+    width: 96%;
+    padding: 0% 2%;
 	max-width: 1200px;
 	margin: auto;
 	margin-bottom:4%;
@@ -67,7 +69,7 @@ aside a img{
 	
 	display: inline-block;
 }
-#content .gridImg IMG{
+#content .gridImg figure img{
 	width: 100%
 }
 #content .gridImg figure{
@@ -113,7 +115,12 @@ aside a img{
 	color: #FF91B8;
 	
 }
-.gridOne .left,
+.gridOne .left{
+    width: 49%;
+	display: inline-block;
+	margin: 0% .5%;
+
+}
 .gridOne .right
 {
 	width: 48.5%;
@@ -142,7 +149,7 @@ aside a img{
 	
 }
 .gridOne .right .singleGird{
-	width: 48.5%;
+	width: 49%;
 	display: inline-block;
 	vertical-align: top;
 	margin: 0% 0% 0% 1%;
@@ -154,27 +161,32 @@ aside a img{
 	vertical-align: top;
 	margin: 0% .5%;
 }
-
+.gridfour {
+    text-align: center
+}
 .gridfour .left{
-	width:67%;
+	width:66.5%;
 	display: inline-block;
-	margin: 0% .5%;
 }
 .gridfour .right
 {
-	width: 31.5%;
+	width: 30.9%;
 	display: inline-block;
+}
+.gridfour .right img{
+    width: 100%;
 }
 
 .gridfour .left .singleGird{
 	width: 47.5%;
 	display: inline-block;
-	margin: 0% 1%;
+	margin: 0% .5%;
 }
 .gridfour .right .twoGird{
 	width: 100%;
 	height: 100%;
 	margin-bottom: 20px;
+    margin: 0 .5% 20px .5%
 	
 		
 }

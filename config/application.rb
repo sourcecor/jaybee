@@ -23,6 +23,7 @@ module Jaybee
     config.active_record.raise_in_transactional_callbacks = true
 
     config.assets.paths << Rails.root.join('vendor', 'assets', 'bower_components')
+    config.assets.paths << Rails.root.join('app', 'assets', 'stylesheets', 'fonts')
 
     config.autoload_paths += Dir["#{Rails.root}/lib/assets/"]
   end
