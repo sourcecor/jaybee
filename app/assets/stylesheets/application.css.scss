@@ -10,6 +10,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *= require pnotify
+ *= require fancybox
  *= require_directory ./css
  *= require_self
  */

@@ -19,5 +19,18 @@
 //= require pnotify
 //= require unobtrusive_flash
 //= require sync
+//= require fancybox
 //= require_directory ./js
 //= require_directory .
+
+$(function(){
+  $("a.fancybox").fancybox({ parent: "body"});
+  if (typeof google === 'object' && typeof google.maps === 'object') {
+    // initMap();
+  } else {
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCUSk-5eNj1T5RH1U6tWPuqzA5fVMv37f0&libraries=places&callback=initMap';
+    document.body.appendChild(script);
+  }
+});

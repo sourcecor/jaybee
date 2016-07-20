@@ -22,6 +22,8 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'fancybox2-rails', '~> 0.2.8'
+
 gem 'vuejs'
 
 gem 'adminlte-rails'

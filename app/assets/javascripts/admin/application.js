@@ -31,13 +31,14 @@
 //= require unobtrusive_flash
 //= require cocoon
 //= require ckeditor/init
+//= require fancybox
 //= require sync
 //= require_tree .
 
 
 // global after init google map callback
 // callback
-function initMap(){
+function initMap() {
   if ($('#geocode').length > 0)
     autocomplete = new google.maps.places.Autocomplete($('#geocode')[0]);
 }
@@ -46,7 +47,7 @@ function readURL(input) {
   var reader;
   if (input.files && input.files[0]) {
     reader = new FileReader();
-    reader.onload = function(e) {
+    reader.onload = function (e) {
       $(input).siblings('.preview-img').attr('src', e.target.result);
     };
     reader.readAsDataURL(input.files[0]);
@@ -54,15 +55,15 @@ function readURL(input) {
 };
 
 function initImageInput() {
-  $(".preview-img").each(function() {
+  $(".preview-img").each(function () {
     //
     $(this).siblings('.btn-img').unbind();
-    $(this).siblings('.btn-img').click(function() {
+    $(this).siblings('.btn-img').click(function () {
       $(this).siblings('input[type=file]').click();
     });
 
     $(this).siblings('input[type=file]').unbind();
-    $(this).siblings('input[type=file]').change(function() {
+    $(this).siblings('input[type=file]').change(function () {
       readURL(this);
     });
   });
@@ -70,49 +71,59 @@ function initImageInput() {
 
 
 function initSortable(e) {
-    if (e !== '') {
-        $("#" + e).sortable({
-            connectWith: "#" + e,
-            start: function(event, ui) {
-                ui.item.toggleClass("placeholder");
-                ui.placeholder.height(ui.helper[0].scrollHeight);
-                return ui.placeholder.width(ui.helper[0].scrollWidth);
-            },
-            stop: function(event, ui) {
-                var i, id, item, j, len, p_data, sorted, splited;
-                ui.item.toggleClass("placeholder");
-                sorted = $(this).sortable('toArray');
-                i = 0;
-                p_data = [];
-                for (j = 0, len = sorted.length; j < len; j++) {
-                    item = sorted[j];
-                    splited = item.split(" ");
-                    id = splited[0].indexOf("f_new_") !== -1 ? splited[1] : splited[0];
-                    if (id !== '') {
-                        $("input[data-seq*=" + id + "]").val(i);
-                        p_data.push({
-                            id: parseInt($("input[data-id*=" + id + "]").val()),
-                            seq: i
-                        });
-                    }
-                    i++;
-                }
-                return $.ajax({
-                    type: "patch",
-                    url: "/admin/pictures/update_sequence",
-                    data: {
-                        data: p_data
-                    },
-                    success: function() {
-                        return console.log("POST");
-                    }
-                });
-            }
-        }).disableSelection();
-    }
+  if (e !== '') {
+    $("#" + e).sortable({
+      connectWith: "#" + e,
+      start: function (event, ui) {
+        ui.item.toggleClass("placeholder");
+        ui.placeholder.height(ui.helper[0].scrollHeight);
+        return ui.placeholder.width(ui.helper[0].scrollWidth);
+      },
+      stop: function (event, ui) {
+        var i, id, item, j, len, p_data, sorted, splited;
+        ui.item.toggleClass("placeholder");
+        sorted = $(this).sortable('toArray');
+        i = 0;
+        p_data = [];
+        for (j = 0, len = sorted.length; j < len; j++) {
+          item = sorted[j];
+          splited = item.split(" ");
+          id = splited[0].indexOf("f_new_") !== -1 ? splited[1] : splited[0];
+          if (id !== '') {
+            $("input[data-seq*=" + id + "]").val(i);
+            p_data.push({
+              id: parseInt($("input[data-id*=" + id + "]").val()),
+              seq: i
+            });
+          }
+          i++;
+        }
+        return $.ajax({
+          type: "patch",
+          url: "/admin/pictures/update_sequence",
+          data: {
+            data: p_data
+          },
+          success: function () {
+            return console.log("POST");
+          }
+        });
+      }
+    }).disableSelection();
+  }
 };
 
-$(function(){
+$(function () {
+  $(".fancybox").fancybox({
+    'helpers':{
+      'overlay':{
+        closeClick:true
+      }
+    },
+    'closeBtn':true,
+    'modal':false,
+    'type': 'iframe'
+  });
   if (typeof google === 'object' && typeof google.maps === 'object') {
     initMap();
   } else {
