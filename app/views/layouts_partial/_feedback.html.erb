@@ -1,0 +1,17 @@
+<div id="feedback">
+  <div id="feedback-tab"><p>線</p>
+    <p>上</p>
+    <p>客</p>
+    <p>服</p></div>
+  <div id="feedback-form" style='display:none;' class="col-xs-4 col-md-4 panel panel-default">
+    <form method="POST" action="/feedback" class="form panel-body" role="form">
+      <div class="form-group">
+        <input class="form-control" name="email" autofocus placeholder="電子郵件" type="email"/>
+      </div>
+      <div class="form-group">
+        <textarea class="form-control" name="body" required placeholder="我有問題想問...." rows="5"></textarea>
+      </div>
+      <button class="btn" type="submit">Send</button>
+    </form>
+  </div>
+</div>

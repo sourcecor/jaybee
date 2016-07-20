@@ -2,9 +2,9 @@
 .distractful:hover{cursor: pointer; cursor: hand;}
 .distractful-item{background-position: center center;background-size: cover;position:absolute;overflow: hidden;width: 1200px;margin: auto;}
 .distractful-item img{display:none;}
-
-.distractful.isParallax{position:fixed;z-index:0;}
-.distractfulParallaxPlaceholder{background:black;}
+.bg{width: 100%; background: white}
+.distractful.isParallax{position:fixed;z-index:-1;}
+.distractfulParallaxPlaceholder{background:none;}
 
 body.distractful-body{overflow-x:hidden }
 
