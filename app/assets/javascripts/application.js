@@ -23,6 +23,11 @@
 //= require_directory ./js
 //= require_directory .
 
+function initMap() {
+  if ($('#geocode').length > 0)
+    autocomplete = new google.maps.places.Autocomplete($('#geocode')[0]);
+}
+
 $(function(){
   $("a.fancybox").fancybox({ parent: "body"});
   if (typeof google === 'object' && typeof google.maps === 'object') {

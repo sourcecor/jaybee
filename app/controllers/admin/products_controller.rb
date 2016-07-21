@@ -34,7 +34,7 @@ class Admin::ProductsController < Admin::ApplicationController
   end
 
   def show
-    #
+    render :show, layout: 'admin/layouts/frontend'
   end
 
   def destroy
