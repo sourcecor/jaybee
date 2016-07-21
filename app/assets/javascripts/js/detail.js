@@ -1,20 +1,24 @@
 $(document).ready(function(){
-
-	$("#infoPhoto").focus();
-	$(".infoContent").load("ajax.html .infoPhoto");
+	$(".infoPhoto").fadeIn();
+    $("#infoPhoto").focus();
+    $(".infoProduct,.infoSize").fadeOut(0);
 	$("#infoPhoto").click(function(){
-		$(".infoContent").load("ajax.html .infoPhoto");
+		$(".infoPhoto").fadeIn();
+        $(".infoContent div:not(.infoPhoto)").fadeOut(0);
 	});
 	$("#infoProduct").click(function(){
-		$(".infoContent").load("ajax.html .infoProduct");
+		$(".infoProduct").fadeIn();
+        $(".infoContent div:not(.infoProduct)").fadeOut(0);
 	});
 	$("#infoSize").click(function(){
-		$(".infoContent").load("ajax.html .infoSize");
+		$(".infoSize").fadeIn();
+        $(".infoContent div:not(.infoSize)").fadeOut(0);
 	});
 	$(".chart").click(function(){
 		$("#infoSize").focus();
-		$(".infoContent").load("ajax.html .infoSize");
-		$("body").animate({scrollTop:"300px"});
+		$(".infoSize").fadeIn();
+        $(".infoContent div:not(.infoSize)").fadeOut(0);
+		$("body").animate({scrollTop:"400px"});
 	})
 	
 	
@@ -26,7 +30,7 @@ $(document).ready(function(){
 				
 			$(".proColor:eq("+e.data.id+")").addClass("active");
 			$(".proColor:not(.proColor:eq("+e.data.id+"))").removeClass("active");
-			$(".mainImg:eq("+e.data.id+")").fadeIn(0);
+			$(".mainImg:eq("+e.data.id+")").fadeIn();
 			$(".mainImg:not(.mainImg:eq("+e.data.id+"))").fadeOut(0);
 		})
 	

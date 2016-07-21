@@ -121,7 +121,7 @@ $(function () {
       }
     },
     'height': '100%',
-    'width': '80%',
+    'width': '90%',
     'fitToView':false,
     'autoSize':false,
     'closeBtn':true,

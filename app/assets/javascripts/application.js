@@ -12,11 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery-ui
 //= require vue
 //= require vue-router
 //= require vue-resource
-//= require pnotify
 //= require unobtrusive_flash
 //= require sync
 //= require fancybox
@@ -29,7 +27,20 @@ function initMap() {
 }
 
 $(function(){
-  $("a.fancybox").fancybox({ parent: "body"});
+  $(".fancybox").fancybox({
+    'helpers':{
+      'overlay':{
+        closeClick:true
+      }
+    },
+    'height': '100%',
+    'width': '90%',
+    'fitToView':false,
+    'autoSize':false,
+    'closeBtn':true,
+    'modal':false,
+    'type': 'iframe'
+  });
   if (typeof google === 'object' && typeof google.maps === 'object') {
     // initMap();
   } else {

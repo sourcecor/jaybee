@@ -107,28 +107,13 @@ if($(window).width()<768){
 	var windowWidth = $(window).width();
 
 	$(window).resize(function() {
-		if(windowWidth != $(window).width()){
+		if(Math.abs(windowWidth - $(window).width()) > 100 ){
 			window.location.reload();
 			return;
 		}
 	});
-	
+
 	// --------------------------------------------------------
-
-	
-	
-	//reload on every screen size change	
-	var windowWidth = $(window).width();
-
-	$(window).resize(function() {
-		if(windowWidth != $(window).width()){
-			window.location.reload();
-			return;
-		}
-	});
-	
-	// --------------------------------------------------------	
-	
 	
 	//footerSlideUp
 	 fh=$("footer").height()-$("#footerBar").height()-10
