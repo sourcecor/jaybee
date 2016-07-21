@@ -11,6 +11,8 @@
  * file per style scope.
  *= require pnotify
  *= require fancybox
+ *= require_directory ./lib
+ *= require_directory ./libCss
  *= require_directory ./css
  *= require_self
  */

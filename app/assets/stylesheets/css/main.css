@@ -6,13 +6,20 @@ Main Color:
 	 pink: #FF91B8
 	 gray: #EFEFEF
 
-
-
-
-
-
+Main CSS: 
+1.Mouse Scroll - scrollbar
+2.Layout、Content
+3.Online Service - feedback
+4.Nav
+4-1.Moblie Nav - moblieCover
+5.footer
+6.RWD
 
 */
+
+
+
+/***********mouse scroll Start**************************************/
 ::-webkit-scrollbar {
 		  width: 8px;
 	margin-left: 5px;
@@ -34,6 +41,10 @@ Main Color:
 	::-webkit-scrollbar-corner {
 		  background-color: black;
 	} 
+/***********mouse scroll End**************************************/
+
+
+/***********All Set Start*****************************************/
 *{
 	font-family:微軟正黑體,Microsoft YaHei,宋体,sans-serif,Arial;
 	padding: 0px;
@@ -42,6 +53,68 @@ Main Color:
 	color: gray;
 	text-decoration: none;
 }
+
+
+.content{
+    width: 96%;
+    padding: 0% 2%;
+	max-width: 1200px;
+	margin: auto;
+}
+#layout{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+#layout #content{
+    width: 100%;
+	height: 100%;
+	min-height: 1000px;
+    background: white;
+	display: block;
+	padding-bottom: 60px;
+    
+}
+
+#layout .en{
+	font-family: Century Gothic;
+	font-weight: bold;
+}
+
+#layout .center{
+	width: 100%;
+	text-align: center;
+}
+
+
+
+/***********All Set End*****************************************/
+
+
+/***********BackToTopStart*****************************************/
+#back{
+	width: 50px;
+	height: 50px;
+	position: fixed;
+	z-index: 0;
+	right: 20px;
+	bottom: 30px;
+	
+}
+#back i{
+	color: #4FC1FF;
+	cursor: pointer;
+	transition: all .5s ease;
+	font-size: 30px;
+}
+#back i:hover{
+	color: #FF91B8;
+}
+/***********BackToTopEnd*****************************************/
+
+
+
+/***********onlineServiceStart*****************************************/
 #feedback {
 	position: fixed;
 	right: 0;
@@ -107,6 +180,7 @@ Main Color:
 #feedback-form textarea {
 	resize: none;
 }
+
 .form-group textarea,
 .form-group input{
 	width:96% ;
@@ -138,42 +212,15 @@ Main Color:
 }
 .panel-body button:hover
 .panel-body button:focus{
-	background-color: #FF91B8l
+	background-color: #FF91B8
 }
-#layout .en{
-	font-family: Century Gothic;
-	font-weight: bold;
-}
-.content{
-    width: 96%;
-    padding: 0% 2%;
-	max-width: 1200px;
-	margin: auto;
-}
-#layout{
-    width: 100%;
-    height: 100%;
-    overflow-x: hidden;
-}
-#back{
-	width: 50px;
-	height: 50px;
-	position: fixed;
-	z-index: 0;
-	right: 20px;
-	bottom: 30px;
-	
-}
-#back i{
-	color: #4FC1FF;
-	cursor: pointer;
-	transition: all .5s ease;
-	font-size: 30px;
-}
-#back i:hover{
-	color: #FF91B8;
-}
-/****NavStart****/
+/***********onlineServiceEnd*****************************************/
+
+
+
+
+
+/****NavStart**********************************************************/
 header{
 	padding:0px 0px 8px 0px;
 	background-color: white;
@@ -220,6 +267,11 @@ nav .jayNav{
 	vertical-align: top;
 	text-align: center;
 	border-right:dotted 1px #4FC1FF;
+    transition: all .7s ease;
+	
+}
+.jayNav .bottomNav .parentNav:hover{
+	color: #FF91B8
 	
 }
 .jayNav .bottomNav .parentNav:nth-child(1){
@@ -242,10 +294,11 @@ nav .jayNav{
 	background-color: gray;
 	position: absolute;
 	border-radius: 10px;
-	margin:40px 0px 0px 0px;
+	margin:20px 0px 0px 0px;
 	box-shadow: 0px 3px 5px gray;
 	text-align: left;
 	color: white;
+    min-width: 100px;
 	
 	
 }
@@ -255,11 +308,20 @@ nav .jayNav{
 	display: block;
 } 
 .jayNav .bottomNav .parentNav .proList{
-	margin-left: -160px
+	padding: 15px;
+	background-color: gray;
+	position: absolute;
+	border-radius: 10px;
+	margin:20px 0px 0px -160px;
+	box-shadow: 0px 3px 5px gray;
+	text-align: left;
+	color: white;
 }
+
 .content .jayNav .bottomNav .parentNav .proList::after{
 	left: 73%;
 }
+
 .jayNav .bottomNav .parentNav .childrenNav::after{
 	content: " ";
     position: absolute;
@@ -318,7 +380,8 @@ nav .jayNav{
 	display: inline-block;
 	margin-bottom: -10px;
 } 
-.navSearch i{
+.navSearch 
+i{
 	width: 25px;
 	font-size: 20px;
 	float: right;
@@ -357,7 +420,6 @@ nav .jayNav{
     
 }
 .proInfo{
-    
     display: inline-block;
     vertical-align: top;
     word-wrap: break-word;
@@ -371,6 +433,8 @@ nav .jayNav{
 	text-overflow: ellipsis;
 	text-align: left;
 	line-height: 26px;
+	font-size: 14px;
+	
 }
 .proSubjet{
     line-height: 23px;
@@ -378,38 +442,127 @@ nav .jayNav{
     color:  #FFF;
     margin-left: 5px;
     text-align: left;
+	font-size: 14px;
 }
 
 .proPrice{
 	color: white;
 	text-align: left;
-    margin-top: 10px
+    margin-top: 10px;
+	font-size: 14px;
 }
 .proPrice .enPrice{
 	color: white;
 	float: right;
 }
-.boxShadow .content .bottomNav .parentNav .childrenNav .proBtn{
+.proBtn{
 	float: left;
-	width: 38.5%;
+	width: 46%;
 	display: inline-block;
 	vertical-align: top;
 	text-align: center;
-	margin-top: 10px;
-}
+	margin: 10px 5px 0px 5px;
+	background-color: #4FC1FF;
+	color: white;
+	padding: 8px 0%;
+	transition: all .7s ease;
+	font-size: 14px;
+} 
+.proBtn:hover{
+	background-color: #FF91B8;
+} 
 
-
-
-/****NavEnd******/
-#layout #content{
-    width: 100%;
+.moblieCover{
+	position: fixed;
+	top:0px;
+	left: 0px;
+	width: 94%;
 	height: 100%;
-	min-height: 1000px;
-    background: white;
-	display: block;
-	padding-bottom: 60px;
-    
+	padding: 3%;
+	background-color: rgba(0, 0, 0, 0.87);
+	z-index: 999
 }
+
+.moblieCover .bt-times{
+	position: fixed;
+	top: 15px;
+	right: 0px;
+	color: white;
+	width: 30px;
+	height: 30px;
+	display:block;
+}
+
+.moblieCover .mobileSearch{
+	position: relative;
+	z-index: 9
+}
+.moblieCover ul li a{
+	padding: 10px 15px;
+	display: block;
+	color: white;
+	font-size: 14px;
+}
+.moblieCover .mobileSearch{
+	margin-top: 50px;
+} 
+.moblieCover .mobileSearch input{
+	width: 90%;
+	color: white;
+	font-size: 18px;
+	background-color: rgba(240, 248, 255, 0);
+	border: none;
+	border-bottom:1px solid white
+}
+.moblieCover .mobileSearch button{
+	background-color: rgba(240, 248, 255, 0);
+	border: none;
+}
+.moblieCover .mobileSearch button i{
+	
+	color: white;
+}
+.moblieCover .keyword{
+	margin-top: 20px;
+	width: 90%;
+	display: block;
+}
+.moblieCover .keyword .solid{
+	width: 30%;
+	border-top:1px solid lightgray;
+	display: inline-block;
+	vertical-align:middle;
+	
+}
+.moblieCover .keyword  .keyFont{
+	width: 40%;
+	display: inline-block;
+	text-align: center;
+	font-size: 14px;
+	color: lightgray;
+}
+
+.moblieCover .keyword p{
+	margin-bottom: 20px;
+}
+.moblieCover .keyword a{
+	padding: 5px 10px;
+	display: inline-block;
+	margin:1% .5%;
+	border: 1px solid #EFEFEF;
+	color: #EFEFEF;
+	font-size: 14px;
+}
+
+/****NavEnd**************************************************************************/
+
+
+
+
+
+
+/****NavEnd**************************************************************************/
+
 
 #footerBar{
 	width: 100%;
@@ -485,6 +638,7 @@ footer article ul li .social{
 .blankH60{
 	height: 60px;
 }
+
 /*******RWD start**********************************************/
 @media screen and (max-width: 940px) {
 	nav .jayNav{
@@ -511,6 +665,7 @@ footer article ul li .social{
 		display: inline-block;
 	}
 	.topNav .navSearch input,
+	.topNav .navSearch button,
 	.jayNav .bottomNav .member{
 		display: none;
 	}
@@ -555,7 +710,9 @@ footer article ul li .social{
 	.parentNav img{
 		display: none;	
 	}
-
+	.moblieCover .keyword  .keyFont{
+		font-size: 12px;
+	}
 
 }
 @media screen and (max-width: 460px) {

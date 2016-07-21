@@ -1,5 +1,57 @@
-.box
-  .box-header
-    h4
-      = @product.caption
-  .box-body
+link[rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"]
+.right
+  article.products
+    .detail
+      .detailImg
+        img.mainImg[src="../assets/images/products/detail0.jpg"]
+        img.mainImg[src="../assets/images/products/detail1.jpg"]
+      form.detailInfo
+        ul
+          li.proBrand
+            | MeAnDo米果
+          li.proTitle
+            | 甜美日系蕾絲勾花拼接
+          li.proNum
+            | 商品編號：JM4097
+          li.proMoney
+            p.before
+              | NT$350
+            p.after
+              span.en
+                | NT$
+              span.unit
+                | 250
+            a.hot
+              | 夏日限定‧2件88折
+              i.btr.bt-angles-right.bt-sm
+        ul.proSize
+          li
+            input.proColor[style="background-image:url(../assets/images/products/color0.jpg)" type="button"]
+            input.proColor[style="background-image:url(../assets/images/products/color1.jpg)" type="button"]
+            input.proColor.disabled[style="background-image:url(../assets/images/products/color0.jpg)" type="button" disabled]
+        input.proChart[type="button" value="2"]
+        input.proChart[type="button" value="4"]
+        input.proChart[type="button" value="6"]
+        input.proChart[type="button" value="8"]
+        input.proChart.disabled[type="button" value="10" disabled]
+        a.chart[href="javascript:;"]
+          | 查看尺寸表
+        .number-input-area
+          .btn-pill-area.btn-pill-area--numbers
+            button.btn.js-num-down[type="button" aria-controls="unique_ID"]
+              span[aria-hidden="true"]
+                i.btr.bt-minus.bt-sm
+          input#unique_ID.js-numbler[type="number" name="unique_ID" min="1" step="1" value="1"]
+          .btn-pill-area.btn-pill-area--numbers
+            button.btn.js-num-up[type="button" aria-controls="unique_ID"]
+              span[aria-hidden="true"]
+                i.btr.bt-plus.bt-sm
+        button.button[type="submit"]
+          i.btr.bt-shopping-cart.bt-sm
+          | 加入購物車
+  article.infoBox
+    .infoTab
+      input#infoPhoto[type="button" value="圖文說明"]
+      input#infoProduct[type="button" value="商品說明"]
+      input#infoSize[type="button" value="尺寸說明"]
+    .infoContent

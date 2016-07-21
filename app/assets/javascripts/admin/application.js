@@ -120,6 +120,10 @@ $(function () {
         closeClick:true
       }
     },
+    'height': '100%',
+    'width': '80%',
+    'fitToView':false,
+    'autoSize':false,
     'closeBtn':true,
     'modal':false,
     'type': 'iframe'
