@@ -1,6 +1,8 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea
 .keep
+app/assets/images/index
+app/assets/images/products
 config/puma.rb
 config/deploy.rb
 config/application.yml
