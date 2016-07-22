@@ -1,5 +1,5 @@
 class Admin::ProductsController < Admin::ApplicationController
-  before_action :set_record, :only => [:edit, :update, :destroy]
+  before_action :set_record, :only => [:edit, :update, :show, :destroy]
 
   def index
     @products_grid = initialize_grid(Product.not_deleted)
@@ -31,6 +31,10 @@ class Admin::ProductsController < Admin::ApplicationController
     else
       render :edit
     end
+  end
+
+  def show
+    render :show, layout: 'admin/layouts/frontend'
   end
 
   def destroy

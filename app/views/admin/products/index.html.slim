@@ -16,7 +16,8 @@
         - product.categories.collect{|item| item.caption }.to_sentence(:two_words_connector => ' , ')
       - g.column name: '規格' do |product|
         - product.sub_product_colors.collect{|item| item.sub_products.collect{|sub| "[#{sub.size}-#{sub.color} 庫存:#{sub.qty}]"}.to_sentence(:two_words_connector => ' , ') }.to_sentence(:two_words_connector => ' , ')
-      - g.column name: '操作' do |product|
+      - g.column name: '操作', html: {style: 'width: 143px'} do |product|
         - content_tag(:div) do
+          - concat(link_to('預覽', admin_product_path(product), class: 'btn btn-success btn-xs fancybox', style: 'margin-right:5px'))
           - concat(link_to('修改', edit_admin_product_path(product), "data-no-turbolink":true, class: 'btn btn-default btn-xs', style: 'margin-right:5px'))
           - concat(link_to('刪除', [:admin, product] ,method: :delete, data: {confirm: '確定要刪除?'}, class: 'btn btn-danger btn-xs'))

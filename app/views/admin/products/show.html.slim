@@ -1,0 +1,186 @@
+= stylesheet_link_tag 'css/detail'
+= stylesheet_link_tag 'css/number'
+link[rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"]
+.right
+  article.products
+    .detail
+      .detailImg
+        = image_tag "products/detail0.jpg", class: "mainImg"
+        = image_tag "products/detail1.jpg", class: "mainImg"
+      form.detailInfo
+        ul
+          li.proBrand
+            | MeAnDo米果
+          li.proTitle
+            | 甜美日系蕾絲勾花拼接
+          li.proNum
+            | 商品編號：JM4097
+          li.proMoney
+            p.before
+              | NT$350
+            p.after
+              span.en
+                | NT$
+              span.unit
+                | 250
+            a.hot
+              | 夏日限定‧2件88折
+              i.btr.bt-angles-right.bt-sm
+        ul.proSize
+          li
+            input.proColor[style="background-image:url(#{image_path('products/color0.jpg')})" type="button"]
+            input.proColor[style="background-image:url(#{image_path('products/color1.jpg')})" type="button"]
+            input.proColor.disabled[style="background-image:url(#{image_path('products/color0.jpg')})" type="button" disabled]
+          li
+            input.proChart[type="button" value="2"]
+            input.proChart[type="button" value="4"]
+            input.proChart[type="button" value="6"]
+            input.proChart[type="button" value="8"]
+            input.proChart.disabled[type="button" value="10" disabled]
+            a.chart[href="javascript:;"]
+              | 查看尺寸表
+        .number-input-area
+          .btn-pill-area.btn-pill-area--numbers
+            button.btn.js-num-down[type="button" aria-controls="unique_ID"]
+              span[aria-hidden="true"]
+                i.btr.bt-minus.bt-sm
+          input#unique_ID.js-numbler[type="number" name="unique_ID" min="1" step="1" value="1"]
+          .btn-pill-area.btn-pill-area--numbers
+            button.btn.js-num-up[type="button" aria-controls="unique_ID"]
+              span[aria-hidden="true"]
+                i.btr.bt-plus.bt-sm
+        button.button[type="submit"]
+          i.btr.bt-shopping-cart.bt-sm
+          | 加入購物車
+  article.infoBox
+      .infoTab
+        input#infoPhoto[type="button" value="圖文說明"]
+        input#infoProduct[type="button" value="商品說明"]
+        input#infoSize[type="button" value="尺寸說明"]
+      .infoContent
+        .infoPhoto
+          = image_tag "products/detail2.jpg"
+          = image_tag "products/detail3.jpg"
+          = image_tag "products/detail4.jpg"
+          = image_tag "products/detail5.jpg"
+        .infoProduct
+          h1
+            | 商品編號【2176110】
+          h2
+            | 銷售重點
+          p.point
+            | 適穿建議身高體重對照為平均數值，僅供參考，請實際測量常穿衣物尺寸後再選購。
+          p.fit
+            | 適穿建議數值為：身高(公分)/體重(公斤)。
+          p.Suggest
+            | 年齡/身高/體重與尺寸沒有絕對關係（同年齡身高體型不全然相同），
+            br
+            |  每個廠商衣物版子也不同，購買前請先詳閱首頁尺寸表。
+        .infoSize
+          table.pure-table
+            tbody
+              tr.pure-table-odd
+                td.th
+                  | 尺寸
+                td
+                  | 02
+                td
+                  | 04
+                td
+                  | 06
+                td
+                  | 08
+                td
+                  | 10
+                td
+                  | 12
+              tr
+                td.th
+                  | 適合建議
+                td
+                  | 85/12
+                td
+                  | 90/14
+                td
+                  | 100/16
+                td
+                  | 100/18
+                td
+                  | 120/20
+                td
+                  | 130/23
+              tr.pure-table-odd
+                td.th
+                  | 腰寬
+                td
+                  | 20.5
+                td
+                  | 21
+                td
+                  | 22
+                td
+                  | 23.5
+                td
+                  | 24
+                td
+                  | 26
+              tr
+                td.th
+                  | 臀寬
+                td
+                  | 27
+                td
+                  | 28
+                td
+                  | 29.5
+                td
+                  | 32
+                td
+                  | 33
+                td
+                  | 35
+              tr.pure-table-odd
+                td.th
+                  | 褲長/裙長
+                td
+                  | 21.5
+                td
+                  | 22
+                td
+                  | 22.5
+                td
+                  | 24
+                td
+                  | 26
+                td
+                  | 28
+              tr
+                td.th
+                  | 褲襠
+                td
+                  | 19.5
+                td
+                  | 19
+                td
+                  | 19.5
+                td
+                  | 20
+                td
+                  | 20.5
+                td
+                  | 22.5
+              tr.pure-table-odd
+                td.th
+                  | 鬆緊帶
+                td
+                  | ○
+                td
+                  | ○
+                td
+                  | ○
+                td
+                  | ○
+                td
+                  | ○
+                td
+                  | ○

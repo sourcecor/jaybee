@@ -1,0 +1,189 @@
+.detail{
+	width: 100%;
+}
+.detailImg{
+	width: 47.5%;
+	max-width: 400px;
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 2%;
+}
+.detailImg img{
+	width: 100%;
+}
+.detailInfo{
+	width: 49.5%;
+	float: right;
+	font-size: 16px;
+}
+.detailInfo input:hover{
+	background-color: #FF91B8;
+	color: white;
+	box-shadow: 0px 0px 5px #FF91B8;
+	border: solid 1px #FF91B8 inside;
+}
+.detailInfo .active{
+	box-shadow: 0px .5px 10px #ff7caa;
+	border: solid 1px #FF91B8;
+	background-color: #FF91B8;
+	color: white;
+}
+.detailInfo .disabled{
+	box-shadow: 0px 0px 10px #5f5f5f;
+	opacity: .5;
+}
+.detailInfo .disabled:hover{
+	box-shadow: 0px 0px 10px #5f5f5f;
+	opacity: .5;
+	background-color: lightgray;
+	color: gray
+}
+.detailInfo ul {
+	width: 100%;
+	border-bottom: 1px solid #EFEFEF;
+	padding:30px 0px;
+	
+}
+.detailInfo ul li{
+	margin-bottom: 15px;
+}
+.detailInfo .proMoney{
+	display: inline-block;
+	float: right;
+	text-align: right;
+	font-family: Century Gothic;
+	margin-top: -90px;
+}
+.detailInfo .before{
+	font-family: Century Gothic;
+	font-size: 14px;
+	color: #b5b4b4;
+	text-decoration: line-through;
+	margin-bottom: 5px;
+} 
+.detailInfo .after{
+	font-family: Century Gothic;
+	font-size:55px;
+	color: #b5b4b4;	
+	font-weight: bold;
+}
+.detailInfo .after .en{
+	font-size: 14px;
+	position: relative;
+	top: 5px;
+	vertical-align: top;
+	color: #FF91B8;
+	font-family: Century Gothic;
+	
+}
+.detailInfo .after .unit{
+	color: #FF91B8;
+	font-weight: bold;
+	font-family: Century Gothic;
+}
+.detailInfo .hot{
+	display: inline-block;
+	padding: 5px 10px;
+	margin-top: 10px;
+	text-align: left;
+	background-color: #4FC1FF;
+	color: white;
+	font-size: 14px;
+	
+}
+.detailInfo .hot i{
+	margin-left: 5px;
+	color: white;
+}
+
+.detailInfo .proColor{ 
+	width: 30px;
+	height: 30px;
+	border: none;
+	display: inline-block;
+	margin-right: 8px;
+	cursor: pointer;	
+}
+
+.detailInfo .proSize input{
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	border: none;
+	margin-right: 8px;
+	cursor: pointer;	
+	font-size: 14px;
+	font-family: Century Gothic;
+	
+}
+.detailInfo .proSize .chart{
+	display: block;
+	margin-top: 15px;
+	text-decoration: underline;
+}
+.detailInfo .proSize .chart:hover{
+	color:  #FF91B8;
+}
+.detailInfo .button{
+	display: inline-block;
+	border: none;
+	padding:7px 15px 9px 15px;
+	background-color: #FF91B8;
+	color: white;
+	font-size: 16px;
+	cursor: pointer;
+	position: relative;
+	top: 1px
+	
+}
+.detailInfo .button i{
+	color: white;
+	font-size: 16px;
+	margin-right: 5px;
+}
+.detailInfo .button:hover{
+	background-color: #ff7ba9;
+	color: white;
+}
+.infoBox .infoTab input{
+	width: 33%;
+	padding: 10px 0;
+	text-align: center;
+	background-color: #EFEFEF;
+	border: none;
+	cursor: pointer;
+	
+	
+}
+.infoBox .infoTab input:hover,
+.infoBox .infoTab input:focus{
+	background-color:#4FC1FF;
+	color: white;
+}
+.infoBox img{
+	width: 100%;
+	margin: 15px 0px;
+}
+.infoProduct h1{
+	font-size: 16px;
+	margin: 20px 0px;
+	font-weight: bold;
+}
+.infoProduct h2{
+	margin-bottom: 10px;
+	font-weight: bold;
+}
+.infoProduct p{
+	font-size: 14px;
+	margin-bottom: 10px;
+	line-height: 18px;
+}
+.infoSize .pure-table{
+	width: 100%;
+	margin-top: 20px;
+}
+.infoSize .th{
+	font-weight: bold;
+	font-family: 微軟正黑體;
+	padding:15px;
+}

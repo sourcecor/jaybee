@@ -1,0 +1,728 @@
+/*
+
+
+Main Color: 
+	 blue: #4FC1FF
+	 pink: #FF91B8
+	 gray: #EFEFEF
+
+Main CSS: 
+1.Mouse Scroll - scrollbar
+2.Layout、Content
+3.Online Service - feedback
+4.Nav
+4-1.Moblie Nav - moblieCover
+5.footer
+6.RWD
+
+*/
+
+
+
+/***********mouse scroll Start**************************************/
+::-webkit-scrollbar {
+		  width: 8px;
+	margin-left: 5px;
+	}
+::-webkit-scrollbar-track {
+		  background-color: rgba(122, 98, 98, 0);;
+	} /* 滚动条的滑轨背景颜色 */
+
+	::-webkit-scrollbar-thumb {
+		  background-color: #4FC1FF;
+		border-radius: 20px;
+		width: 5px!important;
+	} /* 滑块颜色 */
+
+	::-webkit-scrollbar-button {
+		  background-color: rgba(122, 98, 98, 0);;
+	} /* 滑轨两头的监听按钮颜色 */
+
+	::-webkit-scrollbar-corner {
+		  background-color: black;
+	} 
+/***********mouse scroll End**************************************/
+
+
+/***********All Set Start*****************************************/
+*{
+	font-family:微軟正黑體,Microsoft YaHei,宋体,sans-serif,Arial;
+	padding: 0px;
+    margin: 0px;
+	outline: none;
+	color: gray;
+	text-decoration: none;
+}
+
+
+.content{
+    width: 96%;
+    padding: 0% 2%;
+	max-width: 1200px;
+	margin: auto;
+}
+#layout{
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+#layout #content{
+    width: 100%;
+	height: 100%;
+	min-height: 1000px;
+    background: white;
+	display: block;
+	padding-bottom: 60px;
+    
+}
+
+#layout .en{
+	font-family: Century Gothic;
+	font-weight: bold;
+}
+
+#layout .center{
+	width: 100%;
+	text-align: center;
+}
+
+
+
+/***********All Set End*****************************************/
+
+
+/***********BackToTopStart*****************************************/
+#back{
+	width: 50px;
+	height: 50px;
+	position: fixed;
+	z-index: 0;
+	right: 20px;
+	bottom: 30px;
+	
+}
+#back i{
+	color: #4FC1FF;
+	cursor: pointer;
+	transition: all .5s ease;
+	font-size: 30px;
+}
+#back i:hover{
+	color: #FF91B8;
+}
+/***********BackToTopEnd*****************************************/
+
+
+
+/***********onlineServiceStart*****************************************/
+#feedback {
+	position: fixed;
+	right: 0;
+	bottom:100px;
+	height: 250px;
+	margin-left: -3px;
+	margin-bottom: -3px;
+	z-index: 999;
+	border-radius: 5px;
+}
+
+#feedback-form {
+	border-radius: 5px;
+	float: left;
+	width: 300px;
+	height: 100%;
+	z-index: 1000;
+	padding-left: 5px;
+	padding-right: 10px;
+	background-clip: 'padding-box';
+	border: 1px solid rgba(0, 0, 0, .2);
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+	-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+	box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+    background-color: rgba(255, 255, 255, 0.9)
+}
+
+#feedback-tab {
+	float: left;
+	color: #fff;
+	font-size: 18px;
+	cursor: pointer;
+	text-align: center;
+	width:40px;
+	height: 105px;
+	background-color: rgba(0, 0, 0, 0.5);
+	margin-top: 30px;
+	margin-right: -0px;
+	padding-top: 5px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+/*
+	-webkit-transform: rotate(270deg);
+	-moz-transform: rotate(270deg);
+	-ms-transform: rotate(270deg);
+	-o-transform: rotate(270deg);
+	transform: rotate(270deg);
+*/
+}
+#feedback-tab p{
+	color: white;
+	margin: 5px 0px;
+}
+#feedback-tab:hover {
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+#feedback-form textarea {
+	resize: none;
+}
+
+.form-group textarea,
+.form-group input{
+	width:96% ;
+	padding:2%;
+	border-radius: 5px;
+	margin-top: 20px;
+	border: 1px solid lightgray;
+	box-shadow: 0px 0px 3px #e6e6e6;
+	
+}
+.form-group textarea:focus,
+.form-group input:focus{
+	border: 1px solid #4FC1FF;
+	box-shadow: 0px 0px 3px #4FC1FF;
+}
+.panel-body{
+	padding: 15px;
+	
+}
+.panel-body button{
+	width: 60px;
+	height: 30px;
+	margin-top: 10px;
+	background-color: #4FC1FF;
+	border: none;
+	color: white;
+	float: right;
+	border-radius: 4px;
+}
+.panel-body button:hover
+.panel-body button:focus{
+	background-color: #FF91B8
+}
+/***********onlineServiceEnd*****************************************/
+
+
+
+
+
+/****NavStart**********************************************************/
+header{
+	padding:0px 0px 8px 0px;
+	background-color: white;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+	top: 0px;
+	left: 0px;
+	z-index: 4;
+	font-size: 40px
+}
+.boxShadow{
+	box-shadow: 0px 1px 5px lightgray;	
+}
+nav .logo{
+	position: absolute;	
+	display: inline-block;
+	vertical-align: top
+}
+nav .logo img{
+	width: 60%;
+	margin-top: 5px;
+}
+
+nav .jayNav{
+	width: 80%;
+	display: inline-block;
+	vertical-align: top;
+    float: right;
+}
+
+.jayNav .bottomNav{
+	width: 100%;
+	margin-top: 10px;
+    text-align: right;
+    font-size: 15px;
+	font-weight: bold;
+
+	
+}
+.jayNav .bottomNav .parentNav{
+	display: inline-block;
+	width: 13.6%;
+	vertical-align: top;
+	text-align: center;
+	border-right:dotted 1px #4FC1FF;
+    transition: all .7s ease;
+	
+}
+.jayNav .bottomNav .parentNav:hover{
+	color: #FF91B8
+	
+}
+.jayNav .bottomNav .parentNav:nth-child(1){
+	border-left: dotted 1px #4FC1FF;
+}
+.jayNav .bottomNav .parentNav i{
+	margin-right: 5px;
+	margin-top: -5px;
+	color: #FF91B8;
+}
+.jayNav .bottomNav .parentNav img{
+	vertical-align: middle;
+	margin-right:5px;
+	margin-top: -5px;
+}
+.jayNav .bottomNav .parentNav .childrenNav{
+	padding: 15px;
+	display:inline-block;
+	vertical-align: top;
+	background-color: gray;
+	position: absolute;
+	border-radius: 10px;
+	margin:20px 0px 0px 0px;
+	box-shadow: 0px 3px 5px gray;
+	text-align: left;
+	color: white;
+    min-width: 100px;
+	
+	
+}
+.jayNav .bottomNav .parentNav li a{
+	color: white;
+	padding: 10px 0px;
+	display: block;
+} 
+.jayNav .bottomNav .parentNav .proList{
+	padding: 15px;
+	background-color: gray;
+	position: absolute;
+	border-radius: 10px;
+	margin:20px 0px 0px -160px;
+	box-shadow: 0px 3px 5px gray;
+	text-align: left;
+	color: white;
+}
+
+.content .jayNav .bottomNav .parentNav .proList::after{
+	left: 73%;
+}
+
+.jayNav .bottomNav .parentNav .childrenNav::after{
+	content: " ";
+    position: absolute;
+    bottom: 100%;  /* At the top of the tooltip */
+    left: 13%;
+    margin-left: -5px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent gray transparent;
+	text-shadow: 0px 1px 5px lightgray;
+}
+.jayNav .bottomNav .parentNav .childrenNav .subject{
+	display: inline-block;
+	vertical-align: top;
+	
+}
+
+.jayNav .bottomNav .parentNav .childrenNav .subject a{
+	font-size: 15px;
+	font-weight: bold;
+	color: #FF91B8;
+	transition: all .7s ease;
+	padding: 8px 15px;
+	display: inline-block;
+}
+.jayNav .bottomNav .parentNav .childrenNav .subject a:hover{
+	background-color: lightgray;
+}
+ .subject i{
+	display:none;
+	margin-left: 5px;
+}
+
+.jayNav .bottomNav .parentNav .childrenNav .grandsonNav  a{
+	
+	color: white;
+	transition: all .7s ease;
+	
+}
+.jayNav .bottomNav .parentNav .childrenNav .grandsonNav a:hover{
+	background-color: #4FC1FF;
+	color: white;
+}
+
+.navSearch button{
+	width: 20px;
+	height: 20px;
+	border: none;
+	background-color:rgba(221, 221, 221, 0);
+	margin-left: -30px;
+	font-size: 12px;
+	margin-right: 10px;
+	
+}
+.navSearch button i{
+	display: inline-block;
+	margin-bottom: -10px;
+} 
+.navSearch 
+i{
+	width: 25px;
+	font-size: 20px;
+	float: right;
+	display: none;
+}
+.topNav{
+	text-align: right;
+}
+.topNav .navSearch {
+	display: inline-block;
+    margin-left: 0px;
+	text-align: right;
+	
+}
+.topNav .navSearch input{
+	padding:8px 10px;
+	width:250px;
+	background-color:#EFEFEF;
+	border:none;
+    text-align: left;
+    font-size: 12px;
+}
+
+.proBox{
+	border-bottom: 1px solid white;
+	padding-bottom: 10px
+}
+.proImg{
+    width: 100px;
+    height:80px;
+    background-size: cover;
+    background-position: center;
+    display: inline-block;
+    
+    
+    
+}
+.proInfo{
+    display: inline-block;
+    vertical-align: top;
+    word-wrap: break-word;
+	
+	
+}
+.proInfo p{
+	width: 160px;
+	color: white;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	text-align: left;
+	line-height: 26px;
+	font-size: 14px;
+	
+}
+.proSubjet{
+    line-height: 23px;
+    font-weight: bold;
+    color:  #FFF;
+    margin-left: 5px;
+    text-align: left;
+	font-size: 14px;
+}
+
+.proPrice{
+	color: white;
+	text-align: left;
+    margin-top: 10px;
+	font-size: 14px;
+}
+.proPrice .enPrice{
+	color: white;
+	float: right;
+}
+.proBtn{
+	float: left;
+	width: 46%;
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+	margin: 10px 5px 0px 5px;
+	background-color: #4FC1FF;
+	color: white;
+	padding: 8px 0%;
+	transition: all .7s ease;
+	font-size: 14px;
+} 
+.proBtn:hover{
+	background-color: #FF91B8;
+} 
+
+.moblieCover{
+	position: fixed;
+	top:0px;
+	left: 0px;
+	width: 94%;
+	height: 100%;
+	padding: 3%;
+	background-color: rgba(0, 0, 0, 0.87);
+	z-index: 999
+}
+
+.moblieCover .bt-times{
+	position: fixed;
+	top: 15px;
+	right: 0px;
+	color: white;
+	width: 30px;
+	height: 30px;
+	display:block;
+}
+
+.moblieCover .mobileSearch{
+	position: relative;
+	z-index: 9
+}
+.moblieCover ul li a{
+	padding: 10px 15px;
+	display: block;
+	color: white;
+	font-size: 14px;
+}
+.moblieCover .mobileSearch{
+	margin-top: 50px;
+} 
+.moblieCover .mobileSearch input{
+	width: 90%;
+	color: white;
+	font-size: 18px;
+	background-color: rgba(240, 248, 255, 0);
+	border: none;
+	border-bottom:1px solid white
+}
+.moblieCover .mobileSearch button{
+	background-color: rgba(240, 248, 255, 0);
+	border: none;
+}
+.moblieCover .mobileSearch button i{
+	
+	color: white;
+}
+.moblieCover .keyword{
+	margin-top: 20px;
+	width: 90%;
+	display: block;
+}
+.moblieCover .keyword .solid{
+	width: 30%;
+	border-top:1px solid lightgray;
+	display: inline-block;
+	vertical-align:middle;
+	
+}
+.moblieCover .keyword  .keyFont{
+	width: 40%;
+	display: inline-block;
+	text-align: center;
+	font-size: 14px;
+	color: lightgray;
+}
+
+.moblieCover .keyword p{
+	margin-bottom: 20px;
+}
+.moblieCover .keyword a{
+	padding: 5px 10px;
+	display: inline-block;
+	margin:1% .5%;
+	border: 1px solid #EFEFEF;
+	color: #EFEFEF;
+	font-size: 14px;
+}
+
+/****NavEnd**************************************************************************/
+
+
+
+
+
+
+/****NavEnd**************************************************************************/
+
+
+#footerBar{
+	width: 100%;
+	height: 28px;
+	padding-top: 10px;
+	color: white;
+	text-align: center;
+	background-color: #4FC1FF;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 16px;
+	margin-bottom: 30px;
+	
+	
+}
+#footerBar i{
+	font-size: 16px;
+	margin-left: 5px;
+	color: white;
+	
+}
+#layout footer{
+	width: 100%;
+	background: #5C5C5C;
+	font-size: 14px;
+	position: fixed;
+	left: 0px;
+	z-index: 3
+	
+}
+footer article{
+	width: 1200px;
+	margin: auto;
+	margin-bottom: 20px
+}
+footer article ul{
+	width:24%;
+	display: inline-block;
+	vertical-align: top;
+	text-align: left;
+	
+}
+footer article ul li a{
+	color: white;
+	margin-bottom: 20px;
+	display: block;
+	transition: all .7s ease;
+}
+footer article ul li p,
+footer article ul li span{
+	color: white;
+	margin-bottom: 15px;
+	font-weight: normal;
+}
+footer article ul li a:hover{
+	color: #ffaeca
+}
+footer article ul li .social{
+	display: inline-block;
+	margin-right: 5px;
+}
+#copyright{
+	padding-top: 10px;
+	height: 20px;
+	text-align: center;
+	background: #F2F2F2;
+	font-size: 12px;
+	margin-top: -0px
+}
+.blankH20{
+	height: 20px;
+}
+.blankH60{
+	height: 60px;
+}
+
+/*******RWD start**********************************************/
+@media screen and (max-width: 940px) {
+	nav .jayNav{
+		width: 100%;
+		display: inline-block;
+		vertical-align: top;
+		float: right;
+	}
+	nav .logo{
+		position: fixed;	
+		top:-5px;
+		left: 20px;
+
+	}
+	.jayNav .bottomNav{
+		margin-top: 30px;
+	}
+
+}
+
+@media screen and (max-width: 768px) {
+	.topNav .navSearch input{
+		width: 20px;
+		display: inline-block;
+	}
+	.topNav .navSearch input,
+	.topNav .navSearch button,
+	.jayNav .bottomNav .member{
+		display: none;
+	}
+	.jayNav .bottomNav .parentNav{
+		width: 19%;
+	}
+	.topNav .navSearch{
+		width: 210px;
+		margin-right: 5px;
+	}
+	.topNav .navSearch i{
+		font-size: 25px;
+		margin-left: 25px;
+		display: inline-block;
+		cursor: pointer;
+	}
+	.navSearch button i{
+		font-size: 25px;
+		margin-bottom: -0px;
+	}
+	.navSearch button{
+		font-size: 30px;
+		float: right;
+		margin: 0px 0px 0px 30px
+	}
+	.topNav{
+		text-align: right;
+		position: relative;
+		top:10px;
+	}
+	.jayNav .bottomNav .parentNav .childrenNav .subject{
+		display:block;
+	}
+	.subject i{
+		display:inline-block;
+		margin-left: 5px;
+	}
+	
+}
+
+@media screen and (max-width: 530px) {
+	.parentNav img{
+		display: none;	
+	}
+	.moblieCover .keyword  .keyFont{
+		font-size: 12px;
+	}
+
+}
+@media screen and (max-width: 460px) {
+	.jayNav .bottomNav .parentNav{
+		width: 18.5%;
+	}
+	.jayNav .bottomNav{
+		font-size: 13px
+
+
+	}
+
+}

@@ -1,5 +1,5 @@
 class Admin::ApplicationController < ApplicationController
-  layout 'admin/layouts/application'
+  layout :resolve_layout
   after_filter :prepare_unobtrusive_flash
   before_action :configure_permitted_parameters, if: :devise_controller?
   before_action :authenticate_admin_supervisor! # all operation must after login
@@ -14,4 +14,12 @@ class Admin::ApplicationController < ApplicationController
     devise_parameter_sanitizer.permit(:account_update, keys: [:nickname])
   end
 
+  def resolve_layout
+    case action_name
+      when 'show'
+        'admin/layouts/fancybox'
+      else
+        'admin/layouts/application'
+    end
+  end
 end
