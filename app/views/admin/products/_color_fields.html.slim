@@ -20,7 +20,7 @@
               .box-tools
                 = link_to_add_association '新增', f, :pictures, partial: 'picture_fields', class: "btn btn-info btn-sm", \
                     "data-association-insertion-node" => ".sortable#f_new_sub_product_colors_pictures_#{m_id}", "data-association-insertion-method" => :append
-            .box-body.no-padding
+            .box-body
               .row
                 .col-xs-12.col-md-2.col-lg-2
                   = f.input :color_pic, wrapper: :no_label, as: :image_preview
@@ -29,7 +29,7 @@
                   = f.simple_fields_for :pictures do |item|
                     = render 'picture_fields', :f => item
 
-          .box[style="padding:0px "]
+          .box[style="padding:0px 6px"]
             .box-header
               h6.box-title
                 | 細項
