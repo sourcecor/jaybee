@@ -55,11 +55,11 @@
 
     .tab-content.no-padding.collapse#product_info
       .tab-pane.active#item-brief
-        = f.input :size_info, as: :ckeditor, wrapper: :bootstrap
+        = f.input :brief, as: :ckeditor , wrapper: :bootstrap
       .tab-pane#item-spec
         = f.input :spec, as: :ckeditor, wrapper: :bootstrap
       .tab-pane#item-size
-        = f.input :brief, as: :ckeditor , wrapper: :bootstrap
+        = f.input :size_info, as: :ckeditor, wrapper: :bootstrap
     /= content_for :footer
   .box
     .box-header.with-border
