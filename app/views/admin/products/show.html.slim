@@ -31,8 +31,12 @@ link[rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"]
         ul.proSize
           li
             - @product.sub_product_colors.each do | item |
-              input.proColor[style="background-image:url(#{image_path(item.color_pic.thumb.url)})" type="button"]
-            /input.proColor.disabled[style="background-image:url(#{image_path('products/color0.jpg')})" type="button" disabled]
+              - qtyamt = item.sub_products.collect{|sub| sub.qty}.sum()
+              - if qtyamt == 0
+                input.proColor.disabled[style="background-image:url(#{image_path(item.color_pic.thumb.url)})" type="button" disabled]
+              - else
+                input.proColor[style="background-image:url(#{image_path(item.color_pic.thumb.url)})" type="button" v-on:click="color_selected" ]
+
           li
             input.proChart[type="button" value="2"]
             input.proChart[type="button" value="4"]
@@ -55,15 +59,31 @@ link[rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"]
           i.btr.bt-shopping-cart.bt-sm
           | 加入購物車
   article.infoBox
-      .infoTab
-        input#infoPhoto[type="button" value="圖文說明"]
-        input#infoProduct[type="button" value="商品說明"]
-        input#infoSize[type="button" value="尺寸說明"]
-      .infoContent
-        .infoPhoto
-          - @product.profiles.each do |item|
-            = image_tag item.asset.url
-        .infoProduct
-          = @product.spec.html_safe
-        .infoSize
-          = @product.size_info.html_safe
+    .infoTab
+      input#infoPhoto[type="button" value="圖文說明"]
+      input#infoProduct[type="button" value="商品說明"]
+      input#infoSize[type="button" value="尺寸說明"]
+    .infoContent
+      .infoPhoto
+        - @product.profiles.each do |item|
+          = image_tag item.asset.url
+      .infoProduct
+        = @product.spec.html_safe
+      .infoSize
+        = @product.size_info.html_safe
+
+javascript:
+  var vm = new Vue({
+    el: "ul.proSize",
+    ready: function() {
+      this.fetch_events();
+    },
+    methods: {
+      fetch_events: function(){
+        alert('ready');
+      },
+      color_selected: function(e) {
+        alert(e.target.tagName)
+      }
+    }
+  })

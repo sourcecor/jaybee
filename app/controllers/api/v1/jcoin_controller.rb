@@ -1,7 +1,4 @@
-class Api::V1::JcoinController < ApplicationController
-  # http_basic_authenticate_with :name => "myfinance", :password => "credit123"
-  skip_before_filter :authenticate_user! # 移除認證
-  skip_before_filter :verify_authenticity_token, :only => [:fetch, :trans]
+class Api::V1::JcoinController < Api::V1::ApplicationController
   before_filter :fetch_jcard, :except => [:index] # 執行動作前, 先查詢卡號
   #
   def fetch

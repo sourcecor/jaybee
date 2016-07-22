@@ -77,6 +77,7 @@ Rails.application.routes.draw do
     # (app/controllers/admin/products_controller.rb)
   end
   # jCoin API
+  # rails g controller api/v1/your_controller  --no-helper --no-assets --no-controller-specs --no-view-specs
   # Rails API 參考https://codedecoder.wordpress.com/2013/02/21/sample-rest-api-example-in-rails/
   # call api sample
   # http://localhost:3000/api/v1/jcard/card_id_123456.json
@@ -85,6 +86,11 @@ Rails.application.routes.draw do
     scope :controller => 'jcoin' do
       get 'jcard/:id' => :fetch
       post 'jcard/:id' => :trans
+    end
+
+    scope :controller => 'product' do
+      get 'product_color/:id' => :color
+      get 'product_size/:id'  => :size
     end
   end
 end
