@@ -17,6 +17,7 @@ public/uploads
 vendor/assets/bower_components
 Contact GitHub API Training Shop Blog About
 _mac
+codestyles
 inspection
 quicklists
 IntelliLang.xml
@@ -32,3 +33,4 @@ ide.general.xml
 ignore.xml
 ui.lnf.xml
 web-browsers.xml
+code.style.schemes.xml
