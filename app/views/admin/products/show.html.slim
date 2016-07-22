@@ -6,17 +6,16 @@ link[rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"]
   article.products
     .detail
       .detailImg
-        - @product.sub_product_colors.each do | item |
-          = image_tag image_path(item.pictures.first.asset.thumb.url), class: "mainImg"
-        /= image_tag "products/detail1.jpg", class: "mainImg"
+        img[v-bind:src="item_pic" class="mainImg"]
       form.detailInfo
         ul
           li.proBrand
             = @product.caption
+            | {{item_spec}}
           li.proTitle
             = @product.sub_caption
           li.proNum
-            | 商品編號：#{@product.itemcode}
+            | 商品編號：{{itemcode}}
           li.proMoney
             p.before
               | #{"NT$" << @product.unit_price.to_i.to_s if (@product.unit_price.to_i > @product.sale_price) }
@@ -30,19 +29,11 @@ link[rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"]
               i.btr.bt-angles-right.bt-sm
         ul.proSize
           li
-            - @product.sub_product_colors.each do | item |
-              - qtyamt = item.sub_products.collect{|sub| sub.qty}.sum()
-              - if qtyamt == 0
-                input.proColor.disabled[style="background-image:url(#{image_path(item.color_pic.thumb.url)})" type="button" disabled]
-              - else
-                input.proColor[style="background-image:url(#{image_path(item.color_pic.thumb.url)})" type="button" v-on:click="color_selected" ]
-
+            span.proColor[ v-bind:class="{ 'disabled': color.qty_amt==0 }" v-for="color in colors"]
+              input[:disabled="color.qty_amt==0" v-bind:style="{'background-image':'url(' + color.color_pic + ')'}" type="button" v-on:click="color_selected(color.id)" ]
           li
-            input.proChart[type="button" value="2"]
-            input.proChart[type="button" value="4"]
-            input.proChart[type="button" value="6"]
-            input.proChart[type="button" value="8"]
-            input.proChart.disabled[type="button" value="10" disabled]
+            span.proChart[ v-bind:class="{ 'disabled': item.qty==0 }" v-for="item in items"]
+              input[type="button" value="{{item.size}}" :disabled="item.qty==0" v-on:click="size_selected(item.itemcode, item.size, item.qty)"]
             a.chart[href="javascript:;"]
               | 查看尺寸表
         .number-input-area
@@ -50,7 +41,7 @@ link[rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"]
             button.btn.js-num-down[type="button" aria-controls="unique_ID"]
               span[aria-hidden="true"]
                 i.btr.bt-minus.bt-sm
-          input#unique_ID.js-numbler[type="number" name="unique_ID" min="1" step="1" value="1"]
+          input#unique_ID.js-numbler[type="number" name="unique_ID" min="0" step="1" max="{{max_qty}}" value=""  v-model="qty" :disabled="size==''"]
           .btn-pill-area.btn-pill-area--numbers
             button.btn.js-num-up[type="button" aria-controls="unique_ID"]
               span[aria-hidden="true"]
@@ -74,16 +65,52 @@ link[rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"]
 
 javascript:
   var vm = new Vue({
-    el: "ul.proSize",
+    el: ".detail",
+    data: {
+      itemcode: "尚未選擇尺寸",
+      item_pic: "",
+      item_spec: "",
+      color: "",
+      size: "",
+      product: {},
+      colors: {},
+      items: {},
+      qty: "",
+      max_qty: 0
+    },
     ready: function() {
-      this.fetch_events();
+      this.fetch_colors();
     },
     methods: {
-      fetch_events: function(){
-        alert('ready');
+      fetch_colors: function(){
+        this.$http.get("/api/v1/product/#{params[:id]}.jbuilder").then((response)=>{
+          this.$set('product', response.data.product);
+          this.$set('colors', response.data.colors);
+          this.$set('item_pic', this.colors[0].item_pic);
+        }, (response) =>{
+          console.log(response);
+        });
       },
       color_selected: function(e) {
-        alert(e.target.tagName)
+        that = this;
+        this.colors.filter(function (item) {
+            if (item.id == e) {
+              that.$set('item_spec', String.format(" ( {0})", item.color));
+              that.$set('item_pic', item.item_pic);
+              that.$set('color', item.color);
+              that.$set('size', "");
+              that.$set('itemcode', "尚未選擇尺寸");
+              that.$set('items', item.items);
+              that.$set('qty', "");
+            }
+        });
+      },
+      size_selected: function(itemcode, size, max_qty){
+        this.itemcode = itemcode;
+        this.size = size;
+        this.item_spec = String.format(" ( {0} -{1})", this.color, size);
+        this.qty = 1;
+        this.max_qty = max_qty;
       }
     }
-  })
+  });

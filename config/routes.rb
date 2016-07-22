@@ -89,6 +89,7 @@ Rails.application.routes.draw do
     end
 
     scope :controller => 'product' do
+      get 'product/:id' => :index
       get 'product_color/:id' => :color
       get 'product_size/:id'  => :size
     end
