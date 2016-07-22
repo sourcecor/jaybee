@@ -19,7 +19,7 @@ link[rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"]
             | 商品編號：#{@product.itemcode}
           li.proMoney
             p.before
-              | #{"NT$" << @product.unit_price.to_i.to_s if (@product.unit_price.to_i != @product.sale_price) }
+              | #{"NT$" << @product.unit_price.to_i.to_s if (@product.unit_price.to_i > @product.sale_price) }
             p.after
               span.en
                 | NT$
