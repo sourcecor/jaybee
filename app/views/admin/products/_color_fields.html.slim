@@ -12,23 +12,24 @@
       = f.input :id, as: :hidden, :input_html => { :data => {:id => "f_new_sub_product_colors_ #{m_id}"} }
       = f.input :seq, as: :hidden, :input_html => { :data => {:seq => "f_new_sub_product_colors_ #{m_id}"} }
       .row
-        .col-xs-12.col-md-1.col-lg-1
-          = f.input :color_pic, wrapper: :no_label, as: :image_preview
-          = f.input :color, wrapper: :no_label, placeholder: "色名"
-        .col-xs-12.col-md-11.col-lg-11
+        .col-xs-12.col-md-12.col-lg-12
           .box[style="padding:0px 6px"]
             .box-header
               h6.box-title
-                | 主圖
+                | 色票 / 主圖
               .box-tools
                 = link_to_add_association '新增', f, :pictures, partial: 'picture_fields', class: "btn btn-info btn-sm", \
-                    "data-association-insertion-node" => ".row.sortable#f_new_sub_product_colors_pictures_#{m_id}", "data-association-insertion-method" => :append
-            .box-body
-              .row.sortable[id="f_new_sub_product_colors_pictures_#{m_id}"]
-                = f.simple_fields_for :pictures do |item|
-                  = render 'picture_fields', :f => item
+                    "data-association-insertion-node" => ".sortable#f_new_sub_product_colors_pictures_#{m_id}", "data-association-insertion-method" => :append
+            .box-body.no-padding
+              .row
+                .col-xs-12.col-md-2.col-lg-2
+                  = f.input :color_pic, wrapper: :no_label, as: :image_preview
+                  = f.input :color, wrapper: :no_label, placeholder: "色名"
+                .col-xs-12.col-md-10.col-lg-10.sortable[id="f_new_sub_product_colors_pictures_#{m_id}"]
+                  = f.simple_fields_for :pictures do |item|
+                    = render 'picture_fields', :f => item
 
-          .box[style="padding:0px 6px"]
+          .box[style="padding:0px "]
             .box-header
               h6.box-title
                 | 細項

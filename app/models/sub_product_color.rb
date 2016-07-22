@@ -4,7 +4,7 @@ class SubProductColor < ActiveRecord::Base
   mount_uploader :color_pic, PictureUploader
   # 主圖
   has_many :pictures, -> { order(:seq) }, as: :imageable, class_name: "Picture", dependent: :destroy
-  accepts_nested_attributes_for :pictures
+  accepts_nested_attributes_for :pictures, allow_destroy: true
   #產品明細
   has_many :sub_products, -> { where(:deleted_at => nil).order(:seq) }, dependent: :destroy
   accepts_nested_attributes_for :sub_products, allow_destroy: true

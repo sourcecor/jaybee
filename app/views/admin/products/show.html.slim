@@ -6,9 +6,9 @@ link[rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"]
   article.products
     .detail
       .detailImg
-        /- @product.
-        = image_tag "products/detail0.jpg", class: "mainImg"
-        = image_tag "products/detail1.jpg", class: "mainImg"
+        - @product.sub_product_colors.each do | item |
+          = image_tag image_path(item.pictures.first.asset.thumb.url), class: "mainImg"
+        /= image_tag "products/detail1.jpg", class: "mainImg"
       form.detailInfo
         ul
           li.proBrand
@@ -31,7 +31,7 @@ link[rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"]
         ul.proSize
           li
             - @product.sub_product_colors.each do | item |
-              input.proColor[style="background-image:url(#{image_path(item.color_pic.url)})" type="button"]
+              input.proColor[style="background-image:url(#{image_path(item.color_pic.thumb.url)})" type="button"]
             /input.proColor.disabled[style="background-image:url(#{image_path('products/color0.jpg')})" type="button" disabled]
           li
             input.proChart[type="button" value="2"]
