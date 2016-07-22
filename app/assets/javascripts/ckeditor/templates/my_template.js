@@ -14,7 +14,7 @@ CKEDITOR.addTemplates(
           image: 'sizing.png',//圖片
           description: '簡易尺寸表', //樣板描述
           //自訂樣板內容
-          html: "<div><table border='1' class='size_table'>" +
+          html: "<table border='1' class='size_table'>" +
           "<tr>" +
           "<th class='tg-baqh' colspan='7'>商品尺寸(單位公分)</th>" +
           "</tr>" +
@@ -81,7 +81,7 @@ CKEDITOR.addTemplates(
           "<td class='tg-baqh'>〇</td>" +
           "<td class='tg-baqh'>〇</td>" +
           "</tr>" +
-          "</table></div>"
+          "</table>"
         }, {
           title: '試穿報告',
           image: 'try-report.png',

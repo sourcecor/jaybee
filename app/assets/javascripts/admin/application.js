@@ -98,7 +98,7 @@ function initSortable(e) {
           }
           i++;
         }
-        return $.ajax({
+        $.ajax({
           type: "patch",
           url: "/admin/pictures/update_sequence",
           data: {
