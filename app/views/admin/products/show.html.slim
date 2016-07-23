@@ -41,7 +41,7 @@ link[rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"]
             button.btn.js-num-down[type="button" aria-controls="unique_ID"]
               span[aria-hidden="true"]
                 i.btr.bt-minus.bt-sm
-          input#unique_ID.js-numbler[type="number" name="unique_ID" min="0" step="1" max="{{max_qty}}" v-model="qty" :disabled="size==''"]
+          input#unique_ID.js-numbler[type="number" name="unique_ID" min="0" step="1" max="{{max_qty}}" maxlength="2" v-model="qty" :disabled="size==''"]
           .btn-pill-area.btn-pill-area--numbers
             button.btn.js-num-up[type="button" aria-controls="unique_ID"]
               span[aria-hidden="true"]
@@ -104,7 +104,6 @@ javascript:
         this.$http.get("/api/v1/product/#{params[:id]}.jbuilder").then((response)=>{
           this.$set('product', response.data.product);
           this.$set('colors', response.data.colors);
-          this.$set('item_pic', this.colors[0].item_pic);
         }, (response) =>{
           console.log(response);
         });
