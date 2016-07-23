@@ -35,7 +35,7 @@ link[rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"]
             span.proChart[ :class="{ 'disabled': item.qty==0 }" v-for="item in items"]
               input[type="button" value="{{item.size}}" :disabled="item.qty==0" @click="size_selected(item.itemcode, item.size, item.qty)"]
             a.chart[href="javascript:;"]
-              | 查看尺寸表 {{qty}}
+              | 查看尺寸表
         .number-input-area
           .btn-pill-area.btn-pill-area--numbers
             button.btn.js-num-down[type="button" aria-controls="unique_ID"]
@@ -84,9 +84,11 @@ javascript:
     watch: {
       colors: function(val, oldVal){
         for(i in val){
-          if(val[i].qty_amt > 0)
+          if(val[i].qty_amt > 0) {
             $('.proColor').eq(i).find('input').click();
-        };
+            break;
+          }
+        }
       }
     },
     computed: {
