@@ -238,3 +238,6 @@
   font-family: 微軟正黑體;
   padding: 15px;
 }
+article.products {
+  min-height: 450px;
+}
