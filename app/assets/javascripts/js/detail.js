@@ -19,7 +19,7 @@ $(document).ready(function () {
     $(".infoSize").fadeIn();
     $(".infoContent div:not(.infoSize)").fadeOut(0);
     $("body").animate({scrollTop: "400px"});
-  })
+  });
 
   // $(".mainImg:not(.mainImg:eq(0))").fadeOut(0);
   // for (i = 0; i < $(".proColor").length; i++) {
@@ -41,4 +41,4 @@ $(document).ready(function () {
     $(this).siblings().removeClass("active");
   })
 
-})
+});

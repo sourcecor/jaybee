@@ -29,19 +29,19 @@ link[rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"]
               i.btr.bt-angles-right.bt-sm
         ul.proSize
           li
-            span.proColor[ v-bind:class="{ 'disabled': color.qty_amt==0 }" v-for="color in colors"]
-              input[:disabled="color.qty_amt==0" v-bind:style="{'background-image':'url(' + color.color_pic + ')'}" type="button" v-on:click="color_selected(color.id)" ]
+            span.proColor[ :class="{ 'disabled': color.qty_amt==0 }" v-for="color in colors"]
+              input[:disabled="color.qty_amt==0" :style="{'background-image':'url(' + color.color_pic + ')'}" type="button" @click="color_selected(color.id)"]
           li
-            span.proChart[ v-bind:class="{ 'disabled': item.qty==0 }" v-for="item in items"]
-              input[type="button" value="{{item.size}}" :disabled="item.qty==0" v-on:click="size_selected(item.itemcode, item.size, item.qty)"]
+            span.proChart[ :class="{ 'disabled': item.qty==0 }" v-for="item in items"]
+              input[type="button" value="{{item.size}}" :disabled="item.qty==0" @click="size_selected(item.itemcode, item.size, item.qty)"]
             a.chart[href="javascript:;"]
-              | 查看尺寸表
+              | 查看尺寸表 {{qty}}
         .number-input-area
           .btn-pill-area.btn-pill-area--numbers
             button.btn.js-num-down[type="button" aria-controls="unique_ID"]
               span[aria-hidden="true"]
                 i.btr.bt-minus.bt-sm
-          input#unique_ID.js-numbler[type="number" name="unique_ID" min="0" step="1" max="{{max_qty}}" value=""  v-model="qty" :disabled="size==''"]
+          input#unique_ID.js-numbler[type="number" name="unique_ID" min="0" step="1" max="{{max_qty}}" v-model="qty" :disabled="size==''"]
           .btn-pill-area.btn-pill-area--numbers
             button.btn.js-num-up[type="button" aria-controls="unique_ID"]
               span[aria-hidden="true"]
@@ -79,10 +79,26 @@ javascript:
       max_qty: 0
     },
     ready: function() {
-      this.fetch_colors();
+      this.fetch_product();
+    },
+    watch: {
+      colors: function(val, oldVal){
+        for(i in val){
+          if(val[i].qty_amt > 0)
+            $('.proColor').eq(i).find('input').click();
+        };
+      }
+    },
+    computed: {
+      item_spec: function(){
+        if(this.size != "")
+          return String.format(" ( {0} -{1})", this.color, this.size);
+        else
+          return String.format(" ( {0})", this.color);
+      }
     },
     methods: {
-      fetch_colors: function(){
+      fetch_product: function(){
         this.$http.get("/api/v1/product/#{params[:id]}.jbuilder").then((response)=>{
           this.$set('product', response.data.product);
           this.$set('colors', response.data.colors);
@@ -95,7 +111,6 @@ javascript:
         that = this;
         this.colors.filter(function (item) {
             if (item.id == e) {
-              that.$set('item_spec', String.format(" ( {0})", item.color));
               that.$set('item_pic', item.item_pic);
               that.$set('color', item.color);
               that.$set('size', "");
@@ -108,7 +123,6 @@ javascript:
       size_selected: function(itemcode, size, max_qty){
         this.itemcode = itemcode;
         this.size = size;
-        this.item_spec = String.format(" ( {0} -{1})", this.color, size);
         this.qty = 1;
         this.max_qty = max_qty;
       }
