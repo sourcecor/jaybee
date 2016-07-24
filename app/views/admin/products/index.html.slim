@@ -6,6 +6,11 @@
   | 說明
 
 = extends "admin/layouts_partial/_box_grid" do
+  = content_for :title do
+    - simple_form_for :product, url: admin_products_path, method: :get, html: {class: "form-inline"} do |f|
+      = f.input :caption, wrapper: :search, label: "品名"
+      = f.input :category, wrapper: :search, label: "類別"
+      = button_tag "查詢", class:"btn btn-sm btn-default"
   = content_for :tools do
     - link_to('新增', new_admin_product_path, class: 'btn btn-primary btn-sm',)
   = content_for :body do

@@ -173,6 +173,15 @@ SimpleForm.setup do |config|
     b.use :placeholder
     b.use :input, class: 'form-control'
   end
+
+  config.wrappers :search, tag: 'div', class: 'form-group', html: {style: "margin-right:5px"} do |b|
+    b.use :html5
+    b.use :placeholder
+    b.wrapper tag: 'div', class: 'input-group input-group-sm' do |ba|
+      ba.use :label, class: 'input-group-addon'
+      ba.use :input, class: 'form-control'
+    end
+  end
   # Wrappers for forms and inputs using the Bootstrap toolkit.
   # Check the Bootstrap docs (http://getbootstrap.com)
   # to learn about the different styles for forms and inputs,
