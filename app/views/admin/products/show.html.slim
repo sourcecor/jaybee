@@ -29,11 +29,11 @@ link[rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"]
               i.btr.bt-angles-right.bt-sm
         ul.proSize
           li
-            span.proColor[ :class="{ 'disabled': color.qty_amt==0 }" v-for="color in colors"]
-              input[:disabled="color.qty_amt==0" :style="{'background-image':'url(' + color.color_pic + ')'}" type="button" @click="color_selected(color.id)"]
+            /span[ :class="{ 'disabled': color.qty_amt==0 }" v-for="color in colors"]
+            input.proColor[:class="{ 'disabled': color.qty_amt==0 }" :disabled="color.qty_amt==0" :style="{'background-image':'url(' + color.color_pic + ')'}" type="button" @click="color_selected(color.id)" v-for="color in colors"]
           li
-            span.proChart[ :class="{ 'disabled': item.qty==0 }" v-for="item in items"]
-              input[type="button" value="{{item.size}}" :disabled="item.qty==0" @click="size_selected(item.itemcode, item.size, item.qty)"]
+            /span.proChart[ :class="{ 'disabled': item.qty==0 }" v-for="item in items"]
+            input.proChart[:class="{ 'disabled': item.qty==0 }" type="button" value="{{item.size}}" :disabled="item.qty==0" @click="size_selected(item.itemcode, item.size, item.qty)" v-for="item in items"]
             a.chart[href="javascript:;"]
               | 查看尺寸表
         .number-input-area
@@ -41,7 +41,7 @@ link[rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"]
             button.btn.js-num-down[type="button" aria-controls="unique_ID"]
               span[aria-hidden="true"]
                 i.btr.bt-minus.bt-sm
-          input#unique_ID.js-numbler[type="number" name="unique_ID" min="0" step="1" max="{{max_qty}}" maxlength="2" v-model="qty" :disabled="size==''"]
+          input#unique_ID.js-numbler[type="number" name="unique_ID" min="1" step="1" max="{{max_qty}}" maxlength="2" v-model="qty" :disabled="size==''"]
           .btn-pill-area.btn-pill-area--numbers
             button.btn.js-num-up[type="button" aria-controls="unique_ID"]
               span[aria-hidden="true"]
@@ -85,7 +85,7 @@ javascript:
       colors: function(val, oldVal){
         for(i in val){
           if(val[i].qty_amt > 0) {
-            $('.proColor').eq(i).find('input').click();
+            $('.proColor').eq(i).click();
             break;
           }
         }

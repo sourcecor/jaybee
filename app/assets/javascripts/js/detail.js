@@ -32,12 +32,14 @@ $(document).ready(function () {
 
   $(document).on('click', ".proColor", function (e) {
     $(this).addClass("active");
+    // $(this).find('input').click();
     $(this).siblings().removeClass("active");
     $(".proChart").removeClass("active");
   })
 
   $(document).on('click', ".proChart", function (e) {
     $(this).addClass("active");
+    // $(this).find('input').click();
     $(this).siblings().removeClass("active");
   })
 
