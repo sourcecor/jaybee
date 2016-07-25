@@ -35,18 +35,18 @@ link[rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"]
             /span.proChart[ :class="{ 'disabled': item.qty==0 }" v-for="item in items"]
             input.proChart[:class="{ 'disabled': item.qty==0 }" type="button" value="{{item.size}}" :disabled="item.qty==0" @click="size_selected(item.itemcode, item.size, item.qty)" v-for="item in items"]
             a.chart[href="javascript:;"]
-              | 查看尺寸表
+              | 查看尺寸表{{qty}}
         .number-input-area
           .btn-pill-area.btn-pill-area--numbers
-            button.btn.js-num-down[type="button" aria-controls="unique_ID"]
+            button.btn.js-num-down[type="button" aria-controls="unique_ID" :disabled="size==''"]
               span[aria-hidden="true"]
                 i.btr.bt-minus.bt-sm
-          input#unique_ID.js-numbler[type="number" name="unique_ID" min="1" step="1" max="{{max_qty}}" maxlength="2" v-model="qty" :disabled="size==''"]
+          input#unique_ID.js-numbler[type="number" name="unique_ID" min="0" step="1" :max="max_qty" :disabled="size==''" v-model="qty" v-el:input-qty]
           .btn-pill-area.btn-pill-area--numbers
-            button.btn.js-num-up[type="button" aria-controls="unique_ID"]
+            button.btn.js-num-up[type="button" aria-controls="unique_ID" :disabled="size==''"]
               span[aria-hidden="true"]
                 i.btr.bt-plus.bt-sm
-        button.button[type="submit"]
+        button.button[type="submit" :disabled="qty<=0"]
           i.btr.bt-shopping-cart.bt-sm
           | 加入購物車
   article.infoBox
@@ -75,7 +75,7 @@ javascript:
       product: {},
       colors: {},
       items: {},
-      qty: "",
+      qty: 0,
       max_qty: 0
     },
     ready: function() {
@@ -89,6 +89,11 @@ javascript:
             break;
           }
         }
+      },
+      size: function(val, oldVal){
+        $('.js-num-down').unbind();
+        $('.js-num-up').unbind();
+        $(".js-numbler").Numbler();
       }
     },
     computed: {
@@ -128,4 +133,8 @@ javascript:
         this.max_qty = max_qty;
       }
     }
+  });
+
+  $('#unique_ID').change(function(){
+    console.log('change');
   });

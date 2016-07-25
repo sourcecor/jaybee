@@ -2,7 +2,7 @@ class Admin::ProductsController < Admin::ApplicationController
   before_action :set_record, :only => [:edit, :update, :show, :destroy]
 
   def index
-    @products_grid = initialize_grid(Product.not_deleted)
+    @products_grid = initialize_grid(Product.order(id: :desc).not_deleted)
   end
 
   def new
