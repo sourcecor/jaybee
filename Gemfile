@@ -42,6 +42,8 @@ gem 'font-awesome-sass',  '~> 4.3'
 
 gem 'bootstrap-datepicker-rails'
 
+gem 'jquery-datetimepicker-rails'
+
 gem 'momentjs-rails'
 
 gem 'jquery-ui-rails'

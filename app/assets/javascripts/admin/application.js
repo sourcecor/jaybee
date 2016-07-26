@@ -33,6 +33,7 @@
 //= require ckeditor/init
 //= require fancybox
 //= require sync
+//= require jquery.datetimepicker
 //= require_tree .
 
 
@@ -114,6 +115,7 @@ function initSortable(e) {
 };
 
 $(function () {
+  $(":input").inputmask();
   $(".fancybox").fancybox({
     'helpers':{
       'overlay':{

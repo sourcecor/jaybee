@@ -50,7 +50,7 @@ class Admin::ProductsController < Admin::ApplicationController
   end
   # strong params
   def product_params
-    params.require(:product).permit(:id, :caption, :sub_caption, :brief, :size_info, :spec, :itemcode, :unit_price, :sale_price, :cost,
+    params.require(:product).permit(:id, :caption, :sub_caption, :brief, :size_info, :spec, :itemcode, :unit_price, :sale_price, :cost, :started_at, :stoped_at,
                                     { profiles_attributes: [ :id, :asset_cache, :asset, :seq, :_destroy ] },
                                     { sub_product_colors_attributes: [:id, :color, :color_pic, :color_pic_cache, :seq, :_destroy,
                                                                       { pictures_attributes: [ :id, :asset_cache, :asset, :seq, :_destroy ] },

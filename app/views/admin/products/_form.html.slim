@@ -23,6 +23,10 @@
         .col-xs-12.col-md-12.col-lg-12
           = f.association :categories, collection: cate_group, as: :grouped_select, \
             :group_method => :last, :group_label_method => :first, input_html: { multiple: true }
+        .col-xs-12.col-md-6.col-lg-6
+          = f.input :started_at, as: :string, input_html: { placeholder: "開賣日", "data-inputmask"=>"'mask': '9999/99/99 99:99'" }
+        .col-xs-12.col-md-6.col-lg-6
+          = f.input :stoped_at, as: :string, input_html: { placeholder: "結束日", "data-inputmask"=>"'mask': '9999/99/99 99:99'" }
   .box.collapsed-box
     .box-header.with-border
       h3.box-title
@@ -74,6 +78,8 @@
           = render 'color_fields', :f => item
 
 coffee:
+  $('#product_started_at').datetimepicker();
+  $('#product_stoped_at').datetimepicker();
 
   $("#product_category_ids").select2
     placeholder: "選擇分類",

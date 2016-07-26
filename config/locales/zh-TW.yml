@@ -49,6 +49,8 @@ zh-TW:
         sale_price: "售價"
         cost: "成本"
         categories: "分類"
+        started_at: "開賣日"
+        stoped_at: "結束日"
       sub_product_color:
         color_pic: "色票"
         color: "色名"

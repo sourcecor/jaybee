@@ -10,6 +10,8 @@ class CreateProducts < ActiveRecord::Migration
       t.decimal :unit_price, precision: 8, scale: 2, default: 9999
       t.decimal :sale_price, precision: 8, scale: 2, default: 9999
       t.decimal :cost, precision: 8, scale: 2, default: 0
+      t.timestamp :started_at, :null => false, :default => CURRENT_TIMESTAMP
+      t.timestamp :stoped_at
       t.timestamp :deleted_at
       t.timestamps null: false
     end
