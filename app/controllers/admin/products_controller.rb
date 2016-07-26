@@ -2,7 +2,9 @@ class Admin::ProductsController < Admin::ApplicationController
   before_action :set_record, :only => [:edit, :update, :show, :destroy]
 
   def index
-    @products_grid = initialize_grid(Product.order(id: :desc).not_deleted)
+    keyword = params[:product][:caption] unless params[:product].nil?
+    cate_ids = params[:product][:categories].reject!(&:empty?).join(',').split(",").map(&:to_i) unless params[:product].nil?
+    @products_grid = initialize_grid(Product.keyword_with(keyword).cates_with(cate_ids).order(id: :desc).distinct.not_deleted)
   end
 
   def new

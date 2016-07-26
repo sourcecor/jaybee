@@ -4,6 +4,8 @@ class Category < ActiveRecord::Base
 
   validates :caption, presence: true
 
+  has_and_belongs_to_many :products
+
   has_many :pictures, -> { order(:seq) }, as: :imageable, class_name: "Picture", dependent: :destroy
   accepts_nested_attributes_for :pictures, allow_destroy: true, :reject_if => lambda { |a| a[:asset].blank? }
 

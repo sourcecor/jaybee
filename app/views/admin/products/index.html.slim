@@ -8,10 +8,10 @@
 = extends "admin/layouts_partial/_box_grid" do
   = content_for :title do
     - simple_form_for :product, url: admin_products_path, method: :get, html: {class: "form-inline"} do |f|
-      = f.input :caption, wrapper: :search, label: "品名"
+      = f.input :caption, wrapper: :search, label: "品名", input_html: { value: (params[:product][:caption] unless params[:product].nil?) }
       = f.input :categories, wrapper: :search, collection: cate_group, as: :grouped_select, \
-        :group_method => :last, :group_label_method => :first, input_html: { multiple: true, style: "width:500px"}, label: "類別"
-      = button_tag "查詢", class:"btn btn-sm btn-default"
+        :group_method => :last, :group_label_method => :first, :selected => (params[:product][:categories] unless params[:product].nil?), input_html: { multiple: true, style: "width:500px"}, label: "類別"
+      = button_tag "查詢", :name => nil, class:"btn btn-sm btn-default"
   = content_for :tools do
     - link_to('新增', new_admin_product_path, class: 'btn btn-primary btn-sm',)
   = content_for :body do
@@ -27,7 +27,6 @@
           - concat(link_to('預覽', admin_product_path(product), class: 'btn btn-success btn-xs fancybox', style: 'margin-right:5px'))
           - concat(link_to('修改', edit_admin_product_path(product), "data-no-turbolink":true, class: 'btn btn-default btn-xs', style: 'margin-right:5px'))
           - concat(link_to('刪除', [:admin, product] ,method: :delete, data: {confirm: '確定要刪除?'}, class: 'btn btn-danger btn-xs'))
-
 
 coffee:
 
