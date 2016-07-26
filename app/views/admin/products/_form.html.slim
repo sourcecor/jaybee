@@ -78,8 +78,12 @@
           = render 'color_fields', :f => item
 
 coffee:
-  $('#product_started_at').datetimepicker();
-  $('#product_stoped_at').datetimepicker();
+  $('#product_started_at').datetimepicker(
+    lang:'zh-TW'
+  );
+  $('#product_stoped_at').datetimepicker(
+    lang:'zh-TW'
+  );
 
   $("#product_category_ids").select2
     placeholder: "選擇分類",
