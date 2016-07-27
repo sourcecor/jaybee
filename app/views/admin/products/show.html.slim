@@ -38,12 +38,12 @@ link[rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css"]
               | 查看尺寸表{{qty}}
         .number-input-area
           .btn-pill-area.btn-pill-area--numbers
-            button.btn.js-num-down[type="button" aria-controls="unique_ID" :disabled="size==''"]
+            button.btn[type="button" :disabled="size==''" @click="subVal"]
               span[aria-hidden="true"]
                 i.btr.bt-minus.bt-sm
-          input#unique_ID.js-numbler[type="number" name="unique_ID" min="0" step="1" :max="max_qty" :disabled="size==''" v-model="qty" v-el:input-qty]
+          input#unique_ID[type="number" name="unique_ID" min="1" step="1" :max="max_qty" :disabled="size==''" v-model="qty"]
           .btn-pill-area.btn-pill-area--numbers
-            button.btn.js-num-up[type="button" aria-controls="unique_ID" :disabled="size==''"]
+            button.btn[type="button" :disabled="size==''" @click="addVal"]
               span[aria-hidden="true"]
                 i.btr.bt-plus.bt-sm
         button.button[type="submit" :disabled="qty<=0"]
@@ -76,65 +76,93 @@ javascript:
       colors: {},
       items: {},
       qty: 0,
-      max_qty: 0
+      max_qty: 0,
+      min_qty: 1,
+      step: 1
     },
-    ready: function() {
+    ready: function () {
       this.fetch_product();
     },
     watch: {
-      colors: function(val, oldVal){
-        for(i in val){
-          if(val[i].qty_amt > 0) {
+      colors: function (val, oldVal) {
+        for (i in val) {
+          if (val[i].qty_amt > 0) {
             $('.proColor').eq(i).click();
             break;
           }
         }
       },
-      size: function(val, oldVal){
+      size: function (val, oldVal) {
         $('.js-num-down').unbind();
         $('.js-num-up').unbind();
         $(".js-numbler").Numbler();
       }
     },
     computed: {
-      item_spec: function(){
-        if(this.size != "")
+      item_spec: function () {
+        if (this.size != "")
           return String.format(" ( {0} -{1})", this.color, this.size);
         else
           return String.format(" ( {0})", this.color);
       }
     },
     methods: {
-      fetch_product: function(){
-        this.$http.get("/api/v1/product/#{params[:id]}.jbuilder").then((response)=>{
+      fetch_product: function () {
+        this.$http.get("/api/v1/product/#{params[:id]}.jbuilder").then((response) => {
           this.$set('product', response.data.product);
-          this.$set('colors', response.data.colors);
-        }, (response) =>{
+        this.$set('colors', response.data.colors);
+      }, (response) => {
           console.log(response);
         });
       },
-      color_selected: function(e) {
+      color_selected: function (e) {
         that = this;
         this.colors.filter(function (item) {
-            if (item.id == e) {
-              that.$set('item_pic', item.item_pic);
-              that.$set('color', item.color);
-              that.$set('size', "");
-              that.$set('itemcode', "尚未選擇尺寸");
-              that.$set('items', item.items);
-              that.$set('qty', "");
-            }
+          if (item.id == e) {
+            that.$set('item_pic', item.item_pic);
+            that.$set('color', item.color);
+            that.$set('size', "");
+            that.$set('itemcode', "尚未選擇尺寸");
+            that.$set('items', item.items);
+            that.$set('qty', "");
+          }
         });
       },
-      size_selected: function(itemcode, size, max_qty){
+      size_selected: function (itemcode, size, max_qty) {
         this.itemcode = itemcode;
         this.size = size;
         this.qty = 1;
         this.max_qty = max_qty;
+      },
+      addVal: function (e) {
+        var v = parseInt(this.qty, 10);
+        v += this.step;
+        v = Math.min(v, this.max_qty);
+        this.qty = v;
+        this.checkVal();
+      },
+      subVal: function (e) {
+        var v = parseInt(this.qty, 10);
+        v -= this.step;
+        v = Math.max(v, this.min_qty);
+        this.qty = v;
+        this.checkVal();
+      },
+      // various checks for input value
+      checkVal: function (e) {
+        var v = parseInt(this.qty, 10);
+        if (isNaN(v)) {
+          v = 0;
+          this.qty = v;
+        }
+        if (v < this.min_qty) {
+          v = this.min_qty;
+          this.qty = v;
+        }
+        if (v > this.max_qty) {
+          v = this.max_qty;
+          this.qty = v;
+        }
       }
     }
-  });
-
-  $('#unique_ID').change(function(){
-    console.log('change');
   });
