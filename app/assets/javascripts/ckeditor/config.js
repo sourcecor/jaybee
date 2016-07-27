@@ -18,7 +18,7 @@ CKEDITOR.editorConfig = function( config )
       CKEDITOR.getUrl('templates/my_template.js'),
       CKEDITOR.getUrl('templates/jb_template.js')
     ];
-    config.contentsCss = [CKEDITOR.getUrl('css/table.css'), 'http://yui.yahooapis.com/pure/0.6.0/pure-min.css'];
+    config.contentsCss = [CKEDITOR.getUrl('css/table.css'), CKEDITOR.getUrl('css/pure-min.css')];
     config.templates='jb_custom,my_custom,default';
 
     /* Filebrowser routes */
