@@ -3,7 +3,7 @@
  */
 //加入template
 CKEDITOR.addTemplates(
-    'custom',
+    'my_custom',
     {
       //圖片資料夾路徑，放在同目錄的images資料夾內
       imagesPath: CKEDITOR.getUrl('templates/images/'),

@@ -15,10 +15,11 @@ CKEDITOR.editorConfig = function( config )
     // my templates
     config.templates_files = [
       CKEDITOR.getUrl('templates/default.js'),
-      CKEDITOR.getUrl('templates/my_template.js')
+      CKEDITOR.getUrl('templates/my_template.js'),
+      CKEDITOR.getUrl('templates/jb_template.js')
     ];
-
-  config.templates='custom,default';
+    config.contentsCss = [CKEDITOR.getUrl('css/table.css'), 'http://yui.yahooapis.com/pure/0.6.0/pure-min.css'];
+    config.templates='jb_custom,my_custom,default';
 
     /* Filebrowser routes */
     // The location of an external file browser, that should be launched when "Browse Server" button is pressed.

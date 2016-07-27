@@ -1,0 +1,32 @@
+* {
+  font-family: 微軟正黑體;
+  color: dimgray;
+}
+
+.pure-table {
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+  border: none;
+  border: 1px solid rgba(238, 238, 238, 0);
+}
+
+.pure-table th {
+  font-family: 微軟正黑體;
+  line-height: 22px;
+  font-size: 15px;
+  padding: 15px 10px;
+  color: #676767;
+  text-align: center;
+}
+
+.pure-table th p {
+  margin: 0px;
+}
+
+.th {
+  font-weight: bold;
+  font-family: 微軟正黑體;
+  padding: 15px;
+  text-align: left;
+}
