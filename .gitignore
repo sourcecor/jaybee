@@ -16,6 +16,7 @@ test
 tmp
 public/uploads
 vendor/assets/bower_components
+vendor/bundle/
 Contact GitHub API Training Shop Blog About
 _mac
 codestyles
