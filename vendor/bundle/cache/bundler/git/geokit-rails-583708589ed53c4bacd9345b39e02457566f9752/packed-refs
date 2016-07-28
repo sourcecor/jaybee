@@ -1,0 +1,15 @@
+# pack-refs with: peeled fully-peeled 
+e84043b063819b64b3bc503a428cf7cc716c86bb refs/heads/fix_tests
+3a7b4e1083dd06d486307ebf71c36608186c8d73 refs/heads/fix_tests_more
+eb777e22708814afe4464e06dcfaa8173cb259c9 refs/heads/master
+0c6a84a1f160dafac9ea07a961df800624845ac4 refs/heads/postgres
+cc782f55b0102e3cafe312247099a9c08fe835d3 refs/heads/rails4
+8696f764952ef4dde5c1b051428b04211e3f921b refs/heads/rails5-test
+5bc5b997293f1869387aaca92fbcf026cd31130d refs/tags/v2.0.0
+^a332058062b5e00d8b9da73f0c3a0fd909af9879
+567576c3248cc07d074a1fcefc43e73270e9684a refs/tags/v2.0.1
+^5cf431a87826f090b3ead750629fbdfacbc62c3f
+8f1a30e9983fe608b1037d7488db121aeeb55f85 refs/tags/v2.1.0
+^23bbfb25bb2822afa62869a49f34098db6adf4e0
+0426b0fb54698a47ff973cd7a6ac6d5c1060b6d6 refs/tags/v2.2.0
+^eb777e22708814afe4464e06dcfaa8173cb259c9

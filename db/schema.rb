@@ -178,6 +178,8 @@ ActiveRecord::Schema.define(version: 20160719055749) do
     t.decimal  "unit_price",             precision: 8, scale: 2, default: 9999.0
     t.decimal  "sale_price",             precision: 8, scale: 2, default: 9999.0
     t.decimal  "cost",                   precision: 8, scale: 2, default: 0.0
+    t.datetime "started_at"
+    t.datetime "stoped_at"
     t.datetime "deleted_at"
     t.datetime "created_at",                                                      null: false
     t.datetime "updated_at",                                                      null: false

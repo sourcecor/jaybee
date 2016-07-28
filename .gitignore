@@ -1,6 +1,7 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea
 .keep
+.bundle
 app/assets/images/index
 app/assets/images/products
 config/puma.rb

@@ -1,0 +1,17 @@
+sudo: false
+language: ruby
+rvm:
+- 1.9
+- 2.0
+- 2.2
+gemfile:
+  - gemfiles/rails_3.2.gemfile
+  - gemfiles/rails_4.0.gemfile
+  - gemfiles/rails_4.1.gemfile
+  - gemfiles/rails_4.2.gemfile
+env:
+  matrix:
+  - JQUERY_VERSION=2.1.1
+  - JQUERY_VERSION=1.11.1
+
+script: bundle exec rake spec

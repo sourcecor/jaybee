@@ -42,7 +42,7 @@ link[rel="stylesheet" href="https://cdn.jsdelivr.net/pure/0.6.0/pure-min.css"]
             button.btn[type="button" :disabled="size==''" @click="subVal"]
               span[aria-hidden="true"]
                 i.btr.bt-minus.bt-sm
-          input#unique_ID[type="number" name="unique_ID" min="1" step="1" :max="max_qty" :disabled="size==''" v-model="qty"]
+          input#unique_ID[type="number" name="unique_ID" :min="min_qty" step="1" :max="max_qty" :disabled="size==''" v-model="qty"]
           .btn-pill-area.btn-pill-area--numbers
             button.btn[type="button" :disabled="size==''" @click="addVal"]
               span[aria-hidden="true"]
