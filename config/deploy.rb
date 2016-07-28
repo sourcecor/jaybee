@@ -1,4 +1,4 @@
-lock '3.5.0'
+lock '3.6.0'
 
 set :application, 'jaybee'
 set :repo_url, 'git@github.com:sourcecor/jaybee.git' # 修改這裡，以符合你自己放程式的地方
