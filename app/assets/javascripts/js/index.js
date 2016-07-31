@@ -3,7 +3,7 @@ $(document).ready(function(){
 // Banner
 $('section.distractful').distractful({
         parallax: true,         // true || false
-        parallaxScroll: 225,    // How far the div will move. Default, no movement. lower num = faster
+        parallaxScroll: 505,    // How far the div will move. Default, no movement. lower num = faster
         controls: true,         // moving || true || false. use false to hide
         scrollSpeed: 1000,      // int. Default: 1000 (1 second)
         easing: 'easeInOutExpo',// false || 'easingFunctionName. Use an easing function. Requires Easing library. Set to 'false' to disable, will use jQuery animate

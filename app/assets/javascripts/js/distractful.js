@@ -15,7 +15,7 @@
 		
 		// set up default options 
 		var defaults = { 
-			parallax:  false,
+			parallax:  true,
 			controls: 'moving',		
 			scrollSpeed: 1000,
 			auto:false,

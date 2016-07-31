@@ -1,70 +1,79 @@
-#content .right .banner .cycle-slideshow{
-	position: relative;
-	z-index: 2
+#content .right .banner .cycle-slideshow {
+    position: relative;
+    z-index: 2
 }
-#content .right .banner .bannerImg{
-	width: 100%;
+
+#content .right .banner .bannerImg {
+    width: 100%;
     height: 100%;
-	max-width: 935px;
-	display: block;
-	background-size: cover;
-	background-position: center;
+    max-width: 935px;
+    display: block;
+    background-size: cover;
+    background-position: center;
 }
 
-#menu{
-	width: 100%;
-	text-align: center;
-	position: relative;
-	z-index: 2;
-	top:-25px;
-}
-#menu span{
-	display: inline-block;
-	margin: -0px 5px 0px 5px;
-	width: 15px;
-	height: 15px;
-	background:#4FC1FF;
-	border-radius: 20px;
-	box-shadow: 0px 0px 5px gray;
-	cursor: pointer;
-	transition: all .7s ease;
-	color: rgba(245, 222, 179, 0)
-	
+#bannerMenu {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    top: -25px;
 }
 
-#menu span.cycle-pager-active,
-#menu span:hover{
-	background: #FF91B8;
+#bannerMenu span {
+    display: inline-block;
+    margin: -0px 5px 0px 5px;
+    width: 15px;
+    height: 15px;
+    background: #4FC1FF;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px gray;
+    cursor: pointer;
+    transition: all .7s ease;
+    color: rgba(245, 222, 179, 0)
+
 }
-#content .bread{
-	width: 96%;
+
+#bannerMenu span.cycle-pager-active,
+#bannerMenu span:hover {
+    background: #FF91B8;
+}
+
+#content .bread {
+    width: 96%;
     padding: 2%;
     border: 1px solid #4FC1FF;
-	margin:0px auto 20px auto;
+    margin: 0px auto 20px auto;
 }
-#pager{
+
+#pager {
     float: right;
     margin-top: -5px;
 }
-#pager .yiiPager .page{
+
+#pager .yiiPager .page {
     display: inline-block;
 }
-#pager .yiiPager .page a i{
+
+#pager .yiiPager .page a i {
     color: white
 }
-#pager .yiiPager .page a{
+
+#pager .yiiPager .page a {
     display: inline-block;
     height: 10px;
-    padding:5px 10px 10px 10px;
+    padding: 5px 10px 10px 10px;
     border-radius: 5px;
     background-color: #4FC1FF;
     color: white;
     transition: .5s ease all;
 }
-#pager .yiiPager .page a:hover{
+
+#pager .yiiPager .page a:hover {
     background-color: #FF91B8
 }
-.products .items{
+
+.products .items {
     width: 23.8%;
     max-width: 220px;
     margin: 0% .3% 2% .3%;
@@ -74,125 +83,153 @@
     border: 1px solid #c5ebff;
     padding-bottom: 10px
 }
-.products .items .itemsImg{
+
+.products .items .itemsImg {
     width: 100%;
     height: 220px;
     background-size: cover;
     background-position: center;
-    
-        
-}
-.products .items p{
-    margin-top: 5px;
-    width: 100%;
-	overflow: hidden;
-	text-overflow: ellipsis;
-   white-space: nowrap;
-}
-.products .items .proNum{
-    font-size:13px; 
-    color: #b5b4b4;
-}
-.products .items .proTitle{
-    font-size:15px; 
-}
-.products .items .before{
-    font-size:13px; 
-    color: #b5b4b4;
-    font-weight: normal;
-    text-decoration:line-through;
+
 }
 
-.products .items .after{
+.products .items p {
+    margin-top: 5px;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.products .items .proNum {
+    font-size: 13px;
+    color: #b5b4b4;
+}
+
+.products .items .proTitle {
+    font-size: 15px;
+}
+
+.products .items .before {
+    font-size: 13px;
+    color: #b5b4b4;
+    font-weight: normal;
+    text-decoration: line-through;
+}
+
+.products .items .after {
     font-size: 13px;
 }
-.products .items .after .en{
+
+.products .items .after .en {
     color: #FF91B8;
     font-size: 18px
 }
-.products .items .after .nt{
+
+.products .items .after .nt {
     font-size: 13px;
     margin-right: 3px;
 }
-.products #pager{
+
+.products #pager {
     margin: 10px 0px;
 }
 
 @media screen and (max-width: 1087px) {
-    .products .items{
+    .products .items {
         width: 23.5%;
         max-width: 220px;
         margin: 0% .3% 2% .3%;
 
     }
 }
+
 @media screen and (max-width: 900px) {
-	.products .items .itemsImg{
-		width: 100%;
-		height:150px;
-		background-size: cover;
-		background-position: center;
+    .products .items .itemsImg {
+        width: 100%;
+        height: 150px;
+        background-size: cover;
+        background-position: center;
 
+    }
 
-	}
-	 #content .right .banner,
-    #content aside{
+    #content .right .banner,
+    #content aside {
         display: none;
     }
-    #content .right{
+
+    #content .right {
         width: 96%;
-		padding:1.5% 0%;
-		clear: both;
-		float: none;
-		display: block;
-		margin:0%;
+        padding: 1.5% 0%;
+        clear: both;
+        float: none;
+        display: block;
+        margin: 0%;
     }
- 	 .products .items{
+
+    .products .items {
         width: 23.5%;
         max-width: 220px;
         margin: 0% .3% 2% .3%;
 
     }
 }
-@media screen and (max-width: 650px) {
-	
-	.products .items .proNum{
-		font-size:11px; 
-		color: #b5b4b4;
-	}
-	.products .items .proTitle{
-		font-size:12px; 
-	}
-	.products .items .before{
-		font-size:11px; 
-		color: #b5b4b4;
-		font-weight: normal;
-		text-decoration:line-through;
-	}
 
-	.products .items .after{
-		font-size: 11px;
-	}
-	.products .items .after .en{
-		color: #FF91B8;
-		font-size: 14px
-	}
-	.products .items .after .nt{
-		font-size: 11px;
-		margin-right: 3px;
-	}
-	.products #pager{
-		margin: 10px 0px;
-	}
+@media screen and (max-width: 650px) {
+
+    .products .items .proNum {
+        font-size: 11px;
+        color: #b5b4b4;
+    }
+
+    .products .items .proTitle {
+        font-size: 12px;
+    }
+
+    .products .items .before {
+        font-size: 11px;
+        color: #b5b4b4;
+        font-weight: normal;
+        text-decoration: line-through;
+    }
+
+    .products .items .after {
+        font-size: 11px;
+    }
+
+    .products .items .after .en {
+        color: #FF91B8;
+        font-size: 14px
+    }
+
+    .products .items .after .nt {
+        font-size: 11px;
+        margin-right: 3px;
+    }
+
+    .products #pager {
+        margin: 10px 0px;
+    }
 }
+
+@media screen and (max-width: 574px) {
+    .products .items {
+        width: 31.5%;
+        max-width: 220px;
+        margin: 0% .3% 2% .3%;
+
+    }
+}
+
 @media screen and (max-width: 479px) {
-	.bread #pager{display: none;}
-	.products .items{
+    .bread #pager {
+        display: none;
+    }
+
+    .products .items {
         width: 47%;
         max-width: 220px;
         margin: 0% .3% 2% .3%;
 
     }
-	
 
 }

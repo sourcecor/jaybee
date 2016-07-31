@@ -2,8 +2,8 @@
 .idea
 .keep
 .bundle
-app/assets/images/index
-app/assets/images/products
+#app/assets/images/index
+#app/assets/images/products
 config/puma.rb
 config/deploy.rb
 config/application.yml
