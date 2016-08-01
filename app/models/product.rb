@@ -1,5 +1,5 @@
-require 'carrierwave/orm/activerecord'
 class Product < ActiveRecord::Base
+  acts_as_paranoid
   scope :keyword_with, ->(keyword) { where("products.caption like ? or products.sub_caption like ? or products.itemcode like ?", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%") unless keyword.blank? }
   scope :cates_with, ->(cate_ids) { joins(:categories).where("category_id in (?)", cate_ids) unless cate_ids.blank? }
   validates :caption, :sub_caption, :itemcode, :unit_price, :sale_price, presence: true

@@ -25,14 +25,16 @@ $(document).ready(function() {
         element.className = classes.join(' ');
     }
 
-    menuLink.onclick = function (e) {
-        var active = 'active';
+    if(menuLink != undefined){
+        menuLink.onclick = function (e) {
+            var active = 'active';
 
-        e.preventDefault();
-        toggleClass(layout, active);
-        toggleClass(menu, active);
-        toggleClass(menuLink, active);
-    };    
+            e.preventDefault();
+            toggleClass(layout, active);
+            toggleClass(menu, active);
+            toggleClass(menuLink, active);
+        };
+    }
     
     $(".sub,.subChild").slideUp(0)
 	$("#menu").mouseleave(function(){
