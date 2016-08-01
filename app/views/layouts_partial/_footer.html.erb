@@ -4,9 +4,9 @@
     <ul>
       <li class="subject"><a href="#">關於我們</a></li>
       <span>
-						<li><a href="#">關於捷比</a></li>
-						<li><a href="#">門市資訊</a></li>
-						<li><a href="#">隱私權條款</a></li>
+						<li><%= link_to "關於捷比", about_sites_path %></li>
+						<li><%= link_to "門市資訊", store_sites_path %></li>
+						<li><%= link_to "隱私權條款", copyright_sites_path %></li>
 					</span>
     </ul>
     <ul>
@@ -34,7 +34,7 @@
 							<a href="#" class="social"><%= image_tag "main/socialLink0.png" %></a>
 							<a href="#" class="social"><%= image_tag "main/socialLink1.png" %></a>
 						</li>
-						<li><a href="#">常見問題</a></li>
+						<li><%= link_to "常見問題", qa_sites_path %></li>
 						<li>
 							<p>客服專線：<span class="en">05-2785369</span></p>
 							<p>周一至周六 <span class="en">09:00 - 17:00</span></p>
