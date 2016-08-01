@@ -2,37 +2,44 @@
   <div id="footerBar">關於捷比<i class="btr bt-caret-up bt-sm"></i></div>
   <article>
     <ul>
-      <li class="subject"><a href="#">關於我們</a></li>
-      <li><a href="#">關於捷比</a></li>
-      <li><a href="#">門市資訊</a></li>
-      <li><a href="#">隱私權條款</a></li>
+      <li class="subject"><a href="#">關於捷比</a></li>
+      <span>
+						<li><%= link_to "品牌故事", about_sites_path %></li>
+						<li><%= link_to "門市資訊", store_sites_path %></li>
+						<li><%= link_to "隱私權條款", copyright_sites_path %></li>
+      </span>
     </ul>
     <ul>
       <li class="subject"><a href="#">購物須知</a></li>
-      <li><a href="#">注意事項</a></li>
-      <li><a href="#">付款方式</a></li>
-      <li><a href="#">運送方式</a></li>
-      <li><a href="#">退換貨方式</a></li>
-      <li><a href="#">尺寸丈量</a></li>
-
+      <span>
+						<li><a href="#">注意事項</a></li>
+						<li><a href="#">付款方式</a></li>
+						<li><a href="#">運送方式</a></li>
+						<li><a href="#">退換貨方式</a></li>
+						<li><a href="#">尺寸丈量</a></li>
+					</span>
     </ul>
     <ul>
       <li class="subject"><a href="#">捷幣存摺</a></li>
-      <li><a href="#">使用方式</a></li>
-      <li><a href="#">餘額查詢</a></li>
-      <li><a href="#">最新贈品</a></li>
+      <span>
+						<li><a href="#">使用方式</a></li>
+						<li><a href="#">餘額查詢</a></li>
+						<li><a href="#">最新贈品</a></li>
+					</span>
     </ul>
     <ul>
       <li class="subject"><a href="#">客服資訊</a></li>
-      <li>
-        <a href="#" class="social"><%= image_tag "main/socialLink0.png" %></a>
-        <a href="#" class="social"><%= image_tag "main/socialLink1.png" %></a>
-      </li>
-      <li><a href="#">常見問題</a></li>
-      <li>
-        <p>客服專線：<span class="en">05-2785369</span></p>
-        <p>周一至周六 <span class="en">09:00 - 17:00</span></p>
-      </li>
+      <span>
+						<li>
+							<a href="#" class="social"><%= image_tag "main/socialLink0.png" %></a>
+							<a href="#" class="social"><%= image_tag "main/socialLink1.png" %></a>
+						</li>
+						<li><%= link_to "常見問題", qa_sites_path %></li>
+						<li>
+							<p>客服專線：<span class="en">05-2785369</span></p>
+							<p>周一至周六 <span class="en">09:00 - 17:00</span></p>
+						</li>
+					</span>
     </ul>
   </article>
   <div id="copyright" class="en">

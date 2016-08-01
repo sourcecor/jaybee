@@ -4,9 +4,21 @@ Rails.application.routes.draw do
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
+  # member路由與collection路由的不同, 前者有id,如 product/:id
   # You can have the root of your site routed with "root"
   root 'sites#index'
+  resources :sites do
+    collection do
+      get 'about'
+      get 'copyright'
+      get 'notice'
+      get 'qa'
+      get 'store'
+    end
+    member do
+      get 'store'
+    end
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -90,8 +102,6 @@ Rails.application.routes.draw do
 
     scope :controller => 'product' do
       get 'product/:id' => :index
-      get 'product_color/:id' => :color
-      get 'product_size/:id'  => :size
     end
   end
 end

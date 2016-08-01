@@ -7,7 +7,7 @@
   <%= favicon_link_tag 'main/icon.ico' %>
   <%= csrf_meta_tags %>
   <%= stylesheet_link_tag 'application', :media => 'all' %>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/pure/0.6.0/pure-min.css" type='text/css'/>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css" type='text/css' />
   <%= javascript_include_tag 'application' %>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
   <script>
@@ -18,20 +18,29 @@
       });
     });
   </script>
+  <script>
+    (function () {
+      var cx = '004481172014225767422:hjsmm0n-fjk';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+          '//cse.google.com/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+    })();
+  </script>
 </head>
 <body>
 <div id="layout">
   <div id="back"><i class="btr bt-circle-arrow-up bt-2x"></i></div>
-  <!-- feedback -->
   <%= render "layouts_partial/feedback" %>
-  <!-- header -->
+  <%= render "layouts_partial/mobile_cover" %>
   <%= render "layouts_partial/header" %>
   <div id="content">
     <%= yield %>
   </div>
-  <!-- footer -->
   <%= render "layouts_partial/footer" %>
 </div>
-
 </body>
 </html>

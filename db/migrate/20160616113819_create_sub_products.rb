@@ -9,7 +9,7 @@ class CreateSubProducts < ActiveRecord::Migration
       t.string :itemcode, limit:30
       t.integer :qty, default: 0
       t.integer :seq, default: 0
-      t.timestamp :deleted_at
+      t.timestamp :deleted_at, index:true
       t.timestamps null: false
     end
   end

@@ -1,0 +1,42 @@
+<%= stylesheet_link_tag 'css/about', :media => 'all' %>
+<%= render 'layouts_partial/left_content' %>
+<div class="rightContent">
+  <article class="bread">
+    <a href="/">首頁</a> > <%= link_to "購物須知", notice_sites_path %>
+  </article>
+  <artile class="aboutCenter">
+    <%= image_tag "index/banner3.png"%>
+    <section>
+      <h3>童裝界的國民品牌，擴大網路服務</h3>
+      <ul>
+        <li>捷比童裝的實體店面已經經營10幾年的時間，在雲嘉地區以及台中均有13家實體店面銷售，</li>
+        <li>我們提供溫馨、優質的購物環境給大家有專業優秀的銷售人員熱心為您服務，</li>
+        <li>可以說是童裝界的國民品牌。</li>
+      </ul>
+      <ul>
+        <li>2011年8月，我們將門市的經營理念落實在網路平台上，</li>
+        <li>秉持捷比童裝的經營理念和服務宗旨不變，以相同的熱誠對待網路的客戶，</li>
+        <li>並設立<span class="en">FB</span>粉絲團分享活動訊息增加互動，</li>
+      </ul>
+      <ul>
+        <li>不定期推出新品以及特賣活動、滿額禮，嚴選多樣款式的商品 力求平實價格專櫃品質，</li>
+        <li>讓忙碌的爸比媽咪可以輕鬆在網路上選購漂亮超值的童裝，</li>
+        <li>網路購物的出貨速度是消費者滿意度的指標之一，</li>
+        <li>網拍工作團隊也秉持著門市的服務精神給廣大的買家</li>
+      </ul>
+      <ul class="contact">
+        <li>捷比童裝</li>
+        <li>電話︰05-2785369</li>
+        <li>傳真︰05-2765729</li>
+        <li>地址︰嘉義市林森東路４８１號</li>
+        <li>E-mail︰bearbear0520@yahoo.com.tw</li>
+      </ul>
+    </section>
+  </artile>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+  $(function(){
+    $('.leftContent a[href*=notice]').addClass("active");
+  })
+</script>

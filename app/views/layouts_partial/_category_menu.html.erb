@@ -1,0 +1,16 @@
+<ul class="pure-menu-list sub">
+<% menus.each do |menu| %>
+  <% if menu['children'].nil? %>
+    <%= "<li class='pure-menu-item mainChild'><a href='javascript:;' class='pure-menu-link'>#{menu['caption']}</a></li>".html_safe %>
+  <% else %>
+    <li class="pure-menu-item mainChild">
+      <%= "<a href='javascript:;' class='pure-menu-link'>#{menu['caption']}<i class='btr bt-angles-down bt-sm'></i></a>".html_safe %>
+      <ul class="pure-menu-list subChild">
+        <% menu['children'].each do |sub| %>
+          <%= "<li class='pure-menu-item'><a href='javascript:;' class='pure-menu-link'>#{sub['caption']}</a></li>".html_safe %>
+        <%end%>
+      </ul>
+    </li>
+  <% end %>
+<% end %>
+</ul>

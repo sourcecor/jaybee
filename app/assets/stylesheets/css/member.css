@@ -1,0 +1,175 @@
+#content{
+	max-width: 960px;
+	margin:100px auto 0 auto;
+	
+}
+
+.bread{
+	border: 1px solid #4FC1FF;
+	font-size: 14px;
+}
+
+/*************************Register*********************************/
+.memberInfo{
+	margin-top: 20px;
+}
+.memberInfo p{
+	margin-left: 5px
+}
+.memberBar{
+	display: inline-block;
+	padding: 5px 20px;
+	background-color: #4FC1FF;
+	font-size: 16px;;
+	color: white;
+	font-weight: bold;
+	margin-right: 10px;
+}
+.memberBar img{
+	width: 40px;
+	vertical-align: middle;
+	margin-right: 10px;
+}
+.memberInfo input{
+	width: 98%;
+	padding: 10px 1%;
+	background-color: #F2F2F2;
+	border-radius: 5px;
+	border: solid 1px #F2F2F2;
+	font-size: 14px;
+	margin: 10px 0 25px 0;
+}
+.memberInfo input:hover{
+	border: 1px solid lightgray;
+	box-shadow: 0px 0px 5px lightgray;
+}
+.memberInfo select:focus,
+.memberInfo input:focus{
+	border: 1px solid #4FC1FF	;
+	box-shadow: 0px 0px 5px lightgray;
+}
+.memberInfo .error{
+	width: 98%;
+	padding:10px 1%;
+	border-radius: 5px;
+	border: none;
+	margin:7px 0px 25px 0px;
+	border: 1px solid #ff0f62;
+	transition: all .5s ease
+	
+}
+.errorText{
+	display: inline-block;
+	font-size: 14px;
+	float: right;
+	clear: both;
+	color: #ff0f62;
+}
+.memberInfo span{
+	width: 48.5%;
+	display: inline-block;
+}
+.memberInfo p span{
+	width: auto;
+}
+.memberInfo span:nth-child(1){
+	margin-right: 2%
+}
+.memberInfo select{
+	padding: 9px 3px;
+	background-color: #F2F2F2;
+	border-radius: 5px;
+	border: solid 1px #F2F2F2;
+	font-size: 14px;
+	margin: 10px 0 0px 0;
+	cursor: pointer;
+}
+
+.memberInfo .shipSelect{
+	width: 80%;
+}
+.memberInfo a{
+	font-size: 14px;
+	text-decoration: underline;
+	display: inline-block;
+	
+}
+.memberInfo a:hover{
+	color: #FF91B8
+}
+.memberInfo button{
+	padding: 10px 0px;
+	width: 150px;
+	text-align: center;
+	background-color:#4FC1FF;
+	border: none;
+	color: white;
+	font-size: 14px;
+	margin-top: 15px;
+}
+.memberInfo button:hover{
+	background-color: #FF91B8
+}
+
+
+/*********************MemberTab****************************/
+.memberTab{
+	width: 100%;
+	font-size: 15px;
+	text-align: right;
+	background-color: #595757;
+	margin-top: 20px;
+}
+.tabItems{
+	width: 20%;
+	display: inline-block;
+	padding: 10px 0px;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+	border: none;
+	background-color: #595757;
+	transition: all .5s ease
+}
+.tabItems:hover,
+.tabItems:focus{
+	border: none;
+	background-color: #4FC1FF;
+}
+.memberCenter h2{
+	color: #FF91B8;
+	font-size: 14px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+.memberCenter table{
+	width: 100%;
+	border-radius: 10px 10px 0 0;
+	overflow: hidden;
+}
+
+.memberCenter tr:nth-child(odd){
+	background-color: #F2F2F2;
+	
+}
+.memberCenter tr th{
+	font-family:微軟正黑體;
+	padding: 15px 0px ;
+	text-align: center;
+	border-bottom: solid 1px #C4C4C4;
+	font-weight: bold;
+	
+		
+}
+.memberCenter tr td{
+	padding: 15px 5px;
+	font-family:微軟正黑體;
+	text-align: center;
+	font-size: 14px;
+}
+.memberCenter .orderTatal{
+	background-color: #F2F2F2;
+	padding: 15px 30px;
+	text-align: right;
+	border-radius: 0 0 10px 10px
+}

@@ -23,23 +23,25 @@ Main CSS:
 ::-webkit-scrollbar {
 		  width: 8px;
 	margin-left: 5px;
+	 background-color:white!important;
 	}
 ::-webkit-scrollbar-track {
-		  background-color: rgba(122, 98, 98, 0);;
+		  background-color:white!important;
 	} /* 滚动条的滑轨背景颜色 */
 
 	::-webkit-scrollbar-thumb {
 		  background-color: #4FC1FF;
 		border-radius: 20px;
 		width: 5px!important;
+		
 	} /* 滑块颜色 */
 
 	::-webkit-scrollbar-button {
-		  background-color: rgba(122, 98, 98, 0);;
+		  background-color: white!important;
 	} /* 滑轨两头的监听按钮颜色 */
 
 	::-webkit-scrollbar-corner {
-		  background-color: black;
+		  background-color: white!important;
 	} 
 /***********mouse scroll End**************************************/
 
@@ -52,6 +54,7 @@ Main CSS:
 	outline: none;
 	color: gray;
 	text-decoration: none;
+	scrollbar-face-color: #FFFFFF;
 }
 
 
@@ -64,20 +67,18 @@ Main CSS:
 #layout{
     width: 100%;
     height: 100%;
-    overflow-x: hidden;
 }
 #layout #content{
     width: 100%;
 	height: 100%;
-	min-height: 1000px;
     background: white;
-	display: block;
 	padding-bottom: 60px;
+	position: relative;
     
 }
 
 #layout .en{
-	font-family: Century Gothic;
+	font-family: Century Gothic,Times New Roman;
 	font-weight: bold;
 }
 
@@ -86,7 +87,20 @@ Main CSS:
 	text-align: center;
 }
 
-
+.fancybox-skin {
+	-webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+    box-shadow: none !important;
+	background-color: rgba(255, 255, 255, 0.85) !important; /* or whatever */
+	z-index: 99999!important;
+}
+.fancybox-close { 
+	top: 3px!important; 
+	right: 0px!important; 
+	background-image: url(../images/main/close.png)!important;
+	background-repeat: no-repeat;
+	
+}
 
 /***********All Set End*****************************************/
 
@@ -96,7 +110,7 @@ Main CSS:
 	width: 50px;
 	height: 50px;
 	position: fixed;
-	z-index: 0;
+	z-index: 2;
 	right: 20px;
 	bottom: 30px;
 	
@@ -134,7 +148,7 @@ Main CSS:
 	z-index: 1000;
 	padding-left: 5px;
 	padding-right: 10px;
-	background-clip: 'padding-box';
+	background-clip: padding-box;
 	border: 1px solid rgba(0, 0, 0, .2);
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -216,10 +230,218 @@ Main CSS:
 }
 /***********onlineServiceEnd*****************************************/
 
+/***********pureMenu*****************************************/
+
+/*
+The `#menu` `<div>` is the parent `<div>` that contains the `.pure-menu` that
+appears on the left side of the page.
+*/
+#layout,
+#menu,
+.menu-link {
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    -ms-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+
+/*
+This is the parent `<div>` that contains the menu and the content area.
+*/
+#layout {
+    position: relative;
+    overflow: hidden;
+}
+    #layout.active #menu {
+        left:275px;
+        width:275px;
+    }
+
+    #layout.active .menu-link {
+        left: 275px;
+    }
+#menu {
+    margin-left: -275px; /* "#menu" width */
+    width: 275px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000; /* so the menu or its navicon stays above all content */
+    background: rgba(25, 24, 24, 0.8);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+#menu .pure-form {
+	margin:15px 0px 25px 15px;;
+	
+	
+}
+/*
+#menu .pure-input {
+	width: 0px;
+	display: inline-block;
+	
+	
+}
+*/
+#menu button{
+	background-color:rgba(247, 247, 247, 0);
+	border: none;
+	outline: none;
+	display: inline-block;
+	color: white;
+}
 
 
 
+#blogLink{
+	position: relative;
+	top:14px;
+}
+#blogLink img{
+	position: relative;
+	top:-5px;
+}
+/*
+    All anchors inside the menu should be styled like this.
+    */
+    #menu a {
+        color: white;
+        border: none;
+        padding: 10px 0px 10px 10px;
+    }
 
+    /*
+    Remove all background/borders, since we are applying them to #menu.
+    */
+     #menu .pure-menu,
+     #menu .pure-menu ul {
+		 
+        border: none;
+        background: transparent;
+		
+		
+    }
+
+    /*
+    Add that light border to separate items into groups.
+    */
+    #menu .pure-menu ul,
+    #menu .pure-menu .menu-item-divided {
+        font-size: 16px
+    }
+        /*
+        Change color of the anchor links on hover/focus.
+        */
+        #menu .pure-menu li a:hover,
+        #menu .pure-menu li a:focus {
+            background: rgba(51, 51, 51, 0.82);
+			
+        }
+
+    /*
+    This styles the selected menu item `<li>`.
+    */
+    #menu .pure-menu-selected,
+    #menu .pure-menu-heading {
+        background: white;
+        text-align: center;
+        height: 28px;
+    }
+        /*
+        This styles a link within a selected menu item `<li>`.
+        */
+        #menu .pure-menu-selected a {
+            color: #fff;
+        }
+
+    /*
+    This styles the menu heading.
+    */
+    #menu .pure-menu-heading {
+        color: #fff;
+        margin: 0;
+    }
+    #menu .pure-menu-heading img{
+         width:70px;
+        margin-top: -12px
+    }
+
+#menu .sub li a {
+	
+	font-size:14px;
+	padding-left: 20px;
+}
+/* -- Dynamic Button For Responsive Menu -------------------------------------*/
+
+/*
+The button to open/close the Menu is custom-made and not part of Pure. Here's
+how it works:
+*/
+
+/*
+`.menu-link` represents the responsive menu toggle that shows/hides on
+small screens.
+*/
+.menu-link {
+    position: fixed;
+    display: none; /* show this only on small screens */
+    top: 0;
+    left: 0; /* "#menu width" */
+    background: #4FC1FF;
+    font-size: 10px; /* change this value to increase/decrease button size */
+    z-index: 10;
+    width: 2em;
+    height: auto;
+    padding: 1.5em  1em;
+    text-align: center;
+}
+.menu-link i{
+    color: white;
+    font-size: 18px;
+}
+    .menu-link:hover,
+    .menu-link:focus {
+        background: #FF91B8;
+    }
+
+    .menu-link span {
+        position: relative;
+        display: block;
+    }
+
+    .menu-link span,
+    .menu-link span:before,
+    .menu-link span:after {
+        background-color: #fff;
+        width: 100%;
+        height: 0.2em;
+    }
+
+        .menu-link span:before,
+        .menu-link span:after {
+            position: absolute;
+            margin-top: -0.6em;
+            content: " ";
+        }
+
+        .menu-link span:after {
+            margin-top: 0.6em;
+        }
+
+#menu .mainChild .pure-menu-list .pure-menu-item .pure-menu-link{
+    padding-left: 35px;
+    display: block;
+    font-size: 14px;
+    color: gainsboro
+}
+#menu .mainChild i{
+    margin-left: 5px;
+    font-size: 12px;
+    color: white;
+}
 /****NavStart**********************************************************/
 header{
 	padding:0px 0px 8px 0px;
@@ -380,8 +602,7 @@ nav .jayNav{
 	display: inline-block;
 	margin-bottom: -10px;
 } 
-.navSearch 
-i{
+.navSearch i{
 	width: 25px;
 	font-size: 20px;
 	float: right;
@@ -407,7 +628,8 @@ i{
 
 .proBox{
 	border-bottom: 1px solid white;
-	padding-bottom: 10px
+	padding-bottom: 10px;
+	margin-bottom: 10px;
 }
 .proImg{
     width: 100px;
@@ -451,7 +673,7 @@ i{
     margin-top: 10px;
 	font-size: 14px;
 }
-.proPrice .enPrice{
+#layout .enPrice{
 	color: white;
 	float: right;
 }
@@ -553,7 +775,13 @@ i{
 	color: #EFEFEF;
 	font-size: 14px;
 }
-
+.moblieCover  .bt-times{
+	cursor: pointer;
+}
+.mobileUser i{
+	color: #d3d3d3;
+	margin-right: 5px;
+}
 /****NavEnd**************************************************************************/
 
 
@@ -590,13 +818,16 @@ i{
 	font-size: 14px;
 	position: fixed;
 	left: 0px;
-	z-index: 3
+	z-index: 3;
+	
 	
 }
 footer article{
-	width: 1200px;
+	max-width: 1200px;
 	margin: auto;
-	margin-bottom: 20px
+	margin-bottom: 20px;
+	text-align: center;
+		
 }
 footer article ul{
 	width:24%;
@@ -650,31 +881,39 @@ footer article ul li .social{
 	nav .logo{
 		position: fixed;	
 		top:-5px;
-		left: 20px;
-
+		left: 22px;
 	}
 	.jayNav .bottomNav{
-		margin-top: 30px;
+		margin-top: 10px;
 	}
-
+	nav .logo img{
+		width: 40%;
+		margin-top: 5px;
+	}
 }
 
 @media screen and (max-width: 768px) {
+    .menu-link {
+        
+        display: block; 
+    }
 	.topNav .navSearch input{
 		width: 20px;
 		display: inline-block;
 	}
+    .jayNav .bottomNav,
 	.topNav .navSearch input,
 	.topNav .navSearch button,
 	.jayNav .bottomNav .member{
 		display: none;
 	}
-	.jayNav .bottomNav .parentNav{
-		width: 19%;
-	}
+    header{       
+    }
 	.topNav .navSearch{
 		width: 210px;
 		margin-right: 5px;
+        position: relative;
+        top:-12px;
 	}
 	.topNav .navSearch i{
 		font-size: 25px;
@@ -683,7 +922,7 @@ footer article ul li .social{
 		cursor: pointer;
 	}
 	.navSearch button i{
-		font-size: 25px;
+		font-size: 18px;
 		margin-bottom: -0px;
 	}
 	.navSearch button{
@@ -703,9 +942,40 @@ footer article ul li .social{
 		display:inline-block;
 		margin-left: 5px;
 	}
-	
-}
+    nav .logo{
+        margin: auto;
+        display: inline-block;
+        vertical-align: top;
+        left: 50px
+       
+    }
+    nav .logo img{
+        width: 40%;
+        margin-top: 5px;
+    }
+	footer article{
+		width: 96%;
+		padding: 2%;
+		text-align: left;
+	}
+	footer article ul{
+		width:100%;
+		display: block;
+		text-align: left;
 
+	}
+	footer article span{
+		display: block;
+		margin-left: 16px;
+	}
+
+}
+@media screen and (max-width: 670px) {
+	#layout #feedback{
+		position: fixed;
+		bottom:00px;
+	}
+}
 @media screen and (max-width: 530px) {
 	.parentNav img{
 		display: none;	
@@ -713,7 +983,7 @@ footer article ul li .social{
 	.moblieCover .keyword  .keyFont{
 		font-size: 12px;
 	}
-
+	
 }
 @media screen and (max-width: 460px) {
 	.jayNav .bottomNav .parentNav{
@@ -724,5 +994,10 @@ footer article ul li .social{
 
 
 	}
-
+	#feedback-form {
+		width: 250px;
+	}
+	
 }
+
+

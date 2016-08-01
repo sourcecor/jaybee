@@ -1,4 +1,5 @@
 class SubProductColor < ActiveRecord::Base
+  acts_as_paranoid
   validates :color, presence: true
   # 色票
   mount_uploader :color_pic, PictureUploader
