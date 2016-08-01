@@ -102,8 +102,8 @@
         <li class="pure-menu-item"><a href="/" class="pure-menu-link">首頁</a></li>
         <% menus = categoryMenu Category.where(id: 1) %>
         <% menus.each do |menu| %>
-          <%= "<li class='pure-menu-item main'><a href='javascript:;' class='pure-menu-link'>#{menu['caption']}</a></li>".html_safe %>
-          <%= render 'layouts_partial/category_menu', :menus => menu['children'] unless menu['children'].nil? %>
+            <%= "<li class='pure-menu-item main'><a href='javascript:;' class='pure-menu-link'>#{menu['caption']}</a></li>".html_safe %>
+            <%= render 'layouts_partial/category_menu', :menus => menu['children'] unless menu['children'].nil? %>
         <%end%>
         <% menus = categoryMenu Category.where(id: 2) %>
         <% menus.each do |menu| %>
