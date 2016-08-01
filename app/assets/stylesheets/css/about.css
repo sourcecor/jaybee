@@ -83,7 +83,7 @@
 .tabItems:hover,
 .tabItems:focus{
 	border: none;
-	background-color: #FFC53E;
+	background-color: #FF8797;
 }
 .aboutCenter img{
 	width: 100%;
@@ -94,11 +94,18 @@
 	font-size: 14px;
 	margin-top: 20px;
 	margin-bottom: 10px;
+    line-height: 20px;
+}
+.aboutCenter h1{
+	color: #FF91B8;
+	font-size: 14px;
+	margin-bottom: 10px;
 }
 .aboutCenter table{
 	width: 100%;
 	border-radius: 10px 10px 0 0;
 	overflow: hidden;
+    margin-top: 10px
 }
 
 .aboutCenter tr:nth-child(odd){
@@ -129,7 +136,8 @@
 .aboutCenter section{
 	background-color: #F2F2F2;
 	border-radius: 10px;
-	padding: 20px
+	padding: 20px;
+    margin-bottom: 20px
 }
 .aboutCenter h3{
 	color: #4FC1FF;
@@ -137,9 +145,61 @@
 	margin-bottom: 15px;
 	margin-left: 20px;
 }
+.aboutCenter h4{
+	width: 20%;
+	color: #4FC1FF;
+	font-weight: bold;
+	display: inline-block
+}
+.aboutCenter h5{
+    width: 100%;
+	color: #4FC1FF;
+	font-weight: bold;
+	display: inline-block
+}
+.aboutCenter h6{
+	font-weight: bold;
+    font-size: 14px;
+    padding-top: 15px
+    
+}
+
+.straightTab{
+	padding: 15px 5px;
+	cursor: pointer;
+    transition: all .5s ease;
+    border: 1px solid rgba(255, 145, 184, 0);
+}
+.straightTab:hover{
+    background-color: #ffd5e4;
+}
+.aboutCenter .active{
+	background-color: #FF91B8;
+    color: white;
+    border: 1px solid #FF91B8;
+}
+.straightTab_odd{
+    background-color: #e8e8e8;
+}
+
+.aboutCenter .active h4,
+.aboutCenter .active h5,
+.aboutCenter .active span,
+.aboutCenter .active i{
+    color: white;
+}
+.straightTab span{
+	width: 39%;
+	display: inline-block;
+}
+.straightTab .bt-plus{
+    float: right;
+}
 .aboutCenter p{
+    display: block;
 	font-size: 14px;
 	line-height: 20px;
+    padding: 5px;
 }
 .aboutCenter ul{
 	margin: 20px;
@@ -153,56 +213,37 @@
 .aboutCenter .contact li{
 	color: #FF8797;
 }
+.tabContent{
+    display: block;
+    border-right: 1px solid #FF91B8;
+    border-left: 1px solid #FF91B8;
+    border-bottom: 1px solid #FF91B8;
+    
+}
+    
+.tabContent p a{
+    text-decoration: underline;
+}
+.tabContent table {
+    border-radius: 0px;
+    border-bottom: 1px solid #cccccc;
+}
+.tabContent table tr th{
+    text-align: left;
+    border-bottom: 1px solid #cccccc;
+    background-color:#ededed;
+    padding: 15px 5px;
+}
+.tabContent table tr td:nth-child(1){
+    border-right: 1px solid #cccccc;
+}
+.tabContent table tr th:nth-child(1){
+    border-right: 1px solid #cccccc;
+}
+.tabContent table tr td{
+    text-align: left;
+}
+.tabContent table tr{
+    border-bottom: 1px solid #cccccc;
+}
 
-
-.useCoin p{
-	font-size: 14px;
-	margin: 10px 0px
-}
-.gift{
-	text-align: center;
-}
-.items{
-	width: 23%;
-	border: 1px solid #91d8ff;
-	display: inline-block;
-	text-align: center;
-	margin:0% .7% 2% .8%;
-}
-
-.gift .itemsImg{
-	width: 100%;
-	height: 220px;
-	background-size: cover;
-	background-position: center;
-	margin-bottom: 10px;
-	
-}
-.gift .itemsImg img{
-	width: 100%;
-}
-.gift p{
-	margin-bottom: 7px;
-}
-.gift .proTitle{
-	font-weight: bold;
-}
-.gift .brfore{
-	font-size: 14px;
-	color: #B5B5B6;
-}
-.gift .brfore .en{
-	font-size: 14px;
-	color: #B5B5B6;
-	font-weight: 200;
-}
-.gift .now{
-	font-size: 14px;
-	color: #B5B5B6;
-}
-.gift .now .en{
-	font-size: 16px;
-	color: #FF91B8;
-	font-weight: 200;
-	margin: 0px 5px;
-}
