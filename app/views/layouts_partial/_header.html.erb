@@ -1,6 +1,6 @@
 <header class="boxShadow">
   <nav class="content">
-    <a class="logo" href="index.html"><%= image_tag "main/logo.png"%></a>
+    <a class="logo" href="/"><%= image_tag "main/logo.png"%></a>
     <div class="jayNav">
       <div class="topNav">
         <div class="navSearch">
@@ -14,14 +14,19 @@
         </div>
       </div>
       <ul class="bottomNav">
-        <li class="parentNav"><a href="javascript:;"><%= image_tag "main/iconNew.png" %>最新商品</a>
-        <li class="parentNav"><a href="javascript:;"><%= image_tag "main/iconGirl.png"%>可愛女童</a>
+        <li class="parentNav">
+          <a href="javascript:;"><%= image_tag "main/iconNew.png" %>最新商品</a>
+        <li class="parentNav">
+          <a href="javascript:;"><%= image_tag "main/iconGirl.png"%>可愛女童</a>
         </li>
-        <li class="parentNav"><a href="javascript:;"><%= image_tag "main/iconBoy.png"%>帥氣男童</a>
+        <li class="parentNav">
+          <a href="javascript:;"><%= image_tag "main/iconBoy.png"%>帥氣男童</a>
         </li>
-        <li class="parentNav"><a href="javascript:;"><%= image_tag "main/iconBaby.png"%>嬰幼兒</a>
+        <li class="parentNav">
+          <a href="javascript:;"><%= image_tag "main/iconBaby.png"%>嬰幼兒</a>
         </li>
-        <li class="parentNav subject"><a href="javascript:;"><%= image_tag "main/iconBrain.png"%>人氣品牌</a>
+        <li class="parentNav subject">
+          <a href="javascript:;"><%= image_tag "main/iconBrain.png"%>人氣品牌</a>
         </li>
         <li id="member" class="parentNav member">
           <a href="javascript:;"><%= image_tag "main/iconUser.png"%>會員中心</a>
@@ -94,215 +99,32 @@
     <div class="pure-menu">
       <a class="pure-menu-heading" href="#"><%= image_tag "main/logo.png", class:"pure-img-responsive" %></a>
       <ul class="pure-menu-list">
-        <li class="pure-menu-item"><a href="index.html" class="pure-menu-link">首頁</a></li>
-        <li class="pure-menu-item main"><a href="javascript:;" class="pure-menu-link">最新商品</a></li>
-        <ul class="pure-menu-list sub">
-          <li class="pure-menu-item mainChild">
-            <a href="javascript:;" class="pure-menu-link">最新女童 <i class="btr bt-angles-down bt-sm"></i></a>
-            <ul class="pure-menu-list subChild">
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">T 恤</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">背心</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">短袖</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">長袖</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">襯衫</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">針織衫</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">吊帶裙</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">洋裝</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">外套</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">短褲</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">七分褲</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">群類</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">內搭褲</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">長褲</a></li>
-            </ul>
-
-          </li>
-          <li class="pure-menu-item mainChild">
-            <a href="javascript:;" class="pure-menu-link">最新男童<i class="btr bt-angles-down bt-sm"></i></a>
-            <ul class="pure-menu-list subChild">
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">T 恤</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">背心</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">短袖</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">長袖</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">襯衫</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">針織衫</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">吊帶裙</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">洋裝</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">外套</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">短褲</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">七分褲</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">群類</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">內搭褲</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">長褲</a></li>
-            </ul>
-          </li>
-          <li class="pure-menu-item mainChild">
-            <a href="javascript:;" class="pure-menu-link">最新嬰幼兒<i class="btr bt-angles-down bt-sm"></i></a>
-            <ul class="pure-menu-list subChild">
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">T 恤</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">背心</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">短袖</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">長袖</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">襯衫</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">針織衫</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">吊帶裙</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">洋裝</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">外套</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">短褲</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">七分褲</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">群類</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">內搭褲</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">長褲</a></li>
-            </ul>
-          </li>
-        </ul>
-        <li class="pure-menu-item main" class="menu-item-divided pure-menu-selected">
-          <a href="javascript:;" class="pure-menu-link">可愛女童 </a></li>
-        <ul class="pure-menu-list sub">
-          <li class="pure-menu-item mainChild">
-            <a href="javascript:;" class="pure-menu-link">小女童上著<i class="btr bt-angles-down bt-sm"></i></a>
-            <ul class="pure-menu-list subChild">
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">T 恤</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">背心</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">短袖</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">長袖</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">襯衫</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">針織衫</a></li>
-
-            </ul>
-
-
-          </li>
-          <li class="pure-menu-item mainChild">
-            <a href="javascript:;" class="pure-menu-link">小女童下著<i class="btr bt-angles-down bt-sm"></i></a>
-            <ul class="pure-menu-list subChild">
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">吊帶裙</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">洋裝</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">外套</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">短褲</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">七分褲</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">群類</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">內搭褲</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">長褲</a></li>
-            </ul>
-          </li>
-          <li class="pure-menu-item mainChild">
-            <a href="javascript:;" class="pure-menu-link">大女孩上著<i class="btr bt-angles-down bt-sm"></i></a>
-            <ul class="pure-menu-list subChild">
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">T 恤</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">背心</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">短袖</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">長袖</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">襯衫</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">針織衫</a></li>
-            </ul>
-          </li>
-          <li class="pure-menu-item mainChild">
-            <a href="javascript:;" class="pure-menu-link">大女孩下著<i class="btr bt-angles-down bt-sm"></i></a>
-            <ul class="pure-menu-list subChild">
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">吊帶裙</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">洋裝</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">外套</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">短褲</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">七分褲</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">群類</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">內搭褲</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">長褲</a></li>
-            </ul>
-          </li>
-        </ul>
-
-
-        <li class="pure-menu-item main" class="menu-item-divided pure-menu-selected">
-          <a href="javascript:;" class="pure-menu-link">帥氣男童</a></li>
-        <ul class="pure-menu-list sub">
-          <li class="pure-menu-item mainChild">
-            <a href="javascript:;" class="pure-menu-link">小男童上著<i class="btr bt-angles-down bt-sm"></i></a>
-            <ul class="pure-menu-list subChild">
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">T 恤</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">背心</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">短袖</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">長袖</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">襯衫</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">針織衫</a></li>
-            </ul>
-          </li>
-          <li class="pure-menu-item mainChild">
-            <a href="javascript:;" class="pure-menu-link">小男童下著<i class="btr bt-angles-down bt-sm"></i></a>
-            <ul class="pure-menu-list subChild">
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">吊帶裙</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">洋裝</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">外套</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">短褲</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">七分褲</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">群類</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">內搭褲</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">長褲</a></li>
-            </ul>
-          </li>
-          <li class="pure-menu-item mainChild">
-            <a href="javascript:;" class="pure-menu-link">大男孩上著<i class="btr bt-angles-down bt-sm"></i></a>
-            <ul class="pure-menu-list subChild">
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">T 恤</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">背心</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">短袖</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">長袖</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">襯衫</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">針織衫</a></li>
-            </ul>
-          </li>
-          <li class="pure-menu-item mainChild">
-            <a href="javascript:;" class="pure-menu-link">大男孩下著<i class="btr bt-angles-down bt-sm"></i></a>
-            <ul class="pure-menu-list subChild">
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">吊帶裙</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">洋裝</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">外套</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">短褲</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">七分褲</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">群類</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">內搭褲</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">長褲</a></li>
-            </ul>
-          </li>
-        </ul>
-
-        <li class="pure-menu-item main" class="menu-item-divided pure-menu-selected">
-          <a href="javascript:;" class="pure-menu-link">嬰幼兒</a></li>
-        <ul class="pure-menu-list sub">
-          <li class="pure-menu-item mainChild">
-            <a href="javascript:;" class="pure-menu-link">嬰幼兒上著<i class="btr bt-angles-down bt-sm"></i></a>
-            <ul class="pure-menu-list subChild">
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">T 恤</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">背心</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">短袖</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">長袖</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">襯衫</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">針織衫</a></li>
-            </ul>
-          </li>
-          <li class="pure-menu-item mainChild">
-            <a href="javascript:;" class="pure-menu-link">嬰幼兒下著<i class="btr bt-angles-down bt-sm"></i></a>
-            <ul class="pure-menu-list subChild">
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">吊帶裙</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">洋裝</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">外套</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">短褲</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">七分褲</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">群類</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">內搭褲</a></li>
-              <li class="pure-menu-item"><a href="javascript:;" class="pure-menu-link">長褲</a></li>
-            </ul>
-          </li>
-        </ul>
-        <li class="pure-menu-item main" class="menu-item-divided pure-menu-selected">
-          <a href="javascript:;" class="pure-menu-link">人氣品牌</a></li>
-        <ul class="pure-menu-list sub">
-          <li class="pure-menu-item mainChild"><a href="javascript:;" class="pure-menu-link">米果</a></li>
-          <li class="pure-menu-item mainChild"><a href="javascript:;" class="pure-menu-link">豆山</a></li>
-          <li class="pure-menu-item mainChild"><a href="javascript:;" class="pure-menu-link">瑪瑪米亞</a></li>
-          <li class="pure-menu-item mainChild"><a href="javascript:;" class="pure-menu-link">瑪寶樂</a></li>
-          <li class="pure-menu-item mainChild"><a href="javascript:;" class="pure-menu-link">波提士</a></li>
-        </ul>
+        <li class="pure-menu-item"><a href="/" class="pure-menu-link">首頁</a></li>
+        <% menus = categoryMenu Category.where(id: 1) %>
+        <% menus.each do |menu| %>
+          <%= "<li class='pure-menu-item main'><a href='javascript:;' class='pure-menu-link'>#{menu['caption']}</a></li>".html_safe %>
+          <%= render 'layouts_partial/category_menu', :menus => menu['children'] unless menu['children'].nil? %>
+        <%end%>
+        <% menus = categoryMenu Category.where(id: 2) %>
+        <% menus.each do |menu| %>
+            <%= "<li class='pure-menu-item main'><a href='javascript:;' class='pure-menu-link'>#{menu['caption']}</a></li>".html_safe %>
+            <%= render 'layouts_partial/category_menu', :menus => menu['children'] unless menu['children'].nil? %>
+        <%end%>
+        <% menus = categoryMenu Category.where(id: 3) %>
+        <% menus.each do |menu| %>
+            <%= "<li class='pure-menu-item main'><a href='javascript:;' class='pure-menu-link'>#{menu['caption']}</a></li>".html_safe %>
+            <%= render 'layouts_partial/category_menu', :menus => menu['children'] unless menu['children'].nil? %>
+        <%end%>
+        <% menus = categoryMenu Category.where(id: 4) %>
+        <% menus.each do |menu| %>
+            <%= "<li class='pure-menu-item main'><a href='javascript:;' class='pure-menu-link'>#{menu['caption']}</a></li>".html_safe %>
+            <%= render 'layouts_partial/category_menu', :menus => menu['children'] unless menu['children'].nil? %>
+        <%end%>
+        <% menus = categoryMenu Category.where(id: 5) %>
+        <% menus.each do |menu| %>
+            <%= "<li class='pure-menu-item main'><a href='javascript:;' class='pure-menu-link'>#{menu['caption']}</a></li>".html_safe %>
+            <%= render 'layouts_partial/category_menu', :menus => menu['children'] unless menu['children'].nil? %>
+        <%end%>
       </ul>
     </div>
   </div>
