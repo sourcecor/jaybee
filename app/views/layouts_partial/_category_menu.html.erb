@@ -1,16 +1,13 @@
-<ul class="pure-menu-list sub">
-<% menus.each do |menu| %>
+<% menus.each do |menu|%>
   <% if menu['children'].nil? %>
-    <%= "<li class='pure-menu-item mainChild'><a href='javascript:;' class='pure-menu-link'>#{menu['caption']}</a></li>".html_safe %>
+    <%= "<li><a href='javascript:;'>#{menu['caption']}</a></li>".html_safe %>
   <% else %>
-    <li class="pure-menu-item mainChild">
-      <%= "<a href='javascript:;' class='pure-menu-link'>#{menu['caption']}<i class='btr bt-angles-down bt-sm'></i></a>".html_safe %>
-      <ul class="pure-menu-list subChild">
-        <% menu['children'].each do |sub| %>
-          <%= "<li class='pure-menu-item'><a href='javascript:;' class='pure-menu-link'>#{sub['caption']}</a></li>".html_safe %>
-        <%end%>
+    <li>
+      <%= "<input id='group-#{menu['id']}' type='checkbox' hidden />".html_safe %>
+      <%= "<label for='group-#{menu['id']}'><span class='btr bt-angle-right bt-sm'></span>#{menu['caption']}</label>".html_safe %>
+      <ul class="group-list">
+        <%= render 'layouts_partial/category_menu', :menus => menu['children'] %>
       </ul>
     </li>
   <% end %>
 <% end %>
-</ul>

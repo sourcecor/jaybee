@@ -51,7 +51,7 @@ body.distractful-body{overflow-x:hidden }
 	transition: box-shadow 0.5s ease;
 }
 
-.distractful-pagers{position: absolute;bottom: 50px;width:100%;text-align: center;}
+.distractful-pagers{position: absolute;bottom: 50px;width:100%;text-align: center;z}
 .distractful-pager{
 	position: relative;
     display: inline-block;

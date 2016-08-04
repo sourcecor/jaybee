@@ -23,6 +23,7 @@ Main CSS:
 ::-webkit-scrollbar {
 		  width: 8px;
 	margin-left: 5px;
+	height: 0px;
 	 background-color:white!important;
 	}
 ::-webkit-scrollbar-track {
@@ -43,7 +44,111 @@ Main CSS:
 	::-webkit-scrollbar-corner {
 		  background-color: white!important;
 	} 
+
 /***********mouse scroll End**************************************/
+
+
+.nav{
+	width: 100%;
+	top:88px;
+	display: none;
+	position: fixed;
+	z-index: 5;
+	height: 420px;
+	overflow-y: scroll;
+	overflow-x: hidden
+	
+}
+
+
+.nav a, .nav label {
+      display: block;
+      padding: .85rem;
+      color: #fff;
+      background-color: #4FC1FF;
+      box-shadow: inset 0 -1px #40abe5;
+      -webkit-transition: all .25s ease-in;
+      transition: all .25s ease-in;
+    }
+
+    .nav a:focus, .nav a:hover, .nav label:focus, .nav label:hover {
+      color: rgba(255, 255, 255, 0.8);
+      background: rgba(79, 193, 255, 0.9);
+    }
+
+    .nav label { cursor: pointer; }
+
+    /**
+     * Styling first level lists items
+     */
+
+    .group-list a, .group-list label {
+      padding-left: 2rem;
+      background: #919191;
+      box-shadow: inset 0 -1px #848383;
+    }
+
+    .group-list a:focus, .group-list a:hover, .group-list label:focus, .group-list label:hover { background: rgba(145, 145, 145, 0.9); }
+
+    /**
+     * Styling second level list items
+     */
+
+    .sub-group-list a, .sub-group-list label {
+      padding-left: 4rem;
+      background: #afafaf;
+      box-shadow: inset 0 -1px #bcbbbb;
+    }
+
+    .sub-group-list a:focus, .sub-group-list a:hover, .sub-group-list label:focus, .sub-group-list label:hover { background: rgba(175, 175, 175, 0.9); }
+
+    /**
+     * Styling third level list items
+     */
+
+    .sub-sub-group-list a, .sub-sub-group-list label {
+      padding-left: 6rem;
+      background: #b7b7b7;
+      box-shadow: inset 0 -1px #afafaf;
+    }
+
+    .sub-sub-group-list a:focus, .sub-sub-group-list a:hover, .sub-sub-group-list label:focus, .sub-sub-group-list label:hover { background: rgba(183, 183, 183, 0.9); }
+
+    /**
+     * Hide nested lists
+     */
+
+    .group-list, .sub-group-list, .sub-sub-group-list {
+      height: 100%;
+      max-height: 0;
+      overflow: hidden;
+      -webkit-transition: max-height .5s ease-in-out;
+      transition: max-height .5s ease-in-out;
+    }
+
+    .nav__list input[type=checkbox]:checked + label + ul { /* reset the height when checkbox is checked */
+      max-height: 1000px; }
+
+    /**
+     * Rotating chevron icon
+     */
+
+    label > span {
+		color: white;
+      float: right;
+      -webkit-transition: -webkit-transform .65s ease;
+      transition: transform .65s ease;
+    }
+
+    .nav__list input[type=checkbox]:checked + label > span {
+      -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+      transform: rotate(90deg);
+    }
+
+
+
+
 
 
 /***********All Set Start*****************************************/
@@ -67,6 +172,7 @@ Main CSS:
 #layout{
     width: 100%;
     height: 100%;
+	overflow: hidden;
 }
 #layout #content{
     width: 100%;
@@ -74,6 +180,7 @@ Main CSS:
     background: white;
 	padding-bottom: 60px;
 	position: relative;
+	overflow: k
     
 }
 
@@ -148,7 +255,7 @@ Main CSS:
 	z-index: 1000;
 	padding-left: 5px;
 	padding-right: 10px;
-	background-clip: padding-box;
+	background-clip: 'padding-box';
 	border: 1px solid rgba(0, 0, 0, .2);
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
@@ -228,220 +335,7 @@ Main CSS:
 .panel-body button:focus{
 	background-color: #FF91B8
 }
-/***********onlineServiceEnd*****************************************/
 
-/***********pureMenu*****************************************/
-
-/*
-The `#menu` `<div>` is the parent `<div>` that contains the `.pure-menu` that
-appears on the left side of the page.
-*/
-#layout,
-#menu,
-.menu-link {
-    -webkit-transition: all 0.2s ease-out;
-    -moz-transition: all 0.2s ease-out;
-    -ms-transition: all 0.2s ease-out;
-    -o-transition: all 0.2s ease-out;
-    transition: all 0.2s ease-out;
-}
-
-/*
-This is the parent `<div>` that contains the menu and the content area.
-*/
-#layout {
-    position: relative;
-    overflow: hidden;
-}
-    #layout.active #menu {
-        left:275px;
-        width:275px;
-    }
-
-    #layout.active .menu-link {
-        left: 275px;
-    }
-#menu {
-    margin-left: -275px; /* "#menu" width */
-    width: 275px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    z-index: 1000; /* so the menu or its navicon stays above all content */
-    background: rgba(25, 24, 24, 0.8);
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-}
-#menu .pure-form {
-	margin:15px 0px 25px 15px;;
-	
-	
-}
-/*
-#menu .pure-input {
-	width: 0px;
-	display: inline-block;
-	
-	
-}
-*/
-#menu button{
-	background-color:rgba(247, 247, 247, 0);
-	border: none;
-	outline: none;
-	display: inline-block;
-	color: white;
-}
-
-
-
-#blogLink{
-	position: relative;
-	top:14px;
-}
-#blogLink img{
-	position: relative;
-	top:-5px;
-}
-/*
-    All anchors inside the menu should be styled like this.
-    */
-    #menu a {
-        color: white;
-        border: none;
-        padding: 10px 0px 10px 10px;
-    }
-
-    /*
-    Remove all background/borders, since we are applying them to #menu.
-    */
-     #menu .pure-menu,
-     #menu .pure-menu ul {
-		 
-        border: none;
-        background: transparent;
-		
-		
-    }
-
-    /*
-    Add that light border to separate items into groups.
-    */
-    #menu .pure-menu ul,
-    #menu .pure-menu .menu-item-divided {
-        font-size: 16px
-    }
-        /*
-        Change color of the anchor links on hover/focus.
-        */
-        #menu .pure-menu li a:hover,
-        #menu .pure-menu li a:focus {
-            background: rgba(51, 51, 51, 0.82);
-			
-        }
-
-    /*
-    This styles the selected menu item `<li>`.
-    */
-    #menu .pure-menu-selected,
-    #menu .pure-menu-heading {
-        background: white;
-        text-align: center;
-        height: 28px;
-    }
-        /*
-        This styles a link within a selected menu item `<li>`.
-        */
-        #menu .pure-menu-selected a {
-            color: #fff;
-        }
-
-    /*
-    This styles the menu heading.
-    */
-    #menu .pure-menu-heading {
-        color: #fff;
-        margin: 0;
-    }
-    #menu .pure-menu-heading img{
-         width:70px;
-        margin-top: -12px
-    }
-
-#menu .sub li a {
-	
-	font-size:14px;
-	padding-left: 20px;
-}
-/* -- Dynamic Button For Responsive Menu -------------------------------------*/
-
-/*
-The button to open/close the Menu is custom-made and not part of Pure. Here's
-how it works:
-*/
-
-/*
-`.menu-link` represents the responsive menu toggle that shows/hides on
-small screens.
-*/
-.menu-link {
-    position: fixed;
-    display: none; /* show this only on small screens */
-    top: 0;
-    left: 0; /* "#menu width" */
-    background: #4FC1FF;
-    font-size: 10px; /* change this value to increase/decrease button size */
-    z-index: 10;
-    width: 2em;
-    height: auto;
-    padding: 1.5em  1em;
-    text-align: center;
-}
-.menu-link i{
-    color: white;
-    font-size: 18px;
-}
-    .menu-link:hover,
-    .menu-link:focus {
-        background: #FF91B8;
-    }
-
-    .menu-link span {
-        position: relative;
-        display: block;
-    }
-
-    .menu-link span,
-    .menu-link span:before,
-    .menu-link span:after {
-        background-color: #fff;
-        width: 100%;
-        height: 0.2em;
-    }
-
-        .menu-link span:before,
-        .menu-link span:after {
-            position: absolute;
-            margin-top: -0.6em;
-            content: " ";
-        }
-
-        .menu-link span:after {
-            margin-top: 0.6em;
-        }
-
-#menu .mainChild .pure-menu-list .pure-menu-item .pure-menu-link{
-    padding-left: 35px;
-    display: block;
-    font-size: 14px;
-    color: gainsboro
-}
-#menu .mainChild i{
-    margin-left: 5px;
-    font-size: 12px;
-    color: white;
-}
 /****NavStart**********************************************************/
 header{
 	padding:0px 0px 8px 0px;
@@ -476,16 +370,20 @@ nav .jayNav{
 
 .jayNav .bottomNav{
 	width: 100%;
-	margin-top: 10px;
+	height: 20px;
+	padding-top: 5px;
     text-align: right;
     font-size: 15px;
 	font-weight: bold;
-
+	overflow: auto;
+    white-space: nowrap;
+	margin-top:10px 
+	
 	
 }
 .jayNav .bottomNav .parentNav{
 	display: inline-block;
-	width: 13.6%;
+	width: 100px;
 	vertical-align: top;
 	text-align: center;
 	border-right:dotted 1px #4FC1FF;
@@ -884,7 +782,7 @@ footer article ul li .social{
 		left: 22px;
 	}
 	.jayNav .bottomNav{
-		margin-top: 10px;
+		margin-top: 15px;
 	}
 	nav .logo img{
 		width: 40%;
@@ -893,18 +791,15 @@ footer article ul li .social{
 }
 
 @media screen and (max-width: 768px) {
-    .menu-link {
-        
-        display: block; 
-    }
+   .nav{
+		display: block;
+	}
 	.topNav .navSearch input{
 		width: 20px;
 		display: inline-block;
 	}
-    .jayNav .bottomNav,
 	.topNav .navSearch input,
-	.topNav .navSearch button,
-	.jayNav .bottomNav .member{
+	.topNav .navSearch button,#proList,#member{
 		display: none;
 	}
     header{       
@@ -946,12 +841,12 @@ footer article ul li .social{
         margin: auto;
         display: inline-block;
         vertical-align: top;
-        left: 50px
+        left: 10px
        
     }
     nav .logo img{
         width: 40%;
-        margin-top: 5px;
+        margin-top: 10px;
     }
 	footer article{
 		width: 96%;
@@ -986,14 +881,7 @@ footer article ul li .social{
 	
 }
 @media screen and (max-width: 460px) {
-	.jayNav .bottomNav .parentNav{
-		width: 18.5%;
-	}
-	.jayNav .bottomNav{
-		font-size: 13px
 
-
-	}
 	#feedback-form {
 		width: 250px;
 	}

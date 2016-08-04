@@ -1,19 +1,21 @@
 #content{
-	max-width: 1200px;
+	max-width: 960px;
 	margin:100px auto 0 auto;
 	
 }
 #content .leftContent{
-	width: 15%;
+	width: 20%;
 	display: inline-block;
 	vertical-align: top;
 	text-align: center;
-	margin-right: .5%;
+	margin-right: 2%;
 }
 .leftContent img{
 	vertical-align: top;
 }
 .coinTitle{
+	width: 70%;
+	margin: auto;
 	padding: 8px 0px;
 	border-radius: 20px;
 	margin-top: 20px;
@@ -22,7 +24,7 @@
 	font-weight: bold
 }
 #content .rightContent{
-	width: 84%;
+	width: 77.5%;
 	display: inline-block;
 	vertical-align: top;
 }
@@ -118,16 +120,18 @@
 	text-align: center;
 }
 .items{
-	width: 23%;
+	width: 24.3%;
+	height: 24%;
 	border: 1px solid #91d8ff;
 	display: inline-block;
 	text-align: center;
-	margin:0% .7% 2% .8%;
+	margin:0% 0% 2% 0%;
 }
 
 .gift .itemsImg{
 	width: 100%;
-	height: 220px;
+	height: 200px;
+	max-height: 24%;
 	background-size: cover;
 	background-position: center;
 	margin-bottom: 10px;
@@ -135,6 +139,7 @@
 }
 .gift .itemsImg img{
 	width: 100%;
+	height: 100%;
 }
 .gift p{
 	margin-bottom: 7px;

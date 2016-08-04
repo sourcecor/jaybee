@@ -83,7 +83,7 @@
 .tabItems:hover,
 .tabItems:focus{
 	border: none;
-	background-color: #FF8797;
+	background-color: #FFC53E;
 }
 .aboutCenter img{
 	width: 100%;
@@ -94,7 +94,6 @@
 	font-size: 14px;
 	margin-top: 20px;
 	margin-bottom: 10px;
-    line-height: 20px;
 }
 .aboutCenter h1{
 	color: #FF91B8;

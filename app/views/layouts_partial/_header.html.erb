@@ -5,8 +5,7 @@
       <div class="topNav">
         <div class="navSearch">
           <form>
-            <input type="text" placeholder="請輸入關鍵字">
-            <button type="submit"><i class="btr bt-search bt-lg"></i></button>
+            <input type="text" placeholder="請輸入關鍵字"><button type="submit"><i class="btr bt-search bt-lg"></i></button>
             <i class="btr bt-search bt-lg"></i>
             <i class="btr bt-shopping-cart bt-lg"></i>
             <i class="btr bt-user bt-lg"></i>
@@ -14,22 +13,12 @@
         </div>
       </div>
       <ul class="bottomNav">
-        <li class="parentNav">
-          <a href="javascript:;"><%= image_tag "main/iconNew.png" %>最新商品</a>
-        <li class="parentNav">
-          <a href="javascript:;"><%= image_tag "main/iconGirl.png"%>可愛女童</a>
-        </li>
-        <li class="parentNav">
-          <a href="javascript:;"><%= image_tag "main/iconBoy.png"%>帥氣男童</a>
-        </li>
-        <li class="parentNav">
-          <a href="javascript:;"><%= image_tag "main/iconBaby.png"%>嬰幼兒</a>
-        </li>
-        <li class="parentNav subject">
-          <a href="javascript:;"><%= image_tag "main/iconBrain.png"%>人氣品牌</a>
-        </li>
-        <li id="member" class="parentNav member">
-          <a href="javascript:;"><%= image_tag "main/iconUser.png"%>會員中心</a>
+        <li id="new"  class="parentNav"><a href="javascript:;"><%= image_tag "main/iconNew.png" %>最新商品</a>
+        <li id="girl" class="parentNav"><a href="javascript:;"><%= image_tag "main/iconGirl.png" %>可愛女童</a></li>
+        <li id="boy" class="parentNav"><a href="javascript:;"><%= image_tag "main/iconBoy.png" %>帥氣男童</a></li>
+        <li id="baby" class="parentNav"><a href="javascript:;"><%= image_tag "main/iconBaby.png" %>嬰幼兒</a></li>
+        <li id="brands" class="parentNav subject"><a href="javascript:;"><%= image_tag "main/iconBrain.png" %>人氣品牌</a></li>
+        <li id="member" class="parentNav member"><a href="javascript:;"><%= image_tag "main/iconUser.png" %>會員中心</a>
           <ul class="childrenNav">
             <li>
               <a href="member/login.html" class="login">
@@ -71,10 +60,10 @@
                 <i class="btr bt-sign-out bt-lg"></i>會員登出
               </a>
             </li>
+
           </ul>
         </li>
-        <li id="proList" class="parentNav member">
-          <a href="javascript:;"><i class="btr bt-shopping-cart bt-lg"></i>0件商品</a>
+        <li id="proList" class="parentNav member"><a href="javascript:;"><i class="btr bt-shopping-cart bt-lg"></i>0件商品</a>
           <ul class="childrenNav proList">
             <div class="proBox">
               <span class="proImg" style=background-image:url(<%= image_url "index/product0.jpg" %>)></span>
@@ -92,40 +81,45 @@
       </ul>
     </div>
   </nav>
-  <a href="#menu" id="menuLink" class="menu-link">
-    <i class="btr bt-bars bt-1x"></i>
-  </a>
-  <div id="menu">
-    <div class="pure-menu">
-      <a class="pure-menu-heading" href="#"><%= image_tag "main/logo.png", class:"pure-img-responsive" %></a>
-      <ul class="pure-menu-list">
-        <li class="pure-menu-item"><a href="/" class="pure-menu-link">首頁</a></li>
-        <% menus = categoryMenu Category.where(id: 1) %>
-        <% menus.each do |menu| %>
-            <%= "<li class='pure-menu-item main'><a href='javascript:;' class='pure-menu-link'>#{menu['caption']}</a></li>".html_safe %>
-            <%= render 'layouts_partial/category_menu', :menus => menu['children'] unless menu['children'].nil? %>
-        <%end%>
-        <% menus = categoryMenu Category.where(id: 2) %>
-        <% menus.each do |menu| %>
-            <%= "<li class='pure-menu-item main'><a href='javascript:;' class='pure-menu-link'>#{menu['caption']}</a></li>".html_safe %>
-            <%= render 'layouts_partial/category_menu', :menus => menu['children'] unless menu['children'].nil? %>
-        <%end%>
-        <% menus = categoryMenu Category.where(id: 3) %>
-        <% menus.each do |menu| %>
-            <%= "<li class='pure-menu-item main'><a href='javascript:;' class='pure-menu-link'>#{menu['caption']}</a></li>".html_safe %>
-            <%= render 'layouts_partial/category_menu', :menus => menu['children'] unless menu['children'].nil? %>
-        <%end%>
-        <% menus = categoryMenu Category.where(id: 4) %>
-        <% menus.each do |menu| %>
-            <%= "<li class='pure-menu-item main'><a href='javascript:;' class='pure-menu-link'>#{menu['caption']}</a></li>".html_safe %>
-            <%= render 'layouts_partial/category_menu', :menus => menu['children'] unless menu['children'].nil? %>
-        <%end%>
-        <% menus = categoryMenu Category.where(id: 5) %>
-        <% menus.each do |menu| %>
-            <%= "<li class='pure-menu-item main'><a href='javascript:;' class='pure-menu-link'>#{menu['caption']}</a></li>".html_safe %>
-            <%= render 'layouts_partial/category_menu', :menus => menu['children'] unless menu['children'].nil? %>
-        <%end%>
-      </ul>
-    </div>
-  </div>
 </header>
+
+<div class="nav new">
+  <ul class="nav__list ">
+    <% menus = categoryMenu Category.where(id: 1) %>
+    <% menus.each do |menu| %>
+      <%= render 'layouts_partial/category_menu', :menus => menu['children'] %>
+    <%end%>
+  </ul>
+</div>
+<div class="nav girl">
+  <ul class="nav__list ">
+    <% menus = categoryMenu Category.where(id: 2) %>
+    <% menus.each do |menu| %>
+        <%= render 'layouts_partial/category_menu', :menus => menu['children'] %>
+    <%end%>
+  </ul>
+</div>
+<div class="nav boy">
+  <ul class="nav__list ">
+    <% menus = categoryMenu Category.where(id: 3) %>
+    <% menus.each do |menu| %>
+        <%= render 'layouts_partial/category_menu', :menus => menu['children'] %>
+    <%end%>
+  </ul>
+</div>
+<div class="nav baby">
+  <ul class="nav__list ">
+    <% menus = categoryMenu Category.where(id: 4) %>
+    <% menus.each do |menu| %>
+        <%= render 'layouts_partial/category_menu', :menus => menu['children'] %>
+    <%end%>
+  </ul>
+</div>
+<div class="nav brands">
+  <ul class="nav__list ">
+    <% menus = categoryMenu Category.where(id: 5) %>
+    <% menus.each do |menu| %>
+        <%= render 'layouts_partial/category_menu', :menus => menu['children'] %>
+    <%end%>
+  </ul>
+</div>

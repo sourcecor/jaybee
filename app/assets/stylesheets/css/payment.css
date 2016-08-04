@@ -80,7 +80,7 @@
     max-width: 1200px;
     width: 99%
 }
-#shoppingList .pure-table td, .pure-table th{
+#shoppingList .pure-table td, .pure-table th,{
     font-family: 微軟正黑體;
     background-color: #EFEFEF;
 	border: 1px solid lightgray;
@@ -223,7 +223,7 @@ td{
 #cartTotal .count{
 	margin-right: 100px
 }
-#cartTotal .en{
+#cartTotal en{
 	margin-right: 5px;
 	display: inline-block;
 }
