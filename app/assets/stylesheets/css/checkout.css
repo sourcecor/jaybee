@@ -1,219 +1,246 @@
-#content{
-	max-width: 960px;
-}
-.checkOut{
-	width: 47.5%;
-	display: inline-block;
-	margin:1%;
-	text-align: left;
-	
-}
-.checkOutCvs{
-	width: 100%;
-	display: inline-block;
-	text-align: left;
-	
-}
-.checkOutCvs .buyer{
-	width: 94%;
-	padding:2%;
-	display: block;
-	background-color: #EFEFEF;
-	border-radius: 15px;
-	font-size: 14px;
-	margin: 1% auto 0 auto;
-	
-}
-.checkOut h2{
-	
-	margin-left: 20px;
-}
-.checkOutCvs h2{
-	font-weight: bold;
-	margin-left: 30px;
+#content {
+    max-width: 960px;
 }
 
-.checkOut h2 label{
-	font-size: 14px;
-	margin-left: 5px;
-	cursor: pointer;
-	vertical-align: top;
-}
-.checkOut h2 label:hover{
-	color: #b4b4b4;
-}
-.checkOut h2 input{
-	margin-left: 5px;
-	cursor: pointer;	
+.checkOut {
+    width: 47.5%;
+    display: inline-block;
+    margin: 1%;
+    text-align: left;
+
 }
 
-.checkOut .buyer{
-	width: 90%;
-	padding:5% 4% 1% 4%;
-	display: inline-block;
-	background-color: #EFEFEF;
-	border-radius: 15px;
-	font-size: 14px;
-	margin-top: 2%;
-		
-}
-.checkOut .buyer input{
-	width: 98%;
-	padding:1.5% 1%;
-	border-radius: 5px;
-	border: none;
-	margin:10px 0px 25px 0px;
-	border: 1px solid white;
-	transition: all .5s ease
-	
-}
-.checkOutCvs .buyer input{
-	width: 98%;
-	padding:.5% 1%;
-	border-radius: 5px;
-	border: none;
-	margin:5px 0px 15px 0px;
-	border: 1px solid white;
-	transition: all .5s ease
-		
-}
-.checkOutCvs .buyer .error{
-	width: 98%;
-	padding:.5% 1%;
-	border-radius: 5px;
-	border: none;
-	margin:5px 0px 15px 0px;
-	border: 1px solid #ff0f62;
-	transition: all .5s ease
-		
+.checkOutCvs {
+    width: 100%;
+    display: inline-block;
+    text-align: left;
+
 }
 
-.checkOut .buyer .error{
-	width: 98%;
-	padding:1.5% 1%;
-	border-radius: 5px;
-	border: none;
-	margin:7px 0px 25px 0px;
-	border: 1px solid #ff0f62;
-	transition: all .5s ease
-	
+.checkOutCvs .buyer {
+    width: 94%;
+    padding: 2%;
+    display: block;
+    background-color: #EFEFEF;
+    border-radius: 15px;
+    font-size: 14px;
+    margin: 1% auto 0 auto;
+
 }
-.errorText{
-	float: right;
-	clear: both;
-	color: #ff0f62;
+
+.checkOut h2 {
+
+    margin-left: 20px;
 }
+
+.checkOutCvs h2 {
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+.checkOut h2 label {
+    font-size: 14px;
+    margin-left: 5px;
+    cursor: pointer;
+    vertical-align: top;
+}
+
+.checkOut h2 label:hover {
+    color: #b4b4b4;
+}
+
+.checkOut h2 input {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.checkOut .buyer {
+    width: 90%;
+    padding: 5% 4% 1% 4%;
+    display: inline-block;
+    background-color: #EFEFEF;
+    border-radius: 15px;
+    font-size: 14px;
+    margin-top: 2%;
+
+}
+
+.checkOut .buyer input {
+    width: 98%;
+    padding: 1.5% 1%;
+    border-radius: 5px;
+    border: none;
+    margin: 10px 0px 25px 0px;
+    border: 1px solid white;
+    transition: all .5s ease
+
+}
+
+.checkOutCvs .buyer input {
+    width: 98%;
+    padding: .5% 1%;
+    border-radius: 5px;
+    border: none;
+    margin: 5px 0px 15px 0px;
+    border: 1px solid white;
+    transition: all .5s ease
+
+}
+
+.checkOutCvs .buyer .error {
+    width: 98%;
+    padding: .5% 1%;
+    border-radius: 5px;
+    border: none;
+    margin: 5px 0px 15px 0px;
+    border: 1px solid #ff0f62;
+    transition: all .5s ease
+
+}
+
+.checkOut .buyer .error {
+    width: 98%;
+    padding: 1.5% 1%;
+    border-radius: 5px;
+    border: none;
+    margin: 7px 0px 25px 0px;
+    border: 1px solid #ff0f62;
+    transition: all .5s ease
+
+}
+
+.errorText {
+    float: right;
+    clear: both;
+    color: #ff0f62;
+}
+
 .checkOut .buyer select:hover,
 .checkOut .buyer input:hover,
-.checkOutCvs .buyer input:hover{
-	border: 1px solid lightgray;
-	box-shadow: 0px 0px 5px lightgray;
+.checkOutCvs .buyer input:hover {
+    border: 1px solid lightgray;
+    box-shadow: 0px 0px 5px lightgray;
 }
+
 .checkOut .buyer select:focus,
 .checkOut .buyer input:focus,
-.checkOutCvs .buyer input:focus{
-	border: 1px solid #4FC1FF	;
-	box-shadow: 0px 0px 5px lightgray;
+.checkOutCvs .buyer input:focus {
+    border: 1px solid #4FC1FF;
+    box-shadow: 0px 0px 5px lightgray;
 }
-.checkOut .buyer select{
-	padding: 4px 2px;
-	border-radius: 5px;
-	border: none;
-	margin-top: 10px;
-	cursor: pointer;
-	margin-right:5px;
-	border: 1px solid white;
-	transition: all .5s ease
+
+.checkOut .buyer select {
+    padding: 4px 2px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+    margin-right: 5px;
+    border: 1px solid white;
+    transition: all .5s ease
 }
-.checkOutCvs select{
-	width:77%;
-	padding: 4px 2px;
-	border-radius: 5px;
-	border: none;
-	margin-top: 10px;
-	cursor: pointer;
-	margin-right:5px;
-	border: 1px solid white;
-	transition: all .5s ease;
+
+.checkOutCvs select {
+    width: 77%;
+    padding: 4px 2px;
+    border-radius: 5px;
+    border: none;
+    margin-top: 10px;
+    cursor: pointer;
+    margin-right: 5px;
+    border: 1px solid white;
+    transition: all .5s ease;
 }
-.checkOutCvs a{
-	text-decoration: underline;
-	margin-left:15px;
-	display: inline-block;
+
+.checkOutCvs a {
+    text-decoration: underline;
+    margin-left: 15px;
+    display: inline-block;
 }
-.checkOutCvs a:hover{
-	color: #FF91B8
+
+.checkOutCvs a:hover {
+    color: #FF91B8
 }
+
 .invoice section,
-.notice section{
-	width: 94%;
-	padding:2%;
-	display: block;
-	background-color: #EFEFEF;
-	border-radius: 15px;
-	font-size: 14px;
-	margin: 1% auto 0 auto;
-	
+.notice section {
+    width: 94%;
+    padding: 2%;
+    display: block;
+    background-color: #EFEFEF;
+    border-radius: 15px;
+    font-size: 14px;
+    margin: 1% auto 0 auto;
+
 }
+
 .invoice h2,
-.notice h2{
-	margin-left: 30px;
-	margin-top: 30px;
-	font-weight: bold;
+.notice h2 {
+    margin-left: 30px;
+    margin-top: 30px;
+    font-weight: bold;
 }
+
 .invoice p,
-.notice p{
-	margin-bottom: 15px;
-	line-height: 20px;
-}
-.invoice label{
-	margin-right: 15px;
-}
-.backToShip{
-	padding: 10px 0px;
-	width: 150px;
-	text-align: center;
-	background-color:#4FC1FF;
-	border: none;
-	color: white;
-	font-size: 14px;
+.notice p {
+    margin-bottom: 15px;
+    line-height: 20px;
 }
 
-.nextStep{
-	padding: 10px 0px;
-	width: 150px;
-	text-align: center;
-	background-color:#FF91B8;
-	border: none;
-	color: white;
-	margin-left: 20px;
-	font-size: 14px;
+.invoice label {
+    margin-right: 15px;
 }
-table{
-	width: 100%;
-	border: 1px solid rgba(238, 238, 238, 0);
-	text-align: center;
-	font-family: 微軟正黑體
+
+.backToShip {
+    padding: 10px 0px;
+    width: 150px;
+    text-align: center;
+    background-color: #4FC1FF;
+    border: none;
+    color: white;
+    font-size: 14px;
 }
-table th{
-	font-weight: bold;
-	font-family: 微軟正黑體
+
+.nextStep {
+    padding: 10px 0px;
+    width: 150px;
+    text-align: center;
+    background-color: #FF91B8;
+    border: none;
+    color: white;
+    margin-left: 20px;
+    font-size: 14px;
 }
-table tr,table th{
-	padding: 10px  0px;
-	text-align: center;
-	
+
+table {
+    width: 100%;
+    border: 1px solid rgba(238, 238, 238, 0);
+    text-align: center;
+    font-family: 微軟正黑體
+}
+
+table th {
+    font-weight: bold;
+    font-family: 微軟正黑體
+}
+
+table tr, table th {
+    padding: 10px 0px;
+    text-align: center;
 
 }
-.invoice p{
-	text-align: left;
-	border-bottom: 1px solid lightgray;
+
+.invoice p {
+    text-align: left;
+    border-bottom: 1px solid lightgray;
 }
-table tr{
-	border-top: 1px solid lightgray;
-	border-bottom: 1px solid lightgray;
+
+table tr {
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
 }
-table tr td{
-	font-family: 微軟正黑體;
-	padding: 10px 0px
+
+table tr td {
+    font-family: 微軟正黑體;
+    padding: 10px 0px
 }

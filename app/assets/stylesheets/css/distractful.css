@@ -1,69 +1,118 @@
-.distractful{overflow:hidden;margin-top: 0px;}
-.distractful:hover{cursor: pointer; cursor: hand;}
-.distractful-item{background-position: center center;background-size: cover;position:absolute;overflow: hidden;margin: auto;z-index: 0;height: 100%;}
-.distractful-item img{display:none;}
+.distractful {
+    overflow: hidden;
+    margin-top: 0px;
+}
 
-.distractful.isParallax{position:fixed;z-index:0;}
-.distractfulParallaxPlaceholder{background:none;}
+.distractful:hover {
+    cursor: pointer;
+    cursor: hand;
+}
 
-body.distractful-body{overflow-x:hidden }
+.distractful-item {
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    overflow: hidden;
+    margin: auto;
+    z-index: 0;
+    height: 100%;
+}
 
-.distractful-controls{position:absolute;width:100px;height:75px;display: block;}
-.distractful-controls:hover{cursor:pointer;}
+.distractful-item img {
+    display: none;
+}
+
+.distractful.isParallax {
+    position: fixed;
+    z-index: 0;
+}
+
+.distractfulParallaxPlaceholder {
+    background: none;
+}
+
+body.distractful-body {
+    overflow-x: hidden
+}
+
+.distractful-controls {
+    position: absolute;
+    width: 100px;
+    height: 75px;
+    display: block;
+}
+
+.distractful-controls:hover {
+    cursor: pointer;
+}
+
 .distractful-controls.left:hover {
-  box-shadow: 10px -10px 0 rgba(255, 255, 255, 0.2);
-}
-.distractful-controls.left {
-	left:50px;	
-	width: 50px;
-	height: 50px;
-	border-top: 1px solid #4FC1FF;
-	border-right: 1px solid #4FC1FF;
-	border-width: 10px;
-    border-radius: 10px;
-	-moz-transform: rotate(225deg);
-	-ms-transform: rotate(225deg);
-	-webkit-transform: rotate(225deg);
-	transform: rotate(225deg);
-	box-shadow: 5px -5px 0 #FFF;
-	margin-top:35px;
-	cursor: pointer;
-	transition: box-shadow 0.5s ease;
-}
-.distractful-controls.right:hover {
-  box-shadow: 10px -10px 0 rgba(255, 255, 255, 0.2);
-}
-.distractful-controls.right {
-	right:50px;
-	width: 50px;
-    height: 50px;
-	border-top: 1px solid #4FC1FF;
-	border-right: 1px solid #4FC1FF;
-	border-width: 10px;
-    border-radius: 10px;
-	-moz-transform: rotate(-315deg);
-	-ms-transform: rotate(-315deg);
-	-webkit-transform: rotate(-315deg);
-	transform: rotate(-315deg);
-	box-shadow: 5px -5px 0 #FFF;
-	margin-top: 35px;
-	cursor: pointer;
-	transition: box-shadow 0.5s ease;
+    box-shadow: 10px -10px 0 rgba(255, 255, 255, 0.2);
 }
 
-.distractful-pagers{position: absolute;bottom: 50px;width:100%;text-align: center;z}
-.distractful-pager{
-	position: relative;
+.distractful-controls.left {
+    left: 50px;
+    width: 50px;
+    height: 50px;
+    border-top: 1px solid #4FC1FF;
+    border-right: 1px solid #4FC1FF;
+    border-width: 10px;
+    border-radius: 10px;
+    -moz-transform: rotate(225deg);
+    -ms-transform: rotate(225deg);
+    -webkit-transform: rotate(225deg);
+    transform: rotate(225deg);
+    box-shadow: 5px -5px 0 #FFF;
+    margin-top: 35px;
+    cursor: pointer;
+    transition: box-shadow 0.5s ease;
+}
+
+.distractful-controls.right:hover {
+    box-shadow: 10px -10px 0 rgba(255, 255, 255, 0.2);
+}
+
+.distractful-controls.right {
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    border-top: 1px solid #4FC1FF;
+    border-right: 1px solid #4FC1FF;
+    border-width: 10px;
+    border-radius: 10px;
+    -moz-transform: rotate(-315deg);
+    -ms-transform: rotate(-315deg);
+    -webkit-transform: rotate(-315deg);
+    transform: rotate(-315deg);
+    box-shadow: 5px -5px 0 #FFF;
+    margin-top: 35px;
+    cursor: pointer;
+    transition: box-shadow 0.5s ease;
+}
+
+.distractful-pagers {
+    position: absolute;
+    bottom: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+.distractful-pager {
+    position: relative;
     display: inline-block;
     margin: 0 8px;
     width: 10px;
     height: 10px;
     cursor: pointer;
 }
-.distractful-pager a:hover{background-color:rgba(255, 145, 184, 0.5);}
-.distractful-pager a{
-	background-color: transparent;
-    box-shadow: 0 0 0 2px #FF91B8;    
+
+.distractful-pager a:hover {
+    background-color: rgba(255, 145, 184, 0.5);
+}
+
+.distractful-pager a {
+    background-color: transparent;
+    box-shadow: 0 0 0 2px #FF91B8;
     top: 0;
     left: 0;
     width: 100%;
@@ -73,7 +122,10 @@ body.distractful-body{overflow-x:hidden }
     cursor: pointer;
     position: absolute;
     text-indent: -9999px;
-    transition: box-shadow .3s ease,background-color .3s ease;
+    transition: box-shadow .3s ease, background-color .3s ease;
 
 }
-.distractful-pager.active{background-color:rgba(255, 145, 184, 0.5);}
+
+.distractful-pager.active {
+    background-color: rgba(255, 145, 184, 0.5);
+}

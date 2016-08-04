@@ -1,344 +1,391 @@
 
-
-aside{
-	text-align: center;
-	
+aside {
+    text-align: center;
 }
+
 aside a {
-	display: inline-block;
+    display: inline-block;
     max-width: 32.5%;
-	margin: 1%;
-	position: relative;
-        
-}
-aside a img{
-	width: 100%;
-	
-}
-#content article{
-    width: 96%;
-    padding: 0% 2%;
-	max-width: 1200px;
-	margin: auto;
-	margin-bottom:60px;
-	text-align: center;
-	height: auto;
-}
-#content article .more{
-	display: block;
-	color: #4FC1FF;
-	font-size: 18px;
-	font-weight: bold;
-	clear: both;
-}
-#content article .more:hover{
-	color: #FF91B8
-}
-#content article a{
-	transition: all .7s ease;
-	opacity: 1
-}
-#content article a:hover{
-	opacity: .7
-}
-#content article h1{
-	color: #727171;
-	font-size: 20px;
-	text-align: center;
-	margin-bottom: 2%;
-}
-#content .brand a{
-	width: 23%;
-	display: inline-block;
-	border: 1px solid #ddf1fc;
-	vertical-align: top;
-	margin: .5%;
-	
-}
-#content .brand a img{
-	width: 100%;
+    margin: 1%;
+    position: relative;
 
 }
-#content .gridImg{
-	
-	display: inline-block;
-}
-#content .banner{
-	width: 100%;
-	position: relative;
-	z-index: 0
-}
-#content .inner{
-	width: 100%;
-	background-color: white;
-	position: relative;
-	z-index: 2
-	
-}
-#content .gridImg figure img{
-	width: 100%
-}
-#content .gridImg figure{
-	width: 100%;
-	padding: 0px;
-	margin: 0px;
-	border: 1px solid #ddf1fc;
-}
-#content .gridImg figcaption{
-	padding: 5px;
-	height: 50px;
-	margin-top: -60px;
-	background-color: white;
-	position: relative;
-	z-index: 2;
-	text-align: left;
-	
-}
-#content .gridImg figcaption h2{
-	margin-top: 5px;
-	width: 60%;
-	font-size: 14px;
-	color: #898989;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-	overflow: hidden
-}
-#content .gridImg figcaption h3{
-	font-size: 16px;
-	width: 65%;
-	color: #535353;
-	font-weight: bold;
-	margin-top: 10px;
-	display: inline-block;
-	white-space: nowrap;	
-	text-overflow: ellipsis;
-	overflow: hidden
-}
-#content .gridImg figcaption .prize{
-	font-size: 25px;
-	float: right;
-	font-weight: bold;
-	color: #FF91B8;
-	
-}
 
-.gridOne .left{
-    width: 48%;
-	display: inline-block;
-	margin: 0% .5%;
-
-}
-.gridOne .right
-{
-	width: 48%;
-	display: inline-block;
-	margin: 0% .5%;
-}
-
-.gridOne .left .bigGrid{
-	width: 100%;
-	display: inline-block;
-	vertical-align: top;
-}
-.gridOne .right .twoGird{
-	width: 100%;
-	height: 100%;
-	margin-bottom: 20px;
-	
-		
-}
-
-.gridOne .right .twoGirdBox{
-	width: 48%;
-	display: inline-block;
-	vertical-align: top;
-	margin: 0% 1% 0 0;
-	
-}
-.gridOne .right .singleGird{
-	width: 48.5%;
-	display: inline-block;
-	vertical-align: top;
-	margin: 0% 0% 0% 1%;
-		
-}
-.gridThird .singleGird{
-	width:23.5%;
-	display: inline-block;
-	vertical-align: top;
-	margin: 0% .5%;
-}
-.gridfour {
-    text-align: center
-}
-.gridfour .left{
-	width:66.5%;
-	display: inline-block;
-}
-.gridfour .right
-{
-	width: 30.9%;
-	display: inline-block;
-}
-.gridfour .right img{
+aside a img {
     width: 100%;
 }
 
-.gridfour .left .singleGird{
-	width: 47.5%;
-	display: inline-block;
-	margin: 0% .5%;
+#content article {
+    width: 96%;
+    padding: 0% 2%;
+    max-width: 1200px;
+    margin: auto;
+    margin-bottom: 60px;
+    text-align: center;
+    height: auto;
 }
-.gridfour .right .twoGird{
-	width: 100%;
-	height: 100%;
-	margin-bottom: 20px;
+
+#content article .more {
+    display: block;
+    color: #4FC1FF;
+    font-size: 18px;
+    font-weight: bold;
+    clear: both;
+}
+
+#content article .more:hover {
+    color: #FF91B8
+}
+
+#content article a {
+    transition: all .7s ease;
+    opacity: 1
+}
+
+#content article a:hover {
+    opacity: .7
+}
+
+#content article h1 {
+    color: #727171;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 2%;
+}
+
+#content .brand a {
+    width: 23%;
+    display: inline-block;
+    border: 1px solid #ddf1fc;
+    vertical-align: top;
+    margin: .5%;
+
+}
+
+#content .brand a img {
+    width: 100%;
+
+}
+
+#content .gridImg {
+
+    display: inline-block;
+}
+
+#content .banner {
+    width: 100%;
+    position: relative;
+    z-index: 0
+}
+
+#content .inner {
+    width: 100%;
+    background-color: white;
+    position: relative;
+    z-index: 2
+
+}
+
+#content .gridImg figure img {
+    width: 100%
+}
+
+#content .gridImg figure {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    border: 1px solid #ddf1fc;
+}
+
+#content .gridImg figcaption {
+    padding: 5px;
+    height: 50px;
+    margin-top: -60px;
+    background-color: white;
+    position: relative;
+    z-index: 2;
+    text-align: left;
+
+}
+
+#content .gridImg figcaption h2 {
+    margin-top: 5px;
+    width: 60%;
+    font-size: 14px;
+    color: #898989;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden
+}
+
+#content .gridImg figcaption h3 {
+    font-size: 16px;
+    width: 65%;
+    color: #535353;
+    font-weight: bold;
+    margin-top: 10px;
+    display: inline-block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden
+}
+
+#content .gridImg figcaption .prize {
+    font-size: 25px;
+    float: right;
+    font-weight: bold;
+    color: #FF91B8;
+
+}
+
+.gridOne .left {
+    width: 48%;
+    display: inline-block;
+    margin: 0% .5%;
+
+}
+
+.gridOne .right {
+    width: 48%;
+    display: inline-block;
+    margin: 0% .5%;
+}
+
+.gridOne .left .bigGrid {
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.gridOne .right .twoGird {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
+
+}
+
+.gridOne .right .twoGirdBox {
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0% 1% 0 0;
+
+}
+
+.gridOne .right .singleGird {
+    width: 48.5%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0% 0% 0% 1%;
+
+}
+
+.gridThird .singleGird {
+    width: 23.5%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0% .5%;
+}
+
+.gridfour {
+    text-align: center
+}
+
+.gridfour .left {
+    width: 66.5%;
+    display: inline-block;
+}
+
+.gridfour .right {
+    width: 30.9%;
+    display: inline-block;
+}
+
+.gridfour .right img {
+    width: 100%;
+}
+
+.gridfour .left .singleGird {
+    width: 47.5%;
+    display: inline-block;
+    margin: 0% .5%;
+}
+
+.gridfour .right .twoGird {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 20px;
     margin: 0 .5% 20px .5%
-	
-		
+
 }
 
 @media screen and (max-width: 1179px) {
-	aside a {
-		max-width: 32.5%;
-		margin: 0%;
+    aside a {
+        max-width: 32.5%;
+        margin: 0%;
 
-	}
+    }
 
 }
+
 @media screen and (max-width: 1140px) {
-	.gridOne .right .twoGird{
-		margin-bottom:17px;
+    .gridOne .right .twoGird {
+        margin-bottom: 17px;
 
-
-	}
+    }
 }
+
 @media screen and (max-width: 940px) {
-	.gridOne .right .twoGird{
-		margin-bottom:16px;
+    .gridOne .right .twoGird {
+        margin-bottom: 16px;
 
-
-	}
+    }
 }
+
 @media screen and (max-width: 851px) {
-	.gridOne .right .twoGird{
-		margin-bottom:14px;
-	}
-	#content .gridImg figcaption h2{
-		font-size: 12px;
-	}
-	#content .gridImg figcaption h3{
-		font-size: 14px;
-	}
-	#content .gridImg figcaption .prize{
-		font-size: 20px;
-	}
+    .gridOne .right .twoGird {
+        margin-bottom: 14px;
+    }
+
+    #content .gridImg figcaption h2 {
+        font-size: 12px;
+    }
+
+    #content .gridImg figcaption h3 {
+        font-size: 14px;
+    }
+
+    #content .gridImg figcaption .prize {
+        font-size: 20px;
+    }
 }
-@media screen and (max-width:768px) {
-	#content .brand{
-		float: left;
-		margin-bottom: 60px;
-	}
-	#content .brand a{
-		width: 48%;
-		display: inline-block;
-		float: left;
-	}
-	.gridOne .right .twoGird{
-		margin-bottom:25px;
-		
-	}
-	
-	.gridOne .right,
-	.gridOne .left,
-	.gridfour .right,
-	.gridfour .left
-	{
-		width: 97%;
-		display:block;
-		margin: 0% .5%;
-	}
-	.gridOne .right{
-		margin-bottom: 15px;
-	}
-	.gridThird .singleGird{
-		width: 48%;
-		
-	}
-	.gridThird .singleGird:nth-child(1),
-	.gridThird .singleGird:nth-child(2){
-		margin-bottom: 15px;
-	}
-	.gridfour .left .singleGird{
-		margin-bottom: 15px;
-		float: left
-	}
-	.gridOne .right .twoGirdBox{
-		float: left;
-	}
-	#layout #content  h1{
-		margin-bottom: 10px;
-	}
-	.gridOne .left .bigGrid{
-		margin-bottom: 20px;
-	}
-	.gridTwo .left .bigGrid{
-		margin-bottom: 15px;
-	}
-	.gridfour .left .singleGird{
-		width: 48.2%;
-	}
-	.gridfour .left .singleGird:nth-child(1){
-		margin-right: 2%
-	}
+
+@media screen and (max-width: 768px) {
+    #content .brand {
+        float: left;
+        margin-bottom: 60px;
+    }
+
+    #content .brand a {
+        width: 48%;
+        display: inline-block;
+        float: left;
+    }
+
+    .gridOne .right .twoGird {
+        margin-bottom: 25px;
+
+    }
+
+    .gridOne .right,
+    .gridOne .left,
+    .gridfour .right,
+    .gridfour .left {
+        width: 97%;
+        display: block;
+        margin: 0% .5%;
+    }
+
+    .gridOne .right {
+        margin-bottom: 15px;
+    }
+
+    .gridThird .singleGird {
+        width: 48%;
+
+    }
+
+    .gridThird .singleGird:nth-child(1),
+    .gridThird .singleGird:nth-child(2) {
+        margin-bottom: 15px;
+    }
+
+    .gridfour .left .singleGird {
+        margin-bottom: 15px;
+        float: left
+    }
+
+    .gridOne .right .twoGirdBox {
+        float: left;
+    }
+
+    #layout #content h1 {
+        margin-bottom: 10px;
+    }
+
+    .gridOne .left .bigGrid {
+        margin-bottom: 20px;
+    }
+
+    .gridTwo .left .bigGrid {
+        margin-bottom: 15px;
+    }
+
+    .gridfour .left .singleGird {
+        width: 48.2%;
+    }
+
+    .gridfour .left .singleGird:nth-child(1) {
+        margin-right: 2%
+    }
 }
+
 @media screen and (max-width: 700px) {
-	.gridOne .right .twoGird{
-		margin-bottom:22px;
-	}
+    .gridOne .right .twoGird {
+        margin-bottom: 22px;
+    }
 }
+
 @media screen and (max-width: 600px) {
-	.gridOne .right .twoGird{
-		margin-bottom:17px;
-	}
+    .gridOne .right .twoGird {
+        margin-bottom: 17px;
+    }
 }
+
 @media screen and (max-width: 480px) {
-	aside a {
-		max-width: 31%;
-		margin-left: .5%;
+    aside a {
+        max-width: 31%;
+        margin-left: .5%;
 
-	}
-	#content .brand a{
-		width: 47.5%;
+    }
 
-	}
-	.gridOne .right .twoGird{
-		margin-bottom:18px;
-	}
+    #content .brand a {
+        width: 47.5%;
+
+    }
+
+    .gridOne .right .twoGird {
+        margin-bottom: 18px;
+    }
 
 }
+
 @media screen and (max-width: 470px) {
-	.gridOne .right .twoGird{
-		margin-bottom:14px;
-	}
+    .gridOne .right .twoGird {
+        margin-bottom: 14px;
+    }
 }
+
 @media screen and (max-width: 404px) {
-	.gridOne .right .twoGird{
-		margin-bottom:13px;
-	}
+    .gridOne .right .twoGird {
+        margin-bottom: 13px;
+    }
 }
+
 @media screen and (max-width: 380px) {
-	.gridOne .right .twoGird{
-		margin-bottom:10px;
-	}
+    .gridOne .right .twoGird {
+        margin-bottom: 10px;
+    }
 }
+
 @media screen and (max-width: 340px) {
-	#content .gridImg figcaption .prize{
-		font-size: 16px;
-	}
+    #content .gridImg figcaption .prize {
+        font-size: 16px;
+    }
 }
+
 @media screen and (max-width: 320px) {
-	.gridOne .right .twoGird{
-		margin-bottom:7px;
-	}
+    .gridOne .right .twoGird {
+        margin-bottom: 7px;
+    }
 }

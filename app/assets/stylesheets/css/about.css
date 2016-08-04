@@ -1,248 +1,284 @@
-#content{
-	max-width: 960px;
-	margin:100px auto 0 auto;
-	
+#content {
+    max-width: 960px;
+    margin: 100px auto 0 auto;
+
 }
-#content .leftContent{
-	width: 20%;
-	display: inline-block;
-	vertical-align: top;
-	text-align: center;
-	margin-right: 2%;
+
+#content .leftContent {
+    width: 20%;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    margin-right: 2%;
 }
-.leftContent img{
-	vertical-align: top;
+
+.leftContent img {
+    vertical-align: top;
 }
-.leftContent ul{
-	margin-top: 20px;
-	padding:20px;
-	background-color: #EFEFEF
+
+.leftContent ul {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #EFEFEF
 }
-.leftContent ul li{
-	text-align: left;
-	list-style:disc inside;
-	margin-bottom: 5px;
-	font-size: 32px;
-	color: #4FC1FF;
-    
-	
+
+.leftContent ul li {
+    text-align: left;
+    list-style: disc inside;
+    margin-bottom: 5px;
+    font-size: 32px;
+    color: #4FC1FF;
+
 }
-.leftContent ul li a{
-	font-size: 16px;
-	color: #4FC1FF;
-	font-weight: bold;
+
+.leftContent ul li a {
+    font-size: 16px;
+    color: #4FC1FF;
+    font-weight: bold;
     vertical-align: middle;
     padding: 10px 30px 12px 10px;
     margin-left: -5px
-    
-}
-.leftContent ul li a:hover,
-.leftContent ul li .active{
-	color: #FF8797;
-}
-.aboutTitle{
-    width: 70%;
-	padding: 8px 15px;
-	border-radius: 20px;
-	margin-top: 20px;
-	background-color: #FF8797;
-	color: white;
-	font-weight: bold;
-    margin:20px auto 0 auto
-}
-#content .rightContent{
-	width: 77.5%;
-	display: inline-block;
-	vertical-align: top;
-}
-.bread{
-	padding: 13px;
-	border: 1px solid #91d8ff;
-	font-size: 14px;
-	margin-bottom: 20px;
+
 }
 
-.coinTab{
-	width: 100%;
-	font-size: 15px;
-	text-align: right;
-	background-color: #595757;
-	margin: 20px 0px;
+.leftContent ul li a:hover,
+.leftContent ul li .active {
+    color: #FF8797;
 }
-.tabItems{
-	width: 20%;
-	display: inline-block;
-	padding: 10px 0px;
-	text-align: center;
-	color: white;
-	cursor: pointer;
-	border: none;
-	background-color: #595757;
-	transition: all .5s ease
+
+.aboutTitle {
+    width: 70%;
+    padding: 8px 15px;
+    border-radius: 20px;
+    margin-top: 20px;
+    background-color: #FF8797;
+    color: white;
+    font-weight: bold;
+    margin: 20px auto 0 auto
 }
+
+#content .rightContent {
+    width: 77.5%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.bread {
+    padding: 13px;
+    border: 1px solid #91d8ff;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.coinTab {
+    width: 100%;
+    font-size: 15px;
+    text-align: right;
+    background-color: #595757;
+    margin: 20px 0px;
+}
+
+.tabItems {
+    width: 20%;
+    display: inline-block;
+    padding: 10px 0px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    border: none;
+    background-color: #595757;
+    transition: all .5s ease
+}
+
 .tabItems:hover,
-.tabItems:focus{
-	border: none;
-	background-color: #FFC53E;
+.tabItems:focus {
+    border: none;
+    background-color: #FFC53E;
 }
-.aboutCenter img{
-	width: 100%;
-	margin-bottom: 20px;
+
+.aboutCenter img {
+    width: 100%;
+    margin-bottom: 20px;
 }
-.aboutCenter h2{
-	color: #FF91B8;
-	font-size: 14px;
-	margin-top: 20px;
-	margin-bottom: 10px;
+
+.aboutCenter h2 {
+    color: #FF91B8;
+    font-size: 14px;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
-.aboutCenter h1{
-	color: #FF91B8;
-	font-size: 14px;
-	margin-bottom: 10px;
+
+.aboutCenter h1 {
+    color: #FF91B8;
+    font-size: 14px;
+    margin-bottom: 10px;
 }
-.aboutCenter table{
-	width: 100%;
-	border-radius: 10px 10px 0 0;
-	overflow: hidden;
+
+.aboutCenter table {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
     margin-top: 10px
 }
 
-.aboutCenter tr:nth-child(odd){
-	background-color: #F2F2F2;
-	
-}
-.aboutCenter tr th{
-	font-family:微軟正黑體;
-	padding: 15px 0px ;
-	text-align: center;
-	border-bottom: solid 1px #C4C4C4;
-	font-weight: bold;
-	
-		
-}
-.aboutCenter tr td{
-	padding: 15px 5px;
-	font-family:微軟正黑體;
-	text-align: center;
-	font-size: 14px;
-}
-.aboutCenter .orderTatal{
-	background-color: #F2F2F2;
-	padding: 15px 30px;
-	text-align: right;
-	border-radius: 0 0 10px 10px
-}
-.aboutCenter section{
-	background-color: #F2F2F2;
-	border-radius: 10px;
-	padding: 20px;
-    margin-bottom: 20px
-}
-.aboutCenter h3{
-	color: #4FC1FF;
-	font-weight: bold;
-	margin-bottom: 15px;
-	margin-left: 20px;
-}
-.aboutCenter h4{
-	width: 20%;
-	color: #4FC1FF;
-	font-weight: bold;
-	display: inline-block
-}
-.aboutCenter h5{
-    width: 100%;
-	color: #4FC1FF;
-	font-weight: bold;
-	display: inline-block
-}
-.aboutCenter h6{
-	font-weight: bold;
-    font-size: 14px;
-    padding-top: 15px
-    
+.aboutCenter tr:nth-child(odd) {
+    background-color: #F2F2F2;
+
 }
 
-.straightTab{
-	padding: 15px 5px;
-	cursor: pointer;
+.aboutCenter tr th {
+    font-family: 微軟正黑體;
+    padding: 15px 0px;
+    text-align: center;
+    border-bottom: solid 1px #C4C4C4;
+    font-weight: bold;
+
+}
+
+.aboutCenter tr td {
+    padding: 15px 5px;
+    font-family: 微軟正黑體;
+    text-align: center;
+    font-size: 14px;
+}
+
+.aboutCenter .orderTatal {
+    background-color: #F2F2F2;
+    padding: 15px 30px;
+    text-align: right;
+    border-radius: 0 0 10px 10px
+}
+
+.aboutCenter section {
+    background-color: #F2F2F2;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px
+}
+
+.aboutCenter h3 {
+    color: #4FC1FF;
+    font-weight: bold;
+    margin-bottom: 15px;
+    margin-left: 20px;
+}
+
+.aboutCenter h4 {
+    width: 20%;
+    color: #4FC1FF;
+    font-weight: bold;
+    display: inline-block
+}
+
+.aboutCenter h5 {
+    width: 100%;
+    color: #4FC1FF;
+    font-weight: bold;
+    display: inline-block
+}
+
+.aboutCenter h6 {
+    font-weight: bold;
+    font-size: 14px;
+    padding-top: 15px
+
+}
+
+.straightTab {
+    padding: 15px 5px;
+    cursor: pointer;
     transition: all .5s ease;
     border: 1px solid rgba(255, 145, 184, 0);
 }
-.straightTab:hover{
+
+.straightTab:hover {
     background-color: #ffd5e4;
 }
-.aboutCenter .active{
-	background-color: #FF91B8;
+
+.aboutCenter .active {
+    background-color: #FF91B8;
     color: white;
     border: 1px solid #FF91B8;
 }
-.straightTab_odd{
+
+.straightTab_odd {
     background-color: #e8e8e8;
 }
 
 .aboutCenter .active h4,
 .aboutCenter .active h5,
 .aboutCenter .active span,
-.aboutCenter .active i{
+.aboutCenter .active i {
     color: white;
 }
-.straightTab span{
-	width: 39%;
-	display: inline-block;
-}
-.straightTab .bt-plus{
-    float: right;
-}
-.aboutCenter p{
-    display: block;
-	font-size: 14px;
-	line-height: 20px;
-    padding: 5px;
-}
-.aboutCenter ul{
-	margin: 20px;
+
+.straightTab span {
+    width: 39%;
+    display: inline-block;
 }
 
-.aboutCenter li{
-	font-size: 14px;
-	margin-bottom:5px;
-	line-height: 20px;
+.straightTab .bt-plus {
+    float: right;
 }
-.aboutCenter .contact li{
-	color: #FF8797;
+
+.aboutCenter p {
+    display: block;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 5px;
 }
-.tabContent{
+
+.aboutCenter ul {
+    margin: 20px;
+}
+
+.aboutCenter li {
+    font-size: 14px;
+    margin-bottom: 5px;
+    line-height: 20px;
+}
+
+.aboutCenter .contact li {
+    color: #FF8797;
+}
+
+.tabContent {
     display: block;
     border-right: 1px solid #FF91B8;
     border-left: 1px solid #FF91B8;
     border-bottom: 1px solid #FF91B8;
-    
+
 }
-    
-.tabContent p a{
+
+.tabContent p a {
     text-decoration: underline;
 }
+
 .tabContent table {
     border-radius: 0px;
     border-bottom: 1px solid #cccccc;
 }
-.tabContent table tr th{
+
+.tabContent table tr th {
     text-align: left;
     border-bottom: 1px solid #cccccc;
-    background-color:#ededed;
+    background-color: #ededed;
     padding: 15px 5px;
 }
-.tabContent table tr td:nth-child(1){
+
+.tabContent table tr td:nth-child(1) {
     border-right: 1px solid #cccccc;
 }
-.tabContent table tr th:nth-child(1){
+
+.tabContent table tr th:nth-child(1) {
     border-right: 1px solid #cccccc;
 }
-.tabContent table tr td{
+
+.tabContent table tr td {
     text-align: left;
 }
-.tabContent table tr{
+
+.tabContent table tr {
     border-bottom: 1px solid #cccccc;
 }
 
