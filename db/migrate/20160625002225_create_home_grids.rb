@@ -10,6 +10,7 @@ class CreateHomeGrids < ActiveRecord::Migration
       t.integer :size_y
       t.string :link, limit: 100, default: "#"
       t.string :picture, limit: 50
+      t.integer :seq, default: 0
       t.timestamps null: false
     end
   end

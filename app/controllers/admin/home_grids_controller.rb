@@ -2,7 +2,7 @@ class Admin::HomeGridsController < Admin::ApplicationController
   before_action :set_record, :only => [:show, :edit, :update, :destroy]
 
   def index
-    @home_grids = initialize_grid(HomeGrid.where(parent_id: 0))
+    @home_grids = initialize_grid(HomeGrid.where(parent_id: 0).order(:seq))
   end
 
   def new
@@ -38,6 +38,16 @@ class Admin::HomeGridsController < Admin::ApplicationController
     redirect_to :action => 'index'
   end
 
+  def update_sequence
+    params[:data].each do |k, v|
+      HomeGrid.find(v[:id]).update_attribute(:seq, v[:seq]) unless !HomeGrid.exists?(:id => v[:id])
+    end
+    respond_to do |format|
+      # format.json { render json: @jcard }
+      format.json { render json: { status: "successful"} }
+    end
+  end
+
   private
 
   def set_record
@@ -45,7 +55,7 @@ class Admin::HomeGridsController < Admin::ApplicationController
   end
   # strong params
   def home_grid_params
-    params.require(:home_grid).permit(:id, :caption, :link, :template_id,
+    params.require(:home_grid).permit(:id, :caption, :link, :template_id, :seq,
                                  {sub_grids_attributes: [:parent_id, :id, :caption, :link, :row, :col, :size_x, :size_y, :_destroy, :picture_cache, :picture]}
     )
   end

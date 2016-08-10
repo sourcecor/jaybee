@@ -10,10 +10,45 @@
     - link_to('新增', new_admin_home_grid_path, class: 'btn btn-primary btn-sm',)
   = content_for :body do
     == grid(@home_grids) do |g|
-      - g.column name: '標題', attribute: 'caption', filter: false
+      /- g.column name: '標題', attribute: 'caption', filter: false
+      - g.row_attributes do |grid|
+        - {id: "#{grid.id}"}
+      - g.column name: '標題' do | grid |
+        - grid.caption << "(#{grid.link})"
       - g.column name: '內容' do | grid |
-        - grid.sub_grids.collect{| grid | grid.caption }.to_sentence(:two_words_connector => ' , ')
+        - grid.sub_grids.collect{| grid | grid.caption<<"(#{grid.link})" }.to_sentence(:two_words_connector => ' , ')
       - g.column name: '操作' do | grid |
         - content_tag(:div) do
           - concat(link_to('修改', edit_admin_home_grid_path(grid), class: 'btn btn-default btn-xs', style: 'margin-right:5px'))
           - concat(link_to('刪除', [:admin, grid] ,method: :delete, data: {confirm: '確定要刪除?'}, class: 'btn btn-danger btn-xs'))
+
+javascript:
+  $("tbody").sortable({
+    stop: function (event, ui) {
+      var i, id, item, j, len, p_data, sorted, splited;
+      sorted = $("tbody").sortable('toArray');
+      i = 0;
+      p_data = [];
+      for (j = 0, len = sorted.length; j < len; j++) {
+        id = sorted[j];
+        if (id !== '') {
+          p_data.push({
+            id: parseInt(id),
+            seq: i
+          });
+        }
+        i++;
+      }
+      console.log(p_data);
+      $.ajax({
+        type: "patch",
+        url: "/admin/home_grids/update_sequence",
+        data: {
+          data: p_data
+        },
+        success: function () {
+          return console.log("POST");
+        }
+      });
+    }
+  });

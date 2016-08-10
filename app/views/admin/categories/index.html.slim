@@ -10,9 +10,11 @@
     - link_to('新增', new_admin_category_path, class: 'btn btn-primary btn-sm',)
   = content_for :body do
     == grid(@categories_grid) do |g|
-      - g.column name: '標題', attribute: 'caption', filter: false
+      /- g.column name: '標題', attribute: 'caption', filter: false
+      - g.column name: '標題' do | category |
+        - category.caption << "(#{category.id})"
       - g.column name: '子類別' do | category |
-        - category.sub_cate_group.collect{| category | category[0] }.to_sentence(:two_words_connector => ' , ')
+        - category.sub_cate_group.collect{| category | category[0]<<"(#{category[1]})" }.to_sentence(:two_words_connector => ' , ')
       - g.column name: '操作' do | category |
         - content_tag(:div) do
           - concat(link_to('修改', edit_admin_category_path(category), class: 'btn btn-default btn-xs', style: 'margin-right:5px'))

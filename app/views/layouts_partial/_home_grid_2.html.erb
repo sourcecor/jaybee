@@ -1,0 +1,48 @@
+<article class="gridOne gridTwo">
+  <h1><%= data.caption %></h1>
+  <div class="right">
+    <div class="twoGirdBox">
+      <a class="twoGird gridImg" href=<%= data.sub_grids[3].link %> >
+        <figure>
+          <%= image_tag data.sub_grids[3].picture.url %>
+          <!--<figcaption>-->
+          <!--</figcaption>-->
+        </figure>
+      </a>
+      <a class="twoGird gridImg" href=<%= data.sub_grids[2].link %> >
+        <figure>
+          <%= image_tag data.sub_grids[2].picture.url %>
+          <!--<figcaption>-->
+            <!--<h2>DooSun豆山【JD4388】</h2>-->
+            <!--<h3>花拼接領條紋無袖上衣</h3>-->
+            <!--<h4 class="prize en">$250</h4>-->
+          <!--</figcaption>-->
+        </figure>
+      </a>
+    </div>
+    <a class="singleGird gridImg" href=<%= data.sub_grids[1].link %> >
+      <figure>
+        <%= image_tag data.sub_grids[1].picture.url %>
+        <!--<figcaption>-->
+          <!--<h2>DooSun豆山【JD4388】</h2>-->
+          <!--<h3>花拼接領條紋無袖上衣</h3>-->
+          <!--<h4 class="prize en">$250</h4>-->
+        <!--</figcaption>-->
+      </figure>
+    </a>
+  </div>
+  <div class="left">
+    <a class="bigGrid gridImg" href=<%= data.sub_grids[0].link %> >
+      <figure>
+        <%= image_tag data.sub_grids[0].picture.url %>
+        <!--<figcaption>-->
+          <!--<h2>DooSun豆山【JD4388】</h2>-->
+          <!--<h3>花拼接領條紋無袖上衣</h3>-->
+          <!--<h4 class="prize en">$250</h4>-->
+        <!--</figcaption>-->
+      </figure>
+    </a>
+
+  </div>
+  <a class="center more en" href=<%= data.link %> >more +</a>
+</article>

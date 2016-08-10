@@ -77,7 +77,13 @@ Rails.application.routes.draw do
     #
     patch 'pictures/update_sequence'
     #
-    resources :groups, :menus, :categories, :products, :store_infos, :home_grids, :banners
+    resources :groups, :menus, :categories, :products, :store_infos, :banners
+
+    resources :home_grids do
+      collection do
+        patch :update_sequence
+      end
+    end
 
     resources :supervisors do
       collection do
