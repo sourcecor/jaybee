@@ -47,6 +47,8 @@ gem 'jquery-datetimepicker-rails'
 gem 'momentjs-rails'
 
 gem 'jquery-ui-rails'
+# paginate
+gem 'kaminari'
 
 # nested form
 gem 'cocoon'

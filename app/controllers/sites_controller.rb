@@ -3,6 +3,10 @@ class SitesController < ApplicationController
   def index
   end
 
+  def products
+
+  end
+
   # static page
   def about
     render 'sites/about/about'
