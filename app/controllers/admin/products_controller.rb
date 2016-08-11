@@ -3,7 +3,8 @@ class Admin::ProductsController < Admin::ApplicationController
 
   def index
     keyword = params[:product][:caption] unless params[:product].nil?
-    cate_ids = params[:product][:categories].reject!(&:empty?).join(',').split(",").map(&:to_i) unless params[:product].nil?
+    cate_ids = params[:product][:categories].reject(&:empty?).join(',').split(",").map(&:to_i) unless params[:product].nil?
+    puts cate_ids
     @products_grid = initialize_grid(Product.keyword_with(keyword).cates_with(cate_ids).order(id: :desc).distinct)
   end
 
