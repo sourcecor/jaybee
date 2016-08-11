@@ -5,7 +5,7 @@ class Banner < ActiveRecord::Base
   has_many :sub_banners, -> { order(:seq) }, class_name: "Banner", foreign_key: "parent_id", dependent: :destroy
   accepts_nested_attributes_for :sub_banners, allow_destroy: true, :reject_if => lambda { |a| a[:caption].blank? }
 
-  belongs_to :banner, class_name: "Banner"
+  belongs_to :banner, class_name: "Banner", foreign_key: "parent_id"
 
   before_destroy :remember_id
   after_destroy :remove_id_directory

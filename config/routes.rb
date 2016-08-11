@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root 'sites#index'
   resources :sites do
     collection do
+      get 'products'
       get 'about'
       get 'copyright'
       get 'notice'

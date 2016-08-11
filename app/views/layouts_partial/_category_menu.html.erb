@@ -1,10 +1,11 @@
+<% rand = (0...50).map { ('a'..'z').to_a[rand(20)] }.join %>
 <% menus.each do |menu|%>
   <% if menu['children'].nil? %>
-    <%= "<li><a href='javascript:;'>#{menu['caption']}</a></li>".html_safe %>
+    <%= "<li><a href=/sites/products?category=#{menu['id']}>#{menu['caption']}</a></li>".html_safe %>
   <% else %>
     <li>
-      <%= "<input id='group-#{menu['id']}' type='checkbox' hidden />".html_safe %>
-      <%= "<label for='group-#{menu['id']}'><span class='btr bt-angle-right bt-sm'></span>#{menu['caption']}</label>".html_safe %>
+      <%= "<input id='group-#{rand}-#{menu['id']}' type='checkbox' hidden />".html_safe %>
+      <%= "<label for='group-#{rand}-#{menu['id']}'><span class='btr bt-angle-right bt-sm'></span>#{menu['caption']}</label>".html_safe %>
       <ul class="group-list">
         <%= render 'layouts_partial/category_menu', :menus => menu['children'] %>
       </ul>

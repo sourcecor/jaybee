@@ -3,54 +3,9 @@
 <script src="http://malsup.github.com/jquery.cycle2.js"></script>
 <aside class="nav sideMenu">
   <ul class="nav__list ">
-    <li>
-      <input id="sideMenu-1" type="checkbox" hidden />
-      <label for="sideMenu-1"><span class="btr bt-angle-right bt-sm"></span>小女童上著</label>
-      <ul class="group-list">
-        <li><a href="#">背心</a></li>
-        <li><a href="javascript:;">短袖</a></li>
-        <li><a href="javascript:;">長袖</a></li>
-        <li><a href="javascript:;">襯衫</a></li>
-        <li><a href="javascript:;">針織衫</a></li>
-      </ul>
-    </li>
-
-    <li>
-      <input id="sideMenu-2" type="checkbox" hidden />
-      <label for="sideMenu-2"><span class="btr bt-angle-right bt-sm"></span>小女下著</label>
-      <ul class="group-list">
-        <li><a href="javascript:;">吊帶裙</a></li>
-        <li><a href="javascript:;">洋裝</a></li>
-        <li><a href="javascript:;">短褲</a></li>
-        <li><a href="javascript:;">群類</a></li>
-        <li><a href="javascript:;">內搭褲</a></li>
-        <li><a href="javascript:;">長褲</a></li>
-      </ul>
-    </li>
-
-    <li>
-      <input id="sideMenu-3" type="checkbox" hidden />
-      <label for="sideMenu-3"><span class="btr bt-angle-right bt-sm"></span>大女孩上著</label>
-      <ul class="group-list">
-        <li><a href="#">背心</a></li>
-        <li><a href="javascript:;">短袖</a></li>
-        <li><a href="javascript:;">長袖</a></li>
-        <li><a href="javascript:;">襯衫</a></li>
-        <li><a href="javascript:;">針織衫</a></li>
-      </ul>
-    </li>
-    <li>
-      <input id="sideMenu-4" type="checkbox" hidden />
-      <label for="sideMenu-4"><span class="btr bt-angle-right bt-sm"></span>大女孩下著</label>
-      <ul class="group-list">
-        <li><a href="javascript:;">吊帶裙</a></li>
-        <li><a href="javascript:;">洋裝</a></li>
-        <li><a href="javascript:;">短褲</a></li>
-        <li><a href="javascript:;">群類</a></li>
-        <li><a href="javascript:;">內搭褲</a></li>
-        <li><a href="javascript:;">長褲</a></li>
-      </ul>
-    </li>
+    <% @menus.each do |menu| %>
+        <%= render 'layouts_partial/category_menu', :menus => menu['children'] %>
+    <%end%>
   </ul>
 </aside>
 <div class="right">
@@ -60,9 +15,9 @@
              data-cycle-timeout="5000"
              data-cycle-pager="#bannerMenu"
              data-cycle-slides="img" >
-      <a href="javascript:;"><img src="../assets/images/products/banner0.jpg" width="100%"></a>
-      <a href="javascript:;"><img src="../assets/images/products/banner1.jpg" width="100%"></a>
-      <a href="javascript:;"><img src="../assets/images/products/banner0.jpg" width="100%"></a>
+      <% @cate_banners.pictures.each do |picture|%>
+        <a href="javascript:;"><%= image_tag picture.asset, {width: "100%"}  %></a>
+      <%end -%>
     </section>
     <div id="bannerMenu">
     </div>

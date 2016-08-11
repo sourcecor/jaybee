@@ -12,7 +12,13 @@ class Category < ActiveRecord::Base
   has_many :sub_categories, -> { order(:seq) }, class_name: "Category", foreign_key: "parent_id", dependent: :destroy
   accepts_nested_attributes_for :sub_categories, allow_destroy: true, :reject_if => lambda { |a| a[:caption].blank? }
 
-  belongs_to :p_category, class_name: "Category"
+  belongs_to :p_category, class_name: "Category", foreign_key: "parent_id"
+
+  def self.c_parent(_id)
+    cate = self.find(_id)
+    cate = cate.p_category while cate.p_category.nil? == false
+    self.where(id: cate.id)
+  end
 
   def sub_cate_recur(cate)
     r_cate = []

@@ -1,10 +1,12 @@
 class SitesController < ApplicationController
+  include SitesHelper
 
   def index
   end
 
   def products
-
+    @cate_banners = Category.find(params[:category]) unless params[:category].nil?
+    @menus = categoryMenu Category.c_parent(params[:category].to_i) unless params[:category].nil?
   end
 
   # static page

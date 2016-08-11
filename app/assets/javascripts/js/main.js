@@ -1,20 +1,29 @@
 
 $(document).ready(function() {
 
-$(".new,.girl,.boy,.baby,.brands").fadeOut(0);$(".nav").mouseleave(function(){
+$(".new,.girl,.boy,.baby,.brands").fadeOut(0);
+	
+$(".nav").mouseleave(function(){
 	$(".nav").stop()	
 	$(".nav").fadeOut()
+
+}) 
+$("#content aside").mouseleave(function(){
+	$("#content aside").stop()	
+	$("#content aside").fadeIn(0)
 
 })   
 
 
 
 // Menu
+
 	
 $(".childrenNav").fadeOut(0)
 $("header").mouseleave(function(){
 	$(".childrenNav").stop()	
 	$(".childrenNav").fadeOut()
+	
 
 })
 if($(window).width()>769){

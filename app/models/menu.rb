@@ -7,7 +7,7 @@ class Menu < ActiveRecord::Base
 
   has_many :sub_menus, -> { order(:seq) }, class_name: "Menu", foreign_key: "parent_id", dependent: :destroy
   accepts_nested_attributes_for :sub_menus, reject_if: :all_blank, allow_destroy: true
-  belongs_to :p_menu, class_name: "Menu"
+  belongs_to :p_menu, class_name: "Menu", foreign_key: "parent_id"
 
   # remove from related table
   # after_destroy { |record|

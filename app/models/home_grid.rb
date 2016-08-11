@@ -4,7 +4,7 @@ class HomeGrid < ActiveRecord::Base
 
   has_many :sub_grids, class_name: "HomeGrid", foreign_key: "parent_id", dependent: :destroy
   accepts_nested_attributes_for :sub_grids, reject_if: :all_blank, allow_destroy: true
-  belongs_to :p_grid, class_name: "HomeGrid"
+  belongs_to :p_grid, class_name: "HomeGrid", foreign_key: "parent_id"
 
   before_destroy :remember_id
   after_destroy :remove_id_directory

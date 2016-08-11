@@ -162,6 +162,10 @@
     color: #FF91B8
 }
 
+.invoice {
+    margin-bottom: 20px;
+}
+
 .invoice section,
 .notice section {
     width: 94%;
