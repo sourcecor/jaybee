@@ -1,5 +1,5 @@
 <a href=<%= "/sites/#{data.id}" %> class="items">
-  <div  class="itemsImg" style="background-image:url(<%= image_path data.sub_product_colors.first.pictures.first.asset unless data.sub_product_colors.first.sub_products.empty? || data.sub_product_colors.first.pictures.first.nil? %>)">
+  <div  class="itemsImg" style="background-image:url(<%= image_path data.sub_product_colors.first.pictures.first.asset unless data.sub_product_colors.first.sub_products.nil? || data.sub_product_colors.first.pictures.first.nil? %>)">
   </div>
   <p class="proNum"><%= "#{data.caption}" %></p>
   <p class="proTitle"><%= "#{data.sub_caption}" %></p>
