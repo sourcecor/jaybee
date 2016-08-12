@@ -4,6 +4,7 @@ class Product < ActiveRecord::Base
   acts_as_paranoid
   scope :keyword_with, ->(keyword) { where("products.caption like ? or products.sub_caption like ? or products.itemcode like ?", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%") unless keyword.blank? }
   scope :cates_with, ->(cate_ids) { joins(:categories).where("category_id in (?)", cate_ids) unless cate_ids.blank? }
+  scope :started_at, ->(start_date) { where("(started_at <=? AND stoped_at >= ?) OR (started_at <=? AND stoped_at is null)", start_date, start_date, start_date) }
   validates :caption, :sub_caption, :itemcode, :unit_price, :sale_price, presence: true
   # 分類
   has_and_belongs_to_many :categories
