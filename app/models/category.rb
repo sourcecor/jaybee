@@ -20,6 +20,16 @@ class Category < ActiveRecord::Base
     self.where(id: cate.id)
   end
 
+  def self.c_bread(_id)
+    cate = self.find(_id)
+    s_bread = "<a href=/sites/products?category=#{cate.id}>#{cate.caption}</a>"
+    while (cate.p_category.nil? == false) do
+      cate = cate.p_category
+      s_bread = s_bread.prepend("<a href=/sites/products?category=#{cate.id}>#{cate.caption}</a> > ")
+    end
+    s_bread.prepend("<a href=/>首頁</a> > ")
+  end
+
   def sub_cate_recur(cate)
     r_cate = []
     r_cate << [ cate.caption, cate.id ]

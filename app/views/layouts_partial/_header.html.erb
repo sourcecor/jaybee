@@ -4,12 +4,12 @@
     <div class="jayNav">
       <div class="topNav">
         <div class="navSearch">
-          <form>
-            <input type="text" placeholder="請輸入關鍵字"><button type="submit"><i class="btr bt-search bt-lg"></i></button>
+          <%= form_tag('/sites/products', method: :get) do -%>
+            <input name="keyword" type="text" placeholder="請輸入關鍵字" value=<%= params[:keyword] unless params[:keyword].nil? %>><button type="submit"><i class="btr bt-search bt-lg"></i></button>
             <i class="btr bt-search bt-lg"></i>
             <i class="btr bt-shopping-cart bt-lg"></i>
             <i class="btr bt-user bt-lg"></i>
-          </form>
+          <% end -%>
         </div>
       </div>
       <ul class="bottomNav">

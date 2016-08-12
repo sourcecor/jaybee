@@ -1,4 +1,6 @@
 class Product < ActiveRecord::Base
+  paginates_per 20
+  max_paginates_per 50
   acts_as_paranoid
   scope :keyword_with, ->(keyword) { where("products.caption like ? or products.sub_caption like ? or products.itemcode like ?", "%#{keyword}%", "%#{keyword}%", "%#{keyword}%") unless keyword.blank? }
   scope :cates_with, ->(cate_ids) { joins(:categories).where("category_id in (?)", cate_ids) unless cate_ids.blank? }
