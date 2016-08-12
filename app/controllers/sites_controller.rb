@@ -13,9 +13,9 @@ class SitesController < ApplicationController
     @c_bread = Category.c_bread(cate_id) unless cate_id.nil?
     @menus = categoryMenu Category.c_parent(cate_id) unless cate_id.nil?
 
-    @products = Product.keyword_with(keyword).cates_with(cate_id).order(id: :desc).distinct.page params[:page]
+    cate_ids = Category.c_cate_ids(cate_id) unless cate_id.nil?
 
-    puts @products
+    @products = Product.keyword_with(keyword).cates_with(cate_ids).order(id: :desc).distinct.page params[:page]
   end
 
   def show

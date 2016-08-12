@@ -14,6 +14,30 @@ class Category < ActiveRecord::Base
 
   belongs_to :p_category, class_name: "Category", foreign_key: "parent_id"
 
+  def self.c_cate_ids_recur(cate)
+    r_cate = []
+    cate.sub_categories.each do |item|
+      if !item.sub_categories.empty?
+        g_cate = self.c_cate_ids_recur(item)
+        r_cate = r_cate + g_cate
+      else
+        r_cate << item.id
+      end
+    end
+    return r_cate
+  end
+
+  def self.c_cate_ids(_id)
+    r_cate = []
+    r_cate << _id
+    cate = self.find(_id)
+    if !cate.sub_categories.empty?
+      g_cate = self.c_cate_ids_recur(cate)
+      r_cate = r_cate + g_cate
+    end
+    return r_cate.join(',').split(",").map(&:to_i)
+  end
+
   def self.c_parent(_id)
     cate = self.find(_id)
     cate = cate.p_category while cate.p_category.nil? == false
