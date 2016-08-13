@@ -89,7 +89,6 @@
 </div>
 
 <script type="text/javascript" charset="utf-8">
-
   var vm = new Vue({
     el: ".detail",
     data: {
@@ -134,10 +133,10 @@
     },
     methods: {
       fetch_product: function () {
-        this.$http.get("<%= "/api/v1/product/#{params[:id]}.jbuilder" %>").then((response) => {
+        this.$http.get("<%= "/api/v1/product/#{params[:id]}.jbuilder" %>").then(function(response) {
           this.$set('product', response.data.product);
         this.$set('colors', response.data.colors);
-      }, (response) => {
+      }).then(function(response){
           console.log(response);
         });
       },
