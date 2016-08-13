@@ -1,32 +1,41 @@
-<h2>Sign up</h2>
+<%= stylesheet_link_tag 'css/member' %>
+<article class="bread">
+  <span class="memberBar"><img src="../assets/images/member/member.png">會員中心</span>
+  <a href="/">首頁</a> > <a href="member.html">會員中心</a> > <a href="javascript:;">會員註冊</a>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
+</article>
+<article class="memberInfo">
+  <form>
+    <span>
+      <p>中文姓名<span class="errorText">請輸入姓名</span></p>
+      <input class="error" type="text" placeholder="請輸入您的姓名">
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
+      <p>電子郵件</p>
+      <input type="text" placeholder="請輸入您的電子郵件">
+    </span>
+    <span>
+      <p>密碼</p>
+      <input type="password" placeholder="請輸入您的姓名">
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+      <p>密碼確認</p>
+      <input type="password" placeholder="請再次輸入密碼">
+    </span>
+    <p>聯絡地址</p>
+    <select>
+      <option>請選擇郵遞區號</option>
+      <option>100 台北市 中正區</option>
+      <option>103 台北市 大同區</option>
+      <option>104 台北市 中山區</option>
+      <input type="password" placeholder="請輸入正確地址">
+    </select>
+    <p>取貨門市</p>
+    <select class="shipSelect">
+      <option>請選擇您要移除的門市</option>
+    </select>
+    <a href="#">移除</a>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
-  <div class="field">
-    <%= f.label :nickname %><br />
-    <%= f.text_field :nickname %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+    <div class="center">
+      <button>送出</button>
+    </div>
+  </form>
+</article>

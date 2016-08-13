@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160719055749) do
+ActiveRecord::Schema.define(version: 20160813181741) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,10 +30,10 @@ ActiveRecord::Schema.define(version: 20160719055749) do
   create_table "categories", force: :cascade do |t|
     t.string   "caption",     limit: 30
     t.string   "description", limit: 50
-    t.integer  "parent_id",              default: 0
-    t.integer  "seq",                    default: 0
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.integer  "parent_id",                            default: 0
+    t.integer  "seq",                                  default: 0
+    t.datetime "created_at",             precision: 6,             null: false
+    t.datetime "updated_at",             precision: 6,             null: false
   end
 
   create_table "categories_products", id: false, force: :cascade do |t|
@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(version: 20160719055749) do
     t.string   "picture",     limit: 50
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
+    t.integer  "seq",                     default: 0,   null: false
   end
 
   create_table "jcoinds", force: :cascade do |t|
@@ -178,11 +179,11 @@ ActiveRecord::Schema.define(version: 20160719055749) do
     t.decimal  "unit_price",             precision: 8, scale: 2, default: 9999.0
     t.decimal  "sale_price",             precision: 8, scale: 2, default: 9999.0
     t.decimal  "cost",                   precision: 8, scale: 2, default: 0.0
-    t.datetime "started_at"
+    t.time     "deleted_at"
+    t.datetime "created_at",                                                                     null: false
+    t.datetime "updated_at",                                                                     null: false
+    t.datetime "started_at",                                     default: '2016-08-12 00:03:43'
     t.datetime "stoped_at"
-    t.datetime "deleted_at"
-    t.datetime "created_at",                                                      null: false
-    t.datetime "updated_at",                                                      null: false
   end
 
   create_table "store_infos", force: :cascade do |t|
@@ -206,6 +207,7 @@ ActiveRecord::Schema.define(version: 20160719055749) do
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
     t.integer  "seq",                   default: 0
+    t.time     "deleted_at"
   end
 
   add_index "sub_product_colors", ["product_id"], name: "index_sub_product_colors_on_product_id", using: :btree
@@ -218,9 +220,9 @@ ActiveRecord::Schema.define(version: 20160719055749) do
     t.string   "itemcode",             limit: 30
     t.integer  "qty",                             default: 0
     t.integer  "seq",                             default: 0
-    t.datetime "deleted_at"
+    t.time     "deleted_at"
     t.datetime "created_at",                                  null: false
-    t.datetime "updated_at",                                  null: false
+    t.datetime "updated_at"
   end
 
   add_index "sub_products", ["product_id"], name: "index_sub_products_on_product_id", using: :btree
@@ -259,8 +261,12 @@ ActiveRecord::Schema.define(version: 20160719055749) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
   end
 
+  add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 

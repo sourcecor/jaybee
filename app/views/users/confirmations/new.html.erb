@@ -1,16 +1,10 @@
-<h2>Resend confirmation instructions</h2>
-
-<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+<%= stylesheet_link_tag 'css/forget' %>
+<div id="forget">
   <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %> 
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Resend confirmation instructions" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+  <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+      <h1>補寄認證信</h1>
+      <p><%= f.email_field :email, autofocus: true, placeholder: "電子郵件", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email) %></p>
+      <%= render "users/shared/links" %>
+      <%= f.button "發送認證信" %>
+  <% end %>
+</div>

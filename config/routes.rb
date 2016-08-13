@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
   # rails generate controller home index  --no-helper --no-assets --no-controller-specs --no-view-specs
   mount Ckeditor::Engine => '/ckeditor'
-  devise_for :users
+  devise_for :users, controllers: {
+      confirmations: 'users/confirmations',
+      sessions: 'users/sessions',
+      # unlocks: 'users/unlocks',
+      registrations: 'users/registrations',
+      passwords: 'users/passwords',
+  }
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   # member路由與collection路由的不同, 前者有id,如 product/:id

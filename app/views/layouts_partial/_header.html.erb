@@ -20,16 +20,18 @@
         <li id="brands" class="parentNav subject"><a href="/sites/products?category=5"><%= image_tag "main/iconBrain.png" %>人氣品牌</a></li>
         <li id="member" class="parentNav member"><a href="javascript:;"><%= image_tag "main/iconUser.png" %>會員中心</a>
           <ul class="childrenNav">
+            <% if !user_signed_in? %>
             <li>
-              <a href="member/login.html" class="login">
+              <a href="/users/sign_in" class="login">
                 <i class="btr bt-sign-in bt-lg"></i>會員登入
               </a>
             </li>
             <li>
-              <a href="javascript:;">
+              <a href="/users/sign_up">
                 <i class="btr bt-crown bt-lg"></i>會員註冊
               </a>
             </li>
+            <% else %>
             <li>
               <a href="javascript:;">
                 <i class="btr bt-shopping-cart bt-lg"></i>訂單查詢
@@ -56,11 +58,11 @@
               </a>
             </li>
             <li>
-              <a href="javascript:;">
+              <a href="/users/sign_out" data-method="delete">
                 <i class="btr bt-sign-out bt-lg"></i>會員登出
               </a>
             </li>
-
+            <% end -%>
           </ul>
         </li>
         <li id="proList" class="parentNav member"><a href="javascript:;"><i class="btr bt-shopping-cart bt-lg"></i>0件商品</a>

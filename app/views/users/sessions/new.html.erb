@@ -1,26 +1,18 @@
-<h2>Log in</h2>
-
+<%= stylesheet_link_tag 'css/login' %>
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+  <div id="login">
+    <div class="loginBox r">
+      <h1>會員登入</h1>
+      <p><%= f.email_field :email, autofocus: true, placeholder: "電子郵件" %></p>
+      <p><%= f.password_field :password, autocomplete: "off", placeholder: "密碼" %></p>
+      <p class="resend">
+        <%= render "users/shared/links" %>
+      </p>
+      <%= f.button "登入" %>
     </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
+    <div class="loginBox l">
+      <a class="facebook"><i class="fab fab-facebook-alt bt-lg"></i><span class="en">facebook</span>登入</a>
+      <a class="google"><i class="fab fab-google-alt bt-lg"></i><span class="en">google</span>登入</a>
+    </div>
   </div>
 <% end %>
-
-<%= render "users/shared/links" %>
