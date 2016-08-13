@@ -135,8 +135,8 @@
       fetch_product: function () {
         this.$http.get("<%= "/api/v1/product/#{params[:id]}.jbuilder" %>").then(function(response) {
           this.$set('product', response.data.product);
-        this.$set('colors', response.data.colors);
-      }).then(function(response){
+          this.$set('colors', response.data.colors);
+        }).then(function(response){
           console.log(response);
         });
       },
