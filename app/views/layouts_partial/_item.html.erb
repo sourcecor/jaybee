@@ -1,4 +1,4 @@
-<a href=<%= "/sites/#{data.id}" %> class="items">
+<a class="items" href=<%= "/sites/#{data.id}" %><%= "?category=#{params[:category]}" unless params[:category].nil? %> >
   <div  class="itemsImg" style="background-image:url(<%= image_path data.sub_product_colors.first.pictures.first.asset if data.sub_product_colors.first.pictures.empty? == false %>)">
   </div>
   <p class="proNum"><%= "#{data.caption}" %></p>
