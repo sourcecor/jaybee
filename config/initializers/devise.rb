@@ -238,7 +238,7 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-  config.omniauth :google_oauth2, "346788890027-361c2f7rmu0feskkdc73g33pstc3uiuc.apps.googleusercontent.com", "3Dmz3UNw58U_DCZZIlL_ExLc", { access_type: "offline", approval_prompt: "" }
+  config.omniauth :google_oauth2, "271521481360-tlf83d5rav5l0qn31kv0b4itdh55e1bq.apps.googleusercontent.com", "8aSJNtgVCVT8CfJ8n5Xf2Tru", { access_type: "offline", approval_prompt: "" }
   config.omniauth :facebook, "537493326442963", "224733b8cf060fb8ee6f5e669066811a", callback_url: "http://www.wuduhouse.com/users/auth/facebook/callback"
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

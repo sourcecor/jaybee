@@ -1,0 +1,1 @@
+OmniAuth.config.full_host = Rails.env.production? ? 'http://www.wuduhouse.com' : 'http://localhost:3000'
