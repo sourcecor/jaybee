@@ -14,13 +14,10 @@
           = f.input :phone
         .col-xs-12.col-md-6.col-lg-6
           = f.input :address, input_html:{ id: "geocode"}, :placeholder => '請輸入地址'
+      .row
+        .col-xs-12.col-md-12.col-lg-12
+          = f.input :content, :placeholder => '請輸入地圖網址'
     /= content_for :footer
-  .box
-    .box-header.with-border
-      h3.box-title
-        | 簡介
-    .box-body.no-padding
-      = f.input :content, as: :ckeditor , wrapper: :bootstrap
 
 
 coffee:

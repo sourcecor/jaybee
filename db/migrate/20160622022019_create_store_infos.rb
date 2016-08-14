@@ -6,7 +6,7 @@ class CreateStoreInfos < ActiveRecord::Migration
       t.string :phone, limit: 20
       t.decimal :latitude, precision: 10, scale: 6, index:true
       t.decimal :longitude, precision: 10, scale: 6, index:true
-      t.text :content
+      t.string :content
       t.timestamps null: false
     end
   end

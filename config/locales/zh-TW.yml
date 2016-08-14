@@ -79,6 +79,7 @@ zh-TW:
         caption: "店名"
         phone: "電話"
         address: "地址"
+        content: "地圖"
       supervisor:
         nickname: "姓名"
         current_password: "目前密碼"
