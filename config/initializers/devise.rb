@@ -1,5 +1,7 @@
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
+require 'omniauth-google-oauth2'
+require "omniauth-facebook"
 Devise.setup do |config|
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
@@ -236,7 +238,8 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
-
+  config.omniauth :google_oauth2, "346788890027-361c2f7rmu0feskkdc73g33pstc3uiuc.apps.googleusercontent.com", "3Dmz3UNw58U_DCZZIlL_ExLc", { access_type: "offline", approval_prompt: "" }
+  config.omniauth :facebook, "537493326442963", "224733b8cf060fb8ee6f5e669066811a", callback_url: "http://www.wuduhouse.com/users/auth/facebook/callback"
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.

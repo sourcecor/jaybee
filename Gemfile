@@ -29,6 +29,9 @@ gem 'vuejs'
 gem 'adminlte-rails'
 
 gem 'devise'
+gem 'omniauth'
+gem 'omniauth-google-oauth2'
+gem 'omniauth-facebook'
 
 gem 'simple_form'
 

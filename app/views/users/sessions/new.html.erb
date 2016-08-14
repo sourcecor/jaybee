@@ -11,8 +11,8 @@
       <%= f.button "登入" %>
     </div>
     <div class="loginBox l">
-      <a class="facebook"><i class="fab fab-facebook-alt bt-lg"></i><span class="en">facebook</span>登入</a>
-      <a class="google"><i class="fab fab-google-alt bt-lg"></i><span class="en">google</span>登入</a>
+      <%= link_to "<i class='fab fab-facebook-alt bt-lg'></i><span class='en'>facebook</span>登入".html_safe, omniauth_authorize_path(resource_name, :facebook), class: "facebook" %>
+      <%= link_to "<i class='fab fab-google-alt bt-lg'></i><span class='en'>google</span>登入".html_safe, omniauth_authorize_path(resource_name, :google_oauth2), class: "google" %>
     </div>
   </div>
 <% end %>
