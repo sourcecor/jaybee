@@ -2,7 +2,7 @@ class Admin::StoreInfosController < Admin::ApplicationController
   before_action :set_record, :only => [:edit, :update, :destroy]
 
   def index
-    @storeInfos_grid = initialize_grid(StoreInfo)
+    @storeInfos_grid = initialize_grid(StoreInfo.all.order(:id))
   end
 
   def new

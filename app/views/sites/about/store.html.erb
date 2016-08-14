@@ -8,7 +8,7 @@
   <artile class="aboutCenter">
     <%= image_tag "about/store.jpg"%>
     <section>
-      <% StoreInfo.all.each do |store| %>
+      <% StoreInfo.all.order(:id).each do |store| %>
         <div class="straightTab straightTab_odd">
           <h4><%= store.caption %></h4>
           <span><%= store.phone %></span>
