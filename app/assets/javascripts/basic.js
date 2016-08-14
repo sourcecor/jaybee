@@ -14,4 +14,4 @@
 //= require jquery_ujs
 //= require pnotify
 //= require unobtrusive_flash
-//= require_directory .
+//= require flashes

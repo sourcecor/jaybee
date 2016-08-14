@@ -23,4 +23,16 @@ module ApplicationHelper
   def ajax_redirect_to(redirect_uri)
     { js: "window.location.replace('#{redirect_uri}');" }
   end
+
+  def resource_name
+    :user
+  end
+
+  def resource
+    @resource ||= User.new
+  end
+
+  def devise_mapping
+    @devise_mapping ||= Devise.mappings[:user]
+  end
 end

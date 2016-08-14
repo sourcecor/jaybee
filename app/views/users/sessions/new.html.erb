@@ -1,5 +1,5 @@
 <%= stylesheet_link_tag 'css/login' %>
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+<%= form_for(resource, as: resource_name, url: session_path(resource_name), remote: true) do |f| %>
   <div id="login">
     <div class="loginBox r">
       <h1>會員登入</h1>
@@ -16,3 +16,24 @@
     </div>
   </div>
 <% end %>
+
+
+<script type="text/javascript" charset="utf-8">
+$(function(){
+  $.ajaxSetup({
+    headers: {
+      'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+    }
+  });
+
+  $(".new_user").on("ajax:success", function(e, data, status, xhr){
+    parent.window.location = '/'
+  }).on("ajax:error", function(e, data, status, xhr) {
+    PNotify.prototype.options.styling = "jqueryui";
+    new PNotify({
+      title: '登入失敗',
+      text: data.responseText
+    });
+  });
+});
+</script>
