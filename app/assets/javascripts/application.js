@@ -15,6 +15,7 @@
 //= require vue
 //= require vue-router
 //= require vue-resource
+//= require pnotify
 //= require unobtrusive_flash
 //= require sync
 //= require fancybox
