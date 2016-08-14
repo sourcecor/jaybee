@@ -7,8 +7,8 @@ zh-TW:
       send_instructions: "You will receive an email with instructions for how to confirm your email address in a few minutes."
       send_paranoid_instructions: "If your email address exists in our database, you will receive an email with instructions for how to confirm your email address in a few minutes."
     failure:
-      already_authenticated: "You are already signed in."
-      inactive: "Your account is not activated yet."
+      already_authenticated: "你已經登入了."
+      inactive: "你的帳號還沒啟用."
       invalid: "帳號或密碼錯誤."
       locked: "Your account is locked."
       last_attempt: "You have one more attempt before your account is locked."
@@ -24,8 +24,8 @@ zh-TW:
       unlock_instructions:
         subject: "Unlock instructions"
     omniauth_callbacks:
-      failure: "Could not authenticate you from %{kind} because \"%{reason}\"."
-      success: "Successfully authenticated from %{kind} account."
+      failure: "無法從%{kind}認證身分, 因為 \"%{reason}\"."
+      success: "從%{kind}賬戶成功進行身份驗證."
     passwords:
       no_token: "You can't access this page without coming from a password reset email. If you do come from a password reset email, please make sure you used the full URL provided."
       send_instructions: "You will receive an email with instructions on how to reset your password in a few minutes."
