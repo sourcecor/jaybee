@@ -45,7 +45,7 @@ class User < ActiveRecord::Base
                            email: data["email"],
                            uid: access_token.uid ,
                            password: Devise.friendly_token[0,20],
-                           confirmed_at: Date.today
+                           confirmed_at: DateTime.now.to_date
 
         )
       end
@@ -57,7 +57,7 @@ class User < ActiveRecord::Base
       user.email = auth.info.email
       user.password = Devise.friendly_token[0,20]
       user.nickname = auth.info.name   # assuming the user model has a name
-      user.confirmed_at = Date.today
+      user.confirmed_at = DateTime.now.to_date
       # user.image = auth.info.image # assuming the user model has an image
     end
   end
