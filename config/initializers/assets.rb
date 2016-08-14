@@ -7,6 +7,8 @@ Rails.application.config.assets.precompile += %w( admin/application.css.scss )
 Rails.application.config.assets.precompile += %w( admin/application.js )
 Rails.application.config.assets.precompile += %w( application.css.scss )
 Rails.application.config.assets.precompile += %w( application.js )
+Rails.application.config.assets.precompile += %w( basic.css.scss )
+Rails.application.config.assets.precompile += %w( basic.js )
 Rails.application.config.assets.precompile += %w( ckeditor/* )
 # Rails.application.config.assets.precompile += %w( css/*)
 Rails.application.config.assets.precompile << /(^[^_\/]|\/[^_])[^\/]*$/
