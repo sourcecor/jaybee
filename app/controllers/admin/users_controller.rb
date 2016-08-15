@@ -1,5 +1,5 @@
-class UsersController < ApplicationController
-  before_action :authenticate_user!, :except => [:index, :new, :create]
+class Admin::UsersController < Admin::ApplicationController
+  include ApplicationHelper
 
   before_action :set_record, :only => [:edit, :update, :destroy]
 
