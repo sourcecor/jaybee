@@ -28,7 +28,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users
+  resources :users, except: :destroy
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
@@ -88,7 +88,9 @@ Rails.application.routes.draw do
     #
     patch 'pictures/update_sequence'
     #
-    resources :groups, :menus, :categories, :products, :store_infos, :banners, :users
+    resources :groups, :menus, :categories, :products, :store_infos, :banners
+
+    resources :users, except: :destroy
 
     resources :home_grids do
       collection do
