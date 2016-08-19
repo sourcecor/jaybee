@@ -12,6 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require vue
+//= require vue-router
+//= require vue-resource
 //= require pnotify
 //= require unobtrusive_flash
 //= require flashes
