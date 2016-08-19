@@ -11,6 +11,7 @@ config/database.yml
 config/secrets.yml
 config/private_pub.yml
 config/sync.yml
+config/email.yml
 log/*
 test
 tmp

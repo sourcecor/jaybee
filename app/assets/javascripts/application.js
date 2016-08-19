@@ -62,7 +62,7 @@ $(function(){
     },
     'height': '100%',
     'width': '95%',
-    'maxWidth': '900px',
+    'maxWidth': '1024px',
     'fitToView':false,
     'autoSize':false,
     'closeBtn':true,

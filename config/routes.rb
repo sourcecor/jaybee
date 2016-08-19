@@ -28,7 +28,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :users, except: :destroy
+  resources :users, only: [:index, :show]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

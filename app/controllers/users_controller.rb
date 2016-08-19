@@ -3,25 +3,6 @@ class UsersController < ApplicationController
 
   before_action :set_record, :only => [:edit, :update, :destroy]
 
-  def index
-    @users_grid = initialize_grid(User)
-  end
-
-  def new
-    @user = User.new
-  end
-
-  def create
-    @user = User.new(supervisor_params)
-    @user.password=
-        if @user.save
-          flash[:notice] = '新增成功'
-          redirect_to :action => 'index'
-        else
-          render :new
-        end
-  end
-
   def edit
     #
   end

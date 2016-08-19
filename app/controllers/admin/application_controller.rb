@@ -17,7 +17,7 @@ class Admin::ApplicationController < ApplicationController
   def resolve_layout
     case action_name
       when 'show'
-        'admin/layouts/fancybox'
+        'admin/layouts/frontend'
       else
         'admin/layouts/application'
     end

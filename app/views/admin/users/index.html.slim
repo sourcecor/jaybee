@@ -7,7 +7,6 @@
 
 = extends "admin/layouts_partial/_box_grid" do
   = content_for :tools do
-    - link_to('新增', new_user_path, class: 'btn btn-primary btn-sm',)
     = content_for :body do
       == grid(@users_grid) do |g|
         - g.column name: '姓名', attribute: 'nickname', filter: false
@@ -16,5 +15,6 @@
         - g.column name: '最後登入', attribute: 'current_sign_in_at', filter: false
         - g.column name: '操作' do | user |
           - content_tag(:div) do
-            - concat(link_to('修改', edit_user_path(user), class: 'btn btn-default btn-xs', style: 'margin-right:5px'))
-            - concat(link_to('刪除', user ,method: :delete, data: {confirm: '確定要刪除?'}, class: 'btn btn-danger btn-xs'))
+            - concat(link_to('預覽', admin_user_path(user), class: 'btn btn-success btn-xs fancybox', style: 'margin-right:5px'))
+            /- concat(link_to('修改', edit_user_path(user), class: 'btn btn-default btn-xs', style: 'margin-right:5px'))
+            /- concat(link_to('刪除', user ,method: :delete, data: {confirm: '確定要刪除?'}, class: 'btn btn-danger btn-xs'))
