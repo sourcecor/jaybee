@@ -1,146 +1,143 @@
+
 /*
   Make accessible, visually hidden labels for the buttons
 */
 
 .is-visually-hidden {
-    border: 0 !important;
-    color: transparent;
-    height: 1px !important;
-    left: -999999px !important;
-    position: absolute !important;
-    width: 1px !important
+	border: 0 !important;
+	color: transparent;
+	height: 1px !important;
+	left: -999999px !important;
+	position: absolute !important;
+	width: 1px !important
 }
-
 /*
   Input and input container styling
 */
 
 input {
-    font-size: inherit;
-    font-family: inherit
+	font-size: inherit;
+	font-family: inherit
 }
 
 input[type='number']:focus {
-    border: 1px solid #FF91B8 inside;
-    background-color: #FF91B8;
+	border: 1px solid #FF91B8 inside;
+	background-color: #FF91B8;
 }
 
 .btn i:hover,
 .btn i:focus {
-    color: #f48b95;
+	color: #f48b95;
 }
 
 input[type='number'] {
-    border: solid 2px #9a9797;
-    background-color: rgba(79, 193, 255, 0);
-    color: gray;
-    border-radius: 0px;
-    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-    outline: 0;
-    padding: 0.5em 0.5em;
-    width: 30px;
-    margin: 0px;
-    -webkit-appearance: none;
-    display: inline-block;
-    position: relative;
-    top: 0px;
+	border: solid 2px #9a9797;
+	background-color: rgba(79, 193, 255, 0);
+	color: gray;
+	border-radius: 0px;
+	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+	outline: 0;
+	padding: 0.5em 0.5em;
+	width: 30px;
+	margin: 0px;
+	-webkit-appearance: none;
+	display: inline-block;
+	position: relative;
+	top: 0px;
 }
 
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-    height: auto
+	height: auto
 }
 
 .clean-input-number::-webkit-inner-spin-button,
 .clean-input-number::-webkit-outer-spin-button {
-    -webkit-appearance: none
+	-webkit-appearance: none
 }
 
 .clean-input-number {
-    -moz-appearance: textfield
+	-moz-appearance: textfield
 }
 
 .number-input-area {
-    position: relative;
-    display: inline-block;
+	position: relative;
+	display: inline-block;
 }
 
 .number-input-area input[type="number"] {
-    padding-right: 4px;
+	padding-right: 4px;
 }
 
 .no-js .number-input-area input[type="number"] {
-    padding-right: 4px
+	padding-right: 4px
 }
-
 /*
   Button pill & base button styling
 */
 
 .btn-pill-area--numbers {
-    display: inline-block;
-    height: 100%;
-    margin-bottom: 0;
-    right: 0;
-    top: 12px;
-    z-index: 2;
-    position: relative;
+	display: inline-block;
+	height: 100%;
+	margin-bottom: 0;
+	right: 0;
+	top: 12px;
+	z-index: 2;
+	position: relative;
 }
 
 .btn-pill-area--numbers .btn {
-    height: 100%;
-    min-width: 32px !important;
+	height: 100%;
+	min-width: 32px !important;
 }
 
 .btn-pill-area:after {
-    clear: both;
-    content: '';
-    display: table
+	clear: both;
+	content: '';
+	display: table
 }
 
 .btn-pill-area .btn--pill:first-child {
-    border-radius: 2px 0 0 2px
+	border-radius: 2px 0 0 2px
 }
 
 .btn-pill-area .btn--pill:last-child {
-    border-radius: 0 2px 2px 0
+	border-radius: 0 2px 2px 0
 }
 
-.btn-pill-area > :not(:first-child) {
-    border-left: none
+.btn-pill-area>:not(:first-child) {
+	border-left: none
 }
 
 .btn-pill-area .btn {
-    border-radius: 0;
-    height: 100%;
-    float: left;
-    margin: 0;
-    max-width: 40px
+	border-radius: 0;
+	height: 100%;
+	float: left;
+	margin: 0;
+	max-width: 40px
 }
-
 /* restyle buttons to your heart's content */
 
 .btn {
-    -webkit-appearance: none;
-    background-color: #ffffff;
-    color: gray;
-    background-repeat: no-repeat;
-    border: none;
-    cursor: pointer;
-    display: inline-block;
-    font-family: inherit;
-    font-size: inherit;
-    font-weight: 400;
-    line-height: normal;
-    transition: all 0.5s ease;
-    padding: 6px 10px;
-    text-align: center;
-    text-decoration: none !important;
-    text-transform: uppercase;
-    vertical-align: middle;
-    outline: none;
+	-webkit-appearance: none;
+	background-color: #ffffff;
+	color: gray;
+	background-repeat: no-repeat;
+	border: none;
+	cursor: pointer;
+	display: inline-block;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: 400;
+	line-height: normal;
+	transition: all 0.5s ease;
+	padding:6px 10px;
+	text-align: center;
+	text-decoration: none !important;
+	text-transform: uppercase;
+	vertical-align: middle;
+	outline: none;
 }
-
-.btn i {
-    font-size: 18px;
+.btn i{
+	font-size: 18px;
 }

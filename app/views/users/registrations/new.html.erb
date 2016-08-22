@@ -4,38 +4,28 @@
   <a href="/">首頁</a> > <a href="/users">會員中心</a> > <a href="javascript:;">會員註冊</a>
 
 </article>
-<article class="memberInfo">
-  <form>
-    <span>
-      <p>中文姓名<span class="errorText">請輸入姓名</span></p>
-      <input class="error" type="text" placeholder="請輸入您的姓名">
 
+<article class="memberInfo">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+    <span>
+      <p>姓名</p>
+      <%= f.text_field :nickname, placeholder: "請輸入您的姓名" %>
       <p>電子郵件</p>
-      <input type="text" placeholder="請輸入您的電子郵件">
+      <%= f.email_field :email, autofocus: true, placeholder: "請輸入您的電子郵件" %>
     </span>
     <span>
       <p>密碼</p>
-      <input type="password" placeholder="請輸入您的姓名">
+      <% if @minimum_password_length %>
+      <em>(最少<%= @minimum_password_length %>位)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "off", placeholder: "請輸入密碼"  %>
 
       <p>密碼確認</p>
-      <input type="password" placeholder="請再次輸入密碼">
+      <%= f.password_field :password_confirmation, autocomplete: "off", placeholder:"請再次輸入密碼" %>
     </span>
-    <p>聯絡地址</p>
-    <select>
-      <option>請選擇郵遞區號</option>
-      <option>100 台北市 中正區</option>
-      <option>103 台北市 大同區</option>
-      <option>104 台北市 中山區</option>
-      <input type="password" placeholder="請輸入正確地址">
-    </select>
-    <p>取貨門市</p>
-    <select class="shipSelect">
-      <option>請選擇您要移除的門市</option>
-    </select>
-    <a href="#">移除</a>
-
     <div class="center">
       <button>送出</button>
     </div>
-  </form>
+  <% end %>
 </article>

@@ -99,6 +99,11 @@ zh-TW:
         link: "連結"
         seq: "排序"
         picture: "圖片"
+      user:
+        email: "電子郵件"
+        password: "密碼"
+        nickname: "姓名"
+
   date:
     order:
       - :year
