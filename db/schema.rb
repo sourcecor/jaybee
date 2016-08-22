@@ -30,10 +30,10 @@ ActiveRecord::Schema.define(version: 20160814032054) do
   create_table "categories", force: :cascade do |t|
     t.string   "caption",     limit: 30
     t.string   "description", limit: 50
-    t.integer  "parent_id",                            default: 0
-    t.integer  "seq",                                  default: 0
-    t.datetime "created_at",             precision: 6,             null: false
-    t.datetime "updated_at",             precision: 6,             null: false
+    t.integer  "parent_id",              default: 0
+    t.integer  "seq",                    default: 0
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
   end
 
   create_table "categories_products", id: false, force: :cascade do |t|
@@ -99,9 +99,9 @@ ActiveRecord::Schema.define(version: 20160814032054) do
     t.integer  "size_y"
     t.string   "link",        limit: 100, default: "#"
     t.string   "picture",     limit: 50
+    t.integer  "seq",                     default: 0
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
-    t.integer  "seq",                     default: 0,   null: false
   end
 
   create_table "jcoinds", force: :cascade do |t|
@@ -179,12 +179,14 @@ ActiveRecord::Schema.define(version: 20160814032054) do
     t.decimal  "unit_price",             precision: 8, scale: 2, default: 9999.0
     t.decimal  "sale_price",             precision: 8, scale: 2, default: 9999.0
     t.decimal  "cost",                   precision: 8, scale: 2, default: 0.0
-    t.time     "deleted_at"
-    t.datetime "created_at",                                                                     null: false
-    t.datetime "updated_at",                                                                     null: false
-    t.datetime "started_at",                                     default: '2016-08-12 00:03:43'
+    t.datetime "started_at"
     t.datetime "stoped_at"
+    t.datetime "deleted_at"
+    t.datetime "created_at",                                                      null: false
+    t.datetime "updated_at",                                                      null: false
   end
+
+  add_index "products", ["deleted_at"], name: "index_products_on_deleted_at", using: :btree
 
   create_table "store_infos", force: :cascade do |t|
     t.string   "caption"
@@ -192,7 +194,7 @@ ActiveRecord::Schema.define(version: 20160814032054) do
     t.string   "phone",      limit: 20
     t.decimal  "latitude",              precision: 10, scale: 6
     t.decimal  "longitude",             precision: 10, scale: 6
-    t.text     "content"
+    t.string   "content"
     t.datetime "created_at",                                     null: false
     t.datetime "updated_at",                                     null: false
   end
@@ -204,12 +206,13 @@ ActiveRecord::Schema.define(version: 20160814032054) do
     t.integer  "product_id"
     t.string   "color",      limit: 20
     t.string   "color_pic",  limit: 20
+    t.datetime "deleted_at"
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
     t.integer  "seq",                   default: 0
-    t.time     "deleted_at"
   end
 
+  add_index "sub_product_colors", ["deleted_at"], name: "index_sub_product_colors_on_deleted_at", using: :btree
   add_index "sub_product_colors", ["product_id"], name: "index_sub_product_colors_on_product_id", using: :btree
 
   create_table "sub_products", force: :cascade do |t|
@@ -220,11 +223,12 @@ ActiveRecord::Schema.define(version: 20160814032054) do
     t.string   "itemcode",             limit: 30
     t.integer  "qty",                             default: 0
     t.integer  "seq",                             default: 0
-    t.time     "deleted_at"
+    t.datetime "deleted_at"
     t.datetime "created_at",                                  null: false
-    t.datetime "updated_at"
+    t.datetime "updated_at",                                  null: false
   end
 
+  add_index "sub_products", ["deleted_at"], name: "index_sub_products_on_deleted_at", using: :btree
   add_index "sub_products", ["product_id"], name: "index_sub_products_on_product_id", using: :btree
   add_index "sub_products", ["sub_product_color_id"], name: "index_sub_products_on_sub_product_color_id", using: :btree
 
