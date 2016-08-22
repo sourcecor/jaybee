@@ -1,13 +1,11 @@
-class UserMailer < ApplicationMailer
+class UserMailer < Devise::Mailer
+  helper :application
+  default template_path: 'devise/mailer'
+  layout 'mailer'
+  add_template_helper EmailHelper
+  add_template_helper ApplicationHelper
 
-  # Subject can be set in your I18n file at config/locales/en.yml
-  # with the following lookup:
-  #
-  #   en.user_mailer.notify_reg.subject
-  #
-  def notify_reg
-    @greeting = "Hi"
-
-    mail to: "yang5664@gmail.com"
+  def confirmation_instructions(record, token, opts={})
+    super
   end
 end

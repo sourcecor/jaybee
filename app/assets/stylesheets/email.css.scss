@@ -1,0 +1,75 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: 微軟正黑體;
+  color: #3D3D3D;
+}
+
+#layout {
+  width: 460px;
+  background-color: #F3F3F3;
+
+}
+
+header {
+  background-color: #28AEE4;
+  padding: 10px;
+}
+
+header img {
+  width: 100px;
+  vertical-align: middle;
+  margin-right: 20px;
+}
+
+header span {
+  font-size: 35px;
+  font-weight: 500;
+  vertical-align: middle;
+  color: white;
+}
+
+main {
+  font-size: 14px;
+  line-height: 20px;
+  padding: 0px 30px 30px 30px;
+}
+
+h1 {
+  font-size: 20px;
+  margin: 20px 0px;
+  font-weight: 100;
+  line-height: 28px;
+}
+
+h2 {
+  font-size: 16px;
+  font-weight: 100;
+}
+
+h2 span {
+  color: #28AEE4;
+}
+
+a {
+  background-image: image_url("main/mailBtn.png");
+  display: block;
+  width: 270px;
+  height: 80px;
+  margin: 20px 0px 30px -10px;
+}
+
+aside {
+  margin: 30px 0px;
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+footer {
+  width: 100%;
+  text-align: center;
+  color: #F98CB9;
+  font-size: 14px;
+}

@@ -1,5 +1,20 @@
-<p>Welcome <%= @email %>!</p>
+<div id="layout">
+  <header>
+    <%= email_image_tag "main/logo.png", width: "100px" %>
+    <span>歡迎註冊捷比童裝</span>
+  </header>
+  <main>
+    <h1>
+      歡迎加入捷比童裝會員
+    </h1>
+    <h2>您註冊的E-mail ：<span> <%= @email %></span></h2>
+    <%= link_to '點我進行啟用帳號', confirmation_url(@resource, confirmation_token: @token) %>
+    <p>有任何問題有任何問題，歡迎來電來信，親切的客服人員都很樂意為您解決！</p>
+    <p>M : bearbear0520@yahoo.com.tw</p>
+    <p>P : 05-2785-369 | 05 - 2765 - 729</p>
+    <p>T : 9:00~17:00 | 週一至週六</p>
+    <aside>捷比童裝敬上</aside>
+    <footer>＊ 此信件由系統自動產生與發送，請勿直接回覆 ＊</footer>
+  </main>
 
-<p>You can confirm your account email through the link below:</p>
-
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+</div>
