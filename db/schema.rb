@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160814032054) do
+ActiveRecord::Schema.define(version: 20160828145523) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,10 +30,10 @@ ActiveRecord::Schema.define(version: 20160814032054) do
   create_table "categories", force: :cascade do |t|
     t.string   "caption",     limit: 30
     t.string   "description", limit: 50
-    t.integer  "parent_id",              default: 0
-    t.integer  "seq",                    default: 0
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.integer  "parent_id",                            default: 0
+    t.integer  "seq",                                  default: 0
+    t.datetime "created_at",             precision: 6,             null: false
+    t.datetime "updated_at",             precision: 6,             null: false
   end
 
   create_table "categories_products", id: false, force: :cascade do |t|
@@ -99,9 +99,9 @@ ActiveRecord::Schema.define(version: 20160814032054) do
     t.integer  "size_y"
     t.string   "link",        limit: 100, default: "#"
     t.string   "picture",     limit: 50
-    t.integer  "seq",                     default: 0
     t.datetime "created_at",                            null: false
     t.datetime "updated_at",                            null: false
+    t.integer  "seq",                     default: 0,   null: false
   end
 
   create_table "jcoinds", force: :cascade do |t|
@@ -158,6 +158,36 @@ ActiveRecord::Schema.define(version: 20160814032054) do
   add_index "messages", ["conversation_id"], name: "index_messages_on_conversation_id", using: :btree
   add_index "messages", ["user_id"], name: "index_messages_on_user_id", using: :btree
 
+  create_table "order_details", force: :cascade do |t|
+    t.integer "order_id"
+    t.string  "itemcode"
+    t.integer "qty"
+    t.decimal "sale_price", precision: 8, scale: 2, default: 0.0
+  end
+
+  add_index "order_details", ["order_id"], name: "index_order_details_on_order_id", using: :btree
+
+  create_table "orders", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "order_no"
+    t.string   "type"
+    t.datetime "close_date"
+    t.string   "shipping_no"
+    t.string   "shipping_type"
+    t.string   "pay_type"
+    t.string   "recipient"
+    t.string   "phone"
+    t.string   "zip_code"
+    t.string   "address"
+    t.string   "store_no"
+    t.string   "store_address"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+    t.string   "status"
+  end
+
+  add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
+
   create_table "pictures", force: :cascade do |t|
     t.string   "asset",          limit: 50
     t.integer  "imageable_id"
@@ -179,14 +209,12 @@ ActiveRecord::Schema.define(version: 20160814032054) do
     t.decimal  "unit_price",             precision: 8, scale: 2, default: 9999.0
     t.decimal  "sale_price",             precision: 8, scale: 2, default: 9999.0
     t.decimal  "cost",                   precision: 8, scale: 2, default: 0.0
-    t.datetime "started_at"
+    t.time     "deleted_at"
+    t.datetime "created_at",                                                                     null: false
+    t.datetime "updated_at",                                                                     null: false
+    t.datetime "started_at",                                     default: '2016-08-12 00:03:43'
     t.datetime "stoped_at"
-    t.datetime "deleted_at"
-    t.datetime "created_at",                                                      null: false
-    t.datetime "updated_at",                                                      null: false
   end
-
-  add_index "products", ["deleted_at"], name: "index_products_on_deleted_at", using: :btree
 
   create_table "store_infos", force: :cascade do |t|
     t.string   "caption"
@@ -206,13 +234,12 @@ ActiveRecord::Schema.define(version: 20160814032054) do
     t.integer  "product_id"
     t.string   "color",      limit: 20
     t.string   "color_pic",  limit: 20
-    t.datetime "deleted_at"
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
     t.integer  "seq",                   default: 0
+    t.time     "deleted_at"
   end
 
-  add_index "sub_product_colors", ["deleted_at"], name: "index_sub_product_colors_on_deleted_at", using: :btree
   add_index "sub_product_colors", ["product_id"], name: "index_sub_product_colors_on_product_id", using: :btree
 
   create_table "sub_products", force: :cascade do |t|
@@ -223,12 +250,11 @@ ActiveRecord::Schema.define(version: 20160814032054) do
     t.string   "itemcode",             limit: 30
     t.integer  "qty",                             default: 0
     t.integer  "seq",                             default: 0
-    t.datetime "deleted_at"
+    t.time     "deleted_at"
     t.datetime "created_at",                                  null: false
-    t.datetime "updated_at",                                  null: false
+    t.datetime "updated_at"
   end
 
-  add_index "sub_products", ["deleted_at"], name: "index_sub_products_on_deleted_at", using: :btree
   add_index "sub_products", ["product_id"], name: "index_sub_products_on_product_id", using: :btree
   add_index "sub_products", ["sub_product_color_id"], name: "index_sub_products_on_sub_product_color_id", using: :btree
 
@@ -252,24 +278,32 @@ ActiveRecord::Schema.define(version: 20160814032054) do
   add_index "supervisors", ["reset_password_token"], name: "index_supervisors_on_reset_password_token", unique: true, using: :btree
 
   create_table "users", force: :cascade do |t|
-    t.string   "nickname",               default: "", null: false
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "nickname",                                       default: "",  null: false
+    t.string   "email",                                          default: "",  null: false
+    t.string   "encrypted_password",                             default: "",  null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",                                  default: 0,   null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
+    t.datetime "created_at",                                                   null: false
+    t.datetime "updated_at",                                                   null: false
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string   "provider"
     t.string   "uid"
+    t.integer  "buy_count",                                      default: 0
+    t.decimal  "buy_amount",             precision: 8, scale: 2, default: 0.0
+    t.string   "recipient"
+    t.string   "phone"
+    t.string   "zip_code"
+    t.string   "address"
+    t.string   "store_no"
+    t.string   "store_address"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

@@ -52,6 +52,8 @@ gem 'momentjs-rails'
 gem 'jquery-ui-rails'
 # paginate
 gem 'kaminari'
+# order status
+gem 'aasm'
 
 # nested form
 gem 'cocoon'
