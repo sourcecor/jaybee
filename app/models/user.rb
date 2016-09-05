@@ -3,6 +3,12 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :confirmable, :omniauthable, :omniauth_providers => [:facebook, :google_oauth2]
+  # 購物車
+  has_many :carts, dependent: :destroy
+
+  # 訂單
+  has_many :orders, dependent: :destroy
+
   # 對話
   has_many :conversations, :foreign_key => :sender_id
 

@@ -1,4 +1,16 @@
 Rails.application.routes.draw do
+  get 'cart/index'
+
+  get 'cart/new'
+
+  get 'cart/create'
+
+  get 'cart/edit'
+
+  get 'cart/update'
+
+  get 'cart/destroy'
+
   # rails generate controller home index  --no-helper --no-assets --no-controller-specs --no-view-specs
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :users, controllers: {
