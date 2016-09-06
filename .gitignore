@@ -37,6 +37,7 @@ ignore.xml
 ui.lnf.xml
 web-browsers.xml
 code.style.schemes.xml
+rubysettings.xml
 .DS_Store
 app/.DS_Store
 app/assets/.DS_Store
