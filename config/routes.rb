@@ -122,5 +122,11 @@ Rails.application.routes.draw do
     scope :controller => 'product' do
       get 'product/:id' => :index
     end
+
+    scope :controller => 'cart' do
+      get 'cart' => :index
+      post 'cart/add' => :create
+      delete 'cart/remove/:id' => :destroy
+    end
   end
 end
