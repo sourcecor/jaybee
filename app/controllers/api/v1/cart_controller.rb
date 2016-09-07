@@ -1,14 +1,9 @@
 class Api::V1::CartController < Api::V1::ApplicationController
   def index
-  end
-
-  def new
+    @carts = current_user.carts
   end
 
   def create
-  end
-
-  def edit
   end
 
   def update

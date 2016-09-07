@@ -22,7 +22,7 @@
       <div class="detailImg">
         <img class="mainImg" v-bind:src="item_pic">
       </div>
-      <form class="detailInfo" action="../cart/payment.html">
+      <form class="detailInfo">
         <ul>
           <li class="proBrand"><%= @product.caption%>{{item_spec}}</li>
           <li class="proTitle"><%= @product.sub_caption%></li>
@@ -46,21 +46,26 @@
             <a href="javascript:;" class="chart">查看尺寸表</a>
           </li>
         </ul>
-        <div class="number-input-area">
-          <div class="btn-pill-area btn-pill-area--numbers">
-            <button type="button" class="btn" :disabled="size==''" @click="subVal">
-              <span aria-hidden="true"><i class="btr bt-minus bt-sm"></i> </span>
-            </button>
-          </div>
-          <input type="number" id="unique_ID" name="unique_ID" :min="min_qty" step="1" :max="max_qty" :disabled="size==''" v-model="qty">
-          <div class="btn-pill-area btn-pill-area--numbers">
-            <button type="button" class="btn" :disabled="size==''" @click="addVal">
+        <% if user_signed_in? %>
+          <div class="number-input-area">
+            <div class="btn-pill-area btn-pill-area--numbers">
+              <button type="button" class="btn" :disabled="size==''" @click="subVal">
+                <span aria-hidden="true"><i class="btr bt-minus bt-sm"></i> </span>
+              </button>
+            </div>
+            <input type="number" id="unique_ID" name="unique_ID" :min="min_qty" step="1" :max="max_qty" :disabled="size==''" v-model="qty">
+            <div class="btn-pill-area btn-pill-area--numbers">
+              <button type="button" class="btn" :disabled="size==''" @click="addVal">
 
-              <span aria-hidden="true"><i class="btr bt-plus bt-sm"></i> </span>
-            </button>
+                <span aria-hidden="true"><i class="btr bt-plus bt-sm"></i> </span>
+              </button>
+            </div>
           </div>
-        </div>
-        <button class="button" type="submit"><i class="btr bt-shopping-cart bt-sm"></i>加入購物車</button>
+
+          <button class="button" :disabled="size==''"><i class="btr bt-shopping-cart bt-sm"></i>加入購物車</button>
+        <% else %>
+          <div class="button"><i class="btr bt-user bt-sm"></i>請先註冊或登入</div>
+        <% end %>
       </form>
     </div>
 
