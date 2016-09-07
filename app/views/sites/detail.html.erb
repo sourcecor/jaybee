@@ -2,7 +2,7 @@
 <%= stylesheet_link_tag 'css/detail' %>
 <%= stylesheet_link_tag 'css/number' %>
 <% if !@menus.nil? %>
-    <aside class="nav sideMenu">
+    <aside class="nav sideMenu" xmlns:v-bind="http://www.w3.org/1999/xhtml">
       <ul class="nav__list ">
         <% @menus.each do |menu| %>
             <%= render 'layouts_partial/category_menu', :menus => menu['children'] %>
@@ -22,7 +22,7 @@
       <div class="detailImg">
         <img class="mainImg" v-bind:src="item_pic">
       </div>
-      <form class="detailInfo">
+      <div class="detailInfo">
         <ul>
           <li class="proBrand"><%= @product.caption%>{{item_spec}}</li>
           <li class="proTitle"><%= @product.sub_caption%></li>
@@ -62,11 +62,11 @@
             </div>
           </div>
 
-          <button class="button" :disabled="size==''"><i class="btr bt-shopping-cart bt-sm"></i>加入購物車</button>
+          <button class="button" :disabled="size==''" @click="addToCart"><i class="btr bt-shopping-cart bt-sm"></i>加入購物車</button>
         <% else %>
           <div class="button"><i class="btr bt-user bt-sm"></i>請先註冊或登入</div>
         <% end %>
-      </form>
+      </div>
     </div>
 
   </article>
@@ -94,6 +94,7 @@
 </div>
 
 <script type="text/javascript" charset="utf-8">
+  Vue.http.options.emulateJSON = true;
   var vm = new Vue({
     el: ".detail",
     data: {
@@ -188,10 +189,26 @@
         if (v < this.min_qty) {
           v = this.min_qty;
           this.qty = v;
+          showMessage('數量不正確');
+          return false;
         }
         if (v > this.max_qty) {
           v = this.max_qty;
           this.qty = v;
+          showMessage('數量不足');
+          return false;
+        }
+
+        return true;
+      },
+      // add to cart
+      addToCart: function(){
+        if (this.checkVal()){
+          this.$http.post("/api/v1/cart/insert.jbuilder", {itemcode: this.itemcode, qty: this.qty}).then(function(response) {
+//
+          }).then(function(response){
+            console.log(response);
+          });
         }
       }
     }

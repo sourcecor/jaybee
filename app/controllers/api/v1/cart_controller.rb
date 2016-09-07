@@ -4,11 +4,15 @@ class Api::V1::CartController < Api::V1::ApplicationController
   end
 
   def create
+    cart = new Cart()
+    render 'response'
   end
 
   def update
+
   end
 
   def destroy
+
   end
 end
