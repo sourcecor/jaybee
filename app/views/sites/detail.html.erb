@@ -98,6 +98,7 @@
   var vm = new Vue({
     el: ".detail",
     data: {
+      product_id: "",
       itemcode: "尚未選擇尺寸",
       item_pic: "",
       item_spec: "",
@@ -142,6 +143,7 @@
         this.$http.get("<%= "/api/v1/product/#{params[:id]}.jbuilder" %>").then(function(response) {
           this.$set('product', response.data.product);
           this.$set('colors', response.data.colors);
+          this.$set('product_id', response.data.product.id);
         }).then(function(response){
           console.log(response);
         });
@@ -204,7 +206,7 @@
       // add to cart
       addToCart: function(){
         if (this.checkVal()){
-          this.$http.post("/api/v1/cart/insert.jbuilder", {itemcode: this.itemcode, qty: this.qty}).then(function(response) {
+          this.$http.post("/api/v1/cart/insert.jbuilder", {product_id: this.product_id, itemcode: this.itemcode, qty: this.qty}).then(function(response) {
 //
           }).then(function(response){
             console.log(response);
