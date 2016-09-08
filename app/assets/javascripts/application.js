@@ -53,6 +53,16 @@ function initMap() {
     autocomplete = new google.maps.places.Autocomplete($('#geocode')[0]);
 }
 
+function showMessage(msg) {
+    PNotify.prototype.options.styling = "jqueryui";
+    new PNotify({
+        title: '友善提示',
+        addclass: "stack-modal",
+        delay: 3000,
+        text: msg
+    });
+}
+
 $(function(){
   $(".fancybox").fancybox({
     'helpers':{

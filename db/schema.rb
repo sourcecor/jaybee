@@ -31,9 +31,10 @@ ActiveRecord::Schema.define(version: 20160901071751) do
     t.integer "user_id"
     t.string  "itemcode"
     t.integer "qty"
-    t.decimal "sale_price", precision: 8, scale: 2, default: 0.0
+    t.integer "product_id"
   end
 
+  add_index "carts", ["product_id"], name: "index_carts_on_product_id", using: :btree
   add_index "carts", ["user_id"], name: "index_carts_on_user_id", using: :btree
 
   create_table "categories", force: :cascade do |t|

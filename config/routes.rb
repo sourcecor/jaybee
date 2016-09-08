@@ -128,6 +128,7 @@ Rails.application.routes.draw do
       post 'cart/insert' => :create
       post 'cart/update/:id' => :update
       delete 'cart/delete/:id' => :destroy
+      delete 'cart/clear' => :clear
     end
   end
 end
