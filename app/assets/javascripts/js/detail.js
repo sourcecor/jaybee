@@ -1,6 +1,7 @@
 $(document).ready(function () {
   $(".infoPhoto").fadeIn();
   $("#infoPhoto").focus();
+
   $(".infoProduct,.infoSize").fadeOut(0);
   $("#infoPhoto").click(function () {
     $(".infoPhoto").fadeIn();

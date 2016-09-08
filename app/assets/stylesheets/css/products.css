@@ -59,7 +59,12 @@
     color: white
 }
 
-#pager .yiiPager .page a {
+#pager .yiiPager .page a{
+    color: white;
+
+
+}
+#pager .yiiPager .page {
     display: inline-block;
     height: 10px;
     padding: 5px 10px 10px 10px;
@@ -67,9 +72,10 @@
     background-color: #4FC1FF;
     color: white;
     transition: .5s ease all;
+    cursor:pointer
 }
 
-#pager .yiiPager .page a:hover {
+#pager .yiiPager .page:hover {
     background-color: #FF91B8
 }
 

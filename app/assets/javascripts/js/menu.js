@@ -1,6 +1,6 @@
 ;(function($) {
 	$(document).ready(function() {
-		
+        $(".nav__list input").click();
 		// ------------------
 		// Slidebars Submenus
 		

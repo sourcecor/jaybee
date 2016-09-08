@@ -17,7 +17,7 @@ $(document).ready(function () {
 // Menu
 
 
-    $(".childrenNav").fadeOut(0)
+    $(".childrenNav").fadeOut(0).css("display","none")
     $("header").mouseleave(function () {
         $(".childrenNav").stop()
         $(".childrenNav").fadeOut()
@@ -27,7 +27,7 @@ $(document).ready(function () {
     if ($(window).width() > 769) {
         $("#member").mouseenter(function () {
             $(".childrenNav:eq(0)").stop()
-            $(".childrenNav:eq(0)").fadeIn()
+            $(".childrenNav:eq(0)").fadeIn().css("display","block")
             $(".childrenNav:not(.childrenNav:eq(0))").fadeOut(0);
         })
 
@@ -38,7 +38,7 @@ $(document).ready(function () {
         $(".childrenNav:eq(1)").fadeIn()
         $(".childrenNav:not(.childrenNav:eq(1))").fadeOut(0);
     });
-
+    $(".moblieCover").css("display","none")
     $(".moblieCover,.mobileUser,.moblieCover .proList,.moblieCover .mobileSearch").fadeOut(0)
     if ($(window).width() < 769) {
 
@@ -94,25 +94,30 @@ $(document).ready(function () {
         }
 
         $(".navSearch .bt-shopping-cart").click(function () {
-            $(".moblieCover,.moblieCover .proList").fadeIn()
+            $(".moblieCover,.moblieCover .proList").fadeIn();
+            $(".moblieCover").css("display","block")
             $(".moblieCover .mobileUser,.moblieCover .mobileSearch").fadeOut(0)
         })
         $(".navSearch .bt-user").click(function () {
+            $(".moblieCover").css("display","block")
             $(".moblieCover,.moblieCover .mobileUser").fadeIn()
             $(".moblieCover .proList,.moblieCover .mobileSearch").fadeOut(0)
         })
         $(".navSearch .bt-search").click(function () {
+            $(".moblieCover").css("display","block")
             $(".moblieCover,.moblieCover .mobileSearch").fadeIn()
             $(".moblieCover .proList,.moblieCover .mobileUser").fadeOut(0)
         })
 
 
         $(".moblieCover .bt-times").click(function () {
-            $(".moblieCover").fadeOut()
+            $(".moblieCover").fadeOut();
+            $(".moblieCover").css("display","none")
 
         })
         $(".mobileUser .login").click(function () {
             $(".moblieCover").fadeOut()
+            $(".moblieCover").css("display","none")
 
         })
 

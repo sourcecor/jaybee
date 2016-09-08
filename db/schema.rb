@@ -39,10 +39,10 @@ ActiveRecord::Schema.define(version: 20160901071751) do
   create_table "categories", force: :cascade do |t|
     t.string   "caption",     limit: 30
     t.string   "description", limit: 50
-    t.integer  "parent_id",                            default: 0
-    t.integer  "seq",                                  default: 0
-    t.datetime "created_at",             precision: 6,             null: false
-    t.datetime "updated_at",             precision: 6,             null: false
+    t.integer  "parent_id",              default: 0
+    t.integer  "seq",                    default: 0
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
   end
 
   create_table "categories_products", id: false, force: :cascade do |t|
@@ -99,18 +99,18 @@ ActiveRecord::Schema.define(version: 20160901071751) do
   add_index "groups_supervisors", ["supervisor_id"], name: "index_groups_supervisors_on_supervisor_id", using: :btree
 
   create_table "home_grids", force: :cascade do |t|
-    t.integer  "parent_id",               default: 0
-    t.integer  "template_id",             default: 0
-    t.string   "caption",     limit: 50,  default: "#"
+    t.integer  "parent_id",                             default: 0
+    t.integer  "template_id",                           default: 0
+    t.string   "caption",     limit: 50,                default: "#"
     t.integer  "row"
     t.integer  "col"
     t.integer  "size_x"
     t.integer  "size_y"
-    t.string   "link",        limit: 100, default: "#"
+    t.string   "link",        limit: 100,               default: "#"
     t.string   "picture",     limit: 50
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
-    t.integer  "seq",                     default: 0,   null: false
+    t.datetime "created_at",              precision: 6,               null: false
+    t.datetime "updated_at",              precision: 6,               null: false
+    t.integer  "seq",                                   default: 0,   null: false
   end
 
   create_table "jcoinds", force: :cascade do |t|
@@ -218,11 +218,11 @@ ActiveRecord::Schema.define(version: 20160901071751) do
     t.decimal  "unit_price",             precision: 8, scale: 2, default: 9999.0
     t.decimal  "sale_price",             precision: 8, scale: 2, default: 9999.0
     t.decimal  "cost",                   precision: 8, scale: 2, default: 0.0
-    t.time     "deleted_at"
-    t.datetime "created_at",                                                                     null: false
-    t.datetime "updated_at",                                                                     null: false
-    t.datetime "started_at",                                     default: '2016-08-12 00:03:43'
-    t.datetime "stoped_at"
+    t.datetime "created_at",             precision: 6,                             null: false
+    t.datetime "updated_at",             precision: 6,                             null: false
+    t.datetime "started_at",             precision: 6,           default: "now()", null: false
+    t.datetime "stoped_at",              precision: 6
+    t.datetime "deleted_at",             precision: 6
   end
 
   create_table "store_infos", force: :cascade do |t|
@@ -243,10 +243,10 @@ ActiveRecord::Schema.define(version: 20160901071751) do
     t.integer  "product_id"
     t.string   "color",      limit: 20
     t.string   "color_pic",  limit: 20
-    t.datetime "created_at",                        null: false
-    t.datetime "updated_at",                        null: false
-    t.integer  "seq",                   default: 0
-    t.time     "deleted_at"
+    t.datetime "created_at",            precision: 6,             null: false
+    t.datetime "updated_at",            precision: 6,             null: false
+    t.integer  "seq",                                 default: 0
+    t.datetime "deleted_at",            precision: 6
   end
 
   add_index "sub_product_colors", ["product_id"], name: "index_sub_product_colors_on_product_id", using: :btree
@@ -257,11 +257,11 @@ ActiveRecord::Schema.define(version: 20160901071751) do
     t.string   "color",                limit: 10
     t.string   "size",                 limit: 4
     t.string   "itemcode",             limit: 30
-    t.integer  "qty",                             default: 0
-    t.integer  "seq",                             default: 0
-    t.time     "deleted_at"
-    t.datetime "created_at",                                  null: false
-    t.datetime "updated_at"
+    t.integer  "qty",                                           default: 0
+    t.integer  "seq",                                           default: 0
+    t.datetime "created_at",                      precision: 6,             null: false
+    t.datetime "updated_at",                      precision: 6,             null: false
+    t.datetime "deleted_at",                      precision: 6
   end
 
   add_index "sub_products", ["product_id"], name: "index_sub_products_on_product_id", using: :btree
