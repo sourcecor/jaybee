@@ -1002,4 +1002,30 @@ only screen and (min-device-pixel-ratio: 1.5) {
     background-size: 24px 24px; /*The size of the normal image, half the size of the hi-res image*/
   }
 }
+// no product *** start ***
+.noProduct{
+  display: block;
+  position:relative;
+  top:-150px;
+  margin:50% auto 0 auto;
+  text-align: center;
 
+}
+.noProduct a{
+  display: inline-block;
+  margin: 0px 3px;
+}
+.noProduct a:hover{
+  color: #4FC1FF
+}
+.none{
+  display: block;
+  color: #FF91B8;
+  margin-bottom: 15px;
+}
+.none i{
+  color: #FF91B8;
+  margin-right: 10px;
+}
+
+// no product *** end ***
