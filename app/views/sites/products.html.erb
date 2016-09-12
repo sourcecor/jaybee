@@ -26,25 +26,39 @@
       </div>
     </article>
   <%end%>
-  <article class="bread">
-    <%= @c_bread.html_safe unless @c_bread.nil? %>
-    <div id="pager">
-      <ul class="yiiPager">
-        <%= paginate @products %>
-      </ul>
-    </div>
-  </article>
+  <% if !@products.empty? %>
+    <article class="bread">
+      <%= @c_bread.html_safe unless @c_bread.nil? %>
+      <div id="pager">
+        <ul class="yiiPager">
+          <%= paginate @products %>
+        </ul>
+      </div>
+    </article>
 
-  <article class="products">
-    <% @products.each do |item| %>
-      <%= render 'layouts_partial/item', data: item %>
-    <%end%>
-    <div id="pager" class="center">
-      <ul class="yiiPager">
-        <%= paginate @products %>
-      </ul>
+    <article class="products">
+      <% @products.each do |item| %>
+          <%= render 'layouts_partial/item', data: item %>
+      <%end%>
+      <div id="pager" class="center">
+        <ul class="yiiPager">
+          <%= paginate @products %>
+        </ul>
+      </div>
+    </article>
+  <% else %>
+    <div class="noProduct">
+      <span class="none"><i class="btr bt-search bt-2x"></i>查無此商品</span>
+      <span>熱門關鍵字：</span>
+      <a href="javascript:;">T 恤</a>
+      <a href="javascript:;">背心</a>
+      <a href="javascript:;">內搭褲</a>
+      <a href="javascript:;">七分褲</a>
+      <a href="javascript:;">群類</a>
+      <a href="javascript:;">內搭褲</a>
     </div>
-  </article>
+<% end %>
+
 </div>
 
 <script type="text/javascript" charset="utf-8">
