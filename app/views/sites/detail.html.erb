@@ -64,7 +64,9 @@
 
           <button class="button" :disabled="size==''" @click="addToCart"><i class="btr bt-shopping-cart bt-sm"></i>加入購物車</button>
         <% else %>
-          <div class="button"><i class="btr bt-user bt-sm"></i>請先註冊或登入</div>
+          <a href="javascript:;" class="unLogin">
+            <%= image_tag "products/login.png"%>
+          </a>
         <% end %>
       </div>
     </div>

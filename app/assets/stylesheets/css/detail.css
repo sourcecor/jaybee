@@ -192,7 +192,15 @@
     background-color: #ff7ba9;
     color: white;
 }
+.detailInfo .unLogin{
+    margin-top: 20px;
+    display: block;
 
+}
+.detailInfo .unLogin img{
+    width: 100%;
+    max-width: 350px;
+}
 .infoBox {
     width: 100%;
     margin-top: 40px;

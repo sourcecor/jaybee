@@ -17,7 +17,7 @@ $(document).ready(function () {
 // Menu
 
 
-    $(".childrenNav").fadeOut(0).css("display","none")
+    $(".childrenNav").fadeOut(0)
     $("header").mouseleave(function () {
         $(".childrenNav").stop()
         $(".childrenNav").fadeOut()
@@ -27,7 +27,7 @@ $(document).ready(function () {
     if ($(window).width() > 769) {
         $("#member").mouseenter(function () {
             $(".childrenNav:eq(0)").stop()
-            $(".childrenNav:eq(0)").fadeIn().css("display","block")
+            $(".childrenNav:eq(0)").fadeIn()
             $(".childrenNav:not(.childrenNav:eq(0))").fadeOut(0);
         })
 

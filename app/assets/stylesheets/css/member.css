@@ -206,7 +206,41 @@
     text-align: right;
     border-radius: 0 0 10px 10px
 }
+.center .facebook{
+    width: 150px;
+    background-color:#479AD4;
+    color: white;
+    padding: 10px 0px;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
 
+}
+.center .facebook:hover,
+.center .google:hover{
+    color: white;
+
+}
+.facebook span,.google span,
+.facebook i,.google i{
+    color: white;
+    display: inline-block;
+
+}
+.facebook i,.google i{
+    margin-right: 5px;
+}
+.en{
+    font-family: Century Gothic,Times New Roman;
+}
+.center .google{
+    width: 140px;
+    background-color:#DD4B39;
+    color: white;
+    padding: 10px 0px;
+    text-decoration: none;
+    cursor: pointer;
+}
 @media screen and (max-width: 768px) {
     .tabItems {
         width: 32.3%;
@@ -219,4 +253,21 @@
         width: 100%;
         display: inline-block;
     }
+}
+@media screen and (max-width:590px) {
+
+    .center .facebook,
+    .center .google{
+        width: 50px;
+        padding: 25px 10px;
+        border-radius: 50px;
+        margin-bottom: 15px;
+        margin-top: 15px;
+
+    }
+    .facebook .en,
+    .google .en{
+        display: none;
+    }
+
 }
