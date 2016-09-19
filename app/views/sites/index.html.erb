@@ -25,7 +25,7 @@
     </a>
   </aside>
   <!-- home grid -->
-  <% HomeGrid.where(parent_id: 0).order(:seq).each do |grid| %>
+  <% HomeGrid.where(parent_id: 0).order(:id, :seq).each do |grid| %>
     <% case grid.template_id.to_s %>
       <% when "1" %>
         <%= render 'layouts_partial/home_grid_1', data: grid %>
