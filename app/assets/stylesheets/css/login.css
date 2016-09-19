@@ -81,6 +81,7 @@ body {
     display: inline-block;
     font-size: 15px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 #login .l a:hover {
@@ -97,7 +98,7 @@ body {
 }
 
 #login .l i {
-    margin-right: 5px;
+    margin-right:5px;
 }
 
 .en {
@@ -111,7 +112,7 @@ body {
     border-radius: 5px;
 }
 
-@media screen and (max-width: 590px) {
+@media screen and (max-width: 589px) {
     .r {
         width: 70%;
     }
@@ -132,5 +133,6 @@ body {
     #login .l .google .en {
         display: none;
     }
+
 
 }

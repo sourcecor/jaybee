@@ -1,4 +1,5 @@
 <%= stylesheet_link_tag 'css/login' %>
+<link rel="stylesheet" media="all" href="/assets/libCss/black-tie.min.self-4aead90e884761862d0e3bd345563a00438753b3dd8a8ed082d2c7b3aa200651.css?body=1" />
 <%= form_for(resource, as: resource_name, url: session_path(resource_name), remote: true) do |f| %>
   <div id="login">
     <div class="loginBox r">
@@ -13,8 +14,11 @@
     <div class="loginBox l">
       <%= link_to "<i class='fab fab-facebook-alt bt-lg'></i><span class='en'>facebook</span>登入".html_safe, omniauth_authorize_path(resource_name, :facebook), class: "facebook", target: :_top %>
       <%= link_to "<i class='fab fab-google-alt bt-lg'></i><span class='en'>google</span>登入".html_safe, omniauth_authorize_path(resource_name, :google_oauth2), class: "google", target: :_top %>
+
+
     </div>
   </div>
+
 <% end %>
 
 
