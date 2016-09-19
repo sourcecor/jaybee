@@ -4,6 +4,7 @@ li.nested-fields[data-row="#{f.object.row}" data-col="#{f.object.col}" data-size
   = f.input :col, as: :hidden, :input_html => { class: "data-col" }
   = f.input :size_x, as: :hidden, :input_html => { class: "data-sizex" }
   = f.input :size_y, as: :hidden, :input_html => { class: "data-sizey" }
+  = f.input :seq, as: :hidden
   = f.input :picture, wrapper: :no_label, as: :image_preview
   = link_to_remove_association "", f, { class: "fa fa-close btn-remove"}
   a [class="btn btn-box-tool btn-more" data-toggle="modal" title="更多" data-target=".modal#_new_sub_grids_#{m_id}"]

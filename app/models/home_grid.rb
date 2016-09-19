@@ -2,7 +2,7 @@ class HomeGrid < ActiveRecord::Base
   validates :caption, :link, presence: true
   mount_uploader :picture, PictureUploader
 
-  has_many :sub_grids, class_name: "HomeGrid", foreign_key: "parent_id", dependent: :destroy
+  has_many :sub_grids, ->{ order(:id)}, class_name: "HomeGrid", foreign_key: "parent_id", dependent: :destroy
   accepts_nested_attributes_for :sub_grids, reject_if: :all_blank, allow_destroy: true
   belongs_to :p_grid, class_name: "HomeGrid", foreign_key: "parent_id"
 
