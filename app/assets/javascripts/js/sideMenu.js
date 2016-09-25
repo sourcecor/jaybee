@@ -20,8 +20,8 @@ $(document).ready(function(){
 
 		})
 	};
-    
-    
-    $("#content .rightSubject:eq(0)").click()
-    
+
+    if($(window).width()>769) {
+        $("#content .rightSubject:eq(0)").click()
+    }
 })	
