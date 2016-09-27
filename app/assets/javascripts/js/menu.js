@@ -1,6 +1,8 @@
 ;(function($) {
 	$(document).ready(function() {
-        $(".nav__list input").click();
+        if($(window).width()>769) {
+            $(".nav__list input").click();
+        }
 		// ------------------
 		// Slidebars Submenus
 		

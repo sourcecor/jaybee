@@ -21,7 +21,5 @@ $(document).ready(function(){
 		})
 	};
 
-    if($(window).width()>769) {
-        $("#content .rightSubject:eq(0)").click()
-    }
+
 })	

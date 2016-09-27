@@ -28,23 +28,23 @@ $(document).ready(function() {
     })
 
     if($(window).width()>769){
-        $("#new").click(function(){
+        $("#news").click(function(){
             window.location.replace('/sites/products?category=1');
         })
 
-        $("#girl").click(function(){
+        $("#girls").click(function(){
             window.location.replace('/sites/products?category=2');
         })
 
-        $("#boy").click(function(){
+        $("#boys").click(function(){
             window.location.replace('/sites/products?category=3');
         })
 
-        $("#baby").click(function(){
+        $("#babys").click(function(){
             window.location.replace('/sites/products?category=4');
         })
 
-        $("#brands").click(function(){
+        $("#brandss").click(function(){
             window.location.replace('/sites/products?category=5');
         })
         $("#member").mouseenter(function(){
@@ -64,32 +64,51 @@ $(document).ready(function() {
     $(".moblieCover").css("display","none")
     $(".moblieCover,.mobileUser,.moblieCover .proList,.moblieCover .mobileSearch").fadeOut(0)
     if($(window).width()<769){
-
-        $("#new").click(function(){
+        // $(".grandsonNav").slideUp(0)
+        // for(i=0;i<$(".grandsonNav").length;i++){
+        //
+        //     $(".subject:eq("+i+")").click({id:i},function(e){
+        //
+        //         var $t = $(".grandsonNav:eq("+e.data.id+")");
+        //
+        //         if ($t.is(':visible')){
+        //             $t.slideUp();
+        //             $(".subject a i:eq("+e.data.id+")").addClass('bt-caret-left').removeClass('bt-caret-down');
+        //         }
+        //         else{
+        //             $t.slideDown();
+        //             $(".subject a i:eq("+e.data.id+")").addClass('bt-caret-down').removeClass('bt-caret-left');
+        //         }
+        //
+        //
+        //
+        //     })
+        // }
+        $("#news").click(function(){
             $(".new").stop()
             $(".new").fadeToggle(0)
             $(".nav:not(.new)").fadeOut(0);
         })
 
-        $("#girl").click(function(){
+        $("#girls").click(function(){
             $(".girl").stop()
             $(".girl").fadeToggle(0)
             $(".nav:not(.girl)").fadeOut(0);
         })
 
-        $("#boy").click(function(){
+        $("#boys").click(function(){
             $(".boy").stop()
             $(".boy").fadeToggle(00)
             $(".nav:not(.boy)").fadeOut(0);
         })
 
-        $("#baby").click(function(){
+        $("#babys").click(function(){
             $(".baby").stop()
             $(".baby").fadeToggle(0)
             $(".nav:not(.baby)").fadeOut(0);
         })
 
-        $("#brands").click(function(){
+        $("#brandss").click(function(){
             $(".brands").stop()
             $(".brands").fadeToggle(0)
             $(".nav:not(.brands)").fadeOut(0);
@@ -97,26 +116,7 @@ $(document).ready(function() {
 
 
 
-        $(".grandsonNav").slideUp(0)
-        for(i=0;i<$(".grandsonNav").length;i++){
 
-            $(".subject:eq("+i+")").click({id:i},function(e){
-
-                var $t = $(".grandsonNav:eq("+e.data.id+")");
-
-                if ($t.is(':visible')){
-                    $t.slideUp();
-                    $(".subject a i:eq("+e.data.id+")").addClass('bt-caret-left').removeClass('bt-caret-down');
-                }
-                else{
-                    $t.slideDown();
-                    $(".subject a i:eq("+e.data.id+")").addClass('bt-caret-down').removeClass('bt-caret-left');
-                }
-
-
-
-            })
-        }
 
         $(".navSearch .bt-shopping-cart").click(function () {
             $(".moblieCover,.moblieCover .proList").fadeIn();
@@ -154,18 +154,18 @@ $(document).ready(function() {
 
         })
 
-        for(i=0;i<$("footer article .subject").length;i++){
-
-            $("footer article .subject:eq("+i+")").click({id:i},function(e){
-                $("footer article span").stop()
-                $("footer article span:not(footer article span:eq("+e.data.id+"))").slideUp(300)
-                $("footer article span:eq("+e.data.id+")").slideToggle(300)
-
-
-            })
-
-
-        }
+        // for(i=0;i<$("footer article .subject").length;i++){
+        //
+        //     $("footer article .subject:eq("+i+")").click({id:i},function(e){
+        //         $("footer article span").stop()
+        //         $("footer article span:not(footer article span:eq("+e.data.id+"))").slideUp(300)
+        //         $("footer article span:eq("+e.data.id+")").slideToggle(300)
+        //
+        //
+        //     })
+        //
+        //
+        // }
 
 
 
@@ -222,24 +222,24 @@ $(document).ready(function() {
 
 
     //footerSlideUp
-    fh=$("footer").height()-$("#footerBar").height()-10
-    $("footer").animate({bottom:""+-fh+"px"},0);
-    $("#footerBar").click(function(){
-        if($("#footerBar i").hasClass('bt-caret-up'))//mouseWheel icon change
-        {
-            $("#footerBar i").addClass('bt-caret-down').removeClass('bt-caret-up');
-            $("footer").animate({bottom:"0px"});
-
-        }
-        else
-        {
-            $("#footerBar i").addClass('bt-caret-up').removeClass('bt-caret-down');
-            $("footer").animate({bottom:""+-fh+"px"});
-            if($(window).width()<768){
-                $("footer article span").slideUp(0)
-            }
-        };
-    })
+    // fh=$("footer").height()-$("#footerBar").height()-10
+    // $("footer").animate({bottom:""+-fh+"px"},0);
+    // $("#footerBar").click(function(){
+    //     if($("#footerBar i").hasClass('bt-caret-up'))//mouseWheel icon change
+    //     {
+    //         $("#footerBar i").addClass('bt-caret-down').removeClass('bt-caret-up');
+    //         $("footer").animate({bottom:"0px"});
+    //
+    //     }
+    //     else
+    //     {
+    //         $("#footerBar i").addClass('bt-caret-up').removeClass('bt-caret-down');
+    //         $("footer").animate({bottom:""+-fh+"px"});
+    //         if($(window).width()<768){
+    //             $("footer article span").slideUp(0)
+    //         }
+    //     };
+    // })
     // --------------------------------------------------------
 
 
